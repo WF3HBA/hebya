@@ -17,4 +17,25 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
+//$app->register(
+//        new Silex\Provider\DoctrineServiceProvider(),
+//        [
+//            'db.options' => [
+//                'driver' => 'pdo_mysql',
+//                'host' => 'localhost',
+//                'dbname' => 'hebya',
+//                'user' => 'root',
+//                'password' => '',
+//                'charset' => 'utf8'
+//            ]
+//        ]
+//);
+
+// gestionnaire de sessions de Symfony ($app['session'])
+$app->register(new Silex\Provider\SessionServiceProvider());
+
+$app['index.controller'] = function () use ($app) {
+    return new Controller\IndexController($app);
+};
+
 return $app;
