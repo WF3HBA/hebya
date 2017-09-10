@@ -4,7 +4,6 @@
         <title>{% block title '' %} - Hebya</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         {% block stylesheet %}
-     
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
             <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Josefin+Sans|Open+Sans|Roboto" rel="stylesheet"> 
             <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
@@ -24,9 +23,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A propos <span class=""></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">A propos<span class=""></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Notre histoire</a></li>
                 <li><a href="#">Notre mission</a></li>
@@ -34,22 +32,19 @@
                 <li><a href="#">notre équipe</a></li>
               </ul>
             </li>
-            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nos offres <span class=""></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nos offres<span class=""></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">vente</a></li>
                 <li><a href="#">Service</a></li>
-               
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
-            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nos Innovateurs <span class=""></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Nos Innovateurs<span class=""></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -60,7 +55,6 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
-            
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Emploi et carrière<span class=""></span></a>
               <ul class="dropdown-menu">
@@ -73,9 +67,8 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
-            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">contact<span class=""></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact<span class=""></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -153,30 +146,18 @@
                             <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Envoyer</button>
                         </form>		
                     </div>
+
                 </div>
             </div>
         </div>
-        
-        
-        
-        
-        
-        
-    </footer> 
-        
-        
-        
-        
-        
-        
-        {% block javascript %}
-            <script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/map/raphael-min.js') }}"></script>
-        <script src="{{ asset('js/map/africa-paths.js') }}"></script>
-        {% endblock %}
+
+    </footer>
+    {% block javascript %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/map/raphael-min.js') }}"></script>
+    <script src="{{ asset('js/map/africa-paths.js') }}"></script>
+    {% endblock %}
+
     </body>
 </html>
