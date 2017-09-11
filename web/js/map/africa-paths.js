@@ -89,14 +89,28 @@ var africaPaths = {
         // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";
       };
       
-  $(function(){
-	$("path").click(function(){
+  
+
+$(function(){
+     
+	$("svg > path").click(function(){
 		var id_country = ($(this).attr("id"));
 		var country = id_country.split("_").join(" ");
-		$(".info").show();
-		$(".info > h3").html(country);
-	})
-	
-	
-
-})
+                var browserWidth = $( window ).width();
+//		$(".info").show();
+		$(".info > h3").hide().html(country).fadeIn("slow");
+                
+                if(browserWidth < 991){
+                    $('html, body').animate({
+                     scrollTop: $(".info > h3").offset().top
+                    }, 900);
+                    $(".info > button").show();
+                    $(".info > button").click(function(){
+                        $('html, body').animate({
+                        scrollTop: $("svg").offset().top
+                        }, 900);
+                    });  
+                };
+	});
+        
+});

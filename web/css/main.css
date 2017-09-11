@@ -16,45 +16,7 @@ footer{
     color: white;
 }
 
-#backimg{
-    background: url('img/africagirafe.jpg');
-    
-}
-
-
 p{
     font-family: 'Open Sans';
 }
-
-   
-
-path{
-   fill: #008080;
-}
-
-path:hover {
-    fill: #004f4f;
-    cursor: pointer;
-}
- 
-.info{
-   
-    /*	position: absolute;
-            top: 10%;
-            left: 10%;*/
-
-    display: none;
-    font-family: 'Roboto';
-            /*border: 1px  gainsboro;*/
-    border-radius: 1%;
-/*    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.17);
-    -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.17);
-    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.17);*/
-   ;
-
-}
-
-.map-container{
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-}
+  
