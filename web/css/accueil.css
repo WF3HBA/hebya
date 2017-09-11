@@ -29,3 +29,18 @@ h3{
     display: none;
     margin-bottom: 5px;
 }
+
+.assets{
+    padding: 20px;
+    border: 1px solid #008080;
+}
+
+#trio{
+    padding: 20px;
+}
+
+@media (max-width: 991px){
+    .assets{
+        margin: 20px;
+    }
+}
