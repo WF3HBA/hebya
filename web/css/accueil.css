@@ -10,6 +10,7 @@ path:hover {
  
 .info{
     font-family: 'Roboto'; 
+    padding-top: 30px;
 }
 
 .info > h5{
@@ -66,5 +67,10 @@ h3{
     .assets{
         margin: 20px;
     }  
+    
+    #container {
+        text-align: right;
+        margin-top: 40px;
+    }
 }
 
