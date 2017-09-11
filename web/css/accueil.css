@@ -9,11 +9,7 @@ path:hover {
 }
  
 .info{
-    /*display: none;*/
-    font-family: 'Roboto';
-   
-    
-    
+    font-family: 'Roboto'; 
 }
 
 .info > h5{
