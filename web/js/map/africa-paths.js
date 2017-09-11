@@ -103,7 +103,7 @@ $(function(){
                 if(browserWidth < 991){
                     $('html, body').animate({
                      scrollTop: $(".info > h3").offset().top
-                    }, 900);
+                    }, 800);
 //                    $(".info > button").show();
                     
                 };
@@ -118,7 +118,7 @@ $(function(){
                  $(".info > button").click(function(){
                         $('html, body').animate({
                         scrollTop: $("svg").offset().top
-                        }, 900);
+                        }, 800);
                     });  
             }
         });
