@@ -38,4 +38,8 @@ $app['index.controller'] = function () use ($app) {
     return new Controller\IndexController($app);
 };
 
+$app['service.controller'] = function () use ($app) {
+    return new Controller\ServiceController($app);
+};
+
 return $app;

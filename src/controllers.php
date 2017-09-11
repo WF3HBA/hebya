@@ -11,6 +11,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app->get('/', 'index.controller:indexAction')
         ->bind('homepage');
 
+$app->get('/services', 'service.controller:serviceAction')
+        ->bind('services');
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
