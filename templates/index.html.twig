@@ -28,6 +28,7 @@
               </hgroup>
               <button class="btn btn-hero btn-lg" role="button">See all features</button>
             </div>
+
           </div>
           <div class="item slides">
             <div class="slide-2"></div>
@@ -54,15 +55,50 @@
     
     <div class="container">
         <div class="row">
-            <div id="container" class="col-md-8"></div>
-            <div class="info col-md-4">
-                <h3>HEBYA</h3>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <div id="container" class="col-md-8 col-xs-12"></div>
+            <div class="col-md-4 col-xs-12">
+                <div class="info">
+                    <h3>HEBYA</h3><hr>
+                    <h5>Présence</h5>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h5>Service</h5>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h5>Contact</h5>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <button class="btn btn-default btn-block">retour carte</button>
+                    
+                </div>
             </div>
         </div>
     </div> 
     
+    <div class="container">
+        <div id="trio" class="row">
+                <div class="col-md-4">
+                    <div class="assets">
+                        <h4>Hebya</h4>
+                        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                     <div class="assets">
+                        <h4>Hebya</h4>
+                        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="assets">
+                        <h4>Hebya</h4>
+                        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                    </div>
+                </div>
+        </div>
+    </div>
 
 {% endblock %}
 
-
+{% block javascript %}
+    {{ parent() }}
+     <script src="{{ asset('js/map/raphael-min.js') }}"></script>
+     <script src="{{ asset('js/map/africa-paths.js') }}"></script>
+{% endblock %}

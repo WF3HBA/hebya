@@ -16,17 +16,9 @@ footer{
     color: white;
 }
 
-#backimg{
-    background: url('img/africagirafe.jpg');
-    
-}
-
-
 p{
     font-family: 'Open Sans';
-}
-
-   
+}  
 
 path{
    fill: #008080;
@@ -136,3 +128,4 @@ footer a{
     margin-left:70px;
 }
 /******************* end footer **********************/
+

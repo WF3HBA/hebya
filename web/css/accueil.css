@@ -1,0 +1,46 @@
+path{
+   fill: #008080;
+}
+
+path:hover {
+    fill: #004f4f;
+    cursor: pointer;
+    transition: 0.9s;
+}
+ 
+.info{
+    /*display: none;*/
+    font-family: 'Roboto';
+   
+    
+    
+}
+
+.info > h5{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+h3{
+    font-weight: bold;
+}
+
+.info button{
+    display: none;
+    margin-bottom: 5px;
+}
+
+.assets{
+    padding: 20px;
+    border: 1px solid #008080;
+}
+
+#trio{
+    padding: 20px;
+}
+
+@media (max-width: 991px){
+    .assets{
+        margin: 20px;
+    }
+}
