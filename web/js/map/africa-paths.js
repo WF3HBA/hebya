@@ -93,33 +93,43 @@ var africaPaths = {
 
 $(function(){
       
-	$("svg > path").click(function(){
-		var id_country = ($(this).attr("id"));
-		var country = id_country.split("_").join(" ");
-                var browserWidth = $( window ).width();
-//		$(".info").show();
-		$(".info > h3").hide().html(country).fadeIn("slow");
-                
-                if(browserWidth < 991){
-                    $('html, body').animate({
-                     scrollTop: $(".info > h3").offset().top
-                    }, 800);
-//                    $(".info > button").show();
-                    
-                };
-	});
+     var browserWidth = $( window ).width();
+    
+     if (browserWidth > 991) {
+            $(".info > button").hide();
+     } else if (browserWidth < 992) {
+             $(".info > button").show();
+     }
+      
+    $("svg > path").click(function(){
         
-        $( window ).resize(function() {
-            var browserWidth = $( window ).width();
-            if(browserWidth > 991){
-                $(".info > button").hide();
-            }else if(browserWidth < 992){
-                 $(".info > button").show();
-                 $(".info > button").click(function(){
-                        $('html, body').animate({
-                        scrollTop: $("svg").offset().top
-                        }, 800);
-                    });  
-            }
-        });
+        var id_country = ($(this).attr("id"));
+        var country = id_country.split("_").join(" ");
+        var browserWidth = $( window ).width();
+         
+        $(".info h3").hide().html(country).fadeIn();
+
+        if (browserWidth < 991) {
+            $('html, body').animate({
+                scrollTop: $(".info").offset().top-70
+            }, 800);
+        };
+    });
+        
+    $( window ).resize(function() {
+        var browserWidth = $( window ).width();
+        
+        if (browserWidth > 991) {
+            $(".info > button").hide();
+        } else if(browserWidth < 992) {
+             $(".info > button").show();
+        }
+    });
+    
+    $(".info > button").click(function(){
+        $('html, body').animate({
+            scrollTop: $("#container").offset().top-50
+        }, 800);
+    });  
+    
 });

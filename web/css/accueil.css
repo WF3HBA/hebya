@@ -17,40 +17,46 @@ path:hover {
     font-size: 1.5em;
 }
 
-h3{
-    font-weight: bold;
+#country_name {
+    height: 40px;
+    border-bottom: 1px solid gainsboro;
+    margin-bottom: 20px;
 }
 
-.info button{
+h3{
+    font-weight: bold;
+    margin: 0;
+}
+
+.info button {
     display: none;
     margin-bottom: 5px;
 }
 
-.section2{
-  background-color: #FFF0F5;  
+#section2 {
+  background-color: #F5F5F5;  
 }
 
-.assets{
+.assets {
     padding: 20px;
     border: 1px solid #EEEEEE;
     background-color: white;
     border-radius: 2px;
 }
 
-#trio{
+#trio {
     padding: 20px;
     text-align: center;
     padding-bottom: 50px;
     
 }
 
-
 #trio > h2 {
     padding : 50px;
     font-weight: bold;
 }
 
-i{
+#section2 i {
     color: #008080;
     padding: 10px;
 }
