@@ -1,5 +1,28 @@
 {% extends "layout.html.twig" %}
 
+{% block stylesheet %}
+         {{ parent() }}   
+         <link rel="stylesheet" href="{{ asset("css/services/services.css") }}"/>
+{% endblock %}
+
 {% block content %}
+    <main>
+        <div class="container">
+            <section id="main-header">
+                <div id="main-title">
+                    <h1>{{ "Services"|upper }}</h1>
+                </div>
+                <div id="button-action">
+                    
+                </div>
+            </section>
+            <section id="main-body">
+     
+            </section>
+            <section id="main-footer">
+                
+            </section>
+        </div>
+    </main>
     
 {% endblock %}
