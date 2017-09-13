@@ -42,4 +42,12 @@ $app['service.controller'] = function () use ($app) {
     return new Controller\ServiceController($app);
 };
 
+$app['innovator.controller'] = function () use ($app) {
+    return new Controller\InnovatorController($app);
+};
+
+$app['client.controller'] = function () use ($app) {
+    return new Controller\ClientController($app);
+};
+
 return $app;
