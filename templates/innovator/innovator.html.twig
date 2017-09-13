@@ -1,0 +1,114 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="innovators-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1> Innovateurs </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <select style="width:300px;">
+                            <option>Theme</option>
+                            <option>Education</option>
+                            <option>Santé</option>
+                            <option>Assurance</option>
+                            <option>Comptabilité</option>
+                            <option>Numérisation GED</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <select class="col-xs-12">
+                            <option>Afrique du Sud</option>
+                            <option>Algérie</option>
+                            <option>Angola</option>
+                            <option>Bénin</option>
+                            <option>Botswana</option>
+                            <option>Burkina Faso</option>
+                            <option>Burundi</option>
+                            <option>Cameroun</option>
+                            <option>Cap-Vert</option>
+                            <option>Congo</option>
+                            <option>Côte d'Ivoire</option>
+                            <option>Djibouti</option>
+                            <option>Egypte</option>
+                            <option>Erythrée</option>
+                            <option>Ethiopie</option>
+                            <option>Gabon</option>
+                            <option>Gambie</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section><br><br>
+            
+            
+        <section id="innovators-body">
+            <div class="container">
+                
+                 <div class="row">                    
+                    
+                    <div class="col-sm-6">
+                      <a href="#">
+                        <img class="img-thumbnail" src="http://placehold.it/700x250" alt="">
+                      </a>
+                    </div>                    
+                    <div class="col-sm-6">
+                      <h3>Project One</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore,  quos perspiciatis atque eveniet unde.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                      <a class="btn btn-primary" href="#">View Project</a>
+                    </div>
+                     
+                 </div><br><br>
+                 <div class="row"> 
+                    <div class="col-sm-6 col-sm-push-6">
+                      <a href="#">
+                        <img class="img-thumbnail" src="http://placehold.it/700x250" alt="">
+                      </a>
+                    </div>                    
+                    <div class="col-sm-6 col-sm-pull-6">
+                      <h3>Project One</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore,  quos perspiciatis atque eveniet unde.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                      <a class="btn btn-primary" href="#">View Project</a>
+                    </div>
+                 </div><br><br>
+                 
+                 <div class="row">                    
+                    
+                    <div class="col-sm-6">
+                      <a href="#">
+                        <img class="img-thumbnail" src="http://placehold.it/700x250" alt="">
+                      </a>
+                    </div>                    
+                    <div class="col-sm-6">
+                      <h3>Project One</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore,  quos perspiciatis atque eveniet unde.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+                      <a class="btn btn-primary" href="#">View Project</a>
+                    </div>
+                     
+                 </div><br><br>
+                 
+                 
+                 
+                 
+                 
+                 
+            </div>
+        </section><br>
+    </main>
+{% endblock %}
+
+
+{% block javascript %}
+     {{ parent() }}
+    <script src="{{ asset("js/innovators/innovators.js") }}"></script>
+{% endblock %}

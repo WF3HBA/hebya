@@ -14,6 +14,12 @@ $app->get('/', 'index.controller:indexAction')
 $app->get('/services', 'service.controller:serviceAction')
         ->bind('services');
 
+$app->get('/innovateurs', 'innovator.controller:innovatorAction')
+        ->bind('innovateurs');
+
+$app->get('/clients', 'client.controller:clientAction')
+        ->bind('clients');
+
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
 
