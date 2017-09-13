@@ -48,6 +48,10 @@ $app['innovator.controller'] = function () use ($app) {
 
 $app['client.controller'] = function () use ($app) {
     return new Controller\ClientController($app);
+
+$app['contact.controller'] = function () use ($app) {
+    return new Controller\ContactController($app);
+
 };
 
 return $app;
