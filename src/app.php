@@ -42,4 +42,8 @@ $app['service.controller'] = function () use ($app) {
     return new Controller\ServiceController($app);
 };
 
+$app['contact.controller'] = function () use ($app) {
+    return new Controller\ContactController($app);
+};
+
 return $app;

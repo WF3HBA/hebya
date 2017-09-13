@@ -14,6 +14,9 @@ $app->get('/', 'index.controller:indexAction')
 $app->get('/services', 'service.controller:serviceAction')
         ->bind('services');
 
+$app->get('/contact', 'contact.controller:contactAction')
+        ->bind('contact');
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
