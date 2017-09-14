@@ -1,11 +1,43 @@
-body {
-    margin-top: 50px;
+
+/*************RESET*****************/
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+h1{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.clear{
+    clear: both;
+}
+
+a, a:hover, a:focus{
+    text-decoration: none;
+}
+
+
+.navbar .navbar-inverse{
+    margin-bottom: 45px;
 }
 
 footer{
-    background: #222222;
-    color: white;
+    padding-top: 45px;
+    background-color: #222222;
 }
+
+
+
+/***********END OF RESET*********/
 
 .navbar-inverse{
     background: #008080;
@@ -24,45 +56,6 @@ p{
     font-family: 'Open Sans';
 }  
 
-path{
-   fill: #008080;
-}
-
-path:hover {
-    fill: #004f4f;
-    cursor: pointer;
-}
- 
-.info{
-   
-    /*	position: absolute;
-            top: 10%;
-            left: 10%;*/
-
-    // display: none;
-    font-family: 'Roboto';
-            /*border: 1px  gainsboro;*/
-    border-radius: 1%;
-/*    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.17);
-    -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.17);
-    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.17);*/
-   ;
-
-}
-
-.map-container{
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-}
-
-
-
-
-
-
-
-
-
 
 /******************* begening footer **********************/
 
@@ -71,6 +64,7 @@ path:hover {
     border-top: 4px solid #fcab0e;
     margin: 0;
     padding: 20px 0;
+    color: white;
 }
 .footer_dv {
     width: 100%;
@@ -97,6 +91,7 @@ path:hover {
     color: #f1f2f2;
     padding: 5px 0;
 }
+
 .footer_dv p {
     color: #fff;
     font-size: 14px;
@@ -105,9 +100,7 @@ path:hover {
     text-align: justify;
 }
 
-footer{
-    padding-top: 40px;    
-}
+
 footer a{
     color: white;
 } 
@@ -116,7 +109,6 @@ footer a{
     background: #008080;
     margin-left: 20px;
 }
-
 
  .b{
     margin-left:60px;

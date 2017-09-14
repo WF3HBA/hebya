@@ -9,11 +9,11 @@ Image credits: unsplash.com
 /********************************/
 .fade-carousel {
     position: relative;
-    height: 50vh;
+    height: 100vh;
     clip-path: polygon(0% 0%, 0% calc(100% - 50px), calc(50% - 150px) calc(100% - 50px), calc(50% - 80px) 100%, calc(50% + 80px) 100%, calc(50% + 150px) calc(100% - 50px), 100% calc(100% - 50px), 100% 0%);
 }
 .fade-carousel .carousel-inner .item {
-    height: 50vh;
+    height: 100vh;
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
@@ -89,7 +89,7 @@ Image credits: unsplash.com
 .fade-carousel .slides .slide-1, 
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
-  height: 50vh;
+  height: 100vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -113,4 +113,12 @@ Image credits: unsplash.com
 }
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
+}
+
+@media (min-width: 991px){
+    .fade-carousel .slides .slide- 
+    .slide-3
+    .carousel-inner .item {
+        height: 50vh;
+    }
 }

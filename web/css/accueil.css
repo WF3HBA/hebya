@@ -1,3 +1,5 @@
+/**css map***/
+
 path{
    fill: #008080;
 }
@@ -7,7 +9,9 @@ path:hover {
     cursor: pointer;
     transition: 0.9s;
 }
- 
+
+/********MAP INFO******/
+
 .info{
     font-family: 'Roboto'; 
     padding-top: 30px;
@@ -33,6 +37,8 @@ h3{
     display: none;
     margin-bottom: 5px;
 }
+
+/**deuxieme section**/
 
 #section2 {
   background-color: #F5F5F5;  
@@ -74,3 +80,7 @@ h3{
     }
 }
 
+/**LAST SECTION***/
+
+
+              
