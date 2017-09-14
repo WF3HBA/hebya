@@ -4,7 +4,7 @@
   
 }
 /* les deux select (theme et pays) auront des border,des border et une height spécifiques*/
-select{
+#innovators-header select{
     margin-top:30px;
     border:2px solid #008080;
     height: 40px;
@@ -27,7 +27,7 @@ select{
 
 
 
-
+/******************************************************************************************************/
 /*lorsque la taille de l'écran dépasse 700 px, le margin-top aura la valeur 0 */
 @media screen and ( min-width: 700px ) {
   h3 {
