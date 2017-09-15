@@ -14,6 +14,9 @@ $app->get('/', 'index.controller:indexAction')
 $app->get('/services', 'service.controller:serviceAction')
         ->bind('services');
 
+$app->get('/services/description-ajax', 'service.controller:descriptionAction')
+        ->bind('service_description');
+
 $app->get('/innovateurs', 'innovator.controller:innovatorAction')
         ->bind('innovateurs');
 

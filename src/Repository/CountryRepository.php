@@ -18,13 +18,15 @@ ORDER BY cl.country_name
 SQL;
        
             $dbCountries = $this->db->fetchAll($query);
-            $Countries = [];
+            $countries = [];
             
             foreach ($dbCountries as $dbCountry){
+
                 $Countries[] = $this->buidtEntity($dbCountry);
+
             }
             
-            return $Countries;
+            return $countries;
     }
     
     private function buildEntity(array $data){
