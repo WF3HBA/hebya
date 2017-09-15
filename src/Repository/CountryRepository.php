@@ -5,7 +5,6 @@ namespace Repository;
 
 use Entity\Country;
 
-
 class CountryRepository extends RepositoryAbstract {
     
     public function findAll(){
@@ -22,13 +21,15 @@ SQL;
             $countries = [];
             
             foreach ($dbCountries as $dbCountry){
-                $countries[] = $this->builtEntity($dbCountry);
+
+                $Countries[] = $this->buidtEntity($dbCountry);
+
             }
             
             return $countries;
     }
     
-    private function builtEntity(array $data){
+    private function buildEntity(array $data){
        
         $country = new Country();
         
