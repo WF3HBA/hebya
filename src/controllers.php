@@ -27,6 +27,20 @@ $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
 
+
+/***ADMIN ROUTE***/
+
+$app->get('/admin', 'admin.controller:adminAction')
+        ->bind('admin');
+
+$app->get('/admin/products', 'admin.product.controller:productListAction')
+        ->bind('admin_product');
+
+$app->get('/admin/providers', 'admin.provider.controller:providertListAction')
+        ->bind('admin_provider');
+
+
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
