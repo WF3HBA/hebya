@@ -1,23 +1,23 @@
 {% extends "layout.html.twig" %}
 
 {% block stylesheet %}
-         {{ parent() }}   
-         <link rel="stylesheet" href="{{ asset("css/contact/contact.css") }}"/>
+    {{ parent() }}   
+    <link rel="stylesheet" href="{{ asset("css/contact/contact.css") }}"/>
 {% endblock %}
 
 {% block content %}
-    
-    
+
+
     <main>
         <section id="contact-form">
             <div class="container">
                 <div class="form-group row text-center">
-                         <h1>CONTACT &#x2709</h1>
+                    <h1>CONTACT &#x2709</h1>
                 </div>
                 <form action="#" method="post">                     
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            
+
                             <label for="nom" class="col-2 col-form-label"> Nom </label>
                             <div class="col-10">
                                 <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md ">
@@ -65,11 +65,11 @@
 
                             <label for="message" class="col-2 col-form-label">Message</label>
                             <div class="col-10">
-                                 <textarea class="form-control" id="message" placeholder="message" name="message"></textarea>
+                                <textarea class="form-control" id="message" placeholder="message" name="message"></textarea>
                             </div>
 
                             <div class="col-10">
-                               <input class="btn btn-primary boutton-form-contact" type="submit" value="Envoyer">
+                                <input class="btn btn-primary boutton-form-contact" type="submit" value="Envoyer">
                             </div>
                         </div>
                     </div>
@@ -81,5 +81,5 @@
 
 {% block javascript %}
     {{ parent() }}
-     
+
 {% endblock %}
