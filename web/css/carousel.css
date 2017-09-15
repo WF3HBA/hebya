@@ -9,11 +9,10 @@ Image credits: unsplash.com
 /********************************/
 .fade-carousel {
     position: relative;
-    height: 100vh;
-    clip-path: polygon(0% 0%, 0% calc(100% - 50px), calc(50% - 150px) calc(100% - 50px), calc(50% - 80px) 100%, calc(50% + 80px) 100%, calc(50% + 150px) calc(100% - 50px), 100% calc(100% - 50px), 100% 0%);
+    height: calc(100vh - 109px);
 }
 .fade-carousel .carousel-inner .item {
-    height: 100vh;
+    height: calc(100vh - 109px);
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
@@ -89,7 +88,7 @@ Image credits: unsplash.com
 .fade-carousel .slides .slide-1, 
 .fade-carousel .slides .slide-2,
 .fade-carousel .slides .slide-3 {
-  height: 100vh;
+  height: calc(100vh - 109px);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

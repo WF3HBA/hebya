@@ -1,6 +1,15 @@
-/**css map***/
 
-path{
+/*********  G E N E R A L  *******/
+
+
+
+/*********  M A P  **********/
+
+#container {
+    text-align: right;
+}
+    
+path {
    fill: #008080;
 }
 
@@ -10,14 +19,14 @@ path:hover {
     transition: 0.9s;
 }
 
-/********MAP INFO******/
+/******** M A P  I N F O  ******/
 
-.info{
+.info {
     font-family: 'Roboto'; 
     padding-top: 30px;
 }
 
-.info > h5{
+.info > h5 {
     font-weight: bold;
     font-size: 1.5em;
 }
@@ -28,7 +37,7 @@ path:hover {
     margin-bottom: 20px;
 }
 
-h3{
+h3 {
     font-weight: bold;
     margin: 0;
 }
@@ -40,7 +49,7 @@ h3{
 
 /**deuxieme section**/
 
-#section2 {
+#index-info {
   background-color: #F5F5F5;  
 }
 
@@ -51,11 +60,14 @@ h3{
     border-radius: 2px;
 }
 
+.assets {
+    margin: 20px;
+}  
+
 #trio {
     padding: 20px;
     text-align: center;
     padding-bottom: 50px;
-    
 }
 
 #trio > h2 {
@@ -63,24 +75,44 @@ h3{
     font-weight: bold;
 }
 
-#section2 i {
+#index-info i {
     color: #008080;
     padding: 10px;
 }
 
+/********  M E D I A   Q U E R I E S  ***********/
 
-@media (max-width: 991px){
-    .assets{
-        margin: 20px;
-    }  
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    
+
+    
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    .assets {
+        margin: 0;
+    }
     
     #container {
-        text-align: right;
-        margin-top: 40px;
+        text-align: left;
     }
 }
 
-/**LAST SECTION***/
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
 
+}
 
               

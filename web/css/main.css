@@ -1,63 +1,97 @@
 
-/*************RESET*****************/
-body{
-    margin-top: 50px;
+/*************  R E S E T  *************/
+body {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6{
+main {
+    padding-top: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans';
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-h1{
+h1 {
     font-weight: bold;
-    padding: 10px;
+    padding: 10px 0;
 }
 
-.clear{
+.clear {
     clear: both;
 }
 
-a, a:hover, a:focus{
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+a, a:hover, a:focus {
     text-decoration: none;
 }
 
-
-.navbar .navbar-inverse{
-    margin-bottom: 45px;
-}
-
-footer{
+footer {
     padding-top: 45px;
     background-color: #222222;
 }
 
+/***********  H E A D E R  *********/
 
+header {
+    min-height: 50px;
+    z-index: 102;    
+}
 
-/***********END OF RESET*********/
+#header-social {
+    height: 59px;
+    line-height: 74px;
+    text-align: right;
+}
 
-.navbar-inverse{
+#header-social i {
+    margin-left: 5px;
+    font-size: 2.4em;
+}
+
+#header-social select.form-control {
+    display: inline-block;
+    position: relative;
+    top: -8px;
+    width: 40px;
+    border: 1px solid #eee;
+    padding: 0;
+    margin-left: 10px;
+}   
+
+/***********  N A V B A R  *********/
+
+#sticker {
+    z-index: 101 !important;
+}
+
+.navbar-inverse {
     background: #008080;
     border: 0;
+    box-shadow: 0 10px 25px -10px #000;
 }
 
-.navbar-inverse .navbar-nav>li>a{
+.navbar-inverse .navbar-nav>li>a {
     color: white;
 }
 
-.navbar-inverse .navbar-brand{
+.navbar-inverse .navbar-brand {
     color: white;
 }
 
-p{
+p {
     font-family: 'Open Sans';
 }  
 
 
-/******************* begening footer **********************/
+/****************  F O O T E R  ***************/
 
 .footer {
     background: #222222 none repeat scroll 0 0;
@@ -66,9 +100,11 @@ p{
     padding: 20px 0;
     color: white;
 }
+
 .footer_dv {
     width: 100%;
 }
+
 .footer_dv h4 {
     color: #008080;
     font-family: roboto;
@@ -76,15 +112,18 @@ p{
     margin-bottom: 30px;
     text-transform: uppercase;
 }
+
 .footer_dv ul {
     list-style: outside none none;
     margin: 0;
     padding: 0;
 }
+
 .footer_dv ul li:first-child {
     border-top: medium none;
     box-shadow: none;
 }
+
 .footer_dv ul li {
     border-top: 1px solid #000;
     box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
@@ -101,27 +140,54 @@ p{
 }
 
 
-footer a{
+footer a {
     color: white;
 } 
 
-.btn-primary{
+.btn-primary {
     background: #008080;
     margin-left: 20px;
 }
 
- .b{
-    margin-left:60px;
+ .footer-link-twitter,  .footer-link-rss {
+    margin-left: 70px;
 }
 
 
- .c{
-    margin-left:45px;
+ .footer-link-youtube {
+    margin-left: 45px;
 }
 
+/********  M E D I A   Q U E R I E S  ***********/
 
- .d{
-    margin-left:70px;
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
 }
-/******************* end footer **********************/
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    
+    /********  H E A D E R *********/ 
+
+    #header-social select.form-control {
+        margin-left: 20px;
+    }
+    
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
 
