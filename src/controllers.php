@@ -23,6 +23,10 @@ $app->get('/clients', 'client.controller:clientAction')
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
 
+$app->get('/register', 'register.controller:registerAction')
+        ->bind('register');
+
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
