@@ -66,5 +66,9 @@ $app['country.repository'] = function () use ($app){
     return new Repository\CountryRepository($app['db']);
 };
 
+$app['service.repository'] = function () use ($app){
+    return new Repository\ServiceRepository($app['db']);
+};
+
 
 return $app;
