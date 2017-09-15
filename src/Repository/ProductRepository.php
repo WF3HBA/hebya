@@ -17,22 +17,22 @@ class ProductRepository extends RepositoryAbstract {
     
         $query = <<<SQL
                 
-SELECT p.*,
-       pr.company AS provider_company         
-FROM product p
-JOIN provider pr ON pr.idprovider = p.idprovider               
-ORDER BY p.idproduct
+        SELECT p.*,
+                    pr.company AS provider_company         
+        FROM product p
+        JOIN provider pr ON pr.idprovider = p.idprovider               
+        ORDER BY p.idproduct
 
 SQL;
        
             $dbProducts = $this->db->fetchAll($query);
-            $Products = [];
+            $products = [];
             
             foreach ($dbProducts as $dbProduct){
-                $Products[] = $this->buildEntity($dbProduct);
+                $products[] = $this->buildEntity($dbProduct);
             }
             
-            return $Products;
+            return $products;
     }
     
     private function buildEntity(array $data){
@@ -52,7 +52,7 @@ SQL;
             ->setIdprovider($data['idprovider'])
             ->setName($data['name'])
             ->setWebsite($data['website'])
-            ->setCompany($provider)   
+            ->setProvider($provider)   
         ;
         
         return $product;

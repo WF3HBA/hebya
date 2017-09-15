@@ -65,7 +65,7 @@ $app['admin.controller'] = function () use ($app) {
 
 
 $app['admin.product.controller'] = function () use ($app) {
-    return new Controller\Admin\adminProductController($app);
+    return new Controller\Admin\AdminProductController($app);
 };
 
 

@@ -1,9 +1,6 @@
 <?php
 
-
-
 namespace Entity;
-
 
 class Product {
     /**
@@ -21,16 +18,12 @@ class Product {
     
     private $website;
     
-    private $company;
+    private $provider;
     
      /***GETTER****/
     
     function getIdproduct() {
         return $this->idproduct;
-    }
-    
-    function getCompany() {
-        return $this->company;
     }
 
     function getIdprovider() {
@@ -44,15 +37,14 @@ class Product {
     function getWebsite() {
         return $this->website;
     }
+      
+    function getProvider() {
+        return $this->provider;
+    }
 
     
     /**********SETTER************/
     
-     function setCompany(Provider $company) {
-        $this->company = $company;
-        
-        return $this;
-    }
     
     function setIdproduct($idproduct) {
         $this->idproduct = $idproduct;
@@ -77,6 +69,19 @@ class Product {
         
         return $this;
     }
-
+    
+    function setProvider(Provider $provider) {
+        $this->provider = $provider;
+        
+        return $this;
+    }
+    
+    function getProviderCompany(){
+        if (!is_null($this->provider)) {
+            return $this->provider->getCompany();
+        }
+        
+        return '';
+    }
     
 }
