@@ -17,19 +17,19 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
-//$app->register(
-//        new Silex\Provider\DoctrineServiceProvider(),
-//        [
-//            'db.options' => [
-//                'driver' => 'pdo_mysql',
-//                'host' => 'localhost',
-//                'dbname' => 'hebya',
-//                'user' => 'root',
-//                'password' => '',
-//                'charset' => 'utf8'
-//            ]
-//        ]
-//);
+$app->register(
+        new Silex\Provider\DoctrineServiceProvider(),
+        [
+            'db.options' => [
+                'driver' => 'pdo_mysql',
+                'host' => 'localhost',
+                'dbname' => 'hebya',
+                'user' => 'root',
+                'password' => '',
+                'charset' => 'utf8'
+            ]
+        ]
+);
 
 // gestionnaire de sessions de Symfony ($app['session'])
 $app->register(new Silex\Provider\SessionServiceProvider());
@@ -53,5 +53,18 @@ $app['client.controller'] = function () use ($app) {
 $app['contact.controller'] = function () use ($app) {
     return new Controller\ContactController($app);
 };
+
+$app['register.controller'] = function () use ($app) {
+    return new Controller\RegisterController($app);
+};
+
+
+
+//Repository
+
+$app['country.repository'] = function () use ($app){
+    return new Repository\CountryRepository($app['db']);
+};
+
 
 return $app;

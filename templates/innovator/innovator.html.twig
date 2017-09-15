@@ -28,23 +28,10 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 ">
                         <select class="col-xs-12 innovators-select-pays">
-                            <option>Afrique du Sud</option>
-                            <option>Algérie</option>
-                            <option>Angola</option>
-                            <option>Bénin</option>
-                            <option>Botswana</option>
-                            <option>Burkina Faso</option>
-                            <option>Burundi</option>
-                            <option>Cameroun</option>
-                            <option>Cap-Vert</option>
-                            <option>Congo</option>
-                            <option>Côte d'Ivoire</option>
-                            <option>Djibouti</option>
-                            <option>Egypte</option>
-                            <option>Erythrée</option>
-                            <option>Ethiopie</option>
-                            <option>Gabon</option>
-                            <option>Gambie</option>
+                            {% for country in countries %}
+                            <option>{{ country.country_name }}</option>
+                            {% endfor %}
+                           
                         </select>
                     </div>
                 </div>
