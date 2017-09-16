@@ -22,7 +22,7 @@ SQL;
             
             foreach ($dbCountries as $dbCountry){
 
-                $Countries[] = $this->buidtEntity($dbCountry);
+                $countries[] = $this->buildEntity($dbCountry);
 
             }
             
