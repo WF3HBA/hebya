@@ -11,9 +11,9 @@ class CountryRepository extends RepositoryAbstract {
     
         $query = <<<SQL
                 
-SELECT cl.*
-FROM country_has_language cl
-ORDER BY cl.country_name 
+        SELECT *
+        FROM country
+        ORDER BY name
 
 SQL;
        
@@ -36,7 +36,7 @@ SQL;
         $country
             ->setIdcountry($data['idcountry'])
             ->setContent($data['content'])
-            ->setCountry_name($data['country_name'])
+            ->setName($data['name'])
             ->setContinent($data['continent'])
         ;
         

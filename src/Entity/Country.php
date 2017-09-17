@@ -10,10 +10,8 @@ class Country {
      * @var int
      */
     private $idcountry;
-   
- 
-    private $idlangage;
     
+    private $name;
     
     /**
      *
@@ -21,11 +19,7 @@ class Country {
      */
     private $content;
     
-    private $country_name;
-    
     private $continent;
-    
-    
     
     
     /***GETTER****/
@@ -34,16 +28,12 @@ class Country {
         return $this->idcountry;
     }
 
-    function getIdlangage() {
-        return $this->idlangage;
-    }
-
     function getContent() {
         return $this->content;
     }
 
-    function getCountry_name() {
-        return $this->country_name;
+    function getName() {
+        return $this->name;
     }
 
     function getContinent() {
@@ -59,20 +49,14 @@ class Country {
         return $this;
     }
 
-    function setIdlangage($idlangage) {
-        $this->idlangage = $idlangage;
-        
-        return $this;
-    }
-
     function setContent($content) {
         $this->content = $content;
         
         return $this;
     }
 
-    function setCountry_name($country_name) {
-        $this->country_name = $country_name;
+    function setName($name) {
+        $this->name = $name;
         
         return $this;
     }
@@ -82,8 +66,6 @@ class Country {
         
         return $this;
     }
-
-
     
     
 }

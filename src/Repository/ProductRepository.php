@@ -18,7 +18,7 @@ class ProductRepository extends RepositoryAbstract {
         $query = <<<SQL
                 
         SELECT p.*,
-                    pr.company AS provider_company         
+                    pr.company       
         FROM product p
         JOIN provider pr ON pr.idprovider = p.idprovider               
         ORDER BY p.idproduct
@@ -41,7 +41,7 @@ SQL;
             
         $provider
                 ->setIdprovider($data['idprovider'])
-                ->setCompany($data['provider_company'])
+                ->setCompany($data['company'])
         ;
         
         

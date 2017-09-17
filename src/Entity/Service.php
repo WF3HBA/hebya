@@ -6,11 +6,7 @@ class Service {
     
     private $idService;
     
-    private $idLanguage;
-    
     private $target;
-    
-    private $header;
     
     private $content;
     
@@ -19,22 +15,15 @@ class Service {
     public function getIdService() {
         return $this->idService;
     }
-
-    public function getIdLanguage() {
-        return $this->idLanguage;
-    }
-
-    public function getHeader() {
-        return $this->header;
+    
+    public function getTarget() {
+        return $this->target;
     }
 
     public function getContent() {
         return $this->content;
     }
     
-    public function getTarget() {
-        return $this->target;
-    }
     
     /****** S E T T E R ******/
     
@@ -42,14 +31,9 @@ class Service {
         $this->idService = $idService;
         return $this;
     }
-
-    public function setIdLanguage($idLanguage) {
-        $this->idLanguage = $idLanguage;
-        return $this;
-    }
-
-    public function setHeader($header) {
-        $this->header = $header;
+    
+    public function setTarget($target) {
+        $this->target = $target;
         return $this;
     }
 
@@ -57,11 +41,5 @@ class Service {
         $this->content = $content;
         return $this;
     }
-
-    public function setTarget($target) {
-        $this->target = $target;
-        return $this;
-    }
-
 
 }

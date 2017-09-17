@@ -13,12 +13,11 @@ class ServiceController extends ControllerAbstract {
         );
     }
     
-    public function descriptionAction() {
+    public function targetAction() {
         
         $service = $this->app['service.repository']->find($_GET['target']);
         
         $response = [
-            'header' => $service->getHeader(),
             'content' => $service->getContent()
         ];
         
