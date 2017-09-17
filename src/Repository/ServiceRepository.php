@@ -9,16 +9,9 @@ class ServiceRepository extends RepositoryAbstract {
         public function find($target) {
        
         $query = <<<SQL
-            SELECT
-                sl.*,
-                s.target
-            FROM
-                service_has_language sl
-            JOIN
-                service s
-            ON
-                s.idservice = sl.idservice
-            WHERE s.target = :target;
+            SELECT *
+            FROM service
+            WHERE target = :target;
 SQL;
        
        $dbService = $this->db->fetchAssoc(
@@ -40,9 +33,7 @@ SQL;
         
         $service
             ->setIdService($data['idservice'])
-            ->setIdLanguage($data['idlanguage'])
             ->setTarget($data['target'])
-            ->setHeader($data['header'])
             ->setContent($data['content'])
         ;
         
