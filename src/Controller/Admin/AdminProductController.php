@@ -5,6 +5,7 @@ namespace Controller\Admin;
 
 use Controller\ControllerAbstract;
 use Entity\Product;
+use Entity\Provider;
 
 
 class AdminProductController extends ControllerAbstract {
@@ -26,8 +27,10 @@ class AdminProductController extends ControllerAbstract {
         
         if(is_null($id)){
             $product = new Product();
+            $provider = new Provider();
         } else{
             $product = $this->app['product.repository']->find($id);
+            $provider = $this->app['provider.repository']->find($id);
             
             if(is_null($product)){
                 $this->app->abort(404);
@@ -44,6 +47,7 @@ class AdminProductController extends ControllerAbstract {
             $product->setName($_POST['name']);
             $product->setWebsite($_POST['website']);
             $product->setContent($_POST['content']);
+            $product->setSummary($_POST['summary']);
             $product->setField($_POST['field']);
            
             
@@ -64,9 +68,7 @@ class AdminProductController extends ControllerAbstract {
             
             if(empty($_POST['content'])){
                 $errors['content'] = 'content require';
-            } elseif(strlen($_POST['content']) > 1000){
-                $errors['content'] = 'maximum 1000 characteres';
-            }
+            } 
             
             
             if(empty($_POST['field'])){

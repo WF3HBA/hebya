@@ -45,6 +45,10 @@ $app['about.controller'] = function () use ($app) {
     return new Controller\AboutController($app);
 };
 
+$app['product.controller'] = function () use ($app) {
+    return new Controller\ProductController($app);
+};
+
 $app['service.controller'] = function () use ($app) {
     return new Controller\ServiceController($app);
 };
