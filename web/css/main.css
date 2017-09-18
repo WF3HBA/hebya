@@ -40,6 +40,10 @@ footer {
 
 /***********  H E A D E R  *********/
 
+#hebya-logo{
+    padding-top: 100px;
+}
+
 header {
     min-height: 50px;
     z-index: 102;    
