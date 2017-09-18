@@ -60,6 +60,14 @@ $admin->get('/providers/suppression/{id}', 'admin.provider.controller:deleteActi
         ->assert('id','\d+')
         ->bind('admin_provider_delete');
 
+$admin->match('/products/edition/{id}', 'admin.product.controller:editAction')
+        ->value('id', null)
+        ->bind('admin_product_edit');
+
+$admin->get('/products/suppression/{id}', 'admin.product.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_product_delete');
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

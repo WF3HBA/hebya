@@ -12,36 +12,40 @@
     </head>
     <body>
         
+     
+        <div class="navbar navbar-inverse navbar-fixed-left">
+            <a class="navbar-brand" href="{{ path('admin') }}">Hebya</a>
+           <ul class="nav navbar-nav">
+
+               <li><a href="{{ path('admin_product') }}">Produit</a></li>
+               <li><a href="{{ path('admin_provider') }}">Provider</a></li>
+               <li><a href="#">Finance</a></li>
+               <li><a href="#">Link4</a></li>
+               <li><a href="#">Link5</a></li>
+           </ul>
+       </div>
+     
+
+    
+        <div class="row">
+            <div class="col-md-7 col-md-offset-2">
+                <h2>Hosted by africa</h2>
+                <p>Admin</p>
+            </div>
+        </div>  
+   
         
-     <div class="navbar navbar-inverse navbar-fixed-left">
-         <a class="navbar-brand" href="{{ path('admin') }}">Hebya</a>
-        <ul class="nav navbar-nav">
-           
-            <li><a href="{{ path('admin_product') }}">Produit</a></li>
-            <li><a href="{{ path('admin_provider') }}">Provider</a></li>
-            <li><a href="#">Finance</a></li>
-            <li><a href="#">Link4</a></li>
-            <li><a href="#">Link5</a></li>
-        </ul>
-    </div>
-    <div class="col-md-7 col-md-offset-2">
-         <div class="row">
-            <h2>Hosted by africa</h2>
-            <p>Admin</p>
-        </div>
-    </div>  
-        
-        
+     
          {% block content %}
             
         {% endblock %}
         
-            
+           
         
  {% block javascript %}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-     
+    <script src="{{ asset('js/admin/edit.js') }}"></script>
 
     {% endblock %}
 
