@@ -96,7 +96,6 @@ SQL;
                 ->setCompany($data['company'])
         ;
         
-        
         $product = new Product();
         
         $product
@@ -108,8 +107,7 @@ SQL;
             ->setField($data['field'])
             ->setStatus($data['status'])
             ->setSummary($data['summary'])
-            ->setProvider($provider)
-               
+            ->setProvider($provider)       
         ;
         
         return $product;
