@@ -84,7 +84,12 @@ SQL;
     
     private function buildEntity(array $data){
        
+        $provider = new Provider();
         
+        $provider
+                ->setIdprovider($data['idprovider'])
+                ->setCompany($data['company'])
+        ;
         
         
         $product = new Product();
