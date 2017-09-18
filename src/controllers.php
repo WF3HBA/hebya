@@ -8,8 +8,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
+/********* F R O N T *********/
+
 $app->get('/', 'index.controller:indexAction')
         ->bind('homepage');
+
+$app->get('/apropos', 'about.controller:aboutAction')
+        ->bind('apropos');
 
 $app->get('/services', 'service.controller:serviceAction')
         ->bind('services');
@@ -55,7 +60,6 @@ $admin->get('/providers/suppression/{id}', 'admin.provider.controller:deleteActi
         ->assert('id','\d+')
         ->bind('admin_provider_delete');
 
-
 $admin->match('/products/edition/{id}', 'admin.product.controller:editAction')
         ->value('id', null)
         ->bind('admin_product_edit');
@@ -63,6 +67,7 @@ $admin->match('/products/edition/{id}', 'admin.product.controller:editAction')
 $admin->get('/products/suppression/{id}', 'admin.product.controller:deleteAction')
         ->assert('id','\d+')
         ->bind('admin_product_delete');
+
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
