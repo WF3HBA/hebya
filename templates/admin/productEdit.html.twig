@@ -1,0 +1,75 @@
+{% extends "Admin/admin.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/admin/provider_edit.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+<div class="col-md-7 col-md-offset-2">
+    <h1>{% if product.idproduct%}Edit{% else %}Create{% endif %} Product</h1>
+<form class="form-horizontal" method="POST">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend></legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="name">name</label>  
+      <div class="col-md-5">
+      <input id="name" name="name" type="text" placeholder="" value="{{product.name}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="website">website</label>  
+      <div class="col-md-5">
+      <input id="website" name="website" type="text" placeholder="" value="{{product.website}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="content">content</label>  
+      <div class="col-md-5">
+          <textarea id="content" name="content" type="text" placeholder="" value="" class="form-control input-md">{{product.content}}</textarea>
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="field">field</label>  
+      <div class="col-md-5">
+      <input id="field" name="field" type="text" placeholder="" value="{{product.field}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submit">submit</label>
+      <div class="col-md-8">
+        <button  name="submit" type="submit" class="btn btn-success">submit</button>
+        <a href="{{ path('admin_product') }}" class="btn btn-primary">annuler</a>
+      </div>
+    </div>
+
+    </fieldset>
+</form>
+</div>
+
+    {% endblock %}
+    
+    {% block javascript %}
+    {{ parent() }}
+     <script src="{{ asset('js/admin/edit.js') }}"></script>
+     
+    {% endblock %}

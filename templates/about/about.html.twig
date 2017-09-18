@@ -1,0 +1,46 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/about/about.css") }}"/>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="about-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1>{{ "A propos"|upper }}</h1>
+                    </div>
+                </div>
+                {% for about in abouts%}
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="{{ about.section }}" class="about-content">
+                            <h2>{{ about.title }}</h2>
+                            {{ about.content|raw }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row">
+                {% for i in  %}
+                
+                    <div class="col-md-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script>
+        {#var aboutContent = '{{ about.content }}';
+        console.log(aboutContent);#}
+    </script>
+    <script src="{{ asset('js/about/about.js') }}"></script>
+{% endblock %}
