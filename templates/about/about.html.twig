@@ -6,34 +6,40 @@
 {% endblock %}
 
 {% block content %}
-    <main>
-        <section id="about-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <h1>{{ "A propos"|upper }}</h1>
-                    </div>
-                </div>
-                {% for about in abouts%}
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div id="{{ about.section }}" class="about-content">
-                            <h2>{{ about.title }}</h2>
-                            {{ about.content|raw }}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                <div class="row">
-                {% for i in  %}
-                
-                    <div class="col-md-4">
-                        
-                    </div>
+    <main id="about-content" class="container">
+        <section class="row">
+            <div class="col-xs-12 text-center">
+                <h1>{{ "A propos"|upper }}</h1>
+            </div>
+        </section>
+        {% for about in abouts%}
+        <section class="row">
+            <div class="col-xs-12">
+                <div id="{{ about.section }}" class="about-content">
+                    <h2>{{ about.title }}</h2>
+                    {{ about.content|raw }}
                 </div>
             </div>
         </section>
+        {% endfor %}
+        <section id="team-members">
+            <div class="row">
+            {% for teamMember in teamMembers  %}
+                <div class="team-member col-sm-6 col-md-3">
+                    <div class="text-center">
+                        <img src="http://placehold.it/200x200" />
+                    </div>
+                    <h3 class="text-center">{{ teamMember.fullName }}</h3>
+                    <h4  class="text-center">{{ teamMember.title }}</h4>
+                </div>
+          
+            {% endfor %}
+            </div>
+        </section>
     </main>
+    <div id="team-layer">
+        
+    </div>
 {% endblock %}
 
 {% block javascript %}
