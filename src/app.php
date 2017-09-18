@@ -50,6 +50,10 @@ $app['client.controller'] = function () use ($app) {
     return new Controller\ClientController($app);
 };
 
+$app['emploi.controller'] = function () use ($app) {
+    return new Controller\EmploiController($app);
+};
+
 $app['contact.controller'] = function () use ($app) {
     return new Controller\ContactController($app);
 };

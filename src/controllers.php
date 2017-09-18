@@ -23,6 +23,9 @@ $app->get('/innovateurs', 'innovator.controller:innovatorAction')
 $app->get('/clients', 'client.controller:clientAction')
         ->bind('clients');
 
+$app->get('/emplois', 'emploi.controller:emploiAction')
+        ->bind('emplois');
+
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
 

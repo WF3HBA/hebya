@@ -1,11 +1,11 @@
-
 /*************  R E S E T  *************/
 body {
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 
 main {
-    padding-top: 40px;
+    padding: 40px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-weight: bold;
     padding: 10px 0;
+}
+
+p {
+    font-size: 16px;
 }
 
 .clear {
@@ -85,10 +89,6 @@ header {
 .navbar-inverse .navbar-brand {
     color: white;
 }
-
-p {
-    font-family: 'Open Sans';
-}  
 
 
 /****************  F O O T E R  ***************/
@@ -190,4 +190,3 @@ footer a {
 @media only screen and (min-width : 1200px) {
 
 }
-

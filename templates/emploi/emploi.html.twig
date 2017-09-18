@@ -1,0 +1,26 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}   
+    <link rel="stylesheet" href="{{ asset("css/emploi/emploi.css") }}"/>
+{% endblock %}
+
+{% block content %}
+
+
+    <main>
+        <section id="contact-form">
+            <div class="container">
+                <div class="form-group row text-center">
+                    <h1>Emplois et carrières &#x2709</h1>
+                </div>
+                
+            </div>
+        </section><br>
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+
+{% endblock %}
