@@ -1,0 +1,35 @@
+{% extends "Admin/admin.html.twig" %}
+
+
+{% block content %}
+
+
+    <div class="col-md-7 col-md-offset-2">
+        <div class="row">
+            <h2>Produit</h2>
+            <p>Admin</p>
+            <table class="table">
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>website</th>
+                    <th>Provider</th>
+                </tr>
+                {% for product in products%}
+                    <tr>
+                        <td>{{ product.idproduct }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.website }}</td>
+                        <td>{{ product.providerCompany }}</td>
+                        <td>
+                            <button class="btn btn-primary">modifier</button>
+                        </td>
+                    </tr>
+                {% else %} 
+                    <tr><td colspan="2">Aucun résultat</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>   
+
+{% endblock %}

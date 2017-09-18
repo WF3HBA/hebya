@@ -5,37 +5,38 @@ namespace Repository;
 
 use Entity\Country;
 
-
 class CountryRepository extends RepositoryAbstract {
     
     public function findAll(){
     
         $query = <<<SQL
                 
-SELECT cl.*
-FROM country_has_language cl
-ORDER BY cl.country_name 
+        SELECT *
+        FROM country
+        ORDER BY name
 
 SQL;
        
             $dbCountries = $this->db->fetchAll($query);
-            $Countries = [];
+            $countries = [];
             
             foreach ($dbCountries as $dbCountry){
-                $Countries[] = $this->builtEntity($dbCountry);
+
+                $countries[] = $this->buildEntity($dbCountry);
+
             }
             
-            return $Countries;
+            return $countries;
     }
     
-    private function builtEntity(array $data){
+    private function buildEntity(array $data){
        
         $country = new Country();
         
         $country
             ->setIdcountry($data['idcountry'])
             ->setContent($data['content'])
-            ->setCountry_name($data['country_name'])
+            ->setName($data['name'])
             ->setContinent($data['continent'])
         ;
         

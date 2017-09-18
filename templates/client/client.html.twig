@@ -13,13 +13,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <h1> NOS CLIENTS </h1>
+                        <h1>{{ "Nos clients"|upper }}</h1>
                     </div>
                 </div>
                 <div class="row all-select-clients">
                     <div class="col-xs-12 col-sm-6 clients-select-theme">
                         <select class="col-xs-12">
-                            <option>Theme</option>
+                            <option disabled></option>
+                            <option selected>Tous les thèmes</option>
+                            <option disabled>──────────</option>
                             <option>Education</option>
                             <option>Santé</option>
                             <option>Assurance</option>
@@ -29,8 +31,11 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 text-center">
                         <select class="col-xs-12">
+                            <option disabled></option>
+                            <option selected>Tous les pays</option>
+                            <option disabled>──────────</option>
                          {% for country in countries %}
-                            <option>{{ country.country_name }}</option>
+                            <option>{{ country.name }}</option>
                          {% endfor %}
                         </select>
                     </div>

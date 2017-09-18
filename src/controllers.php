@@ -14,6 +14,9 @@ $app->get('/', 'index.controller:indexAction')
 $app->get('/services', 'service.controller:serviceAction')
         ->bind('services');
 
+$app->get('/services/ajax-request', 'service.controller:targetAction')
+        ->bind('services_ajax');
+
 $app->get('/innovateurs', 'innovator.controller:innovatorAction')
         ->bind('innovateurs');
 
@@ -26,6 +29,31 @@ $app->get('/contact', 'contact.controller:contactAction')
 $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
+
+
+/***ADMIN ROUTE***/
+//crée un groupe de route
+
+$admin = $app['controllers_factory'];
+//toutes les url des routes créees par $admin sont préfixées par admin
+$app->mount('/admin', $admin);
+
+$admin->get('/accueil', 'admin.controller:adminAction')
+        ->bind('admin');
+
+$admin->get('/products', 'admin.product.controller:productListAction')
+        ->bind('admin_product');
+
+$admin->get('/providers', 'admin.provider.controller:providertListAction')
+        ->bind('admin_provider');
+
+$admin->match('/providers/edition/{id}', 'admin.provider.controller:editAction')
+        ->value('id', null)
+        ->bind('admin_provider_edit');
+
+$admin->get('/providers/suppression/{id}', 'admin.provider.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_provider_delete');
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

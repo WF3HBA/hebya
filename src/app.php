@@ -59,11 +59,40 @@ $app['register.controller'] = function () use ($app) {
 };
 
 
+$app['admin.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminController($app);
+};
+
+
+$app['admin.product.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminProductController($app);
+};
+
+
+$app['admin.provider.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminProviderController($app);
+};
+
+
 
 //Repository
 
 $app['country.repository'] = function () use ($app){
     return new Repository\CountryRepository($app['db']);
+};
+
+$app['service.repository'] = function () use ($app){
+    return new Repository\ServiceRepository($app['db']);
+};
+
+
+$app['product.repository'] = function () use ($app){
+    return new Repository\ProductRepository($app['db']);
+};
+
+
+$app['provider.repository'] = function () use ($app){
+    return new Repository\ProviderRepository($app['db']);
 };
 
 
