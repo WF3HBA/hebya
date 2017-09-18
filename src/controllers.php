@@ -38,6 +38,10 @@ $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
 
+$app->get('/product', 'product.controller:productAction')
+        ->bind('product');
+
+
 
 /***ADMIN ROUTE***/
 //crée un groupe de route
