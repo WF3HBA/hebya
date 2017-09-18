@@ -7,22 +7,31 @@
     <div class="col-md-7 col-md-offset-2">
         <div class="row">
             <h2>Produit</h2>
-            <p>Admin</p>
+            <p>Admin <a href="{{ path('admin_product_edit')}}">add product</a></p>
             <table class="table">
                 <tr>
                     <th>id</th>
                     <th>name</th>
                     <th>website</th>
+                    <th>content</th>
+                    <th>field</th>
                     <th>Provider</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 {% for product in products%}
                     <tr>
                         <td>{{ product.idproduct }}</td>
                         <td>{{ product.name }}</td>
                         <td>{{ product.website }}</td>
+                        <td>{{ product.content }}</td>
+                        <td>{{ product.field }}</td>
                         <td>{{ product.providerCompany }}</td>
+                         <td>
+                            <a href="{{ path('admin_product_edit', {id: product.idproduct}) }}"><button class="btn btn-primary">modifier</button></a>
+                        </td>
                         <td>
-                            <button class="btn btn-primary">modifier</button>
+                             <a href=" {{path('admin_product_delete', {id: product.idproduct}) }}"><button id="annuler" name="annuler" class="btn btn-danger">delete</button></a>
                         </td>
                     </tr>
                 {% else %} 

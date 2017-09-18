@@ -35,14 +35,56 @@ SQL;
             return $products;
     }
     
+    
+    
+    public function find($id){
+         $dbProduct = $this->db->fetchAssoc(
+                'SELECT * FROM product WHERE idproduct = :idproduct',
+                [
+                    ':idproduct' => $id
+                ]
+            );
+        
+            if(!empty($dbProduct)){
+                return $this->buildEntity($dbProduct);
+            }
+    }
+    
+    
+     public function save(Product $product){
+        
+        $data =
+            [
+                'idproduct' => $product->getIdproduct(),
+                'idprovider' => $product->getIdprovider(),
+                'name' => $product->getName(),
+                'website' => $product->getWebsite(),
+                'content' => $product->getContent(),
+                'field' => $product->getField(),
+                'status' => $product->getStatus()
+            ];
+        
+        if ($product->getIdproduct()){
+            $this->db->update('product', $data, 
+                    [
+                        'idproduct'=>$product->getIdproduct()
+                    ] 
+                );
+        } else {
+            $this->db->insert('product', $data);
+            $product->setIdproduct($this->db->LastInsertId());
+        }
+    }
+    
+     public function delete(Product $product){
+        
+        $this->db->delete('product', ['idproduct' => $product->setIdproduct()]);
+    }
+    
+    
     private function buildEntity(array $data){
        
-        $provider = new Provider();
-            
-        $provider
-                ->setIdprovider($data['idprovider'])
-                ->setCompany($data['company'])
-        ;
+        
         
         
         $product = new Product();
@@ -52,7 +94,10 @@ SQL;
             ->setIdprovider($data['idprovider'])
             ->setName($data['name'])
             ->setWebsite($data['website'])
-            ->setProvider($provider)   
+            ->setContent($data['content'])
+            ->setField($data['field'])
+            ->setStatus($data['status'])
+               
         ;
         
         return $product;
