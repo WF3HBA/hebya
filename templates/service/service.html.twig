@@ -29,9 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 main-body-content">
-                        <p id="service-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sapien dui, viverra et auctor at, finibus venenatis dui. Proin neque nibh, lobortis sed ornare eget, pretium at sapien. Duis aliquam libero non risus dapibus rutrum. Nam quis massa vel purus tempus varius.</p>
-
-                        <p id="service-content">Nunc non imperdiet eros. Proin nec augue erat. Etiam vel augue lacinia, interdum neque eget, iaculis est. Etiam sit amet laoreet metus. Cras augue mi, ornare in dignissim tristique, mollis nec massa. Curabitur arcu tellus, cursus vel mauris id, consequat mollis mi. Mauris ex tellus, suscipit sed luctus a, pretium eget ex. Nulla varius leo felis, id scelerisque orci maximus vitae. Aenean neque nisi, scelerisque sed velit ac, maximus molestie lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla auctor sollicitudin. Nunc ac nibh ex. Fusce rutrum at libero non lobortis. Sed est turpis, bibendum lacinia iaculis et, volutpat tempor massa. Suspendisse vitae felis in lectus congue rutrum. Praesent mattis ipsum sed sollicitudin aliquam. Suspendisse potenti. Ut cursus, neque ac rhoncus vulputate, nisi nulla dictum urna, et varius mi nisi vitae augue. Vivamus lobortis commodo nibh, eu posuere dolor vulputate quis. Quisque in efficitur purus. Vestibulum ut molestie purus. Vestibulum ullamcorper convallis dolor, eu tincidunt arcu. Ut pellentesque sagittis eros non viverra. Sed molestie odio sit amet vehicula volutpat. Suspendisse vitae lorem maximus, volutpat nisl eget, dapibus nulla.</p>
+                        <div id="service-content">Nunc non imperdiet eros. Proin nec augue erat. Etiam vel augue lacinia, interdum neque eget, iaculis est. Etiam sit amet laoreet metus. Cras augue mi, ornare in dignissim tristique, mollis nec massa. Curabitur arcu tellus, cursus vel mauris id, consequat mollis mi. Mauris ex tellus, suscipit sed luctus a, pretium eget ex. Nulla varius leo felis, id scelerisque orci maximus vitae. Aenean neque nisi, scelerisque sed velit ac, maximus molestie lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla auctor sollicitudin. Nunc ac nibh ex. Fusce rutrum at libero non lobortis. Sed est turpis, bibendum lacinia iaculis et, volutpat tempor massa. Suspendisse vitae felis in lectus congue rutrum. Praesent mattis ipsum sed sollicitudin aliquam. Suspendisse potenti. Ut cursus, neque ac rhoncus vulputate, nisi nulla dictum urna, et varius mi nisi vitae augue. Vivamus lobortis commodo nibh, eu posuere dolor vulputate quis. Quisque in efficitur purus. Vestibulum ut molestie purus. Vestibulum ullamcorper convallis dolor, eu tincidunt arcu. Ut pellentesque sagittis eros non viverra. Sed molestie odio sit amet vehicula volutpat. Suspendisse vitae lorem maximus, volutpat nisl eget, dapibus nulla.</div>
                     </div>
                 </div>
             </div>
@@ -59,7 +57,7 @@
 {% block javascript %}
     {{ parent() }}
     <script>
-        var descriptionAjaxUrl = '{{ path('service_description') }}';
+        var targetAjaxUrl = '{{ path('services_ajax') }}';
     </script>
     <script src="{{ asset("js/service/service.js") }}"></script>
 {% endblock %}

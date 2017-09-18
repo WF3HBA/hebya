@@ -120,8 +120,6 @@ class Provider {
         
         return $this;
     }
-
-       
-    
+  
     
 }

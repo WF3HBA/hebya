@@ -7,7 +7,7 @@
     <div class="col-md-7 col-md-offset-2">
          <div class="row">
             <h2>Provider</h2>
-            <p>Admin</p>
+            <p>Admin <a href="{{ path('admin_provider_edit')}}">add provider</a></p>
             <table class="table">
                 <tr>
                     <th>idprovider</th>
@@ -18,6 +18,8 @@
                     <th>phone</th>
                     <th>address</th>
                     <th>country</th>
+                    <th>edit</th>
+                    <th>delete</th>
                 </tr>
                 {% for provider in providers%}
                     <tr>
@@ -30,7 +32,10 @@
                         <td>{{ provider.address }}</td>
                         <td>{{ provider.country }}</td>
                         <td>
-                            <button class="btn btn-primary">modifier</button>
+                            <button class="btn btn-primary"><a href="{{ path('admin_provider_edit', {id: provider.idprovider}) }}">modifier</a></button>
+                        </td>
+                        <td>
+                             <button id="annuler" name="annuler" class="btn btn-danger"><a href=" {{path('admin_provider_delete', {id: provider.idprovider}) }}">delete</a></button>
                         </td>
                     </tr>
                 {% else %} 

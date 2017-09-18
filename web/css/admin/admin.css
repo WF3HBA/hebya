@@ -13,3 +13,7 @@
 .navbar-fixed-left + .container {
   padding-left: 160px;
 }
+
+.navbar-inverse{
+    background-color: #008080;
+}
