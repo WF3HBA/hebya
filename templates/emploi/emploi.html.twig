@@ -8,19 +8,129 @@
 {% block content %}
 
 
-    <main>
-        <section id="contact-form">
-            <div class="container">
-                <div class="form-group row text-center">
-                    <h1>Emplois et carrières &#x2709</h1>
+    <main class="container">
+        <section class="form-group row text-center">
+            <h1>{{ "emplois et carrières"|upper }}</h1>
+        </section>
+        <section class="row">
+            <p class="col-xs-12 icone-fermer"><span class="glyphicon glyphicon-remove"></span></p>
+            <p class="col-xs-12" id="affiner-recherche"><span class="glyphicon glyphicon-th-list"></span></p>
+                <div class="emploi-form col-xs-offset-1 col-sm-3">
+                    
+                    <p>Type de contrat</p>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdi">
+                        CDI
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdd">
+                        CDD
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="interim">
+                        Intérim
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="saisonnier">
+                        Saisonnier
+                    </label><br><br>
+
+                    <p>Expérience</p>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="experience">
+                        Non préciser
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="moins-an">
+                        Moins de 1 an
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="entre1-3">
+                        De 1 à 3 ans
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="plus-3">
+                        Plus de 3 ans
+                    </label><br><br>
+
+                    <p>Niveau de formation</p>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Non préciser
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Moins de 1 an
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        De 1 à 3 ans
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Plus de 3 ans
+                    </label><br><br>
+
+                    <p>DURÉE HEBDOMADAIRE</p>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Non préciser
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Temps plein
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Temps partiel
+                    </label><br>
+                    
+                    <select class="col-xs-12 innovators-select-pays">
+                            {% for country in countries %}
+                            <option>{{ country.name }}</option>
+                            {% endfor %}                           
+                    </select>
+                    
                 </div>
-                
-            </div>
-        </section><br>
+                <div class="emploi-annonce col-xs-12 col-sm-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
+                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
+                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
+                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
+                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
+                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
+                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            
+            
+        </section>
+        
     </main>
 {% endblock %}
 
 {% block javascript %}
     {{ parent() }}
-
+    <script src="{{ asset('js/emploi/emploi.js') }}"></script>
 {% endblock %}
