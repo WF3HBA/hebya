@@ -47,73 +47,20 @@
         <section id="clients-body">
             <div class="container">
                 <div class="row">
+                    {% for client in clients %}
                     <div class="col-lg-4 col-sm-6 text-center mb-4">
                         <a href="#">
                             <div class="test">
                                 <img src="http://placehold.it/200x200" alt="">
                             </div>
-                            <h3>Entreprise
-                              <small>Responsable</small>
+                            <h3>{{ client.company }}
+                              <small>{{ client.firstname }}</small>
                             </h3>
                             <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-sm-6 text-center mb-4">
-                        <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
-                            </div>
-                            <h3>Entreprise
-                              <small>Responsable</small>
-                            </h3>
-                            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center mb-4">
-                        <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
-                            </div>
-                            <h3>Entreprise
-                              <small>Responsable</small>
-                            </h3>
-                            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center mb-4">
-                        <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
-                            </div>
-                            <h3>Entreprise
-                              <small>Responsable</small>
-                            </h3>
-                            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center mb-4">
-                        <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
-                            </div>
-                            <h3>Entreprise
-                              <small>Responsable</small>
-                            </h3>
-                            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center mb-4">
-                        <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
-                            </div>
-                                                       
-                            <h3>Entreprise
-                              <small>Responsable</small>
-                            </h3>
-                            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-                        </a>
-                    </div>
+                    {% endfor %}
+                   
                 </div>
             </div>
         </section><br>

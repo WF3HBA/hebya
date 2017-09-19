@@ -39,7 +39,11 @@ SQL;
     
     public function find($id){
          $dbProduct = $this->db->fetchAssoc(
-                'SELECT * FROM product WHERE idproduct = :idproduct',
+                'SELECT p.*,
+                    pr.company 
+                FROM product p 
+                JOIN provider pr ON pr.idprovider = p.idprovider 
+                WHERE idproduct = :idproduct',
                 [
                     ':idproduct' => $id
                 ]
@@ -61,7 +65,8 @@ SQL;
                 'website' => $product->getWebsite(),
                 'content' => $product->getContent(),
                 'field' => $product->getField(),
-                'status' => $product->getStatus()
+                'status' => $product->getStatus(),
+                'summary' => $product->getSummary()
             ];
         
         if ($product->getIdproduct()){
@@ -101,7 +106,8 @@ SQL;
             ->setContent($data['content'])
             ->setField($data['field'])
             ->setStatus($data['status'])
-            ->setProvider($provider)
+            ->setSummary($data['summary'])
+            ->setProvider($provider)       
         ;
         
         return $product;

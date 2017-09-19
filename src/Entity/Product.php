@@ -26,6 +26,21 @@ class Product {
     
     private $status;
     
+    private $summary;
+    
+    
+    
+    function getSummary() {
+        return $this->summary;
+    }
+
+    function setSummary($summary) {
+        $this->summary = $summary;
+        
+        return $this;
+    }
+
+        
      /***GETTER****/
     
     function getIdproduct() {
