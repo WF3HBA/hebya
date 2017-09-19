@@ -14,7 +14,8 @@ class CountryRepository extends RepositoryAbstract {
         SELECT *
         FROM country
         ORDER BY name
-
+        
+                
 SQL;
        
             $dbCountries = $this->db->fetchAll($query);

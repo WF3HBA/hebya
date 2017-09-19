@@ -6,3 +6,29 @@
     padding-bottom: 20px;
 }
 
+#team-members {
+    padding-top: 20px;
+}
+
+#team-members .team-member {
+    height: 320px;
+}
+
+#team-members img {
+    padding: 20px 0;
+}
+
+#team-members h3 {
+    padding-bottom: 10px;
+}
+
+#team-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+

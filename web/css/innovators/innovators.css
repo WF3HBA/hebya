@@ -17,12 +17,24 @@
 
 
 
+#innovators-body  h3, #innovators-body  h2 {
+    padding-bottom: 20px;
+}
 
 
 
+.product-content-short {
+    padding-bottom: 50px;
+}
 
+.img-thumbnail{
+    border: 0;
+}
 
-
+#hidden{
+    display: none;
+    margin: 0 auto;
+}
 
 
 
