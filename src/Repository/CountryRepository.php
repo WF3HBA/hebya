@@ -30,6 +30,20 @@ SQL;
             return $countries;
     }
     
+    public function find($id){
+         $dbCountry = $this->db->fetchAssoc(
+                'SELECT * FROM country WHERE idcountry = :idcountry',
+                [
+                    ':idcountry' => $id
+                ]
+            );
+        
+            if(!empty($dbCountry)){
+                return $this->buildEntity($dbCountry);
+            }
+    }
+    
+    
     private function buildEntity(array $data){
        
         $country = new Country();

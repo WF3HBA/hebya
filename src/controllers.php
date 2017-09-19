@@ -28,7 +28,7 @@ $app->get('/innovateurs', 'innovator.controller:innovatorAction')
 $app->get('/clients', 'client.controller:clientAction')
         ->bind('clients');
 
-$app->get('/emplois', 'emploi.controller:emploiAction')
+$app->get('/emplois', 'opportunity.controller:opportunityAction')
         ->bind('emplois');
 
 $app->get('/contact', 'contact.controller:contactAction')
@@ -37,9 +37,12 @@ $app->get('/contact', 'contact.controller:contactAction')
 $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
+$app->get('/candidature/{postId}', 'candidacy.controller:candidacyAction')
+        ->value('postId', null)
+        ->bind('candidacy');
+
 $app->match('/login', 'user.controller:loginAction')
         ->bind('login');
-
 
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
