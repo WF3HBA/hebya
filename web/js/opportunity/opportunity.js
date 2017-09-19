@@ -1,7 +1,7 @@
 $(function() { 
     $( window ).resize(function() {
 
-        if($(window).width() < 768){
+        if($(window).width() < 751){
 
             $(".emploi-form").hide();
             $("#affiner-recherche").show();

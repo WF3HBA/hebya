@@ -57,8 +57,8 @@ $app['client.controller'] = function () use ($app) {
     return new Controller\ClientController($app);
 };
 
-$app['emploi.controller'] = function () use ($app) {
-    return new Controller\EmploiController($app);
+$app['opportunity.controller'] = function () use ($app) {
+    return new Controller\OpportunityController($app);
 };
 
 $app['contact.controller'] = function () use ($app) {
@@ -79,6 +79,10 @@ $app['admin.product.controller'] = function () use ($app) {
 
 $app['admin.provider.controller'] = function () use ($app) {
     return new Controller\Admin\AdminProviderController($app);
+};
+
+$app['candidacy.controller'] = function () use ($app) {
+    return new Controller\CandidacyController($app);
 };
 
 
@@ -107,5 +111,12 @@ $app['about.repository'] = function () use ($app) {
 $app['team.repository'] = function () use ($app) {
     return new Repository\TeamRepository($app['db']);
 };
+
+
+$app['opportunity.repository'] = function () use ($app) {
+    return new Repository\OpportunityRepository($app['db']);
+};
+
+
 
 return $app;

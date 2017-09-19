@@ -2,7 +2,7 @@
 
 {% block stylesheet %}
     {{ parent() }}   
-    <link rel="stylesheet" href="{{ asset("css/emploi/emploi.css") }}"/>
+    <link rel="stylesheet" href="{{ asset("css/opportunity/opportunity.css") }}"/>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
         <section class="row">
             <p class="col-xs-12 icone-fermer"><span class="glyphicon glyphicon-remove"></span></p>
             <p class="col-xs-12" id="affiner-recherche"><span class="glyphicon glyphicon-th-list"></span></p>
-                <div class="emploi-form col-xs-offset-1 col-sm-3">
+                <div class="emploi-form col-xs-offset-1 col-sm-offset-0 col-sm-3">
                     
                     <p>Type de contrat</p>
                     <label class="form-check-label">
@@ -93,37 +93,40 @@
                     
                 </div>
                 <div class="emploi-annonce col-xs-12 col-sm-8">
+                {% for opportunity in opportunities %}
                     <div class="panel panel-default">
-                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
-                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
+                        <div class="panel-heading">{{ opportunity.title }}</div>
+                        <div class="panel-body">
+                            <p><strong> Description : </strong> <br>{{ opportunity.description[:100] }}...</p>
+                            <p><strong> Pays : </strong>{{ opportunity.countryName }}</p>
+                            <button type="button" class="btn btn-primary boutton-annonce" data-toggle="modal" data-target="#detail-annonce-{{ opportunity.idopportunity }}">
+                                Voir l'annonce
+                            </button>
+                            <div class="modal fade" id="detail-annonce-{{ opportunity.idopportunity }}" tabindex="-1" role="dialog" aria-hidden="true">  
+                                <div class="modal-content">    
+                                    
+                                    <p><strong> Nom du poste : </strong> <br> {{ opportunity.title}}</p>
+                                    <p><strong> Réference annonce : </strong> {{ opportunity.reference }}</p>
+                                    <p><strong> Déscription : </strong> <br> {{ opportunity.description}}</p>                                    
+                                    <p><strong> Ville : </strong> {{ opportunity.city }}</p>
+                                    <p><strong> Domaine : </strong> {{ opportunity.field }}</p>
+                                    <p><strong> Type de contrat : </strong> {{ opportunity.contract_type }}</p>
+                                    <p><strong> Date de publication : </strong> {{ opportunity.publication_date }}</p>
+                                    <p><strong> Prérequis : </strong> {{ opportunity.required_skills }}</p>
+                                    <p><strong> Salaire : </strong> {{ opportunity.salary }}</p>
+                                    <p><strong> Pays : </strong> {{ opportunity.countryName }}</p>
+                                     
+                                    <div class="modal-footer">
+                                        <a href="{{ path('candidacy', {postId: opportunity.idopportunity}) }}" class="btn btn-primary">Postuler</a>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                      
+                                    </div>
+                                 </div>
+                            </div>  
+                        </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
-                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
-                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
-                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
-                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><a href="#">Nom du poste</a></div>
-                        <div class="panel-body"><a href="#"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500 </a></div>
-                    </div>
-                    
-                    
-                    
-                    
-                    
+                {% endfor %}  
                 </div>
-            
             
         </section>
         
@@ -132,5 +135,5 @@
 
 {% block javascript %}
     {{ parent() }}
-    <script src="{{ asset('js/emploi/emploi.js') }}"></script>
+    <script src="{{ asset('js/opportunity/opportunity.js') }}"></script>
 {% endblock %}
