@@ -96,8 +96,13 @@ $app['admin.provider.controller'] = function () use ($app) {
     return new Controller\Admin\AdminProviderController($app);
 };
 
+$app['admin.service.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminServiceController($app);
+};
+
 $app['candidacy.controller'] = function () use ($app) {
     return new Controller\CandidacyController($app);
+};
 
 $app['admin.client.controller'] = function () use ($app) {
     return new Controller\Admin\AdminClientController($app);

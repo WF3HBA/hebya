@@ -6,7 +6,27 @@ use Entity\Service;
 
 class ServiceRepository extends RepositoryAbstract {
     
-        public function find($target) {
+    public function findAll(){
+    
+        $query = <<<SQL
+                
+        SELECT *         
+        FROM service  
+        ORDER BY idservice
+
+SQL;
+       
+            $dbServices = $this->db->fetchAll($query);
+            $services = [];
+            
+            foreach ($dbServices as $dbService){
+                $services[] = $this->buildEntity($dbService);
+            }
+            
+            return $services;
+    }
+    
+    public function find($target) {
        
         $query = <<<SQL
             SELECT *
