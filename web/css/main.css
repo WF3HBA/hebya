@@ -45,9 +45,7 @@ footer {
 
 /***********  H E A D E R  *********/
 
-#hebya-logo{
-    padding-top: 100px;
-}
+
 
 header {
     min-height: 50px;
@@ -76,6 +74,36 @@ header {
 }   
 
 /***********  N A V B A R  *********/
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #008080;
+    background-color: white;
+}
+
+.navbar-inverse .navbar-nav>.open>a:not(:hover) {
+    color: white;
+    background-color: #008080;
+}
+
+#navbar>ul>li:hover {
+  background-color: white;
+    transition:0.5s;
+}
+
+#navbar>ul>li:not(:hover) {
+  background-color: #008080;
+    transition:0.5s;
+}
+
+#navbar>ul>li>a:hover {
+  color: #008080;
+    transition:0.5s;
+}
+
+#navbar>ul>li>a:not(:hover) {
+  color: white;
+    transition:0.5s;
+}
 
 #sticker {
     z-index: 101 !important;
@@ -144,6 +172,13 @@ header {
     text-align: justify;
 }
 
+footer{
+    padding-bottom: 30px;
+}
+
+button#submit.btn.btn-primary.pull-right{
+    margin-right: 40%;
+}
 
 footer a {
     color: white;

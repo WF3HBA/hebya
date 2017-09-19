@@ -29,6 +29,9 @@ $app->get('/contact', 'contact.controller:contactAction')
 $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
+$app->get('/mention', 'mention.controller:mentionAction')
+        ->bind('mention');
+
 
 
 /***ADMIN ROUTE***/

@@ -75,6 +75,12 @@ $app['admin.provider.controller'] = function () use ($app) {
 
 
 
+$app['mention.controller'] = function () use ($app) {
+    return new Controller\MentionController($app);
+};
+
+
+
 //Repository
 
 $app['country.repository'] = function () use ($app){
