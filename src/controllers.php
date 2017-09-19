@@ -37,6 +37,9 @@ $app->get('/contact', 'contact.controller:contactAction')
 $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
+$app->match('/login', 'user.controller:loginAction')
+        ->bind('login');
+
 
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
@@ -53,8 +56,8 @@ $app->mount('/admin', $admin);
 $admin->get('/accueil', 'admin.controller:adminAction')
         ->bind('admin');
 
-$admin->get('/products', 'admin.product.controller:productListAction')
-        ->bind('admin_product');
+
+/******ADMIN PROVIDER ACTION*********/
 
 $admin->get('/providers', 'admin.provider.controller:providertListAction')
         ->bind('admin_provider');
@@ -67,6 +70,11 @@ $admin->get('/providers/suppression/{id}', 'admin.provider.controller:deleteActi
         ->assert('id','\d+')
         ->bind('admin_provider_delete');
 
+/*******ADMIN PRODUCT ACTION*******/
+
+$admin->get('/products', 'admin.product.controller:productListAction')
+        ->bind('admin_product');
+
 $admin->match('/products/edition/{id}', 'admin.product.controller:editAction')
         ->value('id', null)
         ->bind('admin_product_edit');
@@ -74,6 +82,19 @@ $admin->match('/products/edition/{id}', 'admin.product.controller:editAction')
 $admin->get('/products/suppression/{id}', 'admin.product.controller:deleteAction')
         ->assert('id','\d+')
         ->bind('admin_product_delete');
+
+/*******ADMIN CLIENT ACTION*******/
+
+$admin->get('/clients', 'admin.client.controller:clientListAction')
+        ->bind('admin_client');
+
+$admin->match('/clients/edition/{id}', 'admin.client.controller:editAction')
+         ->value('id', null)
+        ->bind('admin_client_edit');
+
+$admin->get('/clients/suppression/{id}', 'admin.product.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_client_delete');
 
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {

@@ -1,0 +1,131 @@
+{% extends "Admin/admin.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/admin/provider_edit.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+<div class="col-md-7 col-md-offset-2">
+    <h1>{% if client.idclient%}Edit{% else %}Create{% endif %} Client</h1>
+<form class="form-horizontal" method="POST">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend></legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="lastname">lastname</label>  
+      <div class="col-md-5">
+      <input id="lastname" name="lastname" type="text" placeholder="" value="{{client.lastname}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="firstname">firstname</label>  
+      <div class="col-md-5">
+      <input id="firstname" name="firstname" type="text" placeholder="" value="{{client.firstname}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="company">company</label>  
+      <div class="col-md-5">
+      <input id="company" name="company" type="text" placeholder="" value="{{client.company}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="company_type">company type</label>  
+      <div class="col-md-5">
+          <select name="company_type">
+              <option value="" class="form-control input-md">Choisissez</option>
+              
+              <option  value="Entreprise" class="form-control input-md" {% if client.company_type == 'Entreprise' %}selected{% endif %}>Entreprise</option>
+              <option  value="Association" class="form-control input-md" {% if client.company_type == 'Association' %}selected{% endif %}>Association</option>
+              <option  value="Organisme public" class="form-control input-md" {% if client.company_type == 'Organisme public' %}selected{% endif %}>Organisme public</option>
+              <option  value="Université" class="form-control input-md" {% if client.company_type == 'Université' %}selected{% endif %}>Université</option>
+              <option  value="Centre de recherche" class="form-control input-md" {% if client.company_type == 'Centre de recherche' %}selected{% endif %}>Centre de recherche</option>
+              <option  value="Autre" class="form-control input-md" {% if client.company_type == 'Autre' %}selected{% endif %}>Autre</option>
+          </select>
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="email">email</label>  
+      <div class="col-md-5">
+      <input id="email" name="email" type="text" placeholder="" value="{{client.email}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="phone">phone</label>  
+      <div class="col-md-5">
+      <input id="phone" name="phone" type="text" placeholder="" value="{{client.phone}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="address">address</label>  
+      <div class="col-md-5">
+      <input id="address" name="address" type="text" placeholder="" value="{{client.address}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="country">country</label>
+      <div class="col-md-5">
+         <input id="country" name="country" type="text" placeholder="" value="{{client.country}}" class="form-control input-md">
+      </div>
+    </div>
+
+    <!-- text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="password">password</label>
+      <div class="col-md-5">
+         <input id="password" name="password" type="text" placeholder="" value="{{client.password}}" class="form-control input-md">
+      </div>
+    </div>
+      
+  {#  <div class="form-group">
+      <label class="col-md-4 control-label" for="status">status</label>
+      <div class="col-md-5">
+         <input id="password" name="password" type="text" placeholder="" value="{{client.password}}" class="form-control input-md">
+      </div>
+    </div>#}
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submit">submit</label>
+      <div class="col-md-8">
+        <button  name="submit" type="submit" class="btn btn-success">submit</button>
+        <a href="{{ path('admin_client') }}" class="btn btn-primary">annuler</a>
+      </div>
+    </div>
+
+    </fieldset>
+</form>
+</div>
+
+    {% endblock %}
+    
+    {% block javascript %}
+    {{ parent() }}
+     <script src="{{ asset('js/admin/edit.js') }}"></script>
+     
+    {% endblock %}

@@ -13,7 +13,9 @@ $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     // add custom globals, filters, tags, ...
-
+    
+    // le Usermanager est accesible dans le twig globale user_manager
+    $twig->addGlobal('user_manager', $app['user.manager']);
     return $twig;
 });
 
@@ -72,6 +74,15 @@ $app['contact.controller'] = function () use ($app) {
 $app['register.controller'] = function () use ($app) {
     return new Controller\RegisterController($app);
 };
+$app['login.controller'] = function () use ($app) {
+    return new Controller\LoginController($app);
+};
+
+$app['user.controller'] = function () use ($app) {
+    return new Controller\UserController($app);
+};
+
+/***************A D M I N   C O N T R O L L E R****************/
 
 $app['admin.controller'] = function () use ($app) {
     return new Controller\Admin\AdminController($app);
@@ -83,6 +94,10 @@ $app['admin.product.controller'] = function () use ($app) {
 
 $app['admin.provider.controller'] = function () use ($app) {
     return new Controller\Admin\AdminProviderController($app);
+};
+
+$app['admin.client.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminClientController($app);
 };
 
 
@@ -111,5 +126,28 @@ $app['about.repository'] = function () use ($app) {
 $app['team.repository'] = function () use ($app) {
     return new Repository\TeamRepository($app['db']);
 };
+
+$app['client.repository'] = function () use ($app) {
+    return new Repository\ClientRepository($app['db']);
+};
+
+
+$app['user.repository'] = function () use ($app) {
+    return new Repository\UserRepository($app['db']);
+};
+
+
+/*************M A N A G E R*************/
+
+$app['client.manager'] = function() use ($app){
+    return new \Service\ClientManager($app['session']);
+};
+
+$app['user.manager'] = function() use ($app){
+    return new \Service\UserManager($app['session']);
+};
+
+
+
 
 return $app;

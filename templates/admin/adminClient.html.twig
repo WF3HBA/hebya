@@ -1,0 +1,54 @@
+{% extends "Admin/admin.html.twig" %}
+
+{% block content %}
+    
+ <div class="col-md-7 col-md-offset-2">
+        <div class="row">
+            <h2>Produit</h2>
+            <p>Admin <a href="{{ path('admin_client_edit')}}">add client</a></p>
+            <table class="table">
+                <tr>
+                    <th>id</th>
+                    <th>company</th>
+                    <th>company type</th>
+                    <th>lastname</th>
+                    <th>firstname</th>
+                    <th>phone</th>
+                    <th>email</th>
+                    <th>address</th>
+                    <th>country</th>
+                    <th>password</th>
+                    <th>status</th>
+                    <th>Edit</th>
+                    <th>delete</th>
+                    
+                </tr>
+                {% for client in clients%}
+                    <tr>
+                        <td>{{ client.idclient }}</td>
+                        <td>{{ client.company }}</td>
+                        <td>{{ client.company_type }}</td>
+                        <td>{{ client.lastname }}</td>
+                        <td>{{ client.firstname }}</td>
+                        <td>{{ client.phone }}</td>
+                        <td>{{ client.email }}</td>
+                        <td>{{ client.address }}</td>
+                        <td>{{ client.country }}</td>
+
+                        <td>{{ client.password }}</td>
+                        <td>{{ client.status }}</td>
+                         <td>
+                            <a href="{{ path('admin_client_edit', {id: client.idclient}) }}"><button class="btn btn-primary">modifier</button></a>
+                        </td>
+                        <td>
+                             <a href=" {{path('admin_client_delete', {id: client.idclient}) }}"><button id="annuler" name="annuler" class="btn btn-danger">delete</button></a>
+                        </td>
+                    </tr>
+                {% else %} 
+                    <tr><td colspan="2">Aucun résultat</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>   
+
+{% endblock %}
