@@ -26,6 +26,9 @@
                             <option>Ar</option>
                         </select>
                     </div>
+                    {% if user_manager.admin %}
+                        <button><a href="{{ path('admin') }}">Gestion admin</a><button>
+                    {% endif %}
                 </div>
             </div>
         </header>
