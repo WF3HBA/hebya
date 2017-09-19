@@ -2,8 +2,6 @@
 
 namespace Controller;
 
-use Symfony\Component\HttpFoundation\JsonResponse;
-
 class AboutController extends ControllerAbstract {
     
     public function aboutAction() {

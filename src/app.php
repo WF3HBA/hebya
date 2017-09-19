@@ -81,6 +81,12 @@ $app['admin.provider.controller'] = function () use ($app) {
     return new Controller\Admin\AdminProviderController($app);
 };
 
+$app['admin.service.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminServiceController($app);
+};
+
+
+
 
 /*********  R E P O S I T O R Y  *********/
 

@@ -72,6 +72,15 @@ $admin->get('/products/suppression/{id}', 'admin.product.controller:deleteAction
         ->bind('admin_product_delete');
 
 
+
+$admin->get('/services', 'admin.service.controller:serviceListAction')
+        ->bind('admin_service');
+
+$admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_service_edit');
+
+
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
