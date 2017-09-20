@@ -108,6 +108,10 @@ $app['admin.client.controller'] = function () use ($app) {
     return new Controller\Admin\AdminClientController($app);
 };
 
+$app['admin.team.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminTeamController($app);
+};
+
 
 /*********  R E P O S I T O R Y  *********/
 

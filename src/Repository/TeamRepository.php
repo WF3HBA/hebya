@@ -39,6 +39,30 @@ SQL;
             }
     }
     
+    public function save(TeamMember $teamMember){
+        
+        $data =
+            [
+                'idteam_member' => $teamMember->getIdteam_member(),
+                'firstname' => $teamMember->getFirstname(),
+                'lastname' => $teamMember->getLastname(),
+                'title' => $teamMember->getTitle(),
+                'description' => $teamMember->getDescription(),
+                'linkedin' => $teamMember->getLinkedin()
+            ];
+        
+        if ($teamMember->getIdteam_member()){
+            $this->db->update('team_member', $data, 
+                    [
+                        'idteam_member'=>$teamMember->getIdteam_member()
+                    ] 
+            );
+        } else {
+            $this->db->insert('team_member', $data);
+            $teamMember->setIdteam_member($this->db->LastInsertId());
+        }
+    }
+    
     private function buildEntity(array $data){
        
         $teamMember = new TeamMember();
