@@ -16,8 +16,7 @@
             
                 
             <div class="row">
-                <form action="#" method="post">                     
-                    <div class="row">
+                <form action="" method="post">
                         <div class="col-xs-10 col-xs-push-1 col-sm-10 col-sm-push-1">
                             
                             <label for="nom" class="col-2 col-form-label"> Poste </label>
@@ -32,15 +31,15 @@
                                 {% endif %}
                             </div>
                             
-                            <label for="nom" class="col-2 col-form-label"> Nom </label>
+                            <label for="firstname" class="col-2 col-form-label"> Nom </label>
                             <div class="col-10">
-                                <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md ">
+                                <input id="firstname" name="firstname" type="text" placeholder="Nom" class="form-control input-md ">
                             </div>
 
 
-                            <label for="prenom" class="col-2 col-form-label">Prenom</label>
+                            <label for="lastname" class="col-2 col-form-label">Prenom</label>
                             <div class="col-10">
-                                <input id="prenom" name="prenom" type="text" placeholder="Prenom" class="form-control input-md">
+                                <input id="lastname" name="lastname" type="text" placeholder="Prenom" class="form-control input-md">
                             </div>
 
 
@@ -50,19 +49,21 @@
                             </div>
 
 
-                            <label for="telephone" class="col-2 col-form-label">Téléphone</label>
+                            <label for="phone " class="col-2 col-form-label">Téléphone</label>
                             <div class="col-10">
-                                <input id="telephone" name="telephone" type="text" placeholder="Téléphone" class="form-control input-md">
+                                <input id="phone " name="phone " type="text" placeholder="Téléphone" class="form-control input-md">
                             </div>
 
 
-                            <label for="pays" class="col-2 col-form-label">Pays</label>
+                            <label for="adresse" class="col-2 col-form-label">Adresse</label>
                             <div class="col-10">
-                                <input id="pays" name="pays" type="text" placeholder="Pays" class="form-control input-md">
-                            </div>               
+                                <input id="adresse" name="adress" type="text" placeholder="Adresse" class="form-control input-md">
+                            </div>
 
-                            
-                            
+                            <label for="country " class="col-2 col-form-label">Pays</label>
+                            <div class="col-10">
+                                <input id="country " name="country " type="text" placeholder="Pays" class="form-control input-md">
+                            </div>
                             
                             <div class="form-group">
                                 <label for="cv"> CV </label>
@@ -74,23 +75,15 @@
                             <div class="form-group">
                                 <label for="exampleInputFile"> Lettre de motivation </label>
                                 <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                <small id="fileHelp" class="form-text text-muted">Veiullez joindre une lettre de motivation en pdf.</small>
+                                <small id="fileHelp" class="form-text text-muted">Veuillez joindre une lettre de motivation en pdf.</small>
                             </div>
-                            
                             
                             <div class="col-10">
                                 <input class="btn btn-primary boutton-form-candidacy" type="submit" value="Postuler">
                             </div>
                         </div>
-                    </div>
+                   
                 </form>
-                
-                
-                
-                
-                
-                
-                
             </div>
         </section>
     </main>

@@ -31,7 +31,6 @@ SQL;
     }
     
     
-    
     public function find($id){
          $dbOpportunity = $this->db->fetchAssoc(
                 'SELECT o.*, c.name FROM opportunity o JOIN country c ON o.idcountry = c.idcountry WHERE idopportunity = :idopportunity',

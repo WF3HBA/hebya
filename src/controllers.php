@@ -28,21 +28,26 @@ $app->get('/innovateurs', 'innovator.controller:innovatorAction')
 $app->get('/clients', 'client.controller:clientAction')
         ->bind('clients');
 
-$app->get('/emplois', 'opportunity.controller:opportunityAction')
-        ->bind('emplois');
+$app->get('/offres', 'opportunity.controller:opportunityAction')
+        ->bind('opportunity');
 
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
 
-$app->get('/register', 'register.controller:registerAction')
+$app->match('/register', 'register.controller:registerAction')
         ->bind('register');
 
-$app->get('/candidature/{postId}', 'candidacy.controller:candidacyAction')
+$app->match('/candidatures/{postId}', 'candidacy.controller:candidacyAction')
         ->value('postId', null)
         ->bind('candidacy');
 
 $app->match('/login', 'user.controller:loginAction')
         ->bind('login');
+
+
+$app->match('/logout', 'user.controller:logoutAction')
+        ->bind('logout');
+
 
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
@@ -99,7 +104,7 @@ $admin->get('/clients/suppression/{id}', 'admin.product.controller:deleteAction'
         ->assert('id','\d+')
         ->bind('admin_client_delete');
 
-
+/*******ADMIN SERVICE ACTION*******/
 
 $admin->get('/services', 'admin.service.controller:serviceListAction')
         ->bind('admin_service');
@@ -108,6 +113,22 @@ $admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
             ->value('id', null)
             ->bind('admin_service_edit');
 
+/*******ADMIN TEAM ACTION*******/
+
+$admin->get('/team', 'admin.team.controller:teamListAction')
+            ->bind('admin_team');
+
+$admin->match('/team/edition/{id}', 'admin.team.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_team_edit');
+
+
+//route admin user
+$admin->before(function () use ($app){
+    if(!$app['user.manager']->isAdmin()){
+        $app->abort(403, 'acces refusé');
+    }
+});
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

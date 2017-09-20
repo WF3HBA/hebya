@@ -72,7 +72,7 @@ class UserController extends ControllerAbstract {
                     return $this->redirectRoute('homepage');
                 }
             }
-            echo 'ici';
+            echo 'login not allowed';
             $this->addFlashMessage('Identification not correct', 'error');
         }
         

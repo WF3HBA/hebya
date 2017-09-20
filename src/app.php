@@ -108,6 +108,10 @@ $app['admin.client.controller'] = function () use ($app) {
     return new Controller\Admin\AdminClientController($app);
 };
 
+$app['admin.team.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminTeamController($app);
+};
+
 
 /*********  R E P O S I T O R Y  *********/
 
@@ -121,6 +125,10 @@ $app['service.repository'] = function () use ($app){
 
 $app['product.repository'] = function () use ($app){
     return new Repository\ProductRepository($app['db']);
+};
+
+$app['candidacy.repository'] = function () use ($app){
+    return new Repository\CandidacyRepository($app['db']);
 };
 
 $app['provider.repository'] = function () use ($app){
