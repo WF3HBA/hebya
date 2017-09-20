@@ -34,7 +34,7 @@ $app->get('/emplois', 'opportunity.controller:opportunityAction')
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
 
-$app->get('/register', 'register.controller:registerAction')
+$app->match('/register', 'register.controller:registerAction')
         ->bind('register');
 
 $app->get('/candidature/{postId}', 'candidacy.controller:candidacyAction')
@@ -43,6 +43,11 @@ $app->get('/candidature/{postId}', 'candidacy.controller:candidacyAction')
 
 $app->match('/login', 'user.controller:loginAction')
         ->bind('login');
+
+
+$app->match('/logout', 'user.controller:logoutAction')
+        ->bind('logout');
+
 
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
@@ -108,6 +113,14 @@ $admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
             ->value('id', null)
             ->bind('admin_service_edit');
 
+
+
+//route admin user
+$admin->before(function () use ($app){
+    if(!$app['user.manager']->isAdmin()){
+        $app->abort(403, 'acces refusé');
+    }
+});
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

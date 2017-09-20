@@ -25,10 +25,18 @@
                             <option>En</option>
                             <option>Ar</option>
                         </select>
+                         {% if user_manager.admin %}
+                            <a href="{{ path('admin') }}" class="btn btn-primary" id="admin">Gestion admin</a>
+                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Logout</a>
+                        
+                         {% elseif user_manager.UserName %}
+                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Logout</a>
+                        {% else %}
+                            <a href="{{ path('register') }}" class="btn btn-primary" id="admin">register</a>
+                            <a href="{{ path('login') }}" class="btn btn-primary" id="admin">login</a>
+                        {% endif %}
                     </div>
-                    {% if user_manager.admin %}
-                        <button><a href="{{ path('admin') }}">Gestion admin</a><button>
-                    {% endif %}
+                   
                 </div>
             </div>
         </header>
