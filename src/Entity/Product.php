@@ -20,6 +20,27 @@ class Product {
     
     private $provider;
     
+    private $field;
+    
+    private $content;
+    
+    private $status;
+    
+    private $summary;
+    
+    
+    
+    function getSummary() {
+        return $this->summary;
+    }
+
+    function setSummary($summary) {
+        $this->summary = $summary;
+        
+        return $this;
+    }
+
+        
      /***GETTER****/
     
     function getIdproduct() {
@@ -42,10 +63,40 @@ class Product {
         return $this->provider;
     }
 
+        function getField() {
+        return $this->field;
+    }
+
+    function getContent() {
+        return $this->content;
+    }
+
+    function getStatus() {
+        return $this->status;
+    }
     
     /**********SETTER************/
-    
-    
+
+
+    function setField($field) {
+        $this->field = $field;
+        
+        return $this;
+    }
+
+    function setContent($content) {
+        $this->content = $content;
+        
+        return $this;
+    }
+
+    function setStatus($status) {
+        $this->status = $status;
+        
+        return $this;
+    }
+
+        
     function setIdproduct($idproduct) {
         $this->idproduct = $idproduct;
         

@@ -57,7 +57,7 @@ class AdminProviderController extends ControllerAbstract {
             if(empty($_POST['firstname'])){
                 $errors['firstname'] = 'firstname require';
             } elseif(strlen($_POST['firstname']) > 30){
-                $errors['lastname'] = 'maximum 30 characteres';
+                $errors['firstname'] = 'maximum 30 characteres';
             }
             
             
@@ -71,7 +71,7 @@ class AdminProviderController extends ControllerAbstract {
             if(empty($_POST['email'])){
                 $errors['email'] = 'email require';
             } elseif(strlen($_POST['email']) > 30){
-                $errors['lastname'] = 'maximum 30 characteres';
+                $errors['email'] = 'maximum 30 characteres';
             }
             
             

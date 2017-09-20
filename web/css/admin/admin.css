@@ -3,6 +3,7 @@
   position: fixed;
   border-radius: 0;
   height: 100%;
+  border: 0;
 }
 
 .navbar-fixed-left .navbar-nav > li {
@@ -16,4 +17,6 @@
 
 .navbar-inverse{
     background-color: #008080;
+    color: white;
 }
+

@@ -14,7 +14,8 @@ class CountryRepository extends RepositoryAbstract {
         SELECT *
         FROM country
         ORDER BY name
-
+        
+                
 SQL;
        
             $dbCountries = $this->db->fetchAll($query);
@@ -28,6 +29,20 @@ SQL;
             
             return $countries;
     }
+    
+    public function find($id){
+         $dbCountry = $this->db->fetchAssoc(
+                'SELECT * FROM country WHERE idcountry = :idcountry',
+                [
+                    ':idcountry' => $id
+                ]
+            );
+        
+            if(!empty($dbCountry)){
+                return $this->buildEntity($dbCountry);
+            }
+    }
+    
     
     private function buildEntity(array $data){
        

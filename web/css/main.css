@@ -1,12 +1,12 @@
-
 /*************  R E S E T  *************/
 body {
     box-sizing: border-box;
     font-family: 'Roboto';
+    font-size: 1.6em;
 }
 
 main {
-    padding-top: 40px;
+    padding: 40px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,10 +19,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-weight: bold;
     padding: 10px 0;
-}
-
-p {
-    font-size: 16px;
 }
 
 .clear {
@@ -70,8 +66,12 @@ header {
     width: 40px;
     border: 1px solid #eee;
     padding: 0;
-    margin-left: 10px;
-}   
+    margin-left: 15px;
+} 
+
+#admin{
+    margin-bottom: 10px;
+}
 
 /***********  N A V B A R  *********/
 
@@ -207,8 +207,6 @@ footer a {
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
-    
-    /********  H E A D E R *********/ 
 
     #header-social select.form-control {
         margin-left: 20px;
@@ -230,4 +228,3 @@ footer a {
 @media only screen and (min-width : 1200px) {
 
 }
-
