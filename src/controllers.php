@@ -99,7 +99,7 @@ $admin->get('/clients/suppression/{id}', 'admin.product.controller:deleteAction'
         ->assert('id','\d+')
         ->bind('admin_client_delete');
 
-
+/*******ADMIN SERVICE ACTION*******/
 
 $admin->get('/services', 'admin.service.controller:serviceListAction')
         ->bind('admin_service');
@@ -108,6 +108,14 @@ $admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
             ->value('id', null)
             ->bind('admin_service_edit');
 
+/*******ADMIN TEAM ACTION*******/
+
+$admin->get('/team', 'admin.team.controller:teamListAction')
+            ->bind('admin_team');
+
+$admin->match('/team/edition/{id}', 'admin.team.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_team_edit');
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
