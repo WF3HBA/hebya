@@ -1,0 +1,96 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="innovators-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1>{{ "Nos Produit"|upper }}</h1>
+                    </div>
+                </div>
+                <div class="row all-select-innovators">
+                    <div class="col-xs-12 col-sm-6 innovators-select-theme">
+                        <select class="col-xs-12">
+                            <option>Theme</option>
+                            <option>Education</option>
+                            <option>Santé</option>
+                            <option>Assurance</option>
+                            <option>Comptabilité</option>
+                            <option>Numérisation GED</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 ">
+                        <select class="col-xs-12 innovators-select-pays">
+                            {% for country in countries %}
+                            <option>{{ country.name }}</option>
+                            {% endfor %}
+                           
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section><br><br>
+              
+        <section id="innovators-body">
+            <div class="container">
+                
+                 {% for product in products %}
+                 <div class="row product-row">                    
+                  
+                   
+                    <div class="col-sm-6">
+                      <a href="#">
+                        <img class="img-thumbnail" src="http://placehold.it/700x300" alt="">
+                      </a>
+                    </div>                    
+                    <div class="col-sm-6">
+                      <h2 class="product-name">{{ product.name }}</h2>
+                      <div class="product-content-short">{{ product.summary|raw }}</div>
+                      <div class="product-content hidden">{{ product.content|raw }}</div>
+                      
+                        {#Launch modal with the button above #}
+                      <button class="btn btn-primary boutton-innovators-body" data-toggle="modal" data-target="#myModal">View Product</button>
+                    </div>
+                    
+                     
+                 </div><hr><br><br>
+                 {% endfor %}
+                 
+                
+                {#  MODAL #}
+                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content product-detail">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h1 class="modal-title" id="myModalLabel"></h1>
+                        </div>
+                        <div class="modal-body product-detail-content">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+                {# END OF MODAL #}
+                
+            </div>
+        </section><br>
+    </main>
+{% endblock %}
+
+
+{% block javascript %}
+     {{ parent() }}
+    <script src="{{ asset("js/innovators/innovators.js") }}"></script>
+{% endblock %}

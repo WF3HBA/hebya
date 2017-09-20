@@ -1,0 +1,70 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/clients/clients.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+
+   <main>
+        <section id="clients-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1>{{ "Nos clients"|upper }}</h1>
+                    </div>
+                </div>
+                <div class="row all-select-clients">
+                    <div class="col-xs-12 col-sm-6 clients-select-theme">
+                        <select class="col-xs-12">
+                            <option disabled></option>
+                            <option selected>Tous les thèmes</option>
+                            <option disabled>──────────</option>
+                            <option>Education</option>
+                            <option>Santé</option>
+                            <option>Assurance</option>
+                            <option>Comptabilité</option>
+                            <option>Numérisation GED</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <select class="col-xs-12">
+                            <option disabled></option>
+                            <option selected>Tous les pays</option>
+                            <option disabled>──────────</option>
+                         {% for country in countries %}
+                            <option>{{ country.name }}</option>
+                         {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section><br><br>
+            
+            
+        <section id="clients-body">
+            <div class="container">
+                <div class="row">
+                    {% for client in clients %}
+                    <div class="col-lg-4 col-sm-6 text-center mb-4">
+                        <a href="#">
+                            <div class="test">
+                                <img src="http://placehold.it/200x200" alt="">
+                            </div>
+                            <h3>{{ client.company }}
+                              <small>{{ client.firstname }}</small>
+                            </h3>
+                            <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                        </a>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+            </div>
+        </section><br>
+    </main>
+    
+    
+{% endblock %}

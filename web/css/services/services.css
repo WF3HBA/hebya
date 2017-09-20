@@ -1,0 +1,62 @@
+
+#service-main-header div, #service-main-footer div {
+    transition: 0.4s;
+}
+
+#service-main-header, #service-main-footer {
+    padding: 40px 0;
+}
+
+.service-profil-title {
+    margin-bottom: 40px;
+}
+
+#service-subtitle {
+    font-size: 1.2em;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #444;
+    opacity: 0.7;
+}
+
+.service-profil-button, .service-link-button, .service-contact-button {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    border: 2px solid #008080;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #008080;
+    transition: 0.4s;
+}
+
+.service-link-button:hover, .service-profil-button:hover {
+    background-color: #008080;
+    color: #ffffff;
+}
+
+.service-contact-button {
+    background-color: #008080;
+    color: #ffffff;
+}
+
+.service-contact-button:hover {
+    background-color: #ffffff;
+    color: #008080;
+}
+
+#service-header {
+    font-weight: bold;
+}
+
+#service-main-footer .row:first-child {
+    margin-bottom: 40px;
+}
+
+@media only screen and (min-width : 1200px){
+    .service-contact-button {
+        width: 50%;
+    }
+}

@@ -1,0 +1,18 @@
+.icone-fermer{
+    display:none;
+}
+
+#affiner-recherche{
+    display:none;
+}
+
+
+
+.boutton-annonce{
+    float: right;
+}
+
+.modal-content{
+    margin:100px 50px;
+    padding: 30px;
+}

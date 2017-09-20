@@ -1,0 +1,37 @@
+.about-content {
+    padding-top: 40px;
+}
+
+.about-content h2 {
+    padding-bottom: 20px;
+}
+
+#team-members {
+    padding-top: 20px;
+}
+
+#team-members .team-member {
+    height: 320px;
+}
+
+#team-members img {
+    padding: 20px 0;
+}
+
+#team-members h3 {
+    padding-bottom: 10px;
+}
+
+.thumbnail {
+    cursor: pointer;
+}
+
+#team-layer {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+

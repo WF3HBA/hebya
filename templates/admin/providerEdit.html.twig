@@ -1,0 +1,99 @@
+{% extends "Admin/admin.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/admin/provider_edit.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+<div class="col-md-7 col-md-offset-2">
+    <h1>{% if provider.idprovider%}Edit{% else %}Create{% endif %} Provider</h1>
+<form class="form-horizontal" method="POST">
+    <fieldset>
+
+    <!-- Form Name -->
+    <legend></legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="lastname">lastname</label>  
+      <div class="col-md-5">
+      <input id="lastname" name="lastname" type="text" placeholder="" value="{{provider.lastname}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="firstname">firstname</label>  
+      <div class="col-md-5">
+      <input id="firstname" name="firstname" type="text" placeholder="" value="{{provider.firstname}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="company">company</label>  
+      <div class="col-md-5">
+      <input id="company" name="company" type="text" placeholder="" value="{{provider.company}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="email">email</label>  
+      <div class="col-md-5">
+      <input id="email" name="email" type="text" placeholder="" value="{{provider.email}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="phone">phone</label>  
+      <div class="col-md-5">
+      <input id="phone" name="phone" type="text" placeholder="" value="{{provider.phone}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="address">address</label>  
+      <div class="col-md-5">
+      <input id="address" name="address" type="text" placeholder="" value="{{provider.address}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="country">country</label>
+      <div class="col-md-5">
+         <input id="country" name="country" type="text" placeholder="" value="{{provider.country}}" class="form-control input-md">
+      </div>
+    </div>
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submit">submit</label>
+      <div class="col-md-8">
+        <button  name="submit" type="submit" class="btn btn-success">submit</button>
+        <a href="{{ path('admin_provider') }}" class="btn btn-primary">annuler</a>
+      </div>
+    </div>
+
+    </fieldset>
+</form>
+</div>
+
+    {% endblock %}
+    
+    {% block javascript %}
+    {{ parent() }}
+     <script src="{{ asset('js/admin/edit.js') }}"></script>
+     
+    {% endblock %}
