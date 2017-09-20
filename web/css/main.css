@@ -64,8 +64,12 @@ header {
     width: 40px;
     border: 1px solid #eee;
     padding: 0;
-    margin-left: 10px;
-}   
+    margin-left: 15px;
+} 
+
+#admin{
+    margin-bottom: 10px;
+}
 
 /***********  N A V B A R  *********/
 
