@@ -28,8 +28,8 @@ $app->get('/innovateurs', 'innovator.controller:innovatorAction')
 $app->get('/clients', 'client.controller:clientAction')
         ->bind('clients');
 
-$app->get('/emplois', 'opportunity.controller:opportunityAction')
-        ->bind('emplois');
+$app->get('/offres', 'opportunity.controller:opportunityAction')
+        ->bind('opportunity');
 
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
@@ -37,7 +37,7 @@ $app->get('/contact', 'contact.controller:contactAction')
 $app->get('/register', 'register.controller:registerAction')
         ->bind('register');
 
-$app->get('/candidature/{postId}', 'candidacy.controller:candidacyAction')
+$app->match('/candidatures/{postId}', 'candidacy.controller:candidacyAction')
         ->value('postId', null)
         ->bind('candidacy');
 
