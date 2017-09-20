@@ -37,6 +37,9 @@ $app->get('/contact', 'contact.controller:contactAction')
 $app->match('/register', 'register.controller:registerAction')
         ->bind('register');
 
+$app->get('/mention', 'mention.controller:mentionAction')
+        ->bind('mention');
+
 $app->match('/candidatures/{postId}', 'candidacy.controller:candidacyAction')
         ->value('postId', null)
         ->bind('candidacy');
@@ -48,9 +51,9 @@ $app->match('/login', 'user.controller:loginAction')
 $app->match('/logout', 'user.controller:logoutAction')
         ->bind('logout');
 
-
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
+
 
 
 
