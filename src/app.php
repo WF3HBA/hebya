@@ -127,6 +127,10 @@ $app['product.repository'] = function () use ($app){
     return new Repository\ProductRepository($app['db']);
 };
 
+$app['candidacy.repository'] = function () use ($app){
+    return new Repository\CandidacyRepository($app['db']);
+};
+
 $app['provider.repository'] = function () use ($app){
     return new Repository\ProviderRepository($app['db']);
 };
