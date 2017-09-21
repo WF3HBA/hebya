@@ -34,6 +34,12 @@ a, a:hover, a:focus {
     text-decoration: none;
 }
 
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: #008080;
+  transition: 0.5s;
+}
+
 footer {
     padding-top: 45px;
     background-color: #222222;
@@ -70,7 +76,30 @@ header {
 } 
 
 #admin{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+header .fa-facebook-square{
+    color:#008080;
+}
+
+
+header .fa-twitter-square{
+    color:#008080;
+}
+
+header .fa-facebook-square:hover{
+    transition: 1s;
+    color:#2e6da4;
+}
+
+header .fa-twitter-square:hover{
+    transition: 1s;
+    color:#2e6da4;
+}
+
+div#header-social.col-xs-8{
+    margin: 10px 0 10px 0;
 }
 
 /***********  N A V B A R  *********/
@@ -124,6 +153,8 @@ header {
 }
 
 
+
+
 /****************  F O O T E R  ***************/
 
 .footer {
@@ -135,7 +166,9 @@ header {
 }
 
 .footer_dv {
+    text-align: center;
     width: 100%;
+    margin-bottom: 35px;
 }
 
 .footer_dv h4 {
@@ -227,4 +260,20 @@ footer a {
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
 }
