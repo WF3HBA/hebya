@@ -4,17 +4,18 @@ $(function(){
       
       e.preventDefault();
        
-      var target = $(this).data('target');
+      var id = $(this).data('id').trim();
+      console.log(id);
        
       $.ajax({
           url: targetAjaxUrl,
           method: "GET",
-          data: {"target": target}
+          data: {"id": id}
       }).done(function(data){
           console.log(data);
           $('#service-content').hide().html(data.content).fadeIn(1000);
       })
    }); 
+   
 });
-
-
+ 

@@ -45,7 +45,7 @@ class AdminServiceController extends ControllerAbstract {
             }
             
             if (empty($errors)) {
-                $this->app['product.repository']->save($service);
+                $this->app['service.repository']->save($service);
                 $this->addFlashMessage('Le service est bien validé');
                 return $this->redirectRoute('admin_service');
             } else {

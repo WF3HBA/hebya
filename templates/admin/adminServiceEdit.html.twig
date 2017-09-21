@@ -1,45 +1,34 @@
 {% extends "admin/admin.html.twig" %}
 
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/simditor.css') }}" />
+{% endblock %}
+
 {% block content %}
     <div class="col-md-7 col-md-offset-2">
-        <h1>{% if teamMember.idteam_member%}Edit{% else %}Create{% endif %} Membre de l'équipe</h1>
+        <h1>{% if service.idservice%}Edit{% else %}Create{% endif %} des services</h1>
         <form class="form-horizontal" method="POST">
             <fieldset>
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="firstname">Prénom</label>  
+                    <label class="col-md-4 control-label" for="target">Cible</label>  
                     <div class="col-md-5">
-                        <input id="firstname" name="firstname" type="text" placeholder="" value="{{ teamMember.firstname }}" class="form-control input-md">
+                        <input id="target" name="target" type="text" placeholder="" value="{{ service.target }}" class="form-control input-md">
                     </div>
                 </div>
+                
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="lastname">Nom</label>  
+                    <label class="col-md-4 control-label" for="content">Contenu</label>  
                     <div class="col-md-5">
-                        <input id="lastname" name="lastname" type="text" placeholder="" value="{{ teamMember.lastname }}" class="form-control input-md">
+                        <textarea id="content" name="content" placeholder="" class="form-control input-md" rows="15">{{ service.content }}</textarea>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="title">Titre</label>  
-                    <div class="col-md-5">
-                        <input id="title" name="title" type="text" placeholder="" value="{{ teamMember.title }}" class="form-control input-md">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="description">Description</label>  
-                    <div class="col-md-5">
-                        <textarea id="description" name="description" placeholder="" class="form-control input-md" rows="15">{{ teamMember.description }}</textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="linkedin">Linkedin</label>  
-                    <div class="col-md-5">
-                        <input id="linkedin" name="linkedin" type="text" placeholder="" value="{{ teamMember.linkedin }}" class="form-control input-md">
-                    </div>
-                </div>
+               
                 <div class="form-group">
                      <label class="col-md-4 control-label" for="submit">submit</label>
                      <div class="col-md-8">
                           <button  name="submit" type="submit" class="btn btn-success">Valider</button>
-                         <a href="{{ path('admin_team') }}" class="btn btn-primary">Annuler</a>
+                         <a href="{{ path('admin_service') }}" class="btn btn-primary">Annuler</a>
                     </div>
                 </div>
             </fieldset>
@@ -49,6 +38,13 @@
 
 {% block javascript %}
     {{ parent() }}
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({ selector: 'textarea' });</script>
+    <script type="text/javascript" src="{{ asset('js/admin/module.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/hotkeys.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/simditor.min.js') }}"></script>
+    <script>
+        var content = new Simditor({
+             textarea: $('#content')
+        });
+    </script>
 {% endblock %}
