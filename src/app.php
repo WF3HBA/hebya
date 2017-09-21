@@ -82,6 +82,10 @@ $app['user.controller'] = function () use ($app) {
     return new Controller\UserController($app);
 };
 
+$app['profil.controller'] = function () use ($app) {
+    return new Controller\ProfilController($app);
+};
+
 /***************A D M I N   C O N T R O L L E R****************/
 
 $app['admin.controller'] = function () use ($app) {
