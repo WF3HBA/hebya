@@ -2,9 +2,9 @@
 
 {% block content %}
     
- <div class="col-md-7 col-md-offset-2">
+ <div class="col-md-7 col-md-offset-2 table-listing">
         <div class="row">
-            <h2>Produit</h2>
+            <h2>Client</h2>
             <p>Admin <a href="{{ path('admin_client_edit')}}">add client</a></p>
             <table class="table">
                 <tr>
@@ -17,7 +17,7 @@
                     <th>email</th>
                     <th>address</th>
                     <th>country</th>
-                    <th>password</th>
+{#                    <th>password</th>#}
                     <th>status</th>
                     <th>Edit</th>
                     <th>delete</th>
@@ -35,7 +35,7 @@
                         <td>{{ client.address }}</td>
                         <td>{{ client.country }}</td>
 
-                        <td>{{ client.password }}</td>
+{#                        <td>{{ client.password }}</td>#}
                         <td>{{ client.status }}</td>
                          <td>
                             <a href="{{ path('admin_client_edit', {id: client.idclient}) }}"><button class="btn btn-primary">modifier</button></a>
