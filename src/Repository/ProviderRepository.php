@@ -55,6 +55,8 @@ SQL;
                 'lastname' => $provider->getLastname(),
                 'firstname' => $provider->getFirstname(),
                 'company' => $provider->getCompany(),
+                'summary' => $provider->getSummary(),
+                'description' => $provider->getDescription(),
                 'email' => $provider->getEmail(),
                 'phone' => $provider->getPhone(),
                 'address' => $provider->getAddress(),
@@ -90,6 +92,8 @@ SQL;
                 ->setLastname($data['lastname'])
                 ->setFirstname($data['firstname'])
                 ->setCompany($data['company'])
+                ->setSummary($data['summary'])
+                ->setDescription($data['description'])
                 ->setEmail($data['email'])
                 ->setPhone($data['phone'])
                 ->setAddress($data['address'])

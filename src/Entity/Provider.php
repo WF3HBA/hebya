@@ -24,6 +24,10 @@ class Provider {
     
     private $company;
     
+    private $summary;
+    
+    private $description;
+    
     private $email;
     
     private $phone;
@@ -69,7 +73,15 @@ class Provider {
         return $this->country;
     }
 
-    
+    function getSummary() {
+        return $this->summary;
+    }
+
+    function getDescription() {
+        return $this->description;
+    }
+
+        
     /**********SETTER************/
     
     
@@ -117,6 +129,18 @@ class Provider {
 
     function setCountry($country) {
         $this->country = $country;
+        
+        return $this;
+    }
+    
+    function setSummary($summary) {
+        $this->summary = $summary;
+        
+        return $this;
+    }
+
+    function setDescription($description) {
+        $this->description = $description;
         
         return $this;
     }
