@@ -15,6 +15,8 @@ class Candidacy {
     private $address;
     private $country;
     private $opportunity;
+    private $cv;
+    private $coverletter;
     
     public function getIdcandidacy() {
         return $this->idcandidacy;
@@ -46,6 +48,16 @@ class Candidacy {
     
     public function getOpportunity() {
         return $this->opportunity;
+    }
+   
+    
+    public function getCv() {
+        return $this->cv;
+    }
+    
+    
+    public function getCoverletter() {
+        return $this->coverletter;
     }
     
     
@@ -90,6 +102,22 @@ class Candidacy {
         $this->opportunity = $opportunity;
         return $this;
     }
+    
+    public function setCv($cv) {
+        $this->cv = $cv;
+        return $this;
+    }
+    
+    public function setCoverletter($coverletter) {
+        $this->coverletter = $coverletter;
+        return $this;
+    }
+    
+    
+    
+    
+    
+    
     
     public function getOpportunityReference() {
         if (!is_null($this->opportunity)) {

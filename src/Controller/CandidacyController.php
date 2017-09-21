@@ -12,6 +12,10 @@ class CandidacyController extends ControllerAbstract {
         $opportunity = $this->app['opportunity.repository']->find($postId);
         
         if($_POST){
+           // $this->MikeLeRoi("cv");            
+           // $this->MikeLeRoi("coverletter");
+
+            //die();
            
             if(empty($_POST['firstname'])){
                 $errors['firstname'] = 'firstname require';
@@ -40,6 +44,16 @@ class CandidacyController extends ControllerAbstract {
             if(empty($_POST['country'])){
                 $errors['country'] = 'country require';
             }
+            
+            if(empty($_FILES['cv'])){
+                $errors['cv'] = 'cv require';
+            } else {          
+                $_FILES['cv']['name'] = $this->MikeLeRoi($_FILES['cv']);
+            }
+            
+            if(empty($_FILES['coverletter'])){
+                $errors['coverletter'] = 'lettre de motivation require';
+            }
            
             
             if(empty($errors)){
@@ -56,7 +70,31 @@ class CandidacyController extends ControllerAbstract {
                 $candidacy->setPhone($_POST['phone']);
                 $candidacy->setAddress($_POST['address']);
                 $candidacy->setCountry($_POST['country']);
+                
+                
+                
+                
+                
+                
+                $candidacy->setCv($_FILES['cv']["name"]);
+                
+                $candidacy->setCoverletter($_FILES['coverletter']["name"]); 
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 $candidacy->setOpportunity($opportunity);
+                
+                
+                
+                
+                
+                
                     
                 $this->app['candidacy.repository']->save($candidacy);
                 
@@ -81,15 +119,37 @@ class CandidacyController extends ControllerAbstract {
     }
     
     
+   public function MikeLeRoi($name){
+            $nomOrigine = $_FILES[$name]['name'];
+            $elementsChemin = pathinfo($nomOrigine);
+            
+            $extensionFichier = $elementsChemin['extension'];
+            $extensionsAutorisees = array("jpeg", "jpg", "gif");
+            if (!(in_array($extensionFichier, $extensionsAutorisees))) {
+                echo "Le fichier n'a pas l'extension attendue";
+            } else {    
+                // Copie dans le repertoire du script avec un nom
+                // incluant l'heure a la seconde pres 
+                $repertoireDestination = "C:/xampp/htdocs/hebya/web/candidacy/";
+                $nomDestination = "fichier_du_".date("YmdHis").".".$extensionFichier;
+
+                if (move_uploaded_file($_FILES[$name]["tmp_name"], 
+                                                 $repertoireDestination.$nomDestination)) {
+                    
+                    return $repertoireDestination.$nomDestination;
+                    /*echo "Le fichier temporaire ".$_FILES[$name]["tmp_name"].
+                            " a été déplacé vers ".$repertoireDestination.$nomDestination;*/
+                } else {
+                    echo "Le fichier n'a pas été uploadé (trop gros ?) ou ".
+                            "Le déplacement du fichier temporaire a échoué".
+                            " vérifiez l'existence du répertoire ".$repertoireDestination;
+                }
+            }
+    } 
     
     
     
-    
-    
-    
-    
-    
-    
+   
     
     
     
