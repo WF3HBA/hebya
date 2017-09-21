@@ -20,6 +20,8 @@ class CandidacyRepository extends RepositoryAbstract {
                 'phone' => $candidacy->getPhone(),
                 'address' => $candidacy->getAddress(),
                 'country' => $candidacy->getCountry(),
+                'cv' => $candidacy->getCv(),
+                'coverletter' => $candidacy->getCoverletter(),
                 'idopportunity' => $candidacy->getIdOpportunity()
             ];
         
