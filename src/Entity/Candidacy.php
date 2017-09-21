@@ -12,8 +12,9 @@ class Candidacy {
     private $lastname;
     private $email;
     private $phone;
-    private $adresse;
+    private $address;
     private $country;
+    private $opportunity;
     
     public function getIdcandidacy() {
         return $this->idcandidacy;
@@ -35,13 +36,20 @@ class Candidacy {
         return $this->phone;
     }
 
-    public function getAdresse() {
-        return $this->adresse;
+    public function getAddress() {
+        return $this->address;
     }
 
     public function getCountry() {
         return $this->country;
     }
+    
+    public function getOpportunity() {
+        return $this->opportunity;
+    }
+    
+    
+    /*********************** SETTER  ********************** */
 
     public function setIdcandidacy($idcandidacy) {
         $this->idcandidacy = $idcandidacy;
@@ -68,8 +76,8 @@ class Candidacy {
         return $this;
     }
 
-    public function setAdresse($adresse) {
-        $this->adresse = $adresse;
+    public function setAddress($address) {
+        $this->address = $address;
         return $this;
     }
 
@@ -77,6 +85,26 @@ class Candidacy {
         $this->country = $country;
         return $this;
     }
-
+    
+     public function setOpportunity(Opportunity $opportunity) {
+        $this->opportunity = $opportunity;
+        return $this;
+    }
+    
+    public function getOpportunityReference() {
+        if (!is_null($this->opportunity)) {
+            return $this->opportunity->getReference();
+        }
+        
+        return '';
+    }
+    
+    public function getIdOpportunity() {
+        if (!is_null($this->opportunity)) {
+            return $this->opportunity->getIdopportunity();
+        }
+        
+        return '';
+    }
 
 }
