@@ -70,7 +70,7 @@ SQL;
         
         $opportunity
             ->setIdopportunity($data['idopportunity'])
-            ->setTitle($data['title'])
+            ->setPosition($data['position'])
             ->setReference($data['reference'])
             ->setCity($data['city'])
             ->setField($data['field'])

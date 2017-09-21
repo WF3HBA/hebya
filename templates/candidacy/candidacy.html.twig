@@ -25,10 +25,12 @@
                             </div>
                             {% endif %}
                             <div class="col-10">
+
                                 {% if not opportunity %}
                                 <label for="title" class="col-2 col-form-label">Poste recherché</label>   
                                 {% endif %}   
                                 <input name="title" class="form-control input-md {% if opportunity %}hidden{% endif %}" {% if opportunity %}value="{{ opportunity.title }} {% endif %}">
+
                             </div>
                             
                             <div class="col-10">

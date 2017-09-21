@@ -63,7 +63,7 @@ SQL;
                 'idprovider' => $product->getIdprovider(),
                 'name' => $product->getName(),
                 'website' => $product->getWebsite(),
-                'content' => $product->getContent(),
+                'description' => $product->getDescription(),
                 'field' => $product->getField(),
                 'status' => $product->getStatus(),
                 'summary' => $product->getSummary()
@@ -103,7 +103,7 @@ SQL;
             ->setIdprovider($data['idprovider'])
             ->setName($data['name'])
             ->setWebsite($data['website'])
-            ->setContent($data['content'])
+            ->setDescription($data['description'])
             ->setField($data['field'])
             ->setStatus($data['status'])
             ->setSummary($data['summary'])
