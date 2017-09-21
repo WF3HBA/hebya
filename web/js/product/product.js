@@ -1,13 +1,6 @@
 $(function(){
-
-   $("#sticker").sticky({topSpacing:0});
-
-});
-
-
-$(function(){
+    
    $(".boutton-innovators-body").click(function(){
-
 
        var $row = $(this).closest('.product-row');
        var name = $row.find('.product-name').html();

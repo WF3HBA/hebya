@@ -55,31 +55,31 @@ SQL;
     }
     
     
-     public function save(Product $product){
-        
-        $data =
-            [
-                'idproduct' => $product->getIdproduct(),
-                'idprovider' => $product->getIdprovider(),
-                'name' => $product->getName(),
-                'website' => $product->getWebsite(),
-                'description' => $product->getDescription(),
-                'field' => $product->getField(),
-                'status' => $product->getStatus(),
-                'summary' => $product->getSummary()
-            ];
-        
-        if ($product->getIdproduct()){
-            $this->db->update('product', $data, 
-                    [
-                        'idproduct'=>$product->getIdproduct()
-                    ] 
-                );
-        } else {
-            $this->db->insert('product', $data);
-            $product->setIdproduct($this->db->LastInsertId());
-        }
-    }
+        public function save(Product $product){
+
+           $data =
+               [
+                   'idproduct' => $product->getIdproduct(),
+                   'idprovider' => $product->getIdprovider(),
+                   'name' => $product->getName(),
+                   'website' => $product->getWebsite(),
+                   'description' => $product->getDescription(),
+                   'field' => $product->getField(),
+                   'status' => $product->getStatus(),
+                   'summary' => $product->getSummary()
+               ];
+
+           if ($product->getIdproduct()){
+               $this->db->update('product', $data, 
+                       [
+                           'idproduct'=>$product->getIdproduct()
+                       ] 
+                   );
+           } else {
+               $this->db->insert('product', $data);
+               $product->setIdproduct($this->db->LastInsertId());
+           }
+       }
     
      public function delete(Product $product){
         

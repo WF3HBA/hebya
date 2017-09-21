@@ -3,7 +3,7 @@
 {% block stylesheet %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset("css/admin/provider_edit.css") }}"/>
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/simditor.css') }}" />
 {% endblock %}
 
 {% block content %}
@@ -127,5 +127,13 @@
     {% block javascript %}
     {{ parent() }}
      <script src="{{ asset('js/admin/edit.js') }}"></script>
-     
+     <script type="text/javascript" src="{{ asset('js/admin/module.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/hotkeys.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/simditor.min.js') }}"></script>
+    <script>
+        var content = new Simditor({
+             textarea: $('#')
+        });
+    </script>
     {% endblock %}

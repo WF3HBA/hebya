@@ -26,18 +26,18 @@ SQL;
             return $services;
     }
     
-    public function find($target) {
+    public function find($id) {
        
         $query = <<<SQL
             SELECT *
             FROM service
-            WHERE target = :target;
+            WHERE idservice = :id;
 SQL;
        
        $dbService = $this->db->fetchAssoc(
               $query,
                [
-                   ':target' => $target
+                   ':id' => $id
                ]
        );
        
@@ -46,6 +46,27 @@ SQL;
        }
                
    }
+   
+    public function save(Service $service){
+
+           $data =
+               [
+                   'idService' => $service->getIdService(),
+                   'target' => $service->getTarget(),
+                   'content' => $service->getContent()
+               ];
+
+           if ($service->getIdService()) {
+               $this->db->update('service', $data, 
+                       [
+                           'idService'=>$service->getIdService()
+                       ] 
+                   );
+           } else {
+               $this->db->insert('service', $data);
+               $service->setIdService($this->db->LastInsertId());
+           }
+    }
    
    private function buildEntity(array $data){
        
