@@ -80,7 +80,14 @@ path:hover {
 }
 
 
-table td{
-    height: 30px;
-    overflow: auto;
+/********STAT*********/
+
+.asset {
+    padding: 1px;
+    border: 1px solid #EEEEEE;
+    background-color: white;
+    border-radius: 5px;
+    background-color: #FAFAFA;
 }
+
+
