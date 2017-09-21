@@ -20,16 +20,16 @@
                         <div class="col-xs-10 col-xs-push-1 col-sm-10 col-sm-push-1">
                             {% if opportunity %}
                             <div class="row">
-                                <div class="col-sm-4">Poste : {{ opportunity.title }} </div>
+                                <div class="col-sm-4">Poste : {{ opportunity.position }} </div>
                                 <div class="col-sm-4">Réference : {{ opportunity.reference }}</div>
                             </div>
                             {% endif %}
                             <div class="col-10">
 
                                 {% if not opportunity %}
-                                <label for="title" class="col-2 col-form-label">Poste recherché</label>   
+                                <label for="position" class="col-2 col-form-label">Poste recherché</label>   
                                 {% endif %}   
-                                <input name="title" class="form-control input-md {% if opportunity %}hidden{% endif %}" {% if opportunity %}value="{{ opportunity.title }} {% endif %}">
+                                <input name="position" class="form-control input-md {% if opportunity %}hidden{% endif %}" {% if opportunity %}value="{{ opportunity.position }} {% endif %}">
 
                             </div>
                             
