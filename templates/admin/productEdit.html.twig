@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-md-7 col-md-offset-2">
+<div class="col-md-7 col-md-offset-2 table-listing">
     <h1>{% if product.idproduct%}Edit{% else %}Create{% endif %} Product</h1>
 <form class="form-horizontal" method="POST">
     <fieldset>
@@ -37,7 +37,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="content">content</label>  
       <div class="col-md-5">
-          <textarea id="content" name="content" type="text" placeholder="" rows="15" class="form-control input-md">{{product.content}}</textarea>
+          <textarea id="description" name="description" type="text" placeholder="" rows="15" class="form-control input-md">{{ product.description }}</textarea>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="summary">summary</label>  
       <div class="col-md-5">
-          <textarea id="content" name="summary" type="text" placeholder="" rows="15" class="form-control input-md">{{product.summary}}</textarea>
+          <textarea id="content" name="summary" type="text" placeholder="" rows="15" class="form-control input-md">{{ product.summary }}</textarea>
       </div>
     </div>
 

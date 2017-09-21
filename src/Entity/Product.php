@@ -22,7 +22,7 @@ class Product {
     
     private $field;
     
-    private $content;
+    private $description;
     
     private $status;
     
@@ -67,8 +67,8 @@ class Product {
         return $this->field;
     }
 
-    function getContent() {
-        return $this->content;
+    function getDescription() {
+        return $this->description;
     }
 
     function getStatus() {
@@ -84,8 +84,8 @@ class Product {
         return $this;
     }
 
-    function setContent($content) {
-        $this->content = $content;
+    function setDescription($description) {
+        $this->description = $description;
         
         return $this;
     }

@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-4">
-                        <a href="{{path('homepage')}}" id="hebya-logo"><img src="{{ asset('img/hebya-logo-normal.png')}}" /></a>
+                        <a href="{{path('homepage')}}" id="hebya-logo"><img id="top" src="{{ asset('img/hebya-logo-normal.png')}}" /></a>
                     </div>
                     <div id="header-social" class="col-xs-8">
                         <i class="fa fa-facebook-square" aria-hidden="true"></i>
@@ -23,21 +23,18 @@
                       
                          {% if user_manager.admin %}
                             <a href="{{ path('admin') }}" class="btn btn-primary" id="admin">Gestion admin</a>
-                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Logout</a>
+                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
                         
                          {% elseif user_manager.UserName %}
-                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Logout</a>
+                            <a href="{{ path('profil') }}" class="btn btn-primary" id="admin">Espace membre</a>
+                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
                         {% else %}
                             <a href="{{ path('register') }}" class="btn btn-primary" id="admin">Inscription</a>
                             <a href="{{ path('login') }}" class="btn btn-primary" id="admin">Connexion</a>
                         {% endif %}
-                    </div>
 
-                    {% if user_manager.admin %}
-                        <button><a href="{{path('admin') }}">Gestion admin</a><button>
-                    {% endif %}
-
-                </div>
+                    </div>                
+               </div>
             </div>
         </header>
         <nav id="sticker" class="navbar navbar-inverse">
@@ -96,13 +93,12 @@
                     <div class="footer_dv">
                         <h4>Pages</h4>
                         <ul>
-                            <li><a href="http://localhost/hebya/web/index_dev.php/">Accueil</a></li>
-                            <li><a href="http://localhost/hebya/web/index_dev.php/services">Services</a></li>
-                            <li><a href="#">Produits</a></li>
-                            <li><a href="#">A Propos</a></li>
-                            <li><a href="#">Emploi et carrière</a></li>
-                            <li><a href="http://localhost/hebya/web/index_dev.php/contact">Contact</a></li>
-                            <li><a href="http://localhost/hebya/web/index_dev.php/mention">Mentions légales</a></li>
+                            <li><a href="{{path('homepage')}}">Accueil</a></li>
+                            <li><a href="{{path('services')}}">Services</a></li>
+                            <li><a href="{{path('product')}}">Produits</a></li>
+                            <li><a href="{{path('apropos')}}">A Propos</a></li>
+                            <li><a href="{{path('opportunity')}}">Emploi et carrière</a></li>
+                            <li><a href="{{path('contact')}}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -150,14 +146,24 @@
                 </div>
             </div>
         </div>
+                      {#  <a href="{{path('mention')}}"style="color: #fff; font-size: 10px; padding-left: 600px; background-color: grey;"> Mentions légales
+                        </a><br>
+                        <span style="background-color: grey;" >Kikoo</span>#}
+               
+       <div style="text-align:center; margin-top:20px;background-color: rgba(20,20,20,0.5);">
+        <a href="{{path('mention')}}" class="text">mentions legales</a>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          
 
+        </div>               
     </footer>
     {% block javascript %}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-   
+    <script src="{{ asset('js/scrolltop.js') }}"></script>
+
     {% endblock %}
 
     </body>

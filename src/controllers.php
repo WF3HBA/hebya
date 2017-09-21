@@ -47,13 +47,14 @@ $app->match('/candidatures/{postId}', 'candidacy.controller:candidacyAction')
 $app->match('/login', 'user.controller:loginAction')
         ->bind('login');
 
-
 $app->match('/logout', 'user.controller:logoutAction')
         ->bind('logout');
 
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
 
+$app->get('/profil', 'profil.controller:profilAction')
+        ->bind('profil');
 
 
 

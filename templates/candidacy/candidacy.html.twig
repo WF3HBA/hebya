@@ -18,17 +18,26 @@
             <div class="row">
                 <form action="" method="post">
                         <div class="col-xs-10 col-xs-push-1 col-sm-10 col-sm-push-1">
-                            
-                            <label for="nom" class="col-2 col-form-label"> Poste </label>
-                            <div class="col-10">
-                                <input class="form-control input-md " value="{% if opportunity %}{{ opportunity.title }} {% endif %}">
+                            {% if opportunity %}
+                            <div class="row">
+                                <div class="col-sm-4">Poste : {{ opportunity.position }} </div>
+                                <div class="col-sm-4">Réference : {{ opportunity.reference }}</div>
                             </div>
+                            {% endif %}
                             <div class="col-10">
-                                {% if opportunity %}
+
+                                {% if not opportunity %}
+                                <label for="position" class="col-2 col-form-label">Poste recherché</label>   
+                                {% endif %}   
+                                <input name="position" class="form-control input-md {% if opportunity %}hidden{% endif %}" {% if opportunity %}value="{{ opportunity.position }} {% endif %}">
+
+                            </div>
                             
-                                <label for="nom" class="col-2 col-form-label"> Réference </label>
-                                <input class="form-control input-md " value="{{ opportunity.reference }}">
-                                {% endif %}
+                            <div class="col-10">
+                                
+                            
+                                <input name="idopportunity" class="form-control input-md hidden" value="{% if opportunity %}{{ opportunity.idopportunity }}{% else %}null{% endif %}">
+                                
                             </div>
                             
                             <label for="firstname" class="col-2 col-form-label"> Nom </label>
@@ -49,33 +58,33 @@
                             </div>
 
 
-                            <label for="phone " class="col-2 col-form-label">Téléphone</label>
+                            <label for="phone" class="col-2 col-form-label">Téléphone</label>
                             <div class="col-10">
-                                <input id="phone " name="phone " type="text" placeholder="Téléphone" class="form-control input-md">
+                                <input id="phone" name="phone" type="text" placeholder="Téléphone" class="form-control input-md">
                             </div>
 
 
                             <label for="adresse" class="col-2 col-form-label">Adresse</label>
                             <div class="col-10">
-                                <input id="adresse" name="adress" type="text" placeholder="Adresse" class="form-control input-md">
+                                <input id="adresse" name="address" type="text" placeholder="Adresse" class="form-control input-md">
                             </div>
 
-                            <label for="country " class="col-2 col-form-label">Pays</label>
+                            <label for="country" class="col-2 col-form-label">Pays</label>
                             <div class="col-10">
-                                <input id="country " name="country " type="text" placeholder="Pays" class="form-control input-md">
+                                <input id="country" name="country" type="text" placeholder="Pays" class="form-control input-md">
                             </div>
                             
                             <div class="form-group">
                                 <label for="cv"> CV </label>
                                 <input type="file" class="form-control-file" id="cv" aria-describedby="cv">
-                                <small id="cv" class="form-text text-muted">Veiullez joindre un cv en pdf.</small>
+                                <small id="cv" class="form-text text-muted">Veuillez joindre un cv.</small>
                             </div>
                             
                             
                             <div class="form-group">
                                 <label for="exampleInputFile"> Lettre de motivation </label>
                                 <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                <small id="fileHelp" class="form-text text-muted">Veuillez joindre une lettre de motivation en pdf.</small>
+                                <small id="fileHelp" class="form-text text-muted">Veuillez joindre une lettre de motivation.</small>
                             </div>
                             
                             <div class="col-10">
