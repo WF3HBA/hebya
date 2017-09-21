@@ -27,13 +27,16 @@
                         </select>
                          {% if user_manager.admin %}
                             <a href="{{ path('admin') }}" class="btn btn-primary" id="admin">Gestion admin</a>
-                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Logout</a>
+                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
                         
                          {% elseif user_manager.UserName %}
-                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Logout</a>
+                            <a href="{{ path('profil') }}" class="btn btn-primary" id="admin">Espace membre</a>
+                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
+
+                            
                         {% else %}
-                            <a href="{{ path('register') }}" class="btn btn-primary" id="admin">register</a>
-                            <a href="{{ path('login') }}" class="btn btn-primary" id="admin">login</a>
+                            <a href="{{ path('register') }}" class="btn btn-primary" id="admin">Créer un compte</a>
+                            <a href="{{ path('login') }}" class="btn btn-primary" id="admin">Connexion</a>
                         {% endif %}
                     </div>                
                </div>

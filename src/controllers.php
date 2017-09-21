@@ -54,6 +54,8 @@ $app->match('/logout', 'user.controller:logoutAction')
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
 
+$app->get('/profil', 'profil.controller:profilAction')
+        ->bind('profil');
 
 
 
