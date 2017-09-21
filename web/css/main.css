@@ -39,6 +39,18 @@ footer {
     background-color: #222222;
 }
 
+.glyphicon.glyphicon-chevron-up{
+    position: fixed;
+    right: 3%; 
+    top: 93%;  
+    color: white; 
+    background-color: grey; 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 25px; 
+    line-height: 30px;
+}
+
 /***********  H E A D E R  *********/
 
 
@@ -172,9 +184,6 @@ header {
     text-align: justify;
 }
 
-footer{
-    padding-bottom: 30px;
-}
 
 button#submit.btn.btn-primary.pull-right{
     margin-right: 40%;
