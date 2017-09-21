@@ -12,32 +12,71 @@
     </head>
     <body>
         
-     
-        <div class="navbar navbar-inverse navbar-fixed-left">
-            <a class="navbar-brand" href="{{ path('admin') }}">Hebya</a>
-           <ul class="nav navbar-nav">
-
-               <li><a href="{{ path('admin_product') }}">Product</a></li>
-               <li><a href="{{ path('admin_provider') }}">Provider</a></li>
-               <li><a href="{{ path('admin_client') }}">Clients</a></li>
-               <li><a href="#">Team</a></li>
-               <li><a href="{{ path('homepage') }}">Retour au site</a></li>
+        
+        <div class="navbar navbar-inverse navbar-fixed-left" id="leftside">
+            
+           <ul class="nav navbar-nav" id="left-menu">
+              
+               <li class="li-left"><a href="{{ path('admin_product') }}">Product</a></li>
+               <li class="li-left"><a href="{{ path('admin_provider') }}">Provider</a></li>
+               <li class="li-left"><a href="{{ path('admin_client') }}">Clients</a></li>
+               <li class="li-left"><a href="#">Team</a></li>
+               <li class="li-left"><a href="{{ path('homepage') }}">Retour au site</a></li>
            </ul>
        </div>
-     
+       <div class="navbar navbar-inverse navbar-fixed-top"> 
+            <ul class="nav navbar-nav" id="head-menu">
+                <li><a href="{{ path('admin') }}"><img src="{{ asset('img/hebya-logo-inverse.png')}}"/></a></li>
+                <li class="li-nav"><a href="{{ path('admin_product') }}">Product</a></li>
+                <li class="li-nav"><a href="{{ path('admin_provider') }}">Provider</a></li>
+                <li class="li-nav"><a href="{{ path('admin_client') }}">Clients</a></li>
+                <li class="li-nav"><a href="#">Team</a></li>
+                <li class="li-nav"><a href="{{ path('homepage') }}">Retour au site</a></li>
+            </ul>
+        </div>
 
-    
-        <div class="row">
-            <div class="col-md-7 col-md-offset-2">
-                <h2>Hosted by africa</h2>
-                <p>Admin</p>
-            </div>
-        </div>  
-   
-        
-     
+       
+
          {% block content %}
-            
+             <div class="container col-md-offset-2">
+                <div class="row table-listing">                    
+                     <div class="col-md-3">
+                         <div class="asset1 asset">
+                            {#  weather api data   #}
+                         </div> 
+                    </div>                                    
+                   
+                     <div class="col-md-3">
+                         <div class="asset2 asset">
+                            {#  weather api data   #}
+                         </div> 
+                    </div>                                    
+                   
+                     <div class="col-md-3">
+                         <div class="asset3 asset">
+                            {#  weather api data   #}
+                         </div> 
+                    </div>                                    
+                   
+                     <div class="col-md-3">
+                         <div class="asset4 asset">
+                            {#  weather api data   #}
+                           
+                         </div> 
+                         
+                    </div>                                    
+                   
+                </div> 
+                 <div class="row">
+                     <div class="col-md-12 asset table-listing">
+                         <img src="{{ asset('img/ganaly.png')}}"/>
+                     </div>
+                 </div>
+                 
+                
+                 
+            </div>  
+           
         {% endblock %}
         
            
@@ -46,8 +85,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ asset('js/admin/edit.js') }}"></script>
-
+     
+    
+   
+    
     {% endblock %}
-
+    
+    
     </body>
 </html>

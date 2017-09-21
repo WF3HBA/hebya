@@ -95,7 +95,7 @@
                 <div class="emploi-annonce col-xs-12 col-sm-8">
                 {% for opportunity in opportunities %}
                     <div class="panel panel-default">
-                        <div class="panel-heading">{{ opportunity.title }}</div>
+                        <div class="panel-heading">{{ opportunity.position }}</div>
                         <div class="panel-body">
                             <p><strong> Description : </strong> <br>{{ opportunity.description[:100] }}...</p>
                             <p><strong> Pays : </strong>{{ opportunity.countryName }}</p>
@@ -105,7 +105,7 @@
                             <div class="modal fade" id="detail-annonce-{{ opportunity.idopportunity }}" tabindex="-1" role="dialog" aria-hidden="true">  
                                 <div class="modal-content">    
                                     
-                                    <p><strong> Nom du poste : </strong> <br> {{ opportunity.title}}</p>
+                                    <p><strong> Nom du poste : </strong> <br> {{ opportunity.position}}</p>
                                     <p><strong> Réference annonce : </strong> {{ opportunity.reference }}</p>
                                     <p><strong> Déscription : </strong> <br> {{ opportunity.description}}</p>                                    
                                     <p><strong> Ville : </strong> {{ opportunity.city }}</p>

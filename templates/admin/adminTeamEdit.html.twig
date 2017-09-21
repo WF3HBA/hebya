@@ -1,5 +1,9 @@
 {% extends "admin/admin.html.twig" %}
 
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/simditor.css') }}" />
+{% endblock %}
 {% block content %}
     <div class="col-md-7 col-md-offset-2">
         <h1>{% if teamMember.idteam_member%}Edit{% else %}Create{% endif %} Membre de l'équipe</h1>
@@ -45,4 +49,16 @@
             </fieldset>
         </form>
     </div>
+{% endblock %}
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/admin/module.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/hotkeys.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/simditor.min.js') }}"></script>
+    <script>
+        var description = new Simditor({
+             textarea: $('#description')
+        });
+    </script>
 {% endblock %}

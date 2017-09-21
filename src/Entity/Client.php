@@ -33,8 +33,6 @@ class Client {
     
     private $country;
     
-    private $password;
-    
     private $status = 'user';
     
    /**
@@ -42,12 +40,6 @@ class Client {
     * @var img
     */
     private $picture;
-    
-    private $logo;
-    
-    
-   
-
    
    
     
@@ -81,10 +73,6 @@ class Client {
         return $this->email;
     }
     
-    function getPassword() {
-        return $this->password;
-    }
-    
      function getAddress() {
         return $this->address;
     }
@@ -100,10 +88,6 @@ class Client {
 
     function getPicture(){
         return $this->picture;
-    }
-
-    function getLogo() {
-        return $this->logo;
     }
 
     function getFullName(){
@@ -153,12 +137,6 @@ class Client {
         
         return $this;
     }
-
-    function setPassword($password) {
-        $this->password = $password;
-        
-        return $this;
-    }
     
      function setAddress($address) {
         $this->address = $address;
@@ -181,12 +159,6 @@ class Client {
 
     function setPicture($picture) {
         $this->picture = $picture;
-        
-        return $this;
-    }
-
-    function setLogo($logo) {
-        $this->logo = $logo;
         
         return $this;
     }

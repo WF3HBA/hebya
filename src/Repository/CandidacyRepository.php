@@ -3,6 +3,8 @@
 
 namespace Repository;
 
+use Entity\Candidacy;
+
 
 class CandidacyRepository extends RepositoryAbstract {
     
@@ -16,8 +18,9 @@ class CandidacyRepository extends RepositoryAbstract {
                 'lastname' => $candidacy->getLastname(),
                 'email' => $candidacy->getEmail(),
                 'phone' => $candidacy->getPhone(),
-                'adress' => $candidacy->getAdress(),
-                'country' => $candidacy->getCountry()
+                'address' => $candidacy->getAddress(),
+                'country' => $candidacy->getCountry(),
+                'idopportunity' => $candidacy->getIdOpportunity()
             ];
         
             $this->db->insert('candidacy', $data);

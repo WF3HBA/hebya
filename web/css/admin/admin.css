@@ -1,3 +1,6 @@
+
+/****LEFT NAV*****/
+
 .navbar-fixed-left {
   width: 140px;
   position: fixed;
@@ -16,7 +19,75 @@
 }
 
 .navbar-inverse{
-    background-color: #008080;
-    color: white;
+    background-color: #139696;
+    
+    
 }
+
+#leftside{
+    background-color: #008080;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+    padding: 0;
+    font-size: 15px;
+}
+
+/****TOP NAV*****/
+#left-menu{
+    padding-top: 100px;
+}
+
+img{
+    padding-right: 25px;
+    padding-left: 10px;
+}
+
+.navbar-fixed-top{
+    border: 0;
+    -webkit-box-shadow: -1px 10px 22px -3px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 10px 22px -3px rgba(0,0,0,0.31);
+    box-shadow: -1px 10px 22px -3px rgba(0,0,0,0.31);
+    
+}
+
+.li-nav{
+    margin-top: 25px;
+    color: white;
+    padding-left: 10px;
+}
+
+.li-left{
+    padding-bottom: 20px;
+    padding-left: 10px;
+}
+
+/****TABLE******/
+.table-listing{
+    margin-top: 100px;
+}
+/***MAP****/
+
+path {
+   fill: #008080;
+}
+
+path:hover {
+    fill: #004f4f;
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+
+/********STAT*********/
+
+.asset {
+    padding: 1px;
+    border: 1px solid #EEEEEE;
+    background-color: white;
+    border-radius: 5px;
+    background-color: #FAFAFA;
+}
+
 

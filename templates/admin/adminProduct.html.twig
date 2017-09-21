@@ -4,12 +4,12 @@
 {% block content %}
 
 
-    <div class="col-md-7 col-md-offset-2">
+    <div class="col-md-7 col-md-offset-2 table-listing">
         <div class="row">
             <h2>Produit</h2>
             <p>Admin <a href="{{ path('admin_product_edit')}}">add product</a></p>
-            <table class="table">
-                <tr>
+            <table class="table table-striped">
+                <tr class="info">
                     <th>id</th>
                     <th>name</th>
                     <th>website</th>
@@ -25,7 +25,7 @@
                         <td>{{ product.idproduct }}</td>
                         <td>{{ product.name }}</td>
                         <td>{{ product.website }}</td>
-                        <td>{{ product.content }}</td>
+                        <td>{{ product.description }}</td>
                         <td>{{ product.summary }}</td>
                         <td>{{ product.field }}</td>
                         <td>{{ product.providerCompany }}</td>

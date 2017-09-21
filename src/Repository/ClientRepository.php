@@ -88,12 +88,10 @@ SQL;
             ->setFirstname($data['firstname'])
             ->setPhone($data['phone'])
             ->setEmail($data['email'])
-            ->setPassword($data['password'])
             ->setAddress($data['address'])
             ->setCountry($data['country'])
             ->setStatus($data['status'])
             ->setPicture($data['picture'])
-            ->setLogo($data['logo'])
         ;
         
         return $client;
