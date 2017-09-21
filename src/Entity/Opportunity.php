@@ -8,7 +8,7 @@ class Opportunity {
     
     private $idopportunity;
     
-    private $title;
+    private $position;
     
     private $reference;
     
@@ -38,8 +38,8 @@ class Opportunity {
         return $this->idopportunity;
     }
 
-    public function getTitle() {
-        return $this->title;
+    public function getPosition() {
+        return $this->position;
     }
 
     public function getReference() {
@@ -93,8 +93,8 @@ class Opportunity {
         return $this;
     }
 
-    public function setTitle($title) {
-        $this->title = $title;
+    public function setPosition($position) {
+        $this->position = $position;
         return $this;
     }
 

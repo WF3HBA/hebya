@@ -46,7 +46,7 @@ class AdminProductController extends ControllerAbstract {
            
             $product->setName($_POST['name']);
             $product->setWebsite($_POST['website']);
-            $product->setContent($_POST['content']);
+            $product->setDescription($_POST['description']);
             $product->setSummary($_POST['summary']);
             $product->setField($_POST['field']);
            
@@ -66,8 +66,8 @@ class AdminProductController extends ControllerAbstract {
             }
             
             
-            if(empty($_POST['content'])){
-                $errors['content'] = 'content require';
+            if(empty($_POST['description'])){
+                $errors['description'] = 'content require';
             } 
             
             

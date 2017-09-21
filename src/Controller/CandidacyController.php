@@ -21,10 +21,6 @@ class CandidacyController extends ControllerAbstract {
     
     
     
-    
-    
-    
-    
     public function editAction ($id = null){
         
         if(is_null($id)){
