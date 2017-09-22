@@ -1,6 +1,6 @@
 $(function(){
     
-   $(".boutton-innovators-body").click(function(){
+   $(".boutton-products-body").click(function(){
 
        var $row = $(this).closest('.product-row');
        var name = $row.find('.product-name').html();
