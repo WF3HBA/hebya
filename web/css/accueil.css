@@ -80,6 +80,27 @@ h3 {
     padding: 10px;
 }
 
+
+/************************* carousel  ***************************/
+
+
+.carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+.onebyone-carosel .active.left { left: -33.33%; }
+.onebyone-carosel .active.right { left: 33.33%; }
+.onebyone-carosel .next { left: 33.33%; }
+.onebyone-carosel .prev { left: -33.33%; }
+
+
+#index-carousel{
+    margin-top: 40px;   
+}
+
+
+
+
+
+
+
 /********  M E D I A   Q U E R I E S  ***********/
 
 /* Custom, iPhone Retina */ 

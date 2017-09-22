@@ -1,21 +1,64 @@
-
-/* margin bottom entre les champs du formulaire de contact */
-#contact-form .row div{
-    margin-bottom: 20px;
+.information-contact{
+    border:1px solid gray;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin:30px 0 20px 0 ;
 }
 
-/*le boutton du formulaire de contact aura un margin left de 0*/ 
-.boutton-form-contact{
-    margin-left: 0;
+.resaux{
+   border:1px solid gray; 
+    margin:30px 0 30px 0 ;
+}
+.information-contact-reseaux h4{
+        background: #008080;
+        color:white;
+        width:100%;
 }
 
-div.col-10{
+
+.information-contact-reseaux h4{
+    height: 30px;
+    line-height: 30px;
     text-align: center;
 }
 
-/*h1{
-    color: #008080;
+
+
+.information-contact div{
+    padding: 10px;
 }
 
-*/
+.resaux div{
+    padding: 10px;
+}
+
+form{
+    padding-top: 20px;
+}
+
+form div{
+    margin-bottom: 20px;
+}
+
+#title{
+    margin-bottom: 50px;
+}
+
+.information-contact-reseaux i{
+    margin-right: 10px;
+    margin-left: 20px;
+    color:#222222;
+}
+
+.information-contact-reseaux p{
+    margin: 0;
+}
+
+.boutton-form-contact{
+    margin-left: 0px;
+}
+
+.information-contact-reseaux p{
+    margin: 0 0 10px 0;
+}
 
