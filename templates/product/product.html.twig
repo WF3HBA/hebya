@@ -2,23 +2,23 @@
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>
+    <link rel="stylesheet" href="{{ asset("css/products/products.css") }}"/>
 
 {% endblock %}
 
 {% block content %}
     <main>
-        <section id="innovators-header">
+        <section id="products-header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <h1>{{ "Nos Produit"|upper }}</h1>
+                        <h1>{{ "Nos Produits"|upper }}</h1>
                     </div>
                 </div>
-                <div class="row all-select-innovators">
-                    <div class="col-xs-12 col-sm-6 innovators-select-theme">
+                <div class="row all-select-products">
+                    <div class="col-xs-12 col-sm-6 products-select-theme">
                         <select class="col-xs-12">
-                            <option>Theme</option>
+                            <option>Thème</option>
                             <option>Education</option>
                             <option>Santé</option>
                             <option>Assurance</option>
@@ -27,7 +27,7 @@
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-6 ">
-                        <select class="col-xs-12 innovators-select-pays">
+                        <select class="col-xs-12 products-select-pays">
                             {% for country in countries %}
                             <option value="{{ country.idcountry }}">{{ country.name }}</option>
                             {% endfor %}
@@ -38,7 +38,7 @@
             </div>
         </section><br><br>
               
-        <section id="innovators-body">
+        <section id="products-body">
             <div class="container">
                 
                  {% for product in products %}
@@ -56,7 +56,7 @@
                       <div class="product-content hidden">{{ product.description|raw }}</div>
                       
                         {#Launch modal with the button above #}
-                      <button class="btn btn-primary boutton-innovators-body" data-toggle="modal" data-target="#myModal">View Product</button>
+                      <button class="btn btn-primary boutton-products-body" data-toggle="modal" data-target="#myModal">View Product</button>
                     </div>
                     
                      
