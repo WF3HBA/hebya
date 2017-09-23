@@ -63,6 +63,12 @@ img{
     padding-left: 10px;
 }
 
+/****FORM******/
+
+form {
+    margin: 40px 0;
+}
+
 /****TABLE******/
 .table-listing{
     margin-top: 100px;

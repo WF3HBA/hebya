@@ -11,10 +11,9 @@
                 <tr class="info">
                     <th>Nom</th>
                     <th>Site</th>
-                    <th>Résumé</th>
-                    <th>Description</th>
                     <th>Domaine</th>
                     <th>Innovateur</th>
+                    <th>Status</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
                 </tr>
@@ -22,10 +21,9 @@
                     <tr>
                         <td>{{ product.name }}</td>
                         <td>{{ product.website }}</td>
-                        <td>{{ product.summary[:50]|raw }}</td>
-                        <td>{{ product.description[:50]|raw }}</td>
                         <td>{{ product.field }}</td>
                         <td>{{ product.providerCompany }}</td>
+                        <td>{{ product.status }}</td>
                          <td>
                             <a href="{{ path('admin_product_edit', {id: product.idproduct}) }}"><button class="btn btn-primary">modifier</button></a>
                         </td>

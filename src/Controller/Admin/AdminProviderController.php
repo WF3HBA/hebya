@@ -42,56 +42,60 @@ class AdminProviderController extends ControllerAbstract {
             $provider->setLastname($_POST['lastname']);
             $provider->setFirstname($_POST['firstname']);
             $provider->setCompany($_POST['company']);
+            $provider->setDescription($_POST['description']);
             $provider->setEmail($_POST['email']);
             $provider->setPhone($_POST['phone']);
             $provider->setAddress($_POST['address']);
+            $provider->setCity($_POST['city']);
             $provider->setCountry($_POST['country']);
+            $provider->setStatus($_POST['status']);
             
             //contrôle les champs du formulaire d'ajout
             if(empty($_POST['lastname'])){
                 $errors['lastname'] = 'lastname require';
-            } elseif(strlen($_POST['lastname']) > 30){
+            } elseif(strlen($_POST['lastname']) > 45){
                 $errors['lastname'] = 'maximum 30 characteres';
             }
             
             if(empty($_POST['firstname'])){
                 $errors['firstname'] = 'firstname require';
-            } elseif(strlen($_POST['firstname']) > 30){
+            } elseif(strlen($_POST['firstname']) > 45){
                 $errors['firstname'] = 'maximum 30 characteres';
             }
             
-            
             if(empty($_POST['company'])){
                 $errors['company'] = 'company require';
-            } elseif(strlen($_POST['company']) > 30){
+            } elseif(strlen($_POST['company']) > 45){
                 $errors['company'] = 'maximum 30 characteres';
             }
             
-            
             if(empty($_POST['email'])){
                 $errors['email'] = 'email require';
-            } elseif(strlen($_POST['email']) > 30){
+            } elseif(strlen($_POST['email']) > 45){
                 $errors['email'] = 'maximum 30 characteres';
             }
             
-            
             if(empty($_POST['phone'])){
                 $errors['phone'] = 'phone require';
-            } elseif(strlen($_POST['phone']) > 30){
+            } elseif(strlen($_POST['phone']) > 45){
                 $errors['phone'] = 'maximum 30 characteres';
             }
             
-            
             if(empty($_POST['address'])){
                 $errors['adrress'] = 'address require';
-            } elseif(strlen($_POST['address']) > 30){
+            } elseif(strlen($_POST['address']) > 45){
                 $errors['address'] = 'maximum 30 characteres';
             }
             
+            if(empty($_POST['city'])){
+                $errors['city'] = 'Ville requise';
+            } elseif(strlen($_POST['city']) > 45){
+                $errors['city'] = 'Maximum 45 caracteres';
+            }
             
             if(empty($_POST['country'])){
                 $errors['country'] = 'country require';
-            } elseif(strlen($_POST['country']) > 30){
+            } elseif(strlen($_POST['country']) > 45) {
                 $errors['country'] = 'maximum 30 characteres';
             }
             

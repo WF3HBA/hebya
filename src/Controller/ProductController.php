@@ -14,14 +14,12 @@ class ProductController extends ControllerAbstract {
       
         $countries = $this->app['country.repository']->findAll();
         $products = $this->app['product.repository']->findAll();
-        
-        
          
         return $this->render(
                 'product/product.html.twig',
                 [
                      'countries' => $countries,
-                      'products' => $products
+                     'products' => $products
                 ]
         );
     }
@@ -32,8 +30,6 @@ class ProductController extends ControllerAbstract {
         $country = $this->app['country.repository']->find($id);
         
         $product = $this->app['product.repository']->find($id);
-        
-        
          
         return $this->render(
                 'product/productId.html.twig',
@@ -48,14 +44,13 @@ class ProductController extends ControllerAbstract {
         
          $products = $this->app['product.repository']->findByCountry($_GET['idcountry']);
          
-         $response = [
-             
-            'product' => $products
-         ];
+         $response = 
+            [
+                'products' => $products
+            ];
          
-        var_dump($products);
-         
-        //return json_encode($products);
+        $reponse = new JsonResponse($response);
+        dump($reponse);
     }
     
     
