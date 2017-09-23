@@ -53,6 +53,13 @@ $app->match('/logout', 'user.controller:logoutAction')
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
 
+$app->get('/product/{id}', 'product.controller:productIdAction')
+        ->value('id',null)
+        ->bind('product_id');
+
+$app->get('/product/ajaxcountry', 'product.controller:countrySelect')
+        ->bind('product_request');
+
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
 
@@ -116,6 +123,15 @@ $admin->get('/services', 'admin.service.controller:serviceListAction')
 $admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
             ->value('id', null)
             ->bind('admin_service_edit');
+
+/*******ADMIN ABOUT ACTION*******/
+
+$admin->get('/apropos', 'admin.about.controller:aboutListAction')
+            ->bind('admin_about');
+
+$admin->match('/apropos/edition/{id}', 'admin.about.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_about_edit');
 
 /*******ADMIN TEAM ACTION*******/
 

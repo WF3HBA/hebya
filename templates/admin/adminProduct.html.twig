@@ -3,30 +3,27 @@
 
 {% block content %}
 
-
-    <div class="col-md-7 col-md-offset-2 table-listing">
+    <div class="col-md-9 col-md-offset-2 table-listing">
         <div class="row">
             <h2>Produit</h2>
             <p>Admin <a href="{{ path('admin_product_edit')}}">add product</a></p>
             <table class="table table-striped">
                 <tr class="info">
-                    <th>id</th>
-                    <th>name</th>
-                    <th>website</th>
-                    <th>content</th>
-                    <th>Summary</th>
-                    <th>field</th>
-                    <th>Provider</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Nom</th>
+                    <th>Site</th>
+                    <th>Résumé</th>
+                    <th>Description</th>
+                    <th>Domaine</th>
+                    <th>Innovateur</th>
+                    <th>Editer</th>
+                    <th>Supprimer</th>
                 </tr>
                 {% for product in products%}
                     <tr>
-                        <td>{{ product.idproduct }}</td>
                         <td>{{ product.name }}</td>
                         <td>{{ product.website }}</td>
-                        <td>{{ product.description }}</td>
-                        <td>{{ product.summary }}</td>
+                        <td>{{ product.summary[:50]|raw }}</td>
+                        <td>{{ product.description[:50]|raw }}</td>
                         <td>{{ product.field }}</td>
                         <td>{{ product.providerCompany }}</td>
                          <td>

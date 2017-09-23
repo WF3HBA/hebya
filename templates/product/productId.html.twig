@@ -2,23 +2,25 @@
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset("css/products/products.css") }}"/>
+    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>
 
 {% endblock %}
 
 {% block content %}
     <main>
-        <section id="products-header">
+        <section id="innovators-header">
             <div class="container">
                 <div class="row">
+                     {% if product.idproduct %}
                     <div class="col-xs-12 text-center">
-                        <h1>{{ "Nos Produits"|upper }}</h1>
+                        <h1>{{ product.name }}</h1>
                     </div>
+                    {% endif %}
                 </div>
-                <div class="row all-select-products">
-                    <div class="col-xs-12 col-sm-6 products-select-theme">
+                <div class="row all-select-innovators">
+                    <div class="col-xs-12 col-sm-6 innovators-select-theme">
                         <select class="col-xs-12">
-                            <option>Thème</option>
+                            <option>Theme</option>
                             <option>Education</option>
                             <option>Santé</option>
                             <option>Assurance</option>
@@ -26,22 +28,22 @@
                             <option>Numérisation GED</option>
                         </select>
                     </div>
-                    <div class="col-xs-12 col-sm-6 ">
-                        <select class="col-xs-12 products-select-pays">
+                    {#<div class="col-xs-12 col-sm-6 ">
+                        <select class="col-xs-12 innovators-select-pays">
                             {% for country in countries %}
                             <option value="{{ country.idcountry }}">{{ country.name }}</option>
                             {% endfor %}
                            
                         </select>
-                    </div>
+                    </div>#}
                 </div>
             </div>
         </section><br><br>
               
-        <section id="products-body">
+        <section id="innovators-body">
             <div class="container">
                 
-                 {% for product in products %}
+                 {% if product.idproduct %}
                  <div class="row product-row">                    
                   
                    
@@ -52,16 +54,16 @@
                     </div>                    
                     <div class="col-sm-6">
                       <h2 class="product-name">{{ product.name }}</h2>
-                      <div class="product-content-short">{{ product.summary|raw }}</div>
-                      <div class="product-content hidden">{{ product.description|raw }}</div>
+                      <div class="product-content-short hideen">{{ product.summary|raw }}</div>
+                      <div class="product-content ">{{ product.description|raw }}</div>
                       
                         {#Launch modal with the button above #}
-                      <button class="btn btn-primary boutton-products-body" data-toggle="modal" data-target="#myModal">View Product</button>
+                      <button class="btn btn-primary boutton-innovators-body" data-toggle="modal" data-target="#myModal">View Product</button>
                     </div>
-                    
-                     
+                    {% else %}
+                        <p>No product in db</p>
                  </div><hr><br><br>
-                 {% endfor %}
+                 {% endif %}
                  
                 
                 {#  MODAL #}
@@ -98,3 +100,4 @@
     
      <script src="{{ asset("js/product/product.js") }}"></script>
 {% endblock %}
+

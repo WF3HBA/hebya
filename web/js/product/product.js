@@ -1,6 +1,6 @@
 $(function(){
     
-   $(".boutton-innovators-body").click(function(){
+   $(".boutton-products-body").click(function(){
 
        var $row = $(this).closest('.product-row');
        var name = $row.find('.product-name').html();
@@ -11,5 +11,20 @@ $(function(){
        $detail.find('.product-detail-content').html(content);
        
        $(".product-detail").css('display','block');
+   });
+   
+   $(".innovators-select-pays").change(function(){
+       var idCountry = $(".innovators-select-pays option:selected").val();
+       console.log(idCountry);
+       
+//rcountry request
+       $.ajax({
+           url: countrySelect,
+           type: 'GET',
+           data: {'idcountry':idCountry}
+       }).done(function(data){
+            //JSON.parse(data);
+            console.log(data);
+       });
    });
 });
