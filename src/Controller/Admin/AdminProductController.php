@@ -4,6 +4,7 @@
 namespace Controller\Admin;
 
 use Controller\ControllerAbstract;
+use Entity\Disponibility;
 use Entity\Product;
 use Entity\Provider;
 
@@ -25,75 +26,92 @@ class AdminProductController extends ControllerAbstract {
     
       public function editAction ($id = null){
         
-        if(is_null($id)){
+        if (is_null($id)) {
             $product = new Product();
             $provider = new Provider();
-        } else{
+            $disponibility = new Disponibility();
+        } else {
             $product = $this->app['product.repository']->find($id);
+            $disponibility = $this->app['disponibility.repository']->findCountriesByProduct($id);
+            dump($disponibility);
             $provider = $this->app['provider.repository']->find($id);
             
-            if(is_null($product)){
+            if (is_null($product)) {
                 $this->app->abort(404);
             }
         }
         
         $errors = [];
         
-        if(!empty($_POST)){
-            
-            
-          
+        if (!empty($_POST)) {
            
             $product->setName($_POST['name']);
             $product->setWebsite($_POST['website']);
-            $product->setDescription($_POST['description']);
             $product->setSummary($_POST['summary']);
+            $product->setDescription($_POST['description']);
             $product->setField($_POST['field']);
-           
             
             //contrôle les champs du formulaire d'ajout
-            if(empty($_POST['name'])){
+            if (empty($_POST['name'])) {
                 $errors['name'] = 'name require';
-            } elseif(strlen($_POST['name']) > 30){
+            } elseif (strlen($_POST['name']) > 45) {
                 $errors['name'] = 'maximum 30 characteres';
             }
-           
                    
-            if(empty($_POST['website'])){
+            if (empty($_POST['website'])) {
                 $errors['website'] = 'website require';
-            } elseif(strlen($_POST['website']) > 30){
+            } elseif (strlen($_POST['website']) > 45) {
                 $errors['website'] = 'maximum 30 characteres';
             }
             
-            
-            if(empty($_POST['description'])){
+            if (empty($_POST['description'])) {
                 $errors['description'] = 'content require';
             } 
             
-            
-            if(empty($_POST['field'])){
+            if (empty($_POST['field'])) {
                 $errors['field'] = 'field require';
-            } elseif(strlen($_POST['field']) > 30){
+            } elseif(strlen($_POST['field']) > 45) {
                 $errors['field'] = 'maximum 30 characteres';
             }
+
             
-            
-            if(empty($errors)){
-                echo 'là';
+            if (empty($errors)) {
+                
+                foreach ($_POST['product-has-country'] as $idcountry) {
+                    
+//                     dump($idcountry);
+//                     dump($_POST['idproduct']);
+//                     die;
+                    $newDisponibility = new Disponibility();
+                    $newDisponibility->setIdcountry($idcountry);
+                    $newDisponibility->setIdproduct($_POST['idproduct']);
+                    $this->app['disponibility.repository']->save($newDisponibility);
+                }
+                
+                
                 $this->app['product.repository']->save($product);
-                $this->addFlashMessage('new product in database');
+                $this->addFlashMessage('Produit enregistré');
+                
                 return $this->redirectRoute('admin_product');
+                
             } else {
-                var_dump($errors);
+                
                 $message = '<strong>Le formulaire contient des erreur</strong>';
                 $message .= '<br>' .implode('</br>', $errors);
+                
                 $this->addFlashMessage($message, 'error');
             }
         }
         
+        $countries = $this->app['country.repository']->findAll();
+        
         return $this->render(
                 'admin/productEdit.html.twig',
-                ['product' => $product]
+                [
+                    'product' => $product,
+                    'countries' => $countries,
+                    'disponibilities' => $disponibility
+                ]
          );
     }
     
@@ -105,4 +123,5 @@ class AdminProductController extends ControllerAbstract {
         
         return $this->redirectRoute('admin_product');
     }
+    
 }

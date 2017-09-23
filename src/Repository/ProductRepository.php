@@ -1,19 +1,15 @@
 <?php
 
-
-
-
 namespace Repository;
 
+use Entity\Disponibility;
 use Entity\Product;
-
 use Entity\Provider;
-
-
+use function dump;
 
 class ProductRepository extends RepositoryAbstract {
     
-     public function findAll(){
+    public function findAll(){
     
         $query = <<<SQL
                 
@@ -33,14 +29,13 @@ SQL;
             }
             
             return $products;
-    }
-    
-    
+     }
+     
     
     public function find($id){
          $dbProduct = $this->db->fetchAssoc(
                 'SELECT p.*,
-                    pr.company 
+                            pr.company 
                 FROM product p 
                 JOIN provider pr ON pr.idprovider = p.idprovider 
                 WHERE idproduct = :idproduct',
@@ -48,40 +43,60 @@ SQL;
                     ':idproduct' => $id
                 ]
             );
-        
+
             if(!empty($dbProduct)){
                 return $this->buildEntity($dbProduct);
             }
     }
     
+    public function findDisponibility($id) {
+       
+        $dbDisponibilities = $this->db->fetchAll (
+                'SELECT idcountry 
+                FROM country_has_product
+                WHERE idproduct = :idproduct',
+                [
+                    ':idproduct' => $id
+                ]
+            );
+            
+            $disponibility = [];
+        
+            foreach ($dbDisponibilities as $dbDisponibility) {
+                $disponibility[] = $this->buildDisponibility($dbDisponibility);
+            }
     
-        public function save(Product $product){
-
-           $data =
-               [
-                   'idproduct' => $product->getIdproduct(),
-                   'idprovider' => $product->getIdprovider(),
-                   'name' => $product->getName(),
-                   'website' => $product->getWebsite(),
-                   'description' => $product->getDescription(),
-                   'field' => $product->getField(),
-                   'status' => $product->getStatus(),
-                   'summary' => $product->getSummary()
-               ];
-
-           if ($product->getIdproduct()){
-               $this->db->update('product', $data, 
-                       [
-                           'idproduct'=>$product->getIdproduct()
-                       ] 
-                   );
-           } else {
-               $this->db->insert('product', $data);
-               $product->setIdproduct($this->db->LastInsertId());
-           }
-       }
+            return $disponibility;
+    }
     
-     public function delete(Product $product){
+    
+    public function save(Product $product){
+
+        $data =
+            [
+                'idproduct' => $product->getIdproduct(),
+                'idprovider' => $product->getIdprovider(),
+                'name' => $product->getName(),
+                'website' => $product->getWebsite(),
+                'description' => $product->getDescription(),
+                'field' => $product->getField(),
+                'status' => $product->getStatus(),
+                'summary' => $product->getSummary()
+            ];
+
+        if ($product->getIdproduct()){
+            $this->db->update('product', $data, 
+                    [
+                        'idproduct'=>$product->getIdproduct()
+                    ] 
+                );
+        } else {
+            $this->db->insert('product', $data);
+            $product->setIdproduct($this->db->LastInsertId());
+        }
+    }
+    
+    public function delete(Product $product){
         
         $this->db->delete('product', ['idproduct' => $product->setIdproduct()]);
     }
@@ -112,4 +127,16 @@ SQL;
         
         return $product;
     }
+    
+    private function buildDisponibility(array $data){
+       
+        $disponibility = new Disponibility();
+        
+        $disponibility
+            ->setIdcountry($data['idcountry'])    
+        ;
+        
+        return $disponibility;
+    }
+    
 }

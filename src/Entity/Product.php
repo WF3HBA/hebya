@@ -27,18 +27,6 @@ class Product {
     private $status;
     
     private $summary;
-    
-    
-    
-    function getSummary() {
-        return $this->summary;
-    }
-
-    function setSummary($summary) {
-        $this->summary = $summary;
-        
-        return $this;
-    }
 
         
      /***GETTER****/
@@ -66,6 +54,10 @@ class Product {
         function getField() {
         return $this->field;
     }
+    
+    function getSummary() {
+        return $this->summary;
+    }
 
     function getDescription() {
         return $this->description;
@@ -80,6 +72,12 @@ class Product {
 
     function setField($field) {
         $this->field = $field;
+        
+        return $this;
+    }
+    
+    function setSummary($summary) {
+        $this->summary = $summary;
         
         return $this;
     }
