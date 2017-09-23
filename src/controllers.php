@@ -53,6 +53,13 @@ $app->match('/logout', 'user.controller:logoutAction')
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
 
+$app->get('/product/{id}', 'product.controller:productIdAction')
+        ->value('id',null)
+        ->bind('product_id');
+
+$app->get('/product/ajaxcountry', 'product.controller:countrySelect')
+        ->bind('product_request');
+
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
 
