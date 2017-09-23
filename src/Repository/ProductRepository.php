@@ -128,15 +128,36 @@ SQL;
         return $product;
     }
     
-    private function buildDisponibility(array $data){
-       
-        $disponibility = new Disponibility();
+    public function findByCountry($id){
         
-        $disponibility
-            ->setIdcountry($data['idcountry'])    
-        ;
-        
-        return $disponibility;
-    }
+        $query = <<<SQL
+    SELECT c.name,
+           chp.idcountry,
+           p.*,
+           pr.company 
+                
+    FROM product p
+    JOIN country_has_product chp ON chp.idproduct = p.idproduct
+    JOIN country c ON c.idcountry = chp.idcountry
+    JOIN provider pr ON pr.idprovider = p.idprovider
+    WHERE chp.idcountry = :idcountry
     
+SQL;
+        
+        $dbProducts = $this->db->fetchAll(
+                $query,
+                [
+                    ':idcountry' => $id
+                ]
+            );
+    
+            $products = [];    
+        
+            foreach($dbProducts as $dbProduct){
+                $products[] = $this->buildEntity($dbProduct);
+            }
+            
+            return $products;
+    }
+
 }
