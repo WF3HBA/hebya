@@ -124,6 +124,15 @@ $admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
             ->value('id', null)
             ->bind('admin_service_edit');
 
+/*******ADMIN ABOUT ACTION*******/
+
+$admin->get('/apropos', 'admin.about.controller:aboutListAction')
+            ->bind('admin_about');
+
+$admin->match('/apropos/edition/{id}', 'admin.about.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_about_edit');
+
 /*******ADMIN TEAM ACTION*******/
 
 $admin->get('/team', 'admin.team.controller:teamListAction')
