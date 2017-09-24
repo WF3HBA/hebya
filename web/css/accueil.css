@@ -95,8 +95,30 @@ h3 {
     margin-top: 40px;   
 }
 
+#product-carousel-container {
+    display: inline-block;
+    width: 90%;
+}
 
 
+figcaption {
+    position: relative;
+    top: -32px;
+    background: rgba(0, 128, 128, 0.65);
+    color: black;
+    color: white;
+    padding: 5px 0;
+}
+
+ 
+figcaption span{
+    
+text-shadow: 1px 1px 3px rgba(0,0,0,1);
+}
+
+#myCarousel a{
+    display: inline-block;
+}
 
 
 
