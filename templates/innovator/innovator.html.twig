@@ -7,10 +7,14 @@
 {% endblock %}
 
 {% block content %}
+    <div id="slide1">
+    </div>  
     <main>
         <section id="innovators-header">
             <div class="container">
                 <div class="row">
+{#                  <div id="slide1" style="background-image:url("../images/innovateurs.jpg"); background-repeat: none;">
+                    </div>#}
                     <div class="col-xs-12 text-center">
                         <h1>{{ "Nos innovateurs"|upper }}</h1>
                     </div>
@@ -59,12 +63,7 @@
                    
                 </div>
             </div>
-        </section><br>
-        
-        
-        
-        
-        
+        </section><br>   
         <br>
     </main>
 {% endblock %}
@@ -73,4 +72,6 @@
 {% block javascript %}
      {{ parent() }}
     <script src="{{ asset("js/innovators/innovators.js") }}"></script>
+    <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
+
 {% endblock %}
