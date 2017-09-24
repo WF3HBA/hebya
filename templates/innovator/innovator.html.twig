@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block content %}
-    <div id="slide1">
-    </div>  
+
+    <div class="parallax" data-image="{{ asset('img/img-innovator/hosted_by_africa_innovators.jpg') }}"></div>
     <main>
         <section id="innovators-header">
             <div class="container">
@@ -35,42 +35,38 @@
                             {% for country in countries %}
                             <option>{{ country.name }}</option>
                             {% endfor %}
-                           
                         </select>
                     </div>
                 </div>
             </div>
         </section><br><br>
               
-        
-        
-                <section id="innovators-body">
+        <section id="innovators-body">
             <div class="container">
                 <div class="row">
                     {% for provider in providers %}
                     <div class="col-lg-4 col-sm-6 text-center mb-4">
                         <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
+                            <div class="img-box text-center">
+                                <img src="{{ asset(provider.picture) }}" alt="">
                             </div>
                             <h3>{{ provider.company }}
                               <small>{{ provider.firstname }} {{ provider.lastname }}</small>
                             </h3>
-                            <p>{{provider.summary}}</p>
                         </a>
                     </div>
                     {% endfor %}
                    
                 </div>
             </div>
-        </section><br>   
-        <br>
+        </section>
     </main>
 {% endblock %}
 
 
 {% block javascript %}
      {{ parent() }}
+     <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script src="{{ asset("js/innovators/innovators.js") }}"></script>
     <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
 

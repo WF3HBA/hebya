@@ -34,12 +34,17 @@ class Provider {
     
     private $address;
     
-     private $country;
+    private $city;
     
+     private $country;
      
+     private $picture;
      
+     private $status;
+
      
-     /***GETTER****/
+
+    /***GETTER****/
      
     function getIdprovider() {
         return $this->idprovider;
@@ -68,6 +73,10 @@ class Provider {
     function getAddress() {
         return $this->address;
     }
+     
+    function getCity() {
+         return $this->city;
+     }
 
     function getCountry() {
         return $this->country;
@@ -79,6 +88,18 @@ class Provider {
 
     function getDescription() {
         return $this->description;
+    }
+
+    function getPicture() {
+        return $this->picture;
+    }
+    
+     public function getStatus() {
+         return $this->status;
+     }
+     
+     public function getFullName() {
+        return $this->firstname . ' ' . $this->lastname;
     }
 
         
@@ -126,6 +147,11 @@ class Provider {
         
         return $this;
     }
+    
+    function setCity($city) {
+         $this->city = $city;
+         return $this;
+     }
 
     function setCountry($country) {
         $this->country = $country;
@@ -144,6 +170,16 @@ class Provider {
         
         return $this;
     }
-  
+
+    function setPicture($picture) {
+        $this->picture = $picture;
+        
+        return $this;
+    }
+    
+    public function setStatus($status) {
+         $this->status = $status;
+         return $this;
+     }
     
 }

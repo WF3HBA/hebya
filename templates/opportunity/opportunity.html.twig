@@ -6,8 +6,7 @@
 {% endblock %}
 
 {% block content %}
-
-
+    <div class="parallax" data-image="{{ asset('img/opportunity/hosted_by_africa_opportunity.jpg') }}"></div>
     <main class="container">
         <section class="form-group row text-center">
             <h1>{{ "offres d'emploi"|upper }}</h1>
@@ -135,5 +134,6 @@
 
 {% block javascript %}
     {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script src="{{ asset('js/opportunity/opportunity.js') }}"></script>
 {% endblock %}

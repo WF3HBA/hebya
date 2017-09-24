@@ -13,6 +13,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app->get('/', 'index.controller:indexAction')
         ->bind('homepage');
 
+
+
 $app->get('/apropos', 'about.controller:aboutAction')
         ->bind('apropos');
 
@@ -52,6 +54,13 @@ $app->match('/logout', 'user.controller:logoutAction')
 
 $app->get('/product', 'product.controller:productAction')
         ->bind('product');
+
+$app->get('/product/{id}', 'product.controller:productIdAction')
+        ->value('id',null)
+        ->bind('product_id');
+
+$app->get('/product_ajax', 'product.controller:countrySelect')
+        ->bind('product_ajax');
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
@@ -117,6 +126,15 @@ $admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
             ->value('id', null)
             ->bind('admin_service_edit');
 
+/*******ADMIN ABOUT ACTION*******/
+
+$admin->get('/apropos', 'admin.about.controller:aboutListAction')
+            ->bind('admin_about');
+
+$admin->match('/apropos/edition/{id}', 'admin.about.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_about_edit');
+
 /*******ADMIN TEAM ACTION*******/
 
 $admin->get('/team', 'admin.team.controller:teamListAction')
@@ -125,6 +143,15 @@ $admin->get('/team', 'admin.team.controller:teamListAction')
 $admin->match('/team/edition/{id}', 'admin.team.controller:editAction')
             ->value('id', null)
             ->bind('admin_team_edit');
+
+$admin->get('/team/suppression/{id}', 'admin.team.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_team_delete');
+
+
+$admin->match('/team/suppression/{id}', 'admin.team.controller:deleteAction')
+            ->value('id', null)
+            ->bind('admin_team_delete');
 
 
 //route admin user

@@ -43,6 +43,10 @@ $app['index.controller'] = function () use ($app) {
     return new Controller\IndexController($app);
 };
 
+$app['country.controller'] = function () use ($app) {
+    return new Controller\CountryController($app);
+};
+
 $app['about.controller'] = function () use ($app) {
     return new Controller\AboutController($app);
 };
@@ -104,6 +108,10 @@ $app['admin.service.controller'] = function () use ($app) {
     return new Controller\Admin\AdminServiceController($app);
 };
 
+$app['admin.about.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminAboutController($app);
+};
+
 $app['candidacy.controller'] = function () use ($app) {
     return new Controller\CandidacyController($app);
 };
@@ -158,6 +166,10 @@ $app['opportunity.repository'] = function () use ($app) {
 
 $app['client.repository'] = function () use ($app) {
     return new Repository\ClientRepository($app['db']);
+};
+
+$app['disponibility.repository'] = function () use ($app) {
+    return new Repository\DisponibilityRepository($app['db']);
 };
 
 $app['user.repository'] = function () use ($app) {
