@@ -3,9 +3,9 @@
 {% block content %}
     <div class="container"> 
      <div class="row">
-          <div class="col-md-7 col-md-offset-2">
+          <div class="col-md-7 col-md-offset-2 table-listing">
             <h2>Team Members</h2>
-            <p>Admin <a href="{#{ path('admin_provider_edit')}#}">add team member</a></p>
+            <p>Admin <a href="{{ path('admin_team_edit')}}">add team member</a></p>
             <table class="table">
                 <tr>
                     <th>Prénom</th>
@@ -25,7 +25,7 @@
                             <a href="{{ path('admin_team_edit', {id: teamMember.idTeam_Member}) }}"><button class="btn btn-primary">modifier</button></a>
                         </td>
                         <td>
-                             <a href=" {#{path('admin_provider_delete', {id: provider.idprovider}) }#}"><button id="annuler" name="annuler" class="btn btn-danger">delete</button></a>
+                             <a href=" {{path('admin_team_delete', {id: teamMember.idTeam_Member}) }}"><button id="annuler" name="annuler" class="btn btn-danger">delete</button></a>
                         </td>
                     </tr>
                 {% else %} 
