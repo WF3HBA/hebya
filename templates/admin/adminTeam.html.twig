@@ -1,7 +1,7 @@
 {% extends "admin/admin.html.twig" %}
 
 {% block content %}
-   
+
     <div class="col-md-9 col-md-offset-2 table-listing">
         <h2>Team Members</h2>
         <p><a href="{{ path('admin_team_edit') }}">Ajouter un membre</a></p>
@@ -28,8 +28,8 @@
                     </td>
                 </tr>
                 <tr><td colspan="2">Aucun résultat</td></tr>
-             {% endfor %}
+            {% endfor %}
         </table>
   </div>
-       
+
 {% endblock %}

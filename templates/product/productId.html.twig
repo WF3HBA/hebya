@@ -2,7 +2,7 @@
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>
+{#    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>#}
 
 {% endblock %}
 
@@ -17,7 +17,7 @@
                     </div>
                     {% endif %}
                 </div>
-                <div class="row all-select-innovators">
+               {# <div class="row all-select-innovators">
                     <div class="col-xs-12 col-sm-6 innovators-select-theme">
                         <select class="col-xs-12">
                             <option>Theme</option>
@@ -27,7 +27,7 @@
                             <option>Comptabilité</option>
                             <option>Numérisation GED</option>
                         </select>
-                    </div>
+                    </div>#}
                     {#<div class="col-xs-12 col-sm-6 ">
                         <select class="col-xs-12 innovators-select-pays">
                             {% for country in countries %}
@@ -53,8 +53,8 @@
                       </a>
                     </div>                    
                     <div class="col-sm-6">
-                      <h2 class="product-name">{{ product.name }}</h2>
-                      <div class="product-content-short hideen">{{ product.summary|raw }}</div>
+{#                      <h2 class="product-name">{{ product.name }}</h2>#}
+{#                      <div class="product-content-short hideen">{{ product.summary|raw }}</div>#}
                       <div class="product-content ">{{ product.description|raw }}</div>
                       
                         {#Launch modal with the button above #}
