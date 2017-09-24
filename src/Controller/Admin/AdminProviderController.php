@@ -48,6 +48,7 @@ class AdminProviderController extends ControllerAbstract {
             $provider->setAddress($_POST['address']);
             $provider->setCity($_POST['city']);
             $provider->setCountry($_POST['country']);
+            $provider->setPicture($_POST['picture']);
             $provider->setStatus($_POST['status']);
             
             //contrôle les champs du formulaire d'ajout
