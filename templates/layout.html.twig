@@ -22,8 +22,8 @@
                         <i class="fa fa-twitter-square" aria-hidden="true"></i>
                       
                          {% if user_manager.admin %}
-                            <a href="{{ path('admin') }}" class="btn btn-primary" id="admin">Gestion admin</a>
-                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
+                            <a href="{{ path('admin') }}" class="btn btn-primary fa fa-pencil" id="admin" title="Gestion administrateur"></a>
+                            <a href="{{ path('logout') }}" class="btn btn-primary fa fa-sign-out" id="admin" title="Déconnexion"></a>
                         
                          {% elseif user_manager.UserName %}
                             <a href="{{ path('profil') }}" class="btn btn-primary" id="admin">Espace membre</a>

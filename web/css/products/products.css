@@ -6,3 +6,12 @@ select.col-xs-12
 button.btn.btn-primary.boutton-products-body{
     margin: 8px;
 }
+
+button.btn.btn-primary.boutton-products-body:hover{
+    transition: 0.5s;
+}
+
+div.product-content-short{
+  margin-top: 7.5px;
+}
+
