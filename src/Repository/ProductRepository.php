@@ -30,6 +30,29 @@ SQL;
             
             return $products;
      }
+    
+    public function findPublic(){
+    
+        $query = <<<SQL
+                
+        SELECT p.*,
+                    pr.company       
+        FROM product p
+        JOIN provider pr ON pr.idprovider = p.idprovider
+        WHERE p.status = "public"
+        ORDER BY p.idproduct
+
+SQL;
+       
+            $dbProducts = $this->db->fetchAll($query);
+            $products = [];
+            
+            foreach ($dbProducts as $dbProduct){
+                $products[] = $this->buildEntity($dbProduct);
+            }
+            
+            return $products;
+     }
      
     
     public function find($id){
