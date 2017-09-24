@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+    <div class="parallax" data-image="{{ asset('img/img-innovator/bulbs.jpg') }}"></div>
     <main>
         <section id="innovators-header">
             <div class="container">
@@ -38,16 +39,14 @@
             </div>
         </section><br><br>
               
-        
-        
-                <section id="innovators-body">
+        <section id="innovators-body">
             <div class="container">
                 <div class="row">
                     {% for provider in providers %}
                     <div class="col-lg-4 col-sm-6 text-center mb-4">
                         <a href="#">
-                            <div class="test">
-                                <img src="http://placehold.it/200x200" alt="">
+                            <div class="img-box text-center">
+                                <img src="{{ asset(provider.picture) }}" alt="">
                             </div>
                             <h3>{{ provider.company }}
                               <small>{{ provider.firstname }} {{ provider.lastname }}</small>
@@ -58,18 +57,13 @@
                    
                 </div>
             </div>
-        </section><br>
-        
-        
-        
-        
-        
-        <br>
+        </section>
     </main>
 {% endblock %}
 
 
 {% block javascript %}
      {{ parent() }}
+     <script type="text/javascript" src="{{ asset('js/innovators/jquery.imageScroll.min.js') }}"></script>
     <script src="{{ asset("js/innovators/innovators.js") }}"></script>
 {% endblock %}

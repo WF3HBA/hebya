@@ -38,6 +38,8 @@ class Provider {
     
      private $country;
      
+     private $picture;
+     
      private $status;
 
      
@@ -86,6 +88,10 @@ class Provider {
 
     function getDescription() {
         return $this->description;
+    }
+
+    function getPicture() {
+        return $this->picture;
     }
     
      public function getStatus() {
@@ -157,6 +163,12 @@ class Provider {
 
     function setDescription($description) {
         $this->description = $description;
+        
+        return $this;
+    }
+
+    function setPicture($picture) {
+        $this->picture = $picture;
         
         return $this;
     }

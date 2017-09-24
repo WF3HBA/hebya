@@ -1,9 +1,7 @@
-/*
 $(function(){
-   $(".boutton-innovators-body").click(function(){
-       console.log('sisi');
    
-       $(".hidden").css('display','block');
-   });
+    $('.parallax').imageScroll({
+        coverRatio: 0.5,
+        speed: 0.5
+    });
 });
-*/

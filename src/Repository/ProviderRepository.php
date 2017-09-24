@@ -61,6 +61,7 @@ SQL;
                 'address' => $provider->getAddress(),
                 'city' => $provider->getCity(),
                 'country' => $provider->getCountry(),
+                'picture' => $provider->getPicture(),
                 'status' => $provider->getStatus()
             ];
         
@@ -99,6 +100,7 @@ SQL;
                 ->setAddress($data['address'])
                 ->setCity($data['city'])
                 ->setCountry($data['country'])
+                ->setPicture($data['picture'])
                 ->setStatus($data['status'])
         ;
         
