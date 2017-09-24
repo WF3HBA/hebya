@@ -94,10 +94,7 @@
 
 {% block javascript %}
      {{ parent() }}
-    <script>
-        var countrySelect = '{{ path('product_request') }}';
-    </script>
     
-     <script src="{{ asset("js/product/product.js") }}"></script>
+     {#<script src="{{ asset("js/product/product.js") }}"></script>#}
 {% endblock %}
 

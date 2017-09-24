@@ -14,7 +14,7 @@
                 </tr>
                 {% for about in abouts %}
                     <tr>
-                        <td>{{ about.section }}</td>
+                        <td>{{ about.section|capitalize }}</td>
                         <td>{{ about.title }}</td>
                         <td>{{ about.content[:100]|raw }}...</td>
                          <td>

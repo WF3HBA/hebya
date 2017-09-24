@@ -34,12 +34,15 @@ class Provider {
     
     private $address;
     
-     private $country;
+    private $city;
     
+     private $country;
      
+     private $status;
+
      
-     
-     /***GETTER****/
+
+    /***GETTER****/
      
     function getIdprovider() {
         return $this->idprovider;
@@ -68,6 +71,10 @@ class Provider {
     function getAddress() {
         return $this->address;
     }
+     
+    function getCity() {
+         return $this->city;
+     }
 
     function getCountry() {
         return $this->country;
@@ -80,6 +87,10 @@ class Provider {
     function getDescription() {
         return $this->description;
     }
+    
+     public function getStatus() {
+         return $this->status;
+     }
 
         
     /**********SETTER************/
@@ -126,6 +137,11 @@ class Provider {
         
         return $this;
     }
+    
+    function setCity($city) {
+         $this->city = $city;
+         return $this;
+     }
 
     function setCountry($country) {
         $this->country = $country;
@@ -144,6 +160,11 @@ class Provider {
         
         return $this;
     }
+    
+    public function setStatus($status) {
+         $this->status = $status;
+         return $this;
+     }
     
     public function getFullName() {
         

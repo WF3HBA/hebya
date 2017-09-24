@@ -41,7 +41,7 @@
                     <div class="col-xs-12 main-body-content">
                         <div id="service-content">
                             {% for service in services %}
-                                {% if service.target == "general" %}
+                                {% if service.target == "introduction" %}
                                     {{ service.content|raw }}
                                 {% endif %}
                             {% endfor %}

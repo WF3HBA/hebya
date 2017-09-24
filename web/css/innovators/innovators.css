@@ -6,11 +6,10 @@
 /* les deux select (theme et pays) auront des border,des border et une height spécifiques*/
 #innovators-header select{
     margin-top:30px;
-    border:2px solid #008080;
+    border:2px solid rgba(0, 128, 128, 0.8);
     height: 40px;
+    border-radius: 10px;
 }
-
-
 
 /* c'est pour donner la forme ronde au images' */
 #innovators-body img{
@@ -31,8 +30,8 @@ border: 1px solid white;
 
 #innovators-body img:hover {
     
-	border: 10px solid #008080;
-        transition: 0.5s;
+    border: 3px solid rgba(0, 128, 128, 0.8);
+    transition: 0.4s;
 }
 
 #innovators-body img {

@@ -61,19 +61,20 @@ class DisponibilityRepository extends RepositoryAbstract {
         
         $data =
             [
-                'idcountry' => $disponibility->getIdcountry()
+                'idcountry' => $disponibility->getIdcountry(),
+                'idproduct' => $disponibility->getIdproduct()
             ];
 
-        if ($disponibility->getIdproduct()) {
-            $this->db->update('country_has_product', $data, 
-                    [
-                        'idproduct' => $disponibility->getIdproduct()
-                    ] 
-                );
-        } else {
             $this->db->insert('country_has_product', $data);
-            $disponibility->setIdproduct($this->db->LastInsertId());
-        }
+    }
+    
+    public function deleteByProduct($id){
+        
+        $this->db->delete('country_has_product',
+                [
+                    'idproduct' => $id
+                ]
+        );
     }
 
 }
