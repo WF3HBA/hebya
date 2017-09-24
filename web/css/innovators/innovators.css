@@ -2,7 +2,8 @@ h1 {
     position: relative;
     top: -300px;
     color: #fff;
-    text-shadow: 0px 0px 15px rgba(0,0,0,1);
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.3);
+    letter-spacing: 5px;
 }
 
 main {
@@ -11,6 +12,7 @@ main {
 }
 
 /* le select par theme aura un margin-bottom de 20px */
+
 .innovators-select-theme {
     margin-bottom: 20px;
   
@@ -29,15 +31,22 @@ main {
     margin-bottom: 0px;
 }
 
+	/* c'est pour donner la forme ronde au images' */
+	#innovators-body img{
+	    display: inline-block;
+	    overflow: hidden;
+	    box-sizing: border-box;
+	    border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	border: 1px solid white;
+	}
 
 /********************************   hover *********************** */
 #innovators-body{
     margin-top: 100px;
     margin-bottom: 80px;
 }
-
-
-
 
 
 #innovators-body img{
@@ -125,13 +134,11 @@ main {
     font-size: 11px;
 }
 
-
-
-
-
-
-
-
+	#innovators-body img:hover {
+	    
+		border: 10px solid #008080;
+	        transition: 0.5s;
+	}
 
 
 
@@ -160,14 +167,10 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
+	div.col-lg-4.col-sm-6.text-center.mb-4{
+	    margin-bottom: 20px;
+	    height: 350px;
+	}
 
 
 
@@ -194,13 +197,18 @@ main {
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
     h1 {
+        top: -400px;
         font-size: 3.4em;
+        letter-spacing: 5px;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    
+    h1 {
+        font-size: 4em;
+        letter-spacing: 8px;
+    }
 }
 
 /* Large Devices, Wide Screens */

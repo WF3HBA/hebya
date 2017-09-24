@@ -11,10 +11,83 @@
             <div class="col-xs-12 text-center">
                 <h1>{{ "Espace membre"|upper }}</h1>
             </div>
+            <br><br><br><br><br>
         </section>
+        <section class="form-group row text-center">
+            <h3>{{ "Recevoir des alertes mail lors de la publication de nouvelles annonces" }}</h3>
+        </section>
+        <br>
         
-            </div>
+        <section class="row">
+                <div class="emploi-form col-xs-offset-1 col-sm-offset-0 col-sm-3">
+                    
+                    <p>Type de contrat</p>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdi">
+                        CDI
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdd">
+                        CDD
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="interim">
+                        Stage
+                    </label><br>
         </section>
+                   
+        <section class="form-group row text-center">
+            <h3>{{ "Recevoir des alertes mail lors de la publication de nouveaux projets" }}</h3>
+        </section>
+        <br>
+                    
+                            <p>Thèmes</p>
+
+     <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdi">
+                        Education
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdd">
+                        Santé
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="interim">
+                        Assurance
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="cdd">
+                        Comptabilité
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" id="interim">
+                        Numérisation GED
+                    </label><br><br>
+                    
+
+                  {#  <select class="col-xs-12 innovators-select-pays">
+                            {% for country in countries %}
+                            <option>{{ country.name }}</option>
+                            {% endfor %}                           
+                    </select>
+                    #}
+                <section class="form-group row text-center">
+                <h3>{{ "Votre profil" }}</h3>
+                </section>
+                
+                <select class="col-xs-12">                    
+                            <option>Ingénieur logiciel</option>
+                            <option>Graphiste</option>
+                            <option>Ingénieur général</option>
+                            <option>Communication</option>
+                            <option>Marketing</option>
+                </select>
+                <br><br>
+                
+                
+                           <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Sauvegarder</button>
+
+           
     </main>
     <div id="team-layer">
         
