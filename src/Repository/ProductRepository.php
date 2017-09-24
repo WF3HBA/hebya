@@ -16,7 +16,30 @@ class ProductRepository extends RepositoryAbstract {
         SELECT p.*,
                     pr.company       
         FROM product p
-        JOIN provider pr ON pr.idprovider = p.idprovider               
+        JOIN provider pr ON pr.idprovider = p.idprovider
+        ORDER BY p.idproduct
+
+SQL;
+       
+            $dbProducts = $this->db->fetchAll($query);
+            $products = [];
+            
+            foreach ($dbProducts as $dbProduct){
+                $products[] = $this->buildEntity($dbProduct);
+            }
+            
+            return $products;
+     }
+    
+    public function findPublic(){
+    
+        $query = <<<SQL
+                
+        SELECT p.*,
+                    pr.company       
+        FROM product p
+        JOIN provider pr ON pr.idprovider = p.idprovider
+        WHERE p.status = "public"
         ORDER BY p.idproduct
 
 SQL;
@@ -49,27 +72,6 @@ SQL;
             }
     }
     
-    public function findDisponibility($id) {
-       
-        $dbDisponibilities = $this->db->fetchAll (
-                'SELECT idcountry 
-                FROM country_has_product
-                WHERE idproduct = :idproduct',
-                [
-                    ':idproduct' => $id
-                ]
-            );
-            
-            $disponibility = [];
-        
-            foreach ($dbDisponibilities as $dbDisponibility) {
-                $disponibility[] = $this->buildDisponibility($dbDisponibility);
-            }
-    
-            return $disponibility;
-    }
-    
-    
     public function save(Product $product){
 
         $data =
@@ -78,10 +80,10 @@ SQL;
                 'idprovider' => $product->getIdprovider(),
                 'name' => $product->getName(),
                 'website' => $product->getWebsite(),
+                'summary' => $product->getSummary(),
                 'description' => $product->getDescription(),
                 'field' => $product->getField(),
-                'status' => $product->getStatus(),
-                'summary' => $product->getSummary()
+                'status' => $product->getStatus()
             ];
 
         if ($product->getIdproduct()){
@@ -132,9 +134,9 @@ SQL;
         
         $query = <<<SQL
     SELECT c.name,
-           chp.idcountry,
-           p.*,
-           pr.company 
+                chp.idcountry,
+                 p.*,
+                 pr.company 
                 
     FROM product p
     JOIN country_has_product chp ON chp.idproduct = p.idproduct
