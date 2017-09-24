@@ -13,17 +13,16 @@ $(function(){
        $(".product-detail").css('display','block');
    });
    
-   $(".innovators-select-pays").change(function(){
-       var idCountry = $(".innovators-select-pays option:selected").val();
+   $(".products-select-pays").change(function(){
+       var idCountry = $(".products-select-pays option:selected").val();
        console.log(idCountry);
-       
-//rcountry request
+
        $.ajax({
            url: countrySelect,
            type: 'GET',
            data: {'idcountry':idCountry}
        }).done(function(data){
-            //JSON.parse(data);
+           JSON.parse(data);
             console.log(data);
        });
    });

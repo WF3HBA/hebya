@@ -59,8 +59,8 @@ $app->get('/product/{id}', 'product.controller:productIdAction')
         ->value('id',null)
         ->bind('product_id');
 
-$app->get('/product/ajaxcountry', 'product.controller:countrySelect')
-        ->bind('product_request');
+$app->get('/product_ajax', 'product.controller:countrySelect')
+        ->bind('product_ajax');
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
@@ -143,6 +143,10 @@ $admin->get('/team', 'admin.team.controller:teamListAction')
 $admin->match('/team/edition/{id}', 'admin.team.controller:editAction')
             ->value('id', null)
             ->bind('admin_team_edit');
+
+$admin->get('/team/suppression/{id}', 'admin.team.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_team_delete');
 
 
 $admin->match('/team/suppression/{id}', 'admin.team.controller:deleteAction')

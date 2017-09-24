@@ -55,12 +55,14 @@ SQL;
                 'lastname' => $provider->getLastname(),
                 'firstname' => $provider->getFirstname(),
                 'company' => $provider->getCompany(),
-                'summary' => $provider->getSummary(),
                 'description' => $provider->getDescription(),
                 'email' => $provider->getEmail(),
                 'phone' => $provider->getPhone(),
                 'address' => $provider->getAddress(),
-                'country' => $provider->getCountry()
+                'city' => $provider->getCity(),
+                'country' => $provider->getCountry(),
+                'picture' => $provider->getPicture(),
+                'status' => $provider->getStatus()
             ];
         
         if ($provider->getIdprovider()){
@@ -92,14 +94,15 @@ SQL;
                 ->setLastname($data['lastname'])
                 ->setFirstname($data['firstname'])
                 ->setCompany($data['company'])
-                ->setSummary($data['summary'])
                 ->setDescription($data['description'])
                 ->setEmail($data['email'])
                 ->setPhone($data['phone'])
                 ->setAddress($data['address'])
+                ->setCity($data['city'])
                 ->setCountry($data['country'])
+                ->setPicture($data['picture'])
+                ->setStatus($data['status'])
         ;
-        
         
         return $provider;
     }

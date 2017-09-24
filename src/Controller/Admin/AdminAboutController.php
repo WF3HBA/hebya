@@ -31,15 +31,9 @@ class AdminAboutController extends ControllerAbstract {
         
         if (!empty($_POST)) {
             
-            $about->setSection($_POST['section']);
             $about->setTitle($_POST['title']);
             $about->setContent($_POST['content']);
            
-            //contrôle les champs du formulaire d'ajout
-            
-            if (empty($_POST['section'])) {
-                $errors['section'] = 'La section est obligatoire';
-            }
             
             if (empty($_POST['title'])) {
                 $errors['title'] = 'Le titre est obligatoire';

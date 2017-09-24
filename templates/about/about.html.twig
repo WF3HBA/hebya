@@ -22,17 +22,29 @@
             </div>
         </section>
         {% endfor %}
-        <section id="team-members">
+        <section id="team-members" class="container">
             <div class="row">
             {% for teamMember in teamMembers  %}
+
+                <div class="teem col-xs-12 col-sm-6 col-md-3">
+                    <div class="box col-xs-12 col-md-12">
+                        <img class="img-responsive" src="{{ asset('img/img-about/zakaria.jpg') }}">
+                        <div class="box-content">
+                            <h3 class="title">{{ teamMember.fullName }}</h3>                                    
+                            <span class="post">{{ teamMember.title }}</span>
+                        </div>
+                    </div>
+                </div>
+<!--
                 <div id="{{ teamMember.firstName }}" class="team-member col-sm-6 col-md-3" data-toggle="modal" data-target="#myModal">
                     <div class="text-center">
                         <img src="http://placehold.it/200x200" />
                         <h3 class="text-center team-member-name">{{ teamMember.fullName }}</h3>
                         <h4  class="text-center team-member-title">{{ teamMember.title }}</h4>
-                        <div class="team-member-description hidden">{{ teamMember.description }}</div>
+                        <div class="team-member-description hidden">{{ teamMember.description|raw }}</div>
                     </div>
                 </div>
+-->
             {% endfor %}
             {#  MODAL #}
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

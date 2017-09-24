@@ -10,14 +10,14 @@
                 <tr class="info">
                     <th>Cible</th>
                     <th>Contenu</th>
-                    <th>Edit</th>
+                    <th>Edition</th>
                 </tr>
                 {% for service in services %}
                     <tr>
-                        <td>{{ service.target }}</td>
+                        <td>{{ service.target|capitalize }}</td>
                         <td>{{ service.content[:100]|raw }}...</td>
                          <td>
-                            <a href="{{ path('admin_service_edit', {id: service.idservice}) }}"><button class="btn btn-primary">modifier</button></a>
+                            <a href="{{ path('admin_service_edit', {id: service.idservice}) }}"><button class="btn btn-primary">Modifier</button></a>
                         </td>
                     </tr>
                 {% else %} 
