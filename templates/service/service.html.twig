@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block content %}
+    <div class="parallax" data-image="{{ asset('img/services/hosted_by_africa_services.jpg') }}"></div>
     <main>
         <section id="service-main-header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center service-profil-title">
                         <h1>{{ "Nos services"|upper }}</h1>
-                        <span id="service-subtitle">Selon votre profil</span>
                     </div>
                 </div>
                 <div class="row">   
@@ -72,6 +72,7 @@
 
 {% block javascript %}
     {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script>
         var targetAjaxUrl = '{{ path('services_ajax') }}';
     </script>

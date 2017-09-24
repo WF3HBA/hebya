@@ -1,4 +1,10 @@
 $(function() { 
+    
+    $('.parallax').imageScroll({
+        coverRatio: 1,
+        speed: 0.3
+    });
+    
     $( window ).resize(function() {
 
         if($(window).width() < 751){
