@@ -82,6 +82,7 @@ class AdminTeamController extends ControllerAbstract {
          );
     }
     
+
     public function deleteAction($id) {
         $teamMember= $this->app['team.repository']->find($id);
         

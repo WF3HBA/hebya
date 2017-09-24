@@ -43,6 +43,10 @@ $app['index.controller'] = function () use ($app) {
     return new Controller\IndexController($app);
 };
 
+$app['country.controller'] = function () use ($app) {
+    return new Controller\CountryController($app);
+};
+
 $app['about.controller'] = function () use ($app) {
     return new Controller\AboutController($app);
 };
