@@ -5,6 +5,10 @@ body {
     font-size: 1.6em;
 }
 
+header {
+    background-color: #fff;
+}
+
 main {
     padding: 40px 0;
 }
@@ -193,7 +197,7 @@ a#admin.btn.btn-primary.fa.fa-book, a#admin.btn.btn-primary.fa.fa-user{
     margin-bottom: 35px;
 }
 
-div.col-lg-4.col-md-4.col-sm-4{
+/*div.col-lg-4.col-md-4.col-sm-4{
     border-left: 1px solid grey;
     color: #f1f2f2;
     padding: 20px;
@@ -203,7 +207,7 @@ div.col-lg-4.col-md-4.col-sm-4{
     border-right: 1px solid grey;
     color: #f1f2f2;
     padding: 20px;
-}
+}*/
 
 .footer_dv h4 {
     color: #008080;

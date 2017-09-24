@@ -33,7 +33,6 @@ class AdminProductController extends ControllerAbstract {
         } else {
             $product = $this->app['product.repository']->find($id);
             $disponibility = $this->app['disponibility.repository']->findCountriesByProduct($id);
-            dump($disponibility);
             $provider = $this->app['provider.repository']->find($id);
             
             if (is_null($product)) {
@@ -50,6 +49,7 @@ class AdminProductController extends ControllerAbstract {
             $product->setSummary($_POST['summary']);
             $product->setDescription($_POST['description']);
             $product->setField($_POST['field']);
+            $product->setStatus($_POST['status']);
             
             //contrôle les champs du formulaire d'ajout
             if (empty($_POST['name'])) {
@@ -77,17 +77,20 @@ class AdminProductController extends ControllerAbstract {
             
             if (empty($errors)) {
                 
-                foreach ($_POST['product-has-country'] as $idcountry) {
-                    
-//                     dump($idcountry);
-//                     dump($_POST['idproduct']);
-//                     die;
-                    $newDisponibility = new Disponibility();
-                    $newDisponibility->setIdcountry($idcountry);
-                    $newDisponibility->setIdproduct($_POST['idproduct']);
-                    $this->app['disponibility.repository']->save($newDisponibility);
-                }
+                $this->app['disponibility.repository']->deleteByProduct($_POST['idproduct']);
                 
+                if (!empty($_POST['product-has-country'])) {
+                    
+                    foreach ($_POST['product-has-country'] as $idcountry) {
+           
+                        $newDisponibility = new Disponibility();
+
+                        $newDisponibility->setIdcountry($idcountry);
+                        $newDisponibility->setIdproduct($_POST['idproduct']);
+
+                        $this->app['disponibility.repository']->save($newDisponibility);
+                    }
+                }
                 
                 $this->app['product.repository']->save($product);
                 $this->addFlashMessage('Produit enregistré');
@@ -115,7 +118,8 @@ class AdminProductController extends ControllerAbstract {
          );
     }
     
-    public function deleteAction($id){
+    public function deleteAction($id) {
+        
         $product = $this->app['product.repository']->find($id);
         
         $product = $this->app['product.repository']->delete($product);

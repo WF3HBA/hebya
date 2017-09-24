@@ -82,12 +82,14 @@ class AdminTeamController extends ControllerAbstract {
          );
     }
     
-     public function deleteAction($id){
-        $team = $this->app['team.repository']->find($id);
+
+    public function deleteAction($id) {
+        $teamMember= $this->app['team.repository']->find($id);
         
-        $team = $this->app['team.repository']->delete($team);
-        $this->addFlashMessage('le teammate est supprimé');
+        $teamMember = $this->app['team.repository']->delete($teamMember);
+        $this->addFlashMessage('Le membre est supprimé');
         
         return $this->redirectRoute('admin_team');
     }
+    
 }

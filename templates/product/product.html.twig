@@ -31,7 +31,6 @@
                             {% for country in countries %}
                             <option value="{{ country.idcountry }}">{{ country.name }}</option>
                             {% endfor %}
-                           
                         </select>
                     </div>
                 </div>
@@ -93,7 +92,7 @@
 {% block javascript %}
      {{ parent() }}
     <script>
-        var countrySelect = '{{ path('product_request') }}';
+        var countrySelect = '{{ path('product_ajax') }}';
     </script>
     
      <script src="{{ asset("js/product/product.js") }}"></script>

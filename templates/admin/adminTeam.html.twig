@@ -1,38 +1,36 @@
 {% extends "admin/admin.html.twig" %}
 
 {% block content %}
-    <div class="container"> 
-     <div class="row">
-          <div class="col-md-7 col-md-offset-2 table-listing">
-            <h2>Team Members</h2>
-            <p>Admin <a href="{{ path('admin_team_edit')}}">add team member</a></p>
-            <table class="table">
+
+    <div class="col-md-9 col-md-offset-2 table-listing">
+        <h2>Team Members</h2>
+        <p><a href="{{ path('admin_team_edit') }}">Ajouter un membre</a></p>
+        <table class="table table-striped">
+            <tr class="info">
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Titre</th>
+                <th>Linkedin</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+            {% for teamMember in teamMembers %}
                 <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Titre</th>
-                    <th>Description</th>
-                    <th>Linkedin</th>
+                    <td>{{ teamMember.firstname }}</td>
+                    <td>{{ teamMember.lastname }}</td>
+                    <td>{{ teamMember.title }}</td>
+                    <td><a href="{{ teamMember.linkedin }}">Linkedin</a></td>
+                    <td>
+                        <a href="{{ path('admin_team_edit', {id: teamMember.idteam_member}) }}"><button class="btn btn-primary">modifier</button></a>
+                    </td>
+                    <td>
+                         <a href=" {{path('admin_team_delete', {id: teamMember.idteam_member}) }}"><button id="annuler" name="annuler" class="btn btn-danger">delete</button></a>
+                    </td>
                 </tr>
-                {% for teamMember in teamMembers %}
-                    <tr>
-                        <td>{{ teamMember.firstname }}</td>
-                        <td>{{ teamMember.lastname }}</td>
-                        <td>{{ teamMember.title }}</td>
-                        <td>{{ teamMember.description[:15] }}...</td>
-                        <td><a href="{{ teamMember.linkedin }}">Linkedin</a></td>
-                        <td>
-                            <a href="{{ path('admin_team_edit', {id: teamMember.idTeam_Member}) }}"><button class="btn btn-primary">modifier</button></a>
-                        </td>
-                        <td>
-                             <a href=" {{path('admin_team_delete', {id: teamMember.idTeam_Member}) }}"><button id="annuler" name="annuler" class="btn btn-danger">delete</button></a>
-                        </td>
-                    </tr>
-                {% else %} 
-                    <tr><td colspan="2">Aucun résultat</td></tr>
-                 {% endfor %}
-            </table>
-        </div>
-    </div>   
- </div>        
+            {% else %} 
+                <tr><td colspan="2">Aucun résultat</td></tr>
+            {% endfor %}
+        </table>
+  </div>
+
 {% endblock %}
