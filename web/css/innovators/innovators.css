@@ -12,6 +12,7 @@ main {
 }
 
 /* le select par theme aura un margin-bottom de 20px */
+
 .innovators-select-theme {
     margin-bottom: 20px;
   
@@ -39,6 +40,16 @@ main {
     margin-bottom: 0px;
 }
 
+	/* c'est pour donner la forme ronde au images' */
+	#innovators-body img{
+	    display: inline-block;
+	    overflow: hidden;
+	    box-sizing: border-box;
+	    border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	border: 1px solid white;
+	}
 
 #innovators-body img:hover {
     
@@ -46,45 +57,36 @@ main {
     transition: 0.4s;
 }
 
-#innovators-body img {
-    margin: 20px;
-}
 
-.boutton-innovators-body{
-    margin-left:0;
-}
 
-div.col-lg-4.col-sm-6.text-center.mb-4{
-    margin-bottom: 20px;
-    height: 350px;
-}
+	#innovators-body .row div{
+	    margin-bottom: 0px;
+	}
 
 
 
-#innovators-body  h3, #innovators-body  h2 {
-    padding-bottom: 20px;
-}
+
+	#innovators-body img:hover {
+	    
+		border: 10px solid #008080;
+	        transition: 0.5s;
+	}
 
 
-
-.product-content-short {
-    padding-bottom: 50px;
-}
-
-section#innovators-body>img{
-   margin:10px;
-}
-
-.img-thumbnail{
-    border: 0;
-}
-
-#hidden{
-    display: none;
-    margin: 0 auto;
-}
+	#innovators-body img {
+	    margin: 20px;
+	}
 
 
+	.boutton-innovators-body{
+	    margin-left:0;
+	}
+
+
+	div.col-lg-4.col-sm-6.text-center.mb-4{
+	    margin-bottom: 20px;
+	    height: 350px;
+	}
 
 
 /******************************************************************************************************/
