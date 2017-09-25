@@ -19,6 +19,8 @@ class Client {
      */
     private $company;
     
+    private $description;
+        
     private $lastname;
     
     private $firstname;
@@ -49,6 +51,10 @@ class Client {
 
     function getCompany() {
         return $this->company;
+    }
+    
+    public function getDescription() {
+        return $this->description;
     }
 
     function getLastname() {
@@ -92,13 +98,17 @@ class Client {
     
     function setIdclient($idclient) {
         $this->idclient = $idclient;
-        
         return $this;
     }
 
     function setCompany($company) {
         $this->company = $company;
         
+        return $this;
+    }
+    
+    public function setDescription($description) {
+        $this->description = $description;
         return $this;
     }
 
