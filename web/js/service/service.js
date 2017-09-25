@@ -1,5 +1,10 @@
 $(function(){
     
+    $('.parallax').imageScroll({
+        coverRatio: 1,
+        speed: 0.3  
+    });
+    
    $(".service-profil-button").click(function(e){
       
       e.preventDefault();

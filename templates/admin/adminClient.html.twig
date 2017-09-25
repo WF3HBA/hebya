@@ -5,37 +5,30 @@
  <div class="col-md-7 col-md-offset-2 table-listing">
         <div class="row">
             <h2>Client</h2>
-            <p>Admin <a href="{{ path('admin_client_edit')}}">add client</a></p>
+            <p><a href="{{ path('admin_client_edit')}}">Ajout client</a></p>
             <table class="table">
                 <tr>
-                    <th>id</th>
                     <th>company</th>
-                    <th>company type</th>
                     <th>lastname</th>
                     <th>firstname</th>
                     <th>phone</th>
                     <th>email</th>
                     <th>address</th>
                     <th>country</th>
-{#                    <th>password</th>#}
                     <th>status</th>
-                    <th>Edit</th>
-                    <th>delete</th>
+                    <th>Editer</th>
+                    <th>Supprimer</th>
                     
                 </tr>
                 {% for client in clients%}
                     <tr>
-                        <td>{{ client.idclient }}</td>
                         <td>{{ client.company }}</td>
-                        <td>{{ client.company_type }}</td>
                         <td>{{ client.lastname }}</td>
                         <td>{{ client.firstname }}</td>
                         <td>{{ client.phone }}</td>
                         <td>{{ client.email }}</td>
                         <td>{{ client.address }}</td>
                         <td>{{ client.country }}</td>
-
-{#                        <td>{{ client.password }}</td>#}
                         <td>{{ client.status }}</td>
                          <td>
                             <a href="{{ path('admin_client_edit', {id: client.idclient}) }}"><button class="btn btn-primary">modifier</button></a>

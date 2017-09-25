@@ -7,17 +7,20 @@
 {% endblock %}
 
 {% block content %}
-    <div class="parallax" data-image="{{ asset('img/img-innovator/bulbs.jpg') }}"></div>
+
+    <div class="parallax" data-image="{{ asset('img/img-innovator/hosted_by_africa_innovators.jpg') }}"></div>
     <main>
         <section id="innovators-header">
             <div class="container">
                 <div class="row">
+{#                  <div id="slide1" style="background-image:url("../images/innovateurs.jpg"); background-repeat: none;">
+                    </div>#}
                     <div class="col-xs-12 text-center">
                         <h1>{{ "Nos innovateurs"|upper }}</h1>
                     </div>
                 </div>
                 <div class="row all-select-innovators">
-                    <div class="col-xs-12 col-sm-6 innovators-select-theme">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 innovators-select-theme">
                         <select class="col-xs-12">
                             <option>Theme</option>
                             <option>Education</option>
@@ -27,12 +30,11 @@
                             <option>Numérisation GED</option>
                         </select>
                     </div>
-                    <div class="col-xs-12 col-sm-6 ">
+                    <div class="col-xs-offset-1 col-xs-10  col-sm-offset-0 col-sm-6 ">
                         <select class="col-xs-12 innovators-select-pays">
                             {% for country in countries %}
                             <option>{{ country.name }}</option>
                             {% endfor %}
-                           
                         </select>
                     </div>
                 </div>
@@ -43,20 +45,48 @@
             <div class="container">
                 <div class="row">
                     {% for provider in providers %}
-                    <div class="col-lg-4 col-sm-6 text-center mb-4">
-                        <a href="#">
-                            <div class="img-box text-center">
+                        <div class="test col-lg-3 col-sm-6 text-center mb-4">
+                            <div class="box">
                                 <img src="{{ asset(provider.picture) }}" alt="">
+
+                                <div class="box-content">
+                                    <h3 class="title">{{ provider.firstname }} {{ provider.lastname }}</h3>
+                                    <p class="title">{{ provider.company }}</p>
+                                        <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-{{ provider.idprovider }}">
+                                      Détails
+                                    </button>
+                                </div>
                             </div>
-                            <h3>{{ provider.company }}
-                              <small>{{ provider.firstname }} {{ provider.lastname }}</small>
-                            </h3>
-                        </a>
-                    </div>
-                    {% endfor %}
-                   
-                </div>
-            </div>
+                        </div>  
+                                              
+                        <div class="modal fade" id="exampleModalLong-{{ provider.idprovider }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                  <h2 class="modal-title" id="exampleModalLongTitle">{{ provider.firstname }} {{ provider.lastname }}</h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              
+                              <div class="modal-footer text-center">
+                                <div class="col-xs-4">
+                                    <img src="{{ asset(provider.picture) }}" alt="">
+                                </div>
+                                <div class="col-xs-7">
+                                    <h3 class="col-xs-12 text-center">{{ provider.company }}</h3>                                
+                                    <div class="text-center"> {{ provider.description |raw }}</div> 
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                </div>
+                              </div>
+                            </div>       
+                          </div>
+                        </div>    
+                                
+                    {% endfor %}                   
+                </div>                    
+            </div>  
         </section>
     </main>
 {% endblock %}
@@ -64,6 +94,8 @@
 
 {% block javascript %}
      {{ parent() }}
-     <script type="text/javascript" src="{{ asset('js/innovators/jquery.imageScroll.min.js') }}"></script>
+     <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script src="{{ asset("js/innovators/innovators.js") }}"></script>
+    <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
+
 {% endblock %}

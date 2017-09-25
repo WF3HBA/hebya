@@ -78,4 +78,9 @@ SQL;
         
         return $teamMember;
     }
+    
+     public function delete(TeamMember $teamMember){
+        
+        $this->db->delete('team_member', ['idteam_member' => $teamMember->getIdteam_member()]);
+    }
 }

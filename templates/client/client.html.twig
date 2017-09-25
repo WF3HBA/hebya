@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-
+    <div class="parallax" data-image="{{ asset('img/clients/hosted_by_africa_clients.jpg') }}"></div>
    <main>
         <section id="clients-header">
             <div class="container">
@@ -66,5 +66,9 @@
         </section><br>
     </main>
     
-    
+{% endblock %}
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+    <script src="{{ asset('js/clients/clients.js') }}"></script>
 {% endblock %}

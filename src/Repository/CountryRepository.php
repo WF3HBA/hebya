@@ -44,7 +44,7 @@ SQL;
     }
     
     
-    private function buildEntity(array $data){
+    public function buildEntity(array $data){
        
         $country = new Country();
         
@@ -53,6 +53,10 @@ SQL;
             ->setContent($data['content'])
             ->setName($data['name'])
             ->setContinent($data['continent'])
+            ->setContact_name($data['contact_name'])
+            ->setContact_phone($data['contact_phone'])
+            ->setContact_email($data['contact_email'])
+            ->setContact_address($data['contact_address'])
         ;
         
         return $country;

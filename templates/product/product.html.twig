@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+    <div class="parallax" data-image="{{ asset('img/products/hosted_by_africa_products.jpg') }}"></div>
     <main>
         <section id="products-header">
             <div class="container">
@@ -91,9 +92,9 @@
 
 {% block javascript %}
      {{ parent() }}
+     <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script>
         var countrySelect = '{{ path('product_ajax') }}';
     </script>
-    
      <script src="{{ asset("js/product/product.js") }}"></script>
 {% endblock %}

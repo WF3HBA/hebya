@@ -13,6 +13,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app->get('/', 'index.controller:indexAction')
         ->bind('homepage');
 
+
+
 $app->get('/apropos', 'about.controller:aboutAction')
         ->bind('apropos');
 
@@ -145,6 +147,11 @@ $admin->match('/team/edition/{id}', 'admin.team.controller:editAction')
 $admin->get('/team/suppression/{id}', 'admin.team.controller:deleteAction')
         ->assert('id','\d+')
         ->bind('admin_team_delete');
+
+
+$admin->match('/team/suppression/{id}', 'admin.team.controller:deleteAction')
+            ->value('id', null)
+            ->bind('admin_team_delete');
 
 
 //route admin user
