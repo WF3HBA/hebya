@@ -8,14 +8,15 @@
             <p><a href="{{ path('admin_client_edit')}}">Ajout client</a></p>
             <table class="table">
                 <tr>
-                    <th>company</th>
-                    <th>lastname</th>
-                    <th>firstname</th>
-                    <th>phone</th>
-                    <th>email</th>
-                    <th>address</th>
-                    <th>country</th>
-                    <th>status</th>
+                    <th>Société</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>Pays</th>
+                    <th>Statut</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
                     
@@ -28,6 +29,7 @@
                         <td>{{ client.phone }}</td>
                         <td>{{ client.email }}</td>
                         <td>{{ client.address }}</td>
+                        <td>{{ client.city }}</td>
                         <td>{{ client.country }}</td>
                         <td>{{ client.status }}</td>
                          <td>

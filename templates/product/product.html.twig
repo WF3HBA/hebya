@@ -17,52 +17,36 @@
                     </div>
                 </div>
                 <div class="row all-select-products">
-                    <div class="col-xs-12 col-sm-6 products-select-theme">
-                        <select class="col-xs-12">
-                            <option>Thème</option>
-                            <option>Education</option>
-                            <option>Santé</option>
-                            <option>Assurance</option>
-                            <option>Comptabilité</option>
-                            <option>Numérisation GED</option>
-                        </select>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 ">
-                        <select class="col-xs-12 products-select-pays">
-                            {% for country in countries %}
-                            <option value="{{ country.idcountry }}">{{ country.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+                    <form id="filter-form">
+                        <div class="col-xs-12 col-sm-6 products-select-theme">
+                            <select class="col-xs-12 products-select-field">
+                                <option value="">Thème</option>
+                                <option>Education</option>
+                                <option>Santé</option>
+                                <option>Assurance</option>
+                                <option>Comptabilité</option>
+                                <option>Numérisation GED</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 ">
+                            <select class="col-xs-12 products-select-pays">
+                                <option value="">pays</option>
+                                {% for country in countries %}
+{#                                    #}
+                                <option value="{{ country.idcountry }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section><br><br>
               
         <section id="products-body">
             <div class="container">
-                
-                 {% for product in products %}
-                 <div class="row product-row">                    
-                  
-                   
-                    <div class="col-sm-6">
-                      <a href="#">
-                        <img class="img-thumbnail" src="http://placehold.it/700x300" alt="">
-                      </a>
-                    </div>                    
-                    <div class="col-sm-6">
-                      <h2 class="product-name">{{ product.name }}</h2>
-                      <div class="product-content-short">{{ product.summary|raw }}</div>
-                      <div class="product-content hidden">{{ product.description|raw }}</div>
-                      
-                        {#Launch modal with the button above #}
-                      <button class="btn btn-primary boutton-products-body" data-toggle="modal" data-target="#myModal">View Product</button>
-                    </div>
-                    
-                     
-                 </div><hr><br><br>
-                 {% endfor %}
-                 
+                <div id="product-list">
+                    {% include 'product/productList.html.twig' %}
+                </div>
                 
                 {#  MODAL #}
                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -95,6 +79,7 @@
      <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script>
         var countrySelect = '{{ path('product_ajax') }}';
+        
     </script>
      <script src="{{ asset("js/product/product.js") }}"></script>
 {% endblock %}
