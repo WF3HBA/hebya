@@ -5,10 +5,6 @@ namespace Controller;
 
 use Controller\ControllerAbstract;
 
-
-
-
-
 class CountryController extends ControllerAbstract{
     
     public function countryAction() {
