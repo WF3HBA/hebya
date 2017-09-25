@@ -99,3 +99,7 @@ path:hover {
 #calendar{
     padding: 20px;
 }
+
+a:hover{
+    background-color: white;
+}

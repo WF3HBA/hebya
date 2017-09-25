@@ -8,11 +8,7 @@ use Controller\ControllerAbstract;
 
 
 
-/**
- * Description of CountryController
- *
- * @author erwan
- */
+
 class CountryController extends ControllerAbstract{
     
     public function countryAction() {

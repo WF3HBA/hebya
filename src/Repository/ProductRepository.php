@@ -161,5 +161,30 @@ SQL;
             
             return $products;
     }
+    
+    public function findByField(){
+          
+        $query = <<<SQL
+    SELECT p.*    
+    FROM product p 
+    WHERE p.field = :field
+    
+SQL;
+        
+        $dbProducts = $this->db->fetchAll(
+                $query,
+                [
+                    ':field' => $field
+                ]
+            );
+    
+            $products = [];    
+        
+            foreach($dbProducts as $dbProduct){
+                $products[] = $this->buildEntity($dbProduct);
+            }
+            
+            return $products;
+    }
 
 }

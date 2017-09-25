@@ -1,10 +1,17 @@
 $(function(){
     
+    $('.parallax').imageScroll({
+        coverRatio: 1,
+        speed: 0.3
+    });
+    
    $(".boutton-products-body").click(function(){
 
        var $row = $(this).closest('.product-row');
        var name = $row.find('.product-name').html();
        var content = $row.find('.product-content').html();
+       
+       console.log(name);
        
        var $detail = $('.product-detail');
        $detail.find('h1').html(name);
