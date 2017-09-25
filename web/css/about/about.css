@@ -67,7 +67,7 @@ main {
 
 
 .box{
-    height: 400px;
+    width: 70%;
     text-align: center;
     background: #000;
     color: #fff;
@@ -122,11 +122,12 @@ main {
     top: 0;
     left: 0;
     z-index: 1;
+    cursor: pointer;
 }
-.box .title,
+.box .title, 
 .box .post{
     width: 100%;
-    padding: 0 20px;
+    padding: 7px 20px;
     margin: 0;
     position: absolute;
     top: 47%;
@@ -151,6 +152,29 @@ main {
     transform: translate(0, 60%);
     transition-delay: 0.7s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*     */
 @media only screen and (max-width:990px){
     .box{ margin-bottom: 30px; }
 }
