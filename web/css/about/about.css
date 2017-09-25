@@ -114,6 +114,7 @@ main {
 }
 .box img{
     width: 100%;
+    height: 250px;
     /*height: auto;*/
 }
 .box:hover img{
@@ -158,7 +159,10 @@ main {
 }
 
 
-
+.img-modal{
+    width: 35%;
+    height: 35%;
+}
 
 
 
@@ -179,6 +183,20 @@ main {
 
 
 /*     */
+
+
+
+@media screen and (min-width: 518px) and (max-width: 959px) {
+
+    .box img{
+    width: 100%;
+    height: 350px;
+   
+    }
+
+}
+
+
 @media only screen and (max-width:990px){
     .box{ margin-bottom: 30px; }
 }

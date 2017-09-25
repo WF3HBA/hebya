@@ -48,26 +48,33 @@
 -->
                 
                 <div class="modal fade" id="exampleModalLong-{{ teamMember.idteam_member }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                          <h2 class="modal-title" id="exampleModalLongTitle">{{ teamMember.fullName }} </h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="exampleModalLongTitle">{{ teamMember.fullName }} </h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
-                      <div class="modal-footer text-center">
-
-                        <div class="col-xs-12">
-                            <h3 class="col-xs-12 text-center">{{ teamMember.fullName }}</h3>                                
-                            <h3 class="col-xs-12 text-center">{{ teamMember.description|raw }}</h3>                                
-
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        </div>
-                      </div>
-                    </div>       
-                  </div>
+                            <div class="modal-footer text-center">
+                                <div class="col-xs-12">
+                                    <div class="img-modal col-xs-6 col-xs-offset-4">
+                                       <img class="img-responsive" src="{{ asset(teamMember.picture) }}">
+                                    </div>
+                                    <div class="col-xs-12" >
+                                        <h3 class=" text-center col-xs-12">{{ teamMember.fullName }}</h3>                                
+                                        <p class="text-center col-xs-12">{{ teamMember.description|raw }}</p>
+                                         <button type="button" class="btn btn-secondary col-xs-12" data-dismiss="modal">Fermer</button>
+                                    </div>
+                                         
+                                         
+                                    
+                                 
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
                 </div> 
 
 

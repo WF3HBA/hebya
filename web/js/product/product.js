@@ -11,11 +11,12 @@ $(function(){
        var name = $row.find('.product-name').html();
        var content = $row.find('.product-content').html();
        
-       console.log(name);
+       //console.log(name);
        
-       var $detail = $('.product-detail');
-       $detail.find('h1').html(name);
-       $detail.find('.product-detail-content').html(content);
+//       var $detail = $('.product-detail');
+//       $detail.find('h1').html(name);
+       $('.modal-title').html(name);
+       $('.product-detail-content').html(content);
        
        $(".product-detail").css('display','block');
    });
