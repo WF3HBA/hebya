@@ -31,6 +31,8 @@ class Client {
     
     private $address;
     
+    private $city;
+
     private $country;
     
     private $status = 'user';
@@ -75,6 +77,10 @@ class Client {
     
      function getAddress() {
         return $this->address;
+    }
+    
+     public function getCity() {
+        return $this->city;
     }
 
     function getCountry() {
@@ -139,6 +145,11 @@ class Client {
      function setAddress($address) {
         $this->address = $address;
         
+        return $this;
+    }
+    
+    public function setCity($city) {
+        $this->city = $city;
         return $this;
     }
 
