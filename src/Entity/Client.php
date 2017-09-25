@@ -19,8 +19,6 @@ class Client {
      */
     private $company;
     
-    private $company_type;
-    
     private $lastname;
     
     private $firstname;
@@ -51,10 +49,6 @@ class Client {
 
     function getCompany() {
         return $this->company;
-    }
-
-    function getCompany_type() {
-        return $this->company_type;
     }
 
     function getLastname() {
@@ -108,12 +102,6 @@ class Client {
         return $this;
     }
 
-    function setCompany_type($company_type) {
-        $this->company_type = $company_type;
-        
-        return $this;
-    }
-
     function setLastname($lastname) {
         $this->lastname = $lastname;
         
@@ -150,7 +138,6 @@ class Client {
         return $this;
     }
 
-
     function setStatus($status) {
         $this->status = $status;
         
@@ -162,7 +149,5 @@ class Client {
         
         return $this;
     }
-
-
     
 }
