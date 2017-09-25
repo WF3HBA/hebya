@@ -40,6 +40,7 @@ class AdminTeamController extends ControllerAbstract {
             $teamMember->setTitle($_POST['title']);
             $teamMember->setDescription($_POST['description']);
             $teamMember->setLinkedin($_POST['linkedin']);
+            $teamMember->setPicture($_POST['picture']);
           
             if (empty($_POST['firstname'])) {
                 $errors['firstname'] = 'Prénom requis';

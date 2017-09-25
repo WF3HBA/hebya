@@ -15,117 +15,92 @@
             <p class="col-xs-12 icone-fermer"><span class="glyphicon glyphicon-remove"></span></p>
             <p class="col-xs-12" id="affiner-recherche"><span class="glyphicon glyphicon-th-list"></span></p>
                 <div class="emploi-form col-xs-offset-1 col-sm-offset-0 col-sm-3">
-                    
-                    <p>Type de contrat</p>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="cdi">
-                        CDI
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="cdd">
-                        CDD
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="interim">
-                        Stage
-                    </label><br><br>
+                    <form id="filter-form">
+                        <p>Type de contrat</p>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="contrat" value="CDI">
+                            CDI
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="contrat" value="CDD">
+                            CDD
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="contrat" value="Stage">
+                            Stage
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="contrat" value="Alternance">
+                            Alternance
+                        </label><br><br>
 
-                    <p>Expérience</p>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="experience">
-                        Non précisée
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="moins-an">
-                        Moins de 1 an
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="entre1-3">
-                        De 1 à 3 ans
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="plus-3">
-                        Plus de 3 ans
-                    </label><br><br>
+                       {# <p>Expérience</p>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" id="experience">
+                            Non préciser
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" id="moins-an">
+                            Moins de 1 an
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" id="entre1-3">
+                            De 1 à 3 ans
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" id="plus-3">
+                            Plus de 3 ans
+                        </label><br><br>
 
-                    <p>Niveau de formation</p>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Non précisée
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Moins de 1 an
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        De 1 à 3 ans
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Plus de 3 ans
-                    </label><br><br>
+                        <p>Niveau de formation</p>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Non préciser
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Moins de 1 an
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            De 1 à 3 ans
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Plus de 3 ans
+                        </label><br><br>
 
-                    <p>Durée hebdomadaire</p>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Non précisée
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Temps plein
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input">
-                        Temps partiel
-                    </label><br><br>
-                    
-                    <p> Pays souhaité</p>
-                    
-                    <select class="col-xs-12 innovators-select-pays">
+                        <p>DURÉE HEBDOMADAIRE</p>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Non préciser
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Temps plein
+                        </label><br>
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input">
+                            Temps partiel
+                        </label><br>#}
+                       <select class="col-xs-12 col-sm-8 products-select-field">
+                                <option value="">Theme</option>
+                                <option>Comptabilité</option>
+                                <option>Communication</option>
+                                <option>Marketing</option>
+                                <option>Informatique</option>
+                                
+                       </select><br><br>
+                        <select class="col-xs-12 products-select-pays">
+                            <option value="">tout les pays</option>
                             {% for country in countries %}
-                            <option>{{ country.name }}</option>
-                            {% endfor %}                           
-                    </select><br><br>
-                    
-                    <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Rechercher</button>
-
-                    
+                                <option value="{{ country.idcountry }}">{{ country.name }}</option>
+                                {% endfor %}                           
+                        </select>
+                    </form>  
                 </div>
                 <div class="emploi-annonce col-xs-12 col-sm-8">
-                {% for opportunity in opportunities %}
-                    <div class="panel panel-default">
-                        <div class="panel-heading">{{ opportunity.position }}</div>
-                        <div class="panel-body">
-                            <p><strong> Description : </strong> <br>{{ opportunity.description[:100] }}...</p>
-                            <p><strong> Pays : </strong>{{ opportunity.countryName }}</p>
-                            <button type="button" class="btn btn-primary boutton-annonce" data-toggle="modal" data-target="#detail-annonce-{{ opportunity.idopportunity }}">
-                                Voir l'annonce
-                            </button>
-                            <div class="modal fade" id="detail-annonce-{{ opportunity.idopportunity }}" tabindex="-1" role="dialog" aria-hidden="true">  
-                                <div class="modal-content">    
-                                    
-                                    <p><strong> Nom du poste : </strong> <br> {{ opportunity.position}}</p>
-                                    <p><strong> Réference annonce : </strong> {{ opportunity.reference }}</p>
-                                    <p><strong> Déscription : </strong> <br> {{ opportunity.description}}</p>                                    
-                                    <p><strong> Ville : </strong> {{ opportunity.city }}</p>
-                                    <p><strong> Domaine : </strong> {{ opportunity.field }}</p>
-                                    <p><strong> Type de contrat : </strong> {{ opportunity.contract_type }}</p>
-                                    <p><strong> Date de publication : </strong> {{ opportunity.publication_date }}</p>
-                                    <p><strong> Prérequis : </strong> {{ opportunity.required_skills }}</p>
-                                    <p><strong> Salaire : </strong> {{ opportunity.salary }}</p>
-                                    <p><strong> Pays : </strong> {{ opportunity.countryName }}</p>
-                                     
-                                    <div class="modal-footer">
-                                        <a href="{{ path('candidacy', {postId: opportunity.idopportunity}) }}" class="btn btn-primary">Postuler</a>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                      
-                                    </div>
-                                 </div>
-                            </div>  
-                        </div>
-                    </div>
-                {% endfor %}  
+                     {% include 'opportunity/opportunityList.html.twig' %}
                 </div>
             
         </section>
@@ -136,5 +111,9 @@
 {% block javascript %}
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+     <script>
+        var countrySelect = '{{ path('opportunity_ajax') }}';
+        
+    </script>
     <script src="{{ asset('js/opportunity/opportunity.js') }}"></script>
 {% endblock %}

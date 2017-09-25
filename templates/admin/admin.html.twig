@@ -14,7 +14,7 @@
     <body>
         
         
-        <div class="navbar navbar-inverse navbar-fixed-left" id="leftside">
+    {#    <div class="navbar navbar-inverse navbar-fixed-left" id="leftside">
             
            <ul class="nav navbar-nav" id="left-menu">
               
@@ -24,7 +24,7 @@
                <li class="li-left"><a href="{{ path('admin_team') }}">Team</a></li>
                <li class="li-left"><a href="{{ path('homepage') }}">Retour au site</a></li>
            </ul>
-       </div>
+       </div>#}
        <div class="navbar navbar-inverse navbar-fixed-top"> 
             <ul class="nav navbar-nav" id="head-menu">
                 <li><a href="{{ path('admin') }}"><img src="{{ asset('img/hebya-logo-inverse.png')}}"/></a></li>
@@ -32,6 +32,8 @@
                 <li class="li-nav"><a href="{{ path('admin_provider') }}">Fournisseur</a></li>
                 <li class="li-nav"><a href="{{ path('admin_client') }}">Clients</a></li>
                 <li class="li-nav"><a href="{{ path('admin_team') }}">Equipe</a></li>
+                <li class="li-nav"><a href="{{ path('admin_about') }}">A propos</a></li>
+                <li class="li-nav"><a href="{{ path('admin_service') }}">Services</a></li>
                 <li class="li-nav"><a href="{{ path('homepage') }}">Retour au site</a></li>
             </ul>
         </div>
@@ -65,11 +67,27 @@
                            
                          </div> 
                          
-                    </div>                                    
+                </div> 
+                <div class="row">
+                    <span class="col-md-3 col-md-offset-9 powered">Powered by <img src="{{ asset('img/weatheru.jpg') }}"></span>
+                </div>
                    
                 
                  
                  <div class="row">
+                     <div class="col-md-5 table-listing">
+                         
+                         <div class="add-on">
+                             <h2>Ajout</h2>
+                             <a href="{{ path('admin_client_edit')}}" class="btn btn-default"><i class="fa fa-address-card fa-5x" aria-hidden="true"></i><h5>Clients</h5></a>
+                             <a href="{{ path('admin_product_edit')}}" class="btn btn-default"><i class="fa fa-cart-plus fa-5x" aria-hidden="true"></i><h5>Produit</h5></a>
+                             <a href="{{ path('admin_team_edit')}}" class="btn btn-default"><i class="fa fa-users fa-5x" aria-hidden="true"></i><h5>Equipes</h5></a>
+                             <a href="{{ path('admin_provider_edit')}}" class="btn btn-default"><i class="fa fa-globe fa-5x" aria-hidden="true"></i><h5>Pays</h5></a>
+                             <a href="{{ path('admin_provider_edit')}}" class="btn btn-default"><i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i><h5>Innovateurs</h5></a>
+                             <a href="{{ path('admin_provider_edit')}}" class="btn btn-default"><i class="fa fa-handshake-o fa-5x" aria-hidden="true"></i><h5>Emplois</h5></a>
+                         </div>
+                         
+                     </div>
                      <div class="col-md-6 asset table-listing">
                          <div id="calendar"></div>
                      </div>
