@@ -8,6 +8,15 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
+// affiche un message d'erreur
+//$app->error(function (\Exception $e, Request $request, $code) {
+//    return new Response('We are sorry, but something went terribly wrong.');
+//});
+
+
+
+
+
 /********* F R O N T *********/
 
 $app->get('/', 'index.controller:indexAction')
@@ -64,6 +73,9 @@ $app->get('/product_ajax', 'product.controller:countrySelect')
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
+
+$app->get('/notfound', 'notfound.controller:notfoundAction')
+        ->bind('notfound');
 
 
 
