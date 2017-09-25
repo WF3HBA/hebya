@@ -169,7 +169,18 @@ $admin->get('/country/suppression/{id}', 'admin.country.controller:deleteAction'
         ->assert('id','\d+')
         ->bind('admin_country_delete');
 
+/*******ADMIN OPPORTUNITY ACTION*******/
 
+$admin->get('/opportunity', 'admin.opportunity.controller:opportunityListAction')
+            ->bind('admin_opportunity');
+
+$admin->match('/opportunity/edition/{id}', 'admin.opportunity.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_opportunity_edit');
+
+$admin->get('/opportunity/suppression/{id}', 'admin.opportunity.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_opportunity_delete');
 
 
 //route admin user

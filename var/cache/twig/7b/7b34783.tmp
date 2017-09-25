@@ -1,0 +1,309 @@
+<?php
+
+/* innovator/innovator.html.twig */
+class __TwigTemplate_99c526c0e83a107eb8e590c0311dbea2fc16d277f75053e337c79c9f220505b4 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("layout.html.twig", "innovator/innovator.html.twig", 1);
+        $this->blocks = array(
+            'stylesheet' => array($this, 'block_stylesheet'),
+            'content' => array($this, 'block_content'),
+            'javascript' => array($this, 'block_javascript'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "layout.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_3b6999d8512ffc390b838f7968034fae0853e8e1952bcc2702e085c9607c6c07 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_3b6999d8512ffc390b838f7968034fae0853e8e1952bcc2702e085c9607c6c07->enter($__internal_3b6999d8512ffc390b838f7968034fae0853e8e1952bcc2702e085c9607c6c07_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "innovator/innovator.html.twig"));
+
+        $__internal_425009c8f12f56fd4d86764ddfbe05649138fded908a96f045115bab7a877e2e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_425009c8f12f56fd4d86764ddfbe05649138fded908a96f045115bab7a877e2e->enter($__internal_425009c8f12f56fd4d86764ddfbe05649138fded908a96f045115bab7a877e2e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "innovator/innovator.html.twig"));
+
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        
+        $__internal_3b6999d8512ffc390b838f7968034fae0853e8e1952bcc2702e085c9607c6c07->leave($__internal_3b6999d8512ffc390b838f7968034fae0853e8e1952bcc2702e085c9607c6c07_prof);
+
+        
+        $__internal_425009c8f12f56fd4d86764ddfbe05649138fded908a96f045115bab7a877e2e->leave($__internal_425009c8f12f56fd4d86764ddfbe05649138fded908a96f045115bab7a877e2e_prof);
+
+    }
+
+    // line 3
+    public function block_stylesheet($context, array $blocks = array())
+    {
+        $__internal_af9afc0d54a56a8b0b73cc610868c41c54a8b745db9bd1715b0660b167bbfa36 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_af9afc0d54a56a8b0b73cc610868c41c54a8b745db9bd1715b0660b167bbfa36->enter($__internal_af9afc0d54a56a8b0b73cc610868c41c54a8b745db9bd1715b0660b167bbfa36_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        $__internal_b314792f00a12ab23759d3236c4d291dd631f0ab3ac98240d7951ea6561eacef = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b314792f00a12ab23759d3236c4d291dd631f0ab3ac98240d7951ea6561eacef->enter($__internal_b314792f00a12ab23759d3236c4d291dd631f0ab3ac98240d7951ea6561eacef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        // line 4
+        echo "    ";
+        $this->displayParentBlock("stylesheet", $context, $blocks);
+        echo "
+    <link rel=\"stylesheet\" href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/innovators/innovators.css"), "html", null, true);
+        echo "\"/>
+
+";
+        
+        $__internal_b314792f00a12ab23759d3236c4d291dd631f0ab3ac98240d7951ea6561eacef->leave($__internal_b314792f00a12ab23759d3236c4d291dd631f0ab3ac98240d7951ea6561eacef_prof);
+
+        
+        $__internal_af9afc0d54a56a8b0b73cc610868c41c54a8b745db9bd1715b0660b167bbfa36->leave($__internal_af9afc0d54a56a8b0b73cc610868c41c54a8b745db9bd1715b0660b167bbfa36_prof);
+
+    }
+
+    // line 9
+    public function block_content($context, array $blocks = array())
+    {
+        $__internal_57c6f56986bbc612ffa4764268e2a488e27595c67f59e1868e60d3438e088862 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_57c6f56986bbc612ffa4764268e2a488e27595c67f59e1868e60d3438e088862->enter($__internal_57c6f56986bbc612ffa4764268e2a488e27595c67f59e1868e60d3438e088862_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+
+        $__internal_18c77b54c9b620912d4687da7b203e99b4a4020263769d163c02f6027eb6bdbf = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_18c77b54c9b620912d4687da7b203e99b4a4020263769d163c02f6027eb6bdbf->enter($__internal_18c77b54c9b620912d4687da7b203e99b4a4020263769d163c02f6027eb6bdbf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+
+        // line 10
+        echo "    <div class=\"parallax\" data-image=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/img-innovator/bulbs.jpg"), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, "Nos innovateurs"), "html", null, true);
+        echo "</div>
+    <main>
+        <section id=\"innovators-header\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-xs-12 text-center\">
+                        <h1>";
+        // line 16
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, "Nos innovateurs"), "html", null, true);
+        echo "</h1>
+                    </div>
+                </div>
+                <div class=\"row all-select-innovators\">
+                    <div class=\"col-xs-12 col-sm-6 innovators-select-theme\">
+                        <select class=\"col-xs-12\">
+                            <option>Theme</option>
+                            <option>Education</option>
+                            <option>Santé</option>
+                            <option>Assurance</option>
+                            <option>Comptabilité</option>
+                            <option>Numérisation GED</option>
+                        </select>
+                    </div>
+                    <div class=\"col-xs-12 col-sm-6 \">
+                        <select class=\"col-xs-12 innovators-select-pays\">
+                            ";
+        // line 32
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["countries"]) || array_key_exists("countries", $context) ? $context["countries"] : (function () { throw new Twig_Error_Runtime('Variable "countries" does not exist.', 32, $this->getSourceContext()); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["country"]) {
+            // line 33
+            echo "                            <option>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["country"], "name", array()), "html", null, true);
+            echo "</option>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['country'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 35
+        echo "                           
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section><br><br>
+              
+        
+        
+                <section id=\"innovators-body\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    ";
+        // line 47
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["providers"]) || array_key_exists("providers", $context) ? $context["providers"] : (function () { throw new Twig_Error_Runtime('Variable "providers" does not exist.', 47, $this->getSourceContext()); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["provider"]) {
+            // line 48
+            echo "                    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">
+                        <a href=\"#\">
+                            <div class=\"test\">
+                                <img src=\"http://placehold.it/200x200\" alt=\"\">
+                            </div>
+                            <h3>";
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["provider"], "company", array()), "html", null, true);
+            echo "
+                              <small>";
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["provider"], "firstname", array()), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["provider"], "lastname", array()), "html", null, true);
+            echo "</small>
+                            </h3>
+                        </a>
+                    </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['provider'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 59
+        echo "                   
+                </div>
+            </div>
+        </section><br>
+        
+        
+        
+        
+        
+        <br>
+    </main>
+";
+        
+        $__internal_18c77b54c9b620912d4687da7b203e99b4a4020263769d163c02f6027eb6bdbf->leave($__internal_18c77b54c9b620912d4687da7b203e99b4a4020263769d163c02f6027eb6bdbf_prof);
+
+        
+        $__internal_57c6f56986bbc612ffa4764268e2a488e27595c67f59e1868e60d3438e088862->leave($__internal_57c6f56986bbc612ffa4764268e2a488e27595c67f59e1868e60d3438e088862_prof);
+
+    }
+
+    // line 73
+    public function block_javascript($context, array $blocks = array())
+    {
+        $__internal_923bf69e31c301a87963eaed39473896fa9bc19a61896a28657fc576bbcf95b5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_923bf69e31c301a87963eaed39473896fa9bc19a61896a28657fc576bbcf95b5->enter($__internal_923bf69e31c301a87963eaed39473896fa9bc19a61896a28657fc576bbcf95b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+
+        $__internal_6ce9cbbae8834b76fd631e5a02363c24ee9b1d953bba64302227396dc92689a1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6ce9cbbae8834b76fd631e5a02363c24ee9b1d953bba64302227396dc92689a1->enter($__internal_6ce9cbbae8834b76fd631e5a02363c24ee9b1d953bba64302227396dc92689a1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 74
+        echo "     ";
+        $this->displayParentBlock("javascript", $context, $blocks);
+        echo "
+     <script type=\"text/javascript\" src=\"";
+        // line 75
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/innovators/jquery.imageScroll.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 76
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/innovators/innovators.js"), "html", null, true);
+        echo "\"></script>
+";
+        
+        $__internal_6ce9cbbae8834b76fd631e5a02363c24ee9b1d953bba64302227396dc92689a1->leave($__internal_6ce9cbbae8834b76fd631e5a02363c24ee9b1d953bba64302227396dc92689a1_prof);
+
+        
+        $__internal_923bf69e31c301a87963eaed39473896fa9bc19a61896a28657fc576bbcf95b5->leave($__internal_923bf69e31c301a87963eaed39473896fa9bc19a61896a28657fc576bbcf95b5_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "innovator/innovator.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  203 => 76,  199 => 75,  194 => 74,  185 => 73,  164 => 59,  151 => 54,  147 => 53,  140 => 48,  136 => 47,  122 => 35,  113 => 33,  109 => 32,  90 => 16,  78 => 10,  69 => 9,  56 => 5,  51 => 4,  42 => 3,  11 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{% extends \"layout.html.twig\" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel=\"stylesheet\" href=\"{{ asset(\"css/innovators/innovators.css\") }}\"/>
+
+{% endblock %}
+
+{% block content %}
+    <div class=\"parallax\" data-image=\"{{ asset('img/img-innovator/bulbs.jpg') }}\">{{ \"Nos innovateurs\"|upper }}</div>
+    <main>
+        <section id=\"innovators-header\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col-xs-12 text-center\">
+                        <h1>{{ \"Nos innovateurs\"|upper }}</h1>
+                    </div>
+                </div>
+                <div class=\"row all-select-innovators\">
+                    <div class=\"col-xs-12 col-sm-6 innovators-select-theme\">
+                        <select class=\"col-xs-12\">
+                            <option>Theme</option>
+                            <option>Education</option>
+                            <option>Santé</option>
+                            <option>Assurance</option>
+                            <option>Comptabilité</option>
+                            <option>Numérisation GED</option>
+                        </select>
+                    </div>
+                    <div class=\"col-xs-12 col-sm-6 \">
+                        <select class=\"col-xs-12 innovators-select-pays\">
+                            {% for country in countries %}
+                            <option>{{ country.name }}</option>
+                            {% endfor %}
+                           
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section><br><br>
+              
+        
+        
+                <section id=\"innovators-body\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    {% for provider in providers %}
+                    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">
+                        <a href=\"#\">
+                            <div class=\"test\">
+                                <img src=\"http://placehold.it/200x200\" alt=\"\">
+                            </div>
+                            <h3>{{ provider.company }}
+                              <small>{{ provider.firstname }} {{ provider.lastname }}</small>
+                            </h3>
+                        </a>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+            </div>
+        </section><br>
+        
+        
+        
+        
+        
+        <br>
+    </main>
+{% endblock %}
+
+
+{% block javascript %}
+     {{ parent() }}
+     <script type=\"text/javascript\" src=\"{{ asset('js/innovators/jquery.imageScroll.min.js') }}\"></script>
+    <script src=\"{{ asset(\"js/innovators/innovators.js\") }}\"></script>
+{% endblock %}", "innovator/innovator.html.twig", "C:\\xampp\\htdocs\\hebya\\templates\\innovator\\innovator.html.twig");
+    }
+}

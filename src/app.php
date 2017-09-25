@@ -128,6 +128,10 @@ $app['admin.country.controller'] = function () use ($app) {
     return new Controller\Admin\AdminCountryController($app);
 };
 
+$app['admin.opportunity.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminOpportunityController($app);
+};
+
 $app['mention.controller'] = function () use ($app) {
     return new Controller\MentionController($app);
 };

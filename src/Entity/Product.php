@@ -24,6 +24,8 @@ class Product {
     
     private $description;
     
+    private $picture;
+        
     private $status;
     
     private $summary;
@@ -62,6 +64,10 @@ class Product {
     function getDescription() {
         return $this->description;
     }
+    
+    public function getPicture() {
+        return $this->picture;
+    }
 
     function getStatus() {
         return $this->status;
@@ -85,6 +91,11 @@ class Product {
     function setDescription($description) {
         $this->description = $description;
         
+        return $this;
+    }
+    
+    public function setPicture($picture) {
+        $this->picture = $picture;
         return $this;
     }
 

@@ -69,6 +69,11 @@ SQL;
         }
     }
     
+    public function delete(Country $country){
+        
+        $this->db->delete('country', ['idcountry' => $country->getIdcountry()]);
+    }
+    
     
     public function buildEntity(array $data){
        

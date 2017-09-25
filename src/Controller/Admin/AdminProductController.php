@@ -48,6 +48,7 @@ class AdminProductController extends ControllerAbstract {
             $product->setWebsite($_POST['website']);
             $product->setSummary($_POST['summary']);
             $product->setDescription($_POST['description']);
+            $product->setPicture($_POST['picture']);
             $product->setField($_POST['field']);
             $product->setStatus($_POST['status']);
             
