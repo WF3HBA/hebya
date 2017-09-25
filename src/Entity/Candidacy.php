@@ -18,6 +18,7 @@ class Candidacy {
     private $cv;
     private $coverletter;
     
+    
     public function getIdcandidacy() {
         return $this->idcandidacy;
     }
