@@ -125,9 +125,6 @@ a#admin.btn.btn-primary.fa.fa-book, a#admin.btn.btn-primary.fa.fa-user{
    margin-bottom: 18.5px;
    border-radius: 6px;
    border: none;
-}
-
-a#admin.btn.btn-primary.fa.fa-book, a#admin.btn.btn-primary.fa.fa-user{
    background-color:#222222;
    color: white;
 }
@@ -157,6 +154,32 @@ a#admin.btn.btn-primary.fa.fa-sign-out:hover, a#admin.btn.btn-primary.fa.fa-penc
    color: white;
 }
 
+
+a#admin.btn.btn-primary.fa.fa-book:hover, a#admin.btn.btn-primary.fa.fa-user:hover{
+    transition: 1s;
+    background-color:#008080;
+    color: white;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out, a#admin.btn.btn-primary.fa.fa-pencil{
+    padding: 9px 9px 8px 9px;
+    margin-left: 5px;
+    margin-bottom: 18.5px;
+    border-radius: 6px;
+    border: none;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out, a#admin.btn.btn-primary.fa.fa-pencil{
+    background-color:#222222;
+    color: white;
+}
+
+
+a#admin.btn.btn-primary.fa.fa-sign-out:hover, a#admin.btn.btn-primary.fa.fa-pencil:hover{
+    transition: 1s;
+    background-color:#008080;
+    color: white;
+}
 
 /***********  N A V B A R  *********/
 
@@ -271,7 +294,7 @@ div.col-lg-4.col-md-4.col-sm-4{
 }
 
 
-button#submit.btn.btn-primary.pull-right{
+footer button#submit.btn.btn-primary.pull-right{
     margin-right: 40%;
 }
 
@@ -279,8 +302,15 @@ footer a {
     color: white;
 } 
 
-.btn-primary {
+footer .btn-primary {
     background: #008080;
+    border: none;
+    /*margin-left: 20px;*/
+}
+
+footer .btn-primary:hover {
+   transition: 0.5s;
+    border: none;
     /*margin-left: 20px;*/
 }
 
