@@ -20,23 +20,28 @@
                     </div>
                 </div>
                 <div class="row all-select-innovators">
-                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 innovators-select-theme">
-                        <select class="col-xs-12">
-                            <option>Theme</option>
-                            <option>Education</option>
-                            <option>Santé</option>
-                            <option>Assurance</option>
-                            <option>Comptabilité</option>
-                            <option>Numérisation GED</option>
-                        </select>
+                    {#<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 innovators-select-theme">
+                      
+                            <select class="col-xs-12">
+                                <option value="">Theme</option>
+                                <option>Education</option>
+                                <option>Santé</option>
+                                <option>Assurance</option>
+                                <option>Comptabilité</option>
+                                <option>Numérisation GED</option>
+                            </select>
+                    </div>#}
+                    <div class="col-xs-offset-1 col-xs-12  col-sm-offset-3 col-sm-6 ">
+                        <form id="filter-form">
+                            <select class="col-xs-12 innovators-select-pays">
+                                <option value="">choissisez un pays</option>
+                                {% for country in countries %}
+                                <option>{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
                     </div>
-                    <div class="col-xs-offset-1 col-xs-10  col-sm-offset-0 col-sm-6 ">
-                        <select class="col-xs-12 innovators-select-pays">
-                            {% for country in countries %}
-                            <option>{{ country.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+                    
                 </div>
             </div>
         </section><br><br>
@@ -44,47 +49,9 @@
         <section id="innovators-body">
             <div class="container">
                 <div class="row">
-                    {% for provider in providers %}
-                        <div class="test col-lg-3 col-sm-6 text-center mb-4">
-                            <div class="box">
-                                <img src="{{ asset(provider.picture) }}" alt="">
-
-                                <div class="box-content">
-                                    <h3 class="title">{{ provider.firstname }} {{ provider.lastname }}</h3>
-                                    <p class="title">{{ provider.company }}</p>
-                                        <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong-{{ provider.idprovider }}">
-                                      Détails
-                                    </button>
-                                </div>
-                            </div>
-                        </div>  
-                                              
-                        <div class="modal fade" id="exampleModalLong-{{ provider.idprovider }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                  <h2 class="modal-title" id="exampleModalLongTitle">{{ provider.firstname }} {{ provider.lastname }}</h2>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              
-                              <div class="modal-footer text-center">
-                                <div class="col-xs-4">
-                                    <img src="{{ asset(provider.picture) }}" alt="">
-                                </div>
-                                <div class="col-xs-7">
-                                    <h3 class="col-xs-12 text-center">{{ provider.company }}</h3>                                
-                                    <div class="text-center"> {{ provider.description |raw }}</div> 
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                </div>
-                              </div>
-                            </div>       
-                          </div>
-                        </div>    
-                                
-                    {% endfor %}                   
+                    <div id="innovator-list">
+                        {% include 'innovator/innovatorList.html.twig' %}
+                    </div>                  
                 </div>                    
             </div>  
         </section>
@@ -95,6 +62,10 @@
 {% block javascript %}
      {{ parent() }}
      <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+     <script>
+        var countrySelect = '{{ path('provider_ajax') }}';
+        
+    </script>
     <script src="{{ asset("js/innovators/innovators.js") }}"></script>
     <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
 

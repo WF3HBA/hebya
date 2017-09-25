@@ -130,7 +130,7 @@ SQL;
         return $product;
     }
     
-    public function findByCountry($id){
+    public function findByCountryAndField($idCountry, $field){
         
         $query = <<<SQL
     SELECT c.name,
@@ -142,15 +142,24 @@ SQL;
     JOIN country_has_product chp ON chp.idproduct = p.idproduct
     JOIN country c ON c.idcountry = chp.idcountry
     JOIN provider pr ON pr.idprovider = p.idprovider
-    WHERE chp.idcountry = :idcountry
-    
+    WHERE true 
 SQL;
+        
+        $parameters = [];
+        
+        if (!empty($idCountry)) {
+            $query .= ' AND chp.idcountry = :idcountry';
+            $parameters[':idcountry'] = $idCountry;
+        }
+        
+        if (!empty($field)) {
+            $query .= ' AND p.field = :field';
+            $parameters[':field'] = $field;
+        }
         
         $dbProducts = $this->db->fetchAll(
                 $query,
-                [
-                    ':idcountry' => $id
-                ]
+                $parameters
             );
     
             $products = [];    
@@ -162,7 +171,9 @@ SQL;
             return $products;
     }
     
-    public function findByField(){
+    
+    
+    public function findByField(Field $field){
           
         $query = <<<SQL
     SELECT p.*    
@@ -174,7 +185,7 @@ SQL;
         $dbProducts = $this->db->fetchAll(
                 $query,
                 [
-                    ':field' => $field
+                    ':field' => $field->getField($field)
                 ]
             );
     

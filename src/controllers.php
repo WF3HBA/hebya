@@ -59,8 +59,15 @@ $app->get('/product/{id}', 'product.controller:productIdAction')
         ->value('id',null)
         ->bind('product_id');
 
+$app->get('/product/{field}', 'product.controller:fieldSelect')
+        ->value('field',null)
+        ->bind('product_field');
+
 $app->get('/product_ajax', 'product.controller:countrySelect')
         ->bind('product_ajax');
+
+$app->get('/provider_ajax', 'innovator.controller:countrySelect')
+        ->bind('provider_ajax');
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');

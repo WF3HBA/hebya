@@ -20,17 +20,17 @@ $(function(){
        $(".product-detail").css('display','block');
    });
    
-   $(".products-select-pays").change(function(){
-       var idCountry = $(".products-select-pays option:selected").val();
-       console.log(idCountry);
+   $("#filter-form").on('change', 'select', function(){
+       var idCountry = $(".products-select-pays").val();
+       var field = $(".products-select-field").val();
 
        $.ajax({
            url: countrySelect,
            type: 'GET',
-           data: {'idcountry':idCountry}
+           data: {'idcountry':idCountry, 'field': field},
+           dataType: 'html'
        }).done(function(data){
-           JSON.parse(data);
-            console.log(data);
+           $('#product-list').html(data);
        });
    });
 });

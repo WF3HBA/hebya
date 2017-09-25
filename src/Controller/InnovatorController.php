@@ -18,4 +18,18 @@ class InnovatorController extends ControllerAbstract {
                 ]
         );
     }
+    
+    public function countrySelect(){
+        
+         $providers = $this->app['provider.repository']->findByCountryAndField($_GET['country']);
+         
+         
+         return $this->render(
+            'innovator/innovatorList.html.twig',
+             [
+                 'providers' => $providers
+             ]
+        );
+         
+    }
 }
