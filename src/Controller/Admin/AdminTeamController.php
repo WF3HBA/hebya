@@ -92,8 +92,4 @@ class AdminTeamController extends ControllerAbstract {
         return $this->redirectRoute('admin_team');
     }
     
-<<<<<<< HEAD
-
-=======
->>>>>>> a71885530f64ccd04cd9dc399acf48977c76336e
 }
