@@ -19,6 +19,8 @@ class Client {
      */
     private $company;
     
+    private $description;
+        
     private $lastname;
     
     private $firstname;
@@ -29,6 +31,8 @@ class Client {
     
     private $address;
     
+    private $city;
+
     private $country;
     
     private $status = 'user';
@@ -50,6 +54,10 @@ class Client {
     function getCompany() {
         return $this->company;
     }
+    
+    public function getDescription() {
+        return $this->description;
+    }
 
     function getLastname() {
         return $this->lastname;
@@ -69,6 +77,10 @@ class Client {
     
      function getAddress() {
         return $this->address;
+    }
+    
+     public function getCity() {
+        return $this->city;
     }
 
     function getCountry() {
@@ -92,13 +104,17 @@ class Client {
     
     function setIdclient($idclient) {
         $this->idclient = $idclient;
-        
         return $this;
     }
 
     function setCompany($company) {
         $this->company = $company;
         
+        return $this;
+    }
+    
+    public function setDescription($description) {
+        $this->description = $description;
         return $this;
     }
 
@@ -129,6 +145,11 @@ class Client {
      function setAddress($address) {
         $this->address = $address;
         
+        return $this;
+    }
+    
+    public function setCity($city) {
+        $this->city = $city;
         return $this;
     }
 

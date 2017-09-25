@@ -106,4 +106,39 @@ SQL;
         
         return $provider;
     }
+    
+    public function findByCountryAndField($idCountry){
+        
+        $query = <<<SQL
+    SELECT pr.*
+
+    FROM provider pr
+    WHERE true 
+SQL;
+        
+        $parameters = [];
+        
+        if (!empty($idCountry)) {
+            $query .= ' AND pr.country = :country';
+            $parameters[':country'] = $idCountry;
+        }
+        
+//        if (!empty($field)) {
+//            $query .= ' AND pr.field = :field';
+//            $parameters[':field'] = $field;
+//        }
+        
+        $dbProviders = $this->db->fetchAll(
+                $query,
+                $parameters
+            );
+    
+            $providers = [];    
+        
+            foreach($dbProviders as $dbProvider){
+                $providers[] = $this->buildEntity($dbProvider);
+            }
+            
+            return $providers;
+    }
 }

@@ -43,19 +43,7 @@ SQL;
                 return $this->buildEntity($dbOpportunity);
             }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     private function buildEntity(array $data){
        
@@ -86,6 +74,48 @@ SQL;
         return $opportunity;
     }
     
+    public function findBySelector($field, $idcountry, $contrat_type ){
+        
+        $query = <<<SQL
+    SELECT op.*,
+           c.idcountry,
+           c.name
+    FROM opportunity op
+    JOIN country c ON c.idcountry = op.idcountry            
+    WHERE true 
+SQL;
+        
+        $parameters = [];
+        
+        if (!empty($field)) {
+            $query .= ' AND op.field = :field';
+            $parameters[':field'] = $field;
+        }
+        
+        if (!empty($idcountry)) {
+            $query .= ' AND c.idcountry = :idcountry';
+            $parameters[':idcountry'] = $idcountry;
+        }
+        
+        
+        if (!empty($contrat_type)) {
+            $query .= ' AND op.contract_type = :contract_type';
+            $parameters[':contract_type'] = $contrat_type;
+        }
+//        echo $query;
+        $dbopportunities = $this->db->fetchAll(
+                $query, 
+                $parameters
+            );
+    
+            $opportunities = [];    
+        
+            foreach($dbopportunities as $dbopportunity){
+                $opportunities[] = $this->buildEntity($dbopportunity);
+            }
+            
+            return $opportunities;
+    }
     
     
 }

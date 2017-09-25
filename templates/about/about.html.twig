@@ -28,13 +28,13 @@
             {% for teamMember in teamMembers  %}
 
                 <div class="teem col-xs-12 col-sm-6 col-md-3">
-                    <div class="box col-xs-12 col-md-12">
-                        <img class="img-responsive" src="{{ asset('img/img-about/zakaria.jpg') }}">
-                        <div class="box-content">
-                            <h3 class="title">{{ teamMember.fullName }}</h3>                                    
+                    <div class="box col-xs-10 col-xs-offset-2 col-md-12">
+                        <img class="img-responsive" src="{{ asset(teamMember.picture) }}">
+                        <div class="box-content" data-toggle="modal" data-target="#exampleModalLong-{{ teamMember.idteam_member }}">
+                            <h3 class="title">{{ teamMember.fullName }}</h3>                             
                             <span class="post">{{ teamMember.title }}</span>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
 <!--
                 <div id="{{ teamMember.firstName }}" class="team-member col-sm-6 col-md-3" data-toggle="modal" data-target="#myModal">
@@ -46,27 +46,43 @@
                     </div>
                 </div>
 -->
-            {% endfor %}
-            {#  MODAL #}
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content full-description">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h1 class="modal-title"></h1>
-                          <h2></h2>
-                        </div>
-                        <div class="modal-body team-member-full-description">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                
+                <div class="modal fade" id="exampleModalLong-{{ teamMember.idteam_member }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <h2 class="modal-title" id="exampleModalLongTitle">{{ teamMember.fullName }} </h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-footer text-center">
+
+                        <div class="col-xs-12">
+                            <h3 class="col-xs-12 text-center">{{ teamMember.fullName }}</h3>                                
+                            <h3 class="col-xs-12 text-center">{{ teamMember.description|raw }}</h3>                                
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                         </div>
                       </div>
-                    </div>
-                 </div>
-                {# END OF MODAL #}
-            </div>
+                    </div>       
+                  </div>
+                </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {% endfor %}            
         </section>
     </main>
     <div id="team-layer">

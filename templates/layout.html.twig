@@ -12,31 +12,28 @@
     </head>
     <body>
         <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <a href="{{path('homepage')}}" id="hebya-logo"><img id="top" src="{{ asset('img/hebya-logo-normal.png')}}" title="Accueil"/></a>
-                    </div>
-                    <div id="header-social" class="col-xs-8">
-                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
-                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
-                      
-                         {% if user_manager.admin %}
-                            <a href="{{ path('admin') }}" class="btn btn-primary fa fa-pencil" id="admin" title="Gestion administrateur"></a>
-                            <a href="{{ path('logout') }}" class="btn btn-primary fa fa-sign-out" id="admin" title="Déconnexion"></a>
-                        
-                         {% elseif user_manager.UserName %}
-                            <a href="{{ path('profil') }}" class="btn btn-primary" id="admin">Espace membre</a>
-                            <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
-                        {% else %}
-                            <a href="{{ path('register') }}" class="btn btn-primary fa fa-book" aria-hidden="true" id="admin" title="Inscription"></a>
-                            <a href="{{ path('login') }}" class="btn btn-primary fa fa-user" aria-hidden="true" id="admin" title="Connexion"></a>
-                        {% endif %}
-
-                    </div>                
-               </div>
-            </div>
-        </header>
+           <div class="container">
+               <div class="row">
+                   <div class="col-xs-4">
+                       <a href="{{path('homepage')}}" id="hebya-logo"><img id="top" src="{{ asset('img/hebya-logo-normal.png')}}" title="Accueil"/></a>
+                   </div>
+                   <div id="header-social" class="col-xs-8">
+                       <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                       <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        {% if user_manager.admin %}
+                           <a href="{{ path('admin') }}" class="btn btn-primary fa fa-pencil" id="admin" title="Gestion administrateur"></a>
+                           <a href="{{ path('logout') }}" class="btn btn-primary fa fa-sign-out" id="admin" title="Déconnexion"></a>
+                        {% elseif user_manager.UserName %}
+                           <a href="{{ path('profil') }}" class="btn btn-primary" id="admin">Espace membre</a>
+                           <a href="{{ path('logout') }}" class="btn btn-primary" id="admin">Déconnexion</a>
+                       {% else %}
+                           <a href="{{ path('register') }}" class="btn btn-primary fa fa-book" aria-hidden="true" id="admin" title="Inscription"></a>
+                           <a href="{{ path('login') }}" class="btn btn-primary fa fa-user" aria-hidden="true" id="admin" title="Connexion"></a>
+                       {% endif %}
+                   </div>                
+              </div>
+           </div>
+       </header>
         <nav id="sticker" class="navbar navbar-inverse">
           <div class="container">
             <div class="navbar-header">

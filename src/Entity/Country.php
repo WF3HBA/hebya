@@ -29,6 +29,9 @@ class Country {
     
     private $contact_address;
     
+    private $contact_city;
+
+        
     /***GETTER****/
     
     function getIdcountry() {
@@ -63,6 +66,10 @@ class Country {
         return $this->contact_address;
     }
     
+    public function getContact_city() {
+        return $this->contact_city;
+    }
+    
     /**********SETTER************/
     
     function setIdcountry($idcountry) {
@@ -87,9 +94,7 @@ class Country {
         $this->continent = $continent;
         
         return $this;
-    }
-    
-   
+    }   
 
     function setContact_name($contact_name) {
         $this->contact_name = $contact_name;
@@ -113,6 +118,11 @@ class Country {
         $this->contact_address = $contact_address;
         
          return $this;
+    }
+    
+    public function setContact_city($contact_city) {
+        $this->contact_city = $contact_city;
+        return $this;
     }
 
 

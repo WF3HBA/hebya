@@ -42,9 +42,11 @@ class AdminClientController extends ControllerAbstract {
             $client->setLastname($_POST['lastname']);
             $client->setFirstname($_POST['firstname']);
             $client->setCompany($_POST['company']);
+            $client->setDescription($_POST['description']);
             $client->setEmail($_POST['email']);
             $client->setPhone($_POST['phone']);
             $client->setAddress($_POST['address']);
+            $client->setCity($_POST['city']);
             $client->setCountry($_POST['country']);
             $client->setStatus($_POST['status']);
             
@@ -54,7 +56,6 @@ class AdminClientController extends ControllerAbstract {
             } elseif(strlen($_POST['lastname']) > 45) {
                 $errors['lastname'] = 'maximum 30 characteres';
             }
-          
             
             if (empty($_POST['firstname'])) {
                 $errors['firstname'] = 'firstname require';
@@ -64,8 +65,12 @@ class AdminClientController extends ControllerAbstract {
               
             if (empty($_POST['company'])) {
                 $errors['company'] = 'company require';
-            } elseif(strlen($_POST['company']) > 45) {
+            } elseif(strlen($_POST['company']) > 100) {
                 $errors['company'] = 'maximum 30 characteres';
+            }
+            
+            if (empty($_POST['description'])) {
+                $errors['company'] = 'company require';
             }
             
             if (empty($_POST['email'])) {
@@ -74,13 +79,11 @@ class AdminClientController extends ControllerAbstract {
                 $errors['email'] = 'maximum 30 characteres';
             }
             
-            
             if (empty($_POST['phone'])) {
                 $errors['phone'] = 'phone require';
             } elseif(strlen($_POST['phone']) > 45) {
                 $errors['phone'] = 'maximum 30 characteres';
             }
-            
             
             if (empty($_POST['address'])) {
                 $errors['adrress'] = 'address require';
@@ -88,6 +91,11 @@ class AdminClientController extends ControllerAbstract {
                 $errors['address'] = 'maximum 30 characteres';
             }
             
+            if (empty($_POST['city'])) {
+                $errors['city'] = 'country require';
+            } elseif(strlen($_POST['city']) > 45) {
+                $errors['city'] = 'maximum 30 characteres';
+            }
             
             if (empty($_POST['country'])) {
                 $errors['country'] = 'country require';
@@ -106,7 +114,6 @@ class AdminClientController extends ControllerAbstract {
                 $this->addFlashMessage($message, 'error');
             }
         }
-              
         
             return $this->render(
                     'admin/clientEdit.html.twig',

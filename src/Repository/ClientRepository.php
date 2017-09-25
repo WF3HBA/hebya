@@ -2,12 +2,7 @@
 
 namespace Repository;
 
-
-
 use Entity\Client;
-
-
-
 
 class ClientRepository extends RepositoryAbstract{
     
@@ -48,11 +43,13 @@ SQL;
     public function save(Client $client){
         $data = [
             'company' => $client->getCompany(),
+            'description' => $client->getDescription(),
             'lastname' => $client->getLastname(),
             'firstname' => $client->getFirstname(),
             'phone' => $client->getPhone(),
             'email' => $client->getEmail(),
             'address' => $client->getAddress(),
+            'city' => $client->getCity(),
             'country' => $client->getCountry(),
             'status' => $client->getStatus(),
             'picture' => $client->getPicture()
@@ -79,11 +76,13 @@ SQL;
         $client
             ->setIdclient($data['idclient'])
             ->setCompany($data['company'])
+            ->setDescription($data['description'])
             ->setLastname($data['lastname'])
             ->setFirstname($data['firstname'])
             ->setPhone($data['phone'])
             ->setEmail($data['email'])
             ->setAddress($data['address'])
+            ->setCity($data['city'])
             ->setCountry($data['country'])
             ->setStatus($data['status'])
             ->setPicture($data['picture'])
