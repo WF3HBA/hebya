@@ -22,8 +22,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app->get('/', 'index.controller:indexAction')
         ->bind('homepage');
 
-
-
 $app->get('/apropos', 'about.controller:aboutAction')
         ->bind('apropos');
 
@@ -68,8 +66,18 @@ $app->get('/product/{id}', 'product.controller:productIdAction')
         ->value('id',null)
         ->bind('product_id');
 
+$app->get('/product/{field}', 'product.controller:fieldSelect')
+        ->value('field',null)
+        ->bind('product_field');
+
 $app->get('/product_ajax', 'product.controller:countrySelect')
         ->bind('product_ajax');
+
+$app->get('/provider_ajax', 'innovator.controller:countrySelect')
+        ->bind('provider_ajax');
+
+$app->get('/opportunity_ajax', 'opportunity.controller:jobSelect')
+        ->bind('opportunity_ajax');
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
@@ -160,10 +168,31 @@ $admin->get('/team/suppression/{id}', 'admin.team.controller:deleteAction')
         ->assert('id','\d+')
         ->bind('admin_team_delete');
 
+/*******ADMIN COUNTRY ACTION*******/
 
-$admin->match('/team/suppression/{id}', 'admin.team.controller:deleteAction')
+$admin->get('/country', 'admin.country.controller:countryListAction')
+            ->bind('admin_country');
+
+$admin->match('/country/edition/{id}', 'admin.country.controller:editAction')
             ->value('id', null)
-            ->bind('admin_team_delete');
+            ->bind('admin_country_edit');
+
+$admin->get('/country/suppression/{id}', 'admin.country.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_country_delete');
+
+/*******ADMIN OPPORTUNITY ACTION*******/
+
+$admin->get('/opportunity', 'admin.opportunity.controller:opportunityListAction')
+            ->bind('admin_opportunity');
+
+$admin->match('/opportunity/edition/{id}', 'admin.opportunity.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_opportunity_edit');
+
+$admin->get('/opportunity/suppression/{id}', 'admin.opportunity.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_opportunity_delete');
 
 
 //route admin user

@@ -1,4 +1,4 @@
-{% extends "Admin/admin.html.twig" %}
+{% extends "admin/admin.html.twig" %}
 
 {% block stylesheet %}
     {{ parent() }}
@@ -72,15 +72,15 @@
                     </div>
                 </div>
                 <div class="form-group">
-                        <label class="col-md-2 control-label" for="status">Statut</label>  
-                        <div class="col-md-8">
-                            <select id="status" name="status" class="form-control select-md">
-                                <option value="public" {% if provider.status == "public" %}selected{% endif %}>Public</option>
-                                <option value="privé" {% if provider.status == "privé" %}selected{% endif %}>Privé</option>
-                                <option value="archivé" {% if provider.status == "archivé" %}selected{% endif %}>Archvé</option>
-                            </select>
-                        </div>
+                    <label class="col-md-2 control-label" for="status">Statut</label>  
+                    <div class="col-md-8">
+                        <select id="status" name="status" class="form-control select-md">
+                            <option value="public" {% if provider.status == "public" %}selected{% endif %}>Public</option>
+                            <option value="privé" {% if provider.status == "privé" %}selected{% endif %}>Privé</option>
+                            <option value="archivé" {% if provider.status == "archivé" %}selected{% endif %}>Archvé</option>
+                        </select>
                     </div>
+                </div>
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="submit"></label>
                     <div class="col-md-8">

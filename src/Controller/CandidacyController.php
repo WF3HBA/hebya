@@ -48,7 +48,7 @@ class CandidacyController extends ControllerAbstract {
             if(empty($_FILES['cv'])){
                 $errors['cv'] = 'cv require';
             } else {          
-                $_FILES['cv']['name'] = $this->MikeLeRoi($_FILES['cv']);
+                $filename = $this->MikeLeRoi($_FILES['cv']);
             }
             
             if(empty($_FILES['coverletter'])){
@@ -70,7 +70,7 @@ class CandidacyController extends ControllerAbstract {
                 $candidacy->setPhone($_POST['phone']);
                 $candidacy->setAddress($_POST['address']);
                 $candidacy->setCountry($_POST['country']);
-                
+                $candidacy->set
                 
                 
                 

@@ -32,6 +32,7 @@
     color: white;
     padding: 0;
     font-size: 15px;
+    display: inline-block;
 }
 
 /****TOP NAV*****/
@@ -73,16 +74,9 @@ form {
 .table-listing{
     margin-top: 100px;
 }
-/***MAP****/
 
-path {
-   fill: #008080;
-}
-
-path:hover {
-    fill: #004f4f;
-    cursor: pointer;
-    transition: 0.9s;
+.powered{
+    margin-top: 10px;
 }
 
 
@@ -99,3 +93,19 @@ path:hover {
 #calendar{
     padding: 20px;
 }
+
+a:hover{
+    background-color: white;
+}
+
+ img {
+    width: 120px;
+}
+
+.add-on > a{
+    padding: 20px;
+    width: 48%;
+    margin-bottom: 5px;
+}
+
+.
