@@ -8,3 +8,10 @@ $app = require __DIR__.'/../src/app.php';
 require __DIR__.'/../config/prod.php';
 require __DIR__.'/../src/controllers.php';
 $app->run();
+
+$app->error(function (\Exception $e, $code) use ($app) {
+    if (404 === $code) {
+        return $app->redirect($app['url_generator']->generate('home'));
+    }
+    // Do something else (handle error 500 etc.)
+});

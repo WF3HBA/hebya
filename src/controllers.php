@@ -8,6 +8,15 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
+// affiche un message d'erreur
+//$app->error(function (\Exception $e, Request $request, $code) {
+//    return new Response('We are sorry, but something went terribly wrong.');
+//});
+
+
+
+
+
 /********* F R O N T *********/
 
 $app->get('/', 'index.controller:indexAction')
@@ -72,6 +81,9 @@ $app->get('/opportunity_ajax', 'opportunity.controller:jobSelect')
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
+
+$app->get('/notfound', 'notfound.controller:notfoundAction')
+        ->bind('notfound');
 
 
 
@@ -171,9 +183,13 @@ $admin->get('/country/suppression/{id}', 'admin.country.controller:deleteAction'
 
 /*******ADMIN OPPORTUNITY ACTION*******/
 
+
+
+
 $admin->get('/opportunity', 'admin.opportunity.controller:opportunityListAction')
             ->bind('admin_opportunity');
 
+        
 $admin->match('/opportunity/edition/{id}', 'admin.opportunity.controller:editAction')
             ->value('id', null)
             ->bind('admin_opportunity_edit');
