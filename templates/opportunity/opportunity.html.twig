@@ -27,17 +27,13 @@
                     </label><br>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input" id="interim">
-                        Intérim
-                    </label><br>
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" id="saisonnier">
-                        Saisonnier
+                        Stage
                     </label><br><br>
 
                     <p>Expérience</p>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input" id="experience">
-                        Non préciser
+                        Non précisée
                     </label><br>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input" id="moins-an">
@@ -55,7 +51,7 @@
                     <p>Niveau de formation</p>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
-                        Non préciser
+                        Non précisée
                     </label><br>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
@@ -70,10 +66,10 @@
                         Plus de 3 ans
                     </label><br><br>
 
-                    <p>DURÉE HEBDOMADAIRE</p>
+                    <p>Durée hebdomadaire</p>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
-                        Non préciser
+                        Non précisée
                     </label><br>
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
@@ -82,13 +78,18 @@
                     <label class="form-check-label">
                         <input type="checkbox" class="form-check-input">
                         Temps partiel
-                    </label><br>
+                    </label><br><br>
+                    
+                    <p> Pays souhaité</p>
                     
                     <select class="col-xs-12 innovators-select-pays">
                             {% for country in countries %}
                             <option>{{ country.name }}</option>
                             {% endfor %}                           
-                    </select>
+                    </select><br><br>
+                    
+                    <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Rechercher</button>
+
                     
                 </div>
                 <div class="emploi-annonce col-xs-12 col-sm-8">
