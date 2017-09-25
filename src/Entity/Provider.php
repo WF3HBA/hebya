@@ -97,6 +97,10 @@ class Provider {
      public function getStatus() {
          return $this->status;
      }
+     
+     public function getFullName() {
+        return $this->firstname . ' ' . $this->lastname;
+    }
 
         
     /**********SETTER************/
@@ -177,12 +181,5 @@ class Provider {
          $this->status = $status;
          return $this;
      }
-    
-    public function getFullName() {
-        
-        return $this->firstname . ' ' . $this->lastname;
-        
-    }
-  
     
 }

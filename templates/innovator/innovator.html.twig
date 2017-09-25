@@ -7,11 +7,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="parallax" data-image="{{ asset('img/img-innovator/bulbs.jpg') }}"></div>
+
+    <div class="parallax" data-image="{{ asset('img/img-innovator/hosted_by_africa_innovators.jpg') }}"></div>
     <main>
         <section id="innovators-header">
             <div class="container">
                 <div class="row">
+{#                  <div id="slide1" style="background-image:url("../images/innovateurs.jpg"); background-repeat: none;">
+                    </div>#}
                     <div class="col-xs-12 text-center">
                         <h1>{{ "Nos innovateurs"|upper }}</h1>
                     </div>
@@ -93,6 +96,8 @@
 
 {% block javascript %}
      {{ parent() }}
-     <script type="text/javascript" src="{{ asset('js/innovators/jquery.imageScroll.min.js') }}"></script>
+     <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script src="{{ asset("js/innovators/innovators.js") }}"></script>
+    <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
+
 {% endblock %}

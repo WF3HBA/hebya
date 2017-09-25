@@ -7,18 +7,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="col-md-7 col-md-offset-2 table-listing">
-    <h1>{% if client.idclient%}Edit{% else %}Create{% endif %} Client</h1>
+<div class="col-md-9 col-md-offset-2 table-listing">
+    <h1>{% if client.idclient%}Edition{% else %}Création{% endif %} client</h1>
 <form class="form-horizontal" method="POST">
     <fieldset>
-
-    <!-- Form Name -->
     <legend></legend>
-
-    <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="lastname">lastname</label>  
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="lastname">lastname</label>  
+      <div class="col-md-8">
       <input id="lastname" name="lastname" type="text" placeholder="" value="{{client.lastname}}" class="form-control input-md">
 
       </div>
@@ -26,8 +22,8 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="firstname">firstname</label>  
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="firstname">firstname</label>  
+      <div class="col-md-8">
       <input id="firstname" name="firstname" type="text" placeholder="" value="{{client.firstname}}" class="form-control input-md">
 
       </div>
@@ -35,34 +31,16 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="company">company</label>  
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="company">company</label>  
+      <div class="col-md-8">
       <input id="company" name="company" type="text" placeholder="" value="{{client.company}}" class="form-control input-md">
 
       </div>
     </div>
 
-    <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="company_type">company type</label>  
-      <div class="col-md-5">
-          <select name="company_type">
-              <option value="" class="form-control input-md">Choisissez</option>
-              
-              <option  value="Entreprise" class="form-control input-md" {% if client.company_type == 'Entreprise' %}selected{% endif %}>Entreprise</option>
-              <option  value="Association" class="form-control input-md" {% if client.company_type == 'Association' %}selected{% endif %}>Association</option>
-              <option  value="Organisme public" class="form-control input-md" {% if client.company_type == 'Organisme public' %}selected{% endif %}>Organisme public</option>
-              <option  value="Université" class="form-control input-md" {% if client.company_type == 'Université' %}selected{% endif %}>Université</option>
-              <option  value="Centre de recherche" class="form-control input-md" {% if client.company_type == 'Centre de recherche' %}selected{% endif %}>Centre de recherche</option>
-              <option  value="Autre" class="form-control input-md" {% if client.company_type == 'Autre' %}selected{% endif %}>Autre</option>
-          </select>
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="email">email</label>  
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="email">email</label>  
+      <div class="col-md-8">
       <input id="email" name="email" type="text" placeholder="" value="{{client.email}}" class="form-control input-md">
 
       </div>
@@ -70,8 +48,8 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="phone">phone</label>  
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="phone">phone</label>  
+      <div class="col-md-8">
       <input id="phone" name="phone" type="text" placeholder="" value="{{client.phone}}" class="form-control input-md">
 
       </div>
@@ -79,8 +57,8 @@
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="address">address</label>  
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="address">address</label>  
+      <div class="col-md-8">
       <input id="address" name="address" type="text" placeholder="" value="{{client.address}}" class="form-control input-md">
 
       </div>
@@ -88,26 +66,22 @@
 
     <!-- text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="country">country</label>
-      <div class="col-md-5">
+      <label class="col-md-2 control-label" for="country">country</label>
+      <div class="col-md-8">
          <input id="country" name="country" type="text" placeholder="" value="{{client.country}}" class="form-control input-md">
       </div>
     </div>
 
-    <!-- text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="password">password</label>
-      <div class="col-md-5">
-         <input id="password" name="password" type="text" placeholder="" value="{{client.password}}" class="form-control input-md">
-      </div>
+     <div class="form-group">
+        <label class="col-md-2 control-label" for="status">Statut</label>  
+        <div class="col-md-8">
+            <select id="status" name="status" class="form-control select-md">
+                <option value="public" {% if client.status == "public" %}selected{% endif %}>Public</option>
+                <option value="privé" {% if client.status == "privé" %}selected{% endif %}>Privé</option>
+                <option value="archivé" {% if client.status == "archivé" %}selected{% endif %}>Archvé</option>
+            </select>
+        </div>
     </div>
-      
-  {#  <div class="form-group">
-      <label class="col-md-4 control-label" for="status">status</label>
-      <div class="col-md-5">
-         <input id="password" name="password" type="text" placeholder="" value="{{client.password}}" class="form-control input-md">
-      </div>
-    </div>#}
 
     <!-- Button (Double) -->
     <div class="form-group">
