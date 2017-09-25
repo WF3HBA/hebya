@@ -16,6 +16,10 @@ class TeamMember {
     
     private $linkedin;
     
+    private $picture;
+    
+
+        
     /******  G E T T E R  ******/
     
     function getIdteam_member() {
@@ -40,6 +44,10 @@ class TeamMember {
 
     function getLinkedin() {
         return $this->linkedin;
+    }
+    
+    public function getPicture() {
+        return $this->picture;
     }
     
      /******  S E T T E R  ******/
@@ -77,6 +85,11 @@ class TeamMember {
     function setLinkedin($linkedin) {
         $this->linkedin = $linkedin;
         
+        return $this;
+    }
+    
+    public function setPicture($picture) {
+        $this->picture = $picture;
         return $this;
     }
     

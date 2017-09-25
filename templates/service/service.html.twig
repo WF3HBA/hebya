@@ -6,21 +6,31 @@
 {% endblock %}
 
 {% block content %}
+    <div class="parallax" data-image="{{ asset('img/services/hosted_by_africa_services.jpg') }}"></div>
     <main>
         <section id="service-main-header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center service-profil-title">
                         <h1>{{ "Nos services"|upper }}</h1>
-                        <span id="service-subtitle">Selon votre profil</span>
                     </div>
                 </div>
                 <div class="row">   
                     <div class="col-xs-12 col-sm-6 col-lg-3 col-lg-offset-3 text-center">
-                        <a href="btn btn-default" role="button" class="service-profil-button" data-target="start-up">Start-up</a>
+                        <a href="btn btn-default" role="button" class="service-profil-button" data-id="
+                           {% for service in services %}
+                                {% if service.target == "start-up" %}
+                                    {{ service.idService }}
+                                {% endif %}
+                            {% endfor %}">Start-up</a>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
-                        <a href="btn btn-default" role="button" class="service-profil-button" data-target="investor">Investisseur</a>
+                        <a href="btn btn-default" role="button" class="service-profil-button" data-id="
+                           {% for service in services %}
+                                {% if service.target == "investor" %}
+                                    {{ service.idService }}
+                                {% endif %}
+                            {% endfor %}">Investisseur</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +39,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 main-body-content">
-                        <div id="service-content">Nunc non imperdiet eros. Proin nec augue erat. Etiam vel augue lacinia, interdum neque eget, iaculis est. Etiam sit amet laoreet metus. Cras augue mi, ornare in dignissim tristique, mollis nec massa. Curabitur arcu tellus, cursus vel mauris id, consequat mollis mi. Mauris ex tellus, suscipit sed luctus a, pretium eget ex. Nulla varius leo felis, id scelerisque orci maximus vitae. Aenean neque nisi, scelerisque sed velit ac, maximus molestie lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla auctor sollicitudin. Nunc ac nibh ex. Fusce rutrum at libero non lobortis. Sed est turpis, bibendum lacinia iaculis et, volutpat tempor massa. Suspendisse vitae felis in lectus congue rutrum. Praesent mattis ipsum sed sollicitudin aliquam. Suspendisse potenti. Ut cursus, neque ac rhoncus vulputate, nisi nulla dictum urna, et varius mi nisi vitae augue. Vivamus lobortis commodo nibh, eu posuere dolor vulputate quis. Quisque in efficitur purus. Vestibulum ut molestie purus. Vestibulum ullamcorper convallis dolor, eu tincidunt arcu. Ut pellentesque sagittis eros non viverra. Sed molestie odio sit amet vehicula volutpat. Suspendisse vitae lorem maximus, volutpat nisl eget, dapibus nulla.</div>
+                        <div id="service-content">
+                            {% for service in services %}
+                                {% if service.target == "introduction" %}
+                                    {{ service.content|raw }}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,6 +53,7 @@
         <section id="service-main-footer">
             <div class="container">
                 <div class="row">
+                    <br><br>
                     <div class="col-xs-12 col-sm-6 col-lg-3 text-center col-lg-offset-3">
                         <a href="{{ path('clients') }}" role="button" class="service-link-button">Nos clients</a>
                     </div>
@@ -46,7 +63,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 text-center">
-                        <a href="#" role="button" class="service-contact-button">Nous contacter</a>
+                        <a href="http://localhost/hebya/web/index_dev.php/contact" role="button" class="service-contact-button">Nous contacter</a>
                     </div>
                 </div>
             </div>
@@ -56,6 +73,7 @@
 
 {% block javascript %}
     {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script>
         var targetAjaxUrl = '{{ path('services_ajax') }}';
     </script>

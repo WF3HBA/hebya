@@ -1,22 +1,23 @@
-{% extends "Admin/admin.html.twig" %}
+{% extends "admin/admin.html.twig" %}
 
 {% block content %}
     
-    <div class="col-md-7 col-md-offset-2">
+    <div class="col-md-9 col-md-offset-2 table-listing">
         <div class="row">
             <h2>Services</h2>
             <p>Admin</p>
-            <table class="table">
-                <tr>
+            <table class="table table-striped">
+                <tr class="info">
                     <th>Cible</th>
                     <th>Contenu</th>
+                    <th>Edition</th>
                 </tr>
                 {% for service in services %}
                     <tr>
-                        <td>{{ service.target }}</td>
+                        <td>{{ service.target|capitalize }}</td>
                         <td>{{ service.content[:100]|raw }}...</td>
                          <td>
-                            <a href="{{ path('admin_service_edit', {id: service.idservice}) }}"><button class="btn btn-primary">modifier</button></a>
+                            <a href="{{ path('admin_service_edit', {id: service.idservice}) }}"><button class="btn btn-primary">Modifier</button></a>
                         </td>
                     </tr>
                 {% else %} 

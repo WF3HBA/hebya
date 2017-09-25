@@ -55,10 +55,14 @@ SQL;
                 'lastname' => $provider->getLastname(),
                 'firstname' => $provider->getFirstname(),
                 'company' => $provider->getCompany(),
+                'description' => $provider->getDescription(),
                 'email' => $provider->getEmail(),
                 'phone' => $provider->getPhone(),
                 'address' => $provider->getAddress(),
-                'country' => $provider->getCountry()
+                'city' => $provider->getCity(),
+                'country' => $provider->getCountry(),
+                'picture' => $provider->getPicture(),
+                'status' => $provider->getStatus()
             ];
         
         if ($provider->getIdprovider()){
@@ -90,13 +94,51 @@ SQL;
                 ->setLastname($data['lastname'])
                 ->setFirstname($data['firstname'])
                 ->setCompany($data['company'])
+                ->setDescription($data['description'])
                 ->setEmail($data['email'])
                 ->setPhone($data['phone'])
                 ->setAddress($data['address'])
+                ->setCity($data['city'])
                 ->setCountry($data['country'])
+                ->setPicture($data['picture'])
+                ->setStatus($data['status'])
         ;
         
-        
         return $provider;
+    }
+    
+    public function findByCountryAndField($idCountry){
+        
+        $query = <<<SQL
+    SELECT pr.*
+
+    FROM provider pr
+    WHERE true 
+SQL;
+        
+        $parameters = [];
+        
+        if (!empty($idCountry)) {
+            $query .= ' AND pr.country = :country';
+            $parameters[':country'] = $idCountry;
+        }
+        
+//        if (!empty($field)) {
+//            $query .= ' AND pr.field = :field';
+//            $parameters[':field'] = $field;
+//        }
+        
+        $dbProviders = $this->db->fetchAll(
+                $query,
+                $parameters
+            );
+    
+            $providers = [];    
+        
+            foreach($dbProviders as $dbProvider){
+                $providers[] = $this->buildEntity($dbProvider);
+            }
+            
+            return $providers;
     }
 }

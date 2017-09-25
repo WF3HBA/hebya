@@ -40,6 +40,7 @@ class AdminTeamController extends ControllerAbstract {
             $teamMember->setTitle($_POST['title']);
             $teamMember->setDescription($_POST['description']);
             $teamMember->setLinkedin($_POST['linkedin']);
+            $teamMember->setPicture($_POST['picture']);
           
             if (empty($_POST['firstname'])) {
                 $errors['firstname'] = 'Prénom requis';
@@ -81,4 +82,15 @@ class AdminTeamController extends ControllerAbstract {
                 ]
          );
     }
+    
+
+    public function deleteAction($id) {
+        $teamMember= $this->app['team.repository']->find($id);
+        
+        $teamMember = $this->app['team.repository']->delete($teamMember);
+        $this->addFlashMessage('Le membre est supprimé');
+        
+        return $this->redirectRoute('admin_team');
+    }
+    
 }

@@ -1,82 +1,111 @@
-{% extends "Admin/admin.html.twig" %}
+{% extends "admin/admin.html.twig" %}
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset("css/admin/provider_edit.css") }}"/>
-
+    <link rel="stylesheet" href="{{ asset("css/admin/product_edit.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/simditor.css') }}" />
 {% endblock %}
 
 {% block content %}
-<div class="col-md-7 col-md-offset-2">
-    <h1>{% if product.idproduct%}Edit{% else %}Create{% endif %} Product</h1>
-<form class="form-horizontal" method="POST">
-    <fieldset>
-
-    <!-- Form Name -->
-    <legend></legend>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name">name</label>  
-      <div class="col-md-5">
-      <input id="name" name="name" type="text" placeholder="" value="{{product.name}}" class="form-control input-md">
-
-      </div>
+    <div class="col-md-9 col-md-offset-2 table-listing">
+        <h1>{% if product.idproduct%}Edition{% else %}Création{% endif %} de produit</h1>
+        <form class="form-horizontal" method="POST">
+            <fieldset>
+                <legend></legend>
+                <div class="col-md-8"> <!-- Left Column -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="name">Nom</label>  
+                        <div class="col-md-10">
+                             <input id="name" name="name" type="text" placeholder="" value="{{product.name}}" class="form-control input-md">
+                             <input id="idproduct" name="idproduct" type="text" placeholder="" value="{{product.idproduct}}" class="form-control input-md hidden">
+                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="website">Site web</label>  
+                        <div class="col-md-10">
+                            <input id="website" name="website" type="text" placeholder="" value="{{product.website}}" class="form-control input-md">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="summary">Résumé</label>  
+                        <div class="col-md-10">
+                            <textarea id="summary" name="summary" type="text" placeholder="" rows="7" class="form-control input-md">{{ product.summary }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="description">Description</label>  
+                        <div class="col-md-10">
+                            <textarea id="description" name="description" type="text" placeholder="" rows="15" class="form-control input-md">{{ product.description }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="field">Domaine</label>  
+                        <div class="col-md-10">
+                            <select id="field" name="field" class="form-control select-md">
+                                <option value="Education" {% if product.field == "Education" %}selected{% endif %}>Education</option>
+                                <option value="Santé" {% if product.field == "Santé" %}selected{% endif %}>Santé</option>
+                                <option value="Assurance" {% if product.field == "Assurance" %}selected{% endif %}>Assurance</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="status">Statut</label>  
+                        <div class="col-md-10">
+                            <select id="status" name="status" class="form-control select-md">
+                                <option value="public" {% if product.status == "public" %}selected{% endif %}>Public</option>
+                                <option value="privé" {% if product.status == "privé" %}selected{% endif %}>Privé</option>
+                                <option value="archivé" {% if product.status == "archivé" %}selected{% endif %}>Archvé</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="submit"></label>
+                        <div class="col-md-8">
+                            <button  name="submit" type="submit" class="btn btn-success">Valider</button>
+                            <a href="{{ path('admin_product') }}" class="btn btn-primary">Annuler</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4"> <!-- Right Column -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><strong>Disponibilité par pays</strong></div>
+                        <ul class="list-group">
+                            {% for country in countries %}
+                            <li class="list-group-item">
+                                {{ country.name }}
+                                <div class="material-switch pull-right">
+                                    <input id="{{ country.name }}" name="product-has-country[]" type="checkbox" value="{{ country.idcountry }}"
+                                    {% for disponibility in disponibilities %}
+                                        {% if country.idcountry == disponibility.idcountry %}
+                                            checked
+                                        {% endif %}
+                                    {% endfor %}/>
+                                    <label for="{{ country.name }}" class="label-success"></label>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>            
+                </div>      
+            </fieldset>
+        </form>
     </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="website">website</label>  
-      <div class="col-md-5">
-      <input id="website" name="website" type="text" placeholder="" value="{{product.website}}" class="form-control input-md">
-
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="content">content</label>  
-      <div class="col-md-5">
-          <textarea id="content" name="content" type="text" placeholder="" rows="15" class="form-control input-md">{{product.content}}</textarea>
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="summary">summary</label>  
-      <div class="col-md-5">
-          <textarea id="content" name="summary" type="text" placeholder="" rows="15" class="form-control input-md">{{product.summary}}</textarea>
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="field">field</label>  
-      <div class="col-md-5">
-      <input id="field" name="field" type="text" placeholder="" value="{{product.field}}" class="form-control input-md">
-
-      </div>
-    </div>
-
-    
-
-    <!-- Button (Double) -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="submit">submit</label>
-      <div class="col-md-8">
-        <button  name="submit" type="submit" class="btn btn-success">submit</button>
-        <a href="{{ path('admin_product') }}" class="btn btn-primary">annuler</a>
-      </div>
-    </div>
-
-    </fieldset>
-</form>
-</div>
 
     {% endblock %}
     
     {% block javascript %}
     {{ parent() }}
-     <script src="{{ asset('js/admin/edit.js') }}"></script>
-     
+     <script type="text/javascript" src="{{ asset('js/admin/module.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/hotkeys.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/simditor.min.js') }}"></script>
+    <script>
+        var summary = new Simditor({
+             textarea: $('#summary')
+        });
+        var description = new Simditor({
+             textarea: $('#description')
+        });
+    </script>
     {% endblock %}

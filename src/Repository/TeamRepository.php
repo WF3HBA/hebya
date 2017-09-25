@@ -48,7 +48,8 @@ SQL;
                 'lastname' => $teamMember->getLastname(),
                 'title' => $teamMember->getTitle(),
                 'description' => $teamMember->getDescription(),
-                'linkedin' => $teamMember->getLinkedin()
+                'linkedin' => $teamMember->getLinkedin(),
+                'picture' => $teamMember->getPicture()
             ];
         
         if ($teamMember->getIdteam_member()){
@@ -74,8 +75,14 @@ SQL;
                 ->setTitle($data['title'])
                 ->setDescription($data['description'])
                 ->setLinkedin($data['linkedin'])
+                ->setPicture($data['picture'])
         ;
         
         return $teamMember;
+    }
+    
+     public function delete(TeamMember $teamMember){
+        
+        $this->db->delete('team_member', ['idteam_member' => $teamMember->getIdteam_member()]);
     }
 }

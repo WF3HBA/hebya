@@ -1,0 +1,30 @@
+{% extends "admin/admin.html.twig" %}
+
+{% block content %}
+    <div class="col-md-9 col-md-offset-2 table-listing">
+        <div class="row">
+            <h2>A propos</h2>
+            <p>Admin</p>
+            <table class="table table-striped">
+                <tr class="info">
+                    <th>Section</th>
+                    <th>Titre</th>
+                    <th>Contenu</th>
+                    <th>Edit</th>
+                </tr>
+                {% for about in abouts %}
+                    <tr>
+                        <td>{{ about.section|capitalize }}</td>
+                        <td>{{ about.title }}</td>
+                        <td>{{ about.content[:100]|raw }}...</td>
+                         <td>
+                            <a href="{{ path('admin_about_edit', {id: about.idabout}) }}"><button class="btn btn-primary">Modifier</button></a>
+                        </td>
+                    </tr>
+                {% else %} 
+                    <tr><td colspan="2">Aucun résultat</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>   
+{% endblock %}

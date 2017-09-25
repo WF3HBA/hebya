@@ -43,8 +43,34 @@ SQL;
             }
     }
     
+    public function save(Country $country){
+        
+        $data =
+            [
+                'name' => $country->getName(),
+                'continent' => $country->getContinent(),
+                'content' => $country->getContent(),
+                'contact_name' => $country->getContact_name(),
+                'contact_email' => $country->getContact_email(),
+                'contact_phone' => $country->getContact_phone(),
+                'contact_address' => $country->getContact_address(),
+                'contact_city' => $country->getContact_city()
+            ];
+        
+        if ($country->getIdcountry()){
+            $this->db->update('country', $data, 
+                    [
+                        'idcountry'=>$country->getIdcountry()
+                    ] 
+                );
+        } else {
+            $this->db->insert('country', $data);
+            $country->setIdcountry($this->db->LastInsertId());
+        }
+    }
     
-    private function buildEntity(array $data){
+    
+    public function buildEntity(array $data){
        
         $country = new Country();
         
@@ -53,6 +79,11 @@ SQL;
             ->setContent($data['content'])
             ->setName($data['name'])
             ->setContinent($data['continent'])
+            ->setContact_name($data['contact_name'])
+            ->setContact_phone($data['contact_phone'])
+            ->setContact_email($data['contact_email'])
+            ->setContact_address($data['contact_address'])
+            ->setContact_city($data['contact_city'])
         ;
         
         return $country;

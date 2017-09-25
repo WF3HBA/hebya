@@ -21,7 +21,17 @@ class Country {
     
     private $continent;
     
+    private $contact_name;
     
+    private $contact_email;
+    
+    private $contact_phone;
+    
+    private $contact_address;
+    
+    private $contact_city;
+
+        
     /***GETTER****/
     
     function getIdcountry() {
@@ -40,6 +50,25 @@ class Country {
         return $this->continent;
     }
 
+     function getContact_name() {
+        return $this->contact_name;
+    }
+
+    function getContact_email() {
+        return $this->contact_email;
+    }
+
+    function getContact_phone() {
+        return $this->contact_phone;
+    }
+
+    function getContact_address() {
+        return $this->contact_address;
+    }
+    
+    public function getContact_city() {
+        return $this->contact_city;
+    }
     
     /**********SETTER************/
     
@@ -65,7 +94,36 @@ class Country {
         $this->continent = $continent;
         
         return $this;
+    }   
+
+    function setContact_name($contact_name) {
+        $this->contact_name = $contact_name;
+        
+         return $this;
+    }
+
+    function setContact_email($contact_email) {
+        $this->contact_email = $contact_email;
+        
+         return $this;
+    }
+
+    function setContact_phone($contact_phone) {
+        $this->contact_phone = $contact_phone;
+        
+         return $this;
+    }
+
+    function setContact_address($contact_address) {
+        $this->contact_address = $contact_address;
+        
+         return $this;
     }
     
-    
+    public function setContact_city($contact_city) {
+        $this->contact_city = $contact_city;
+        return $this;
+    }
+
+
 }

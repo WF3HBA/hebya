@@ -24,18 +24,27 @@ class Provider {
     
     private $company;
     
+    private $summary;
+    
+    private $description;
+    
     private $email;
     
     private $phone;
     
     private $address;
     
-     private $country;
+    private $city;
     
+     private $country;
      
+     private $picture;
      
+     private $status;
+
      
-     /***GETTER****/
+
+    /***GETTER****/
      
     function getIdprovider() {
         return $this->idprovider;
@@ -64,12 +73,36 @@ class Provider {
     function getAddress() {
         return $this->address;
     }
+     
+    function getCity() {
+         return $this->city;
+     }
 
     function getCountry() {
         return $this->country;
     }
 
+    function getSummary() {
+        return $this->summary;
+    }
+
+    function getDescription() {
+        return $this->description;
+    }
+
+    function getPicture() {
+        return $this->picture;
+    }
     
+     public function getStatus() {
+         return $this->status;
+     }
+     
+     public function getFullName() {
+        return $this->firstname . ' ' . $this->lastname;
+    }
+
+        
     /**********SETTER************/
     
     
@@ -114,12 +147,39 @@ class Provider {
         
         return $this;
     }
+    
+    function setCity($city) {
+         $this->city = $city;
+         return $this;
+     }
 
     function setCountry($country) {
         $this->country = $country;
         
         return $this;
     }
-  
+    
+    function setSummary($summary) {
+        $this->summary = $summary;
+        
+        return $this;
+    }
+
+    function setDescription($description) {
+        $this->description = $description;
+        
+        return $this;
+    }
+
+    function setPicture($picture) {
+        $this->picture = $picture;
+        
+        return $this;
+    }
+    
+    public function setStatus($status) {
+         $this->status = $status;
+         return $this;
+     }
     
 }

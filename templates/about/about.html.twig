@@ -6,10 +6,11 @@
 {% endblock %}
 
 {% block content %}
+    <div class="parallax" data-image="{{ asset('img/img-about/hosted_by_africa_about.jpg') }}"></div>
     <main id="about-content" class="container">
         <section class="row">
             <div class="col-xs-12 text-center">
-                <h1>{{ "A propos"|upper }}</h1>
+                <h1>{{ "À propos"|upper }}</h1>
             </div>
         </section>
         {% for about in abouts%}
@@ -22,20 +23,66 @@
             </div>
         </section>
         {% endfor %}
-        <section id="team-members">
+        <section id="team-members" class="container">
             <div class="row">
             {% for teamMember in teamMembers  %}
-                    <div id="{{ teamMember.firstName }}" class="team-member col-sm-6 col-md-3">
-                        <div class="thumbnail text-center">
-                            <img src="http://placehold.it/200x200" />
-                            <div class="caption">
-                                <h3 class="text-center">{{ teamMember.fullName }}</h3>
-                                <h4  class="text-center">{{ teamMember.title }}</h4>
-                            </div>
+
+                <div class="teem col-xs-12 col-sm-6 col-md-3">
+                    <div class="box col-xs-10 col-xs-offset-2 col-md-12">
+                        <img class="img-responsive" src="{{ asset(teamMember.picture) }}">
+                        <div class="box-content" data-toggle="modal" data-target="#exampleModalLong-{{ teamMember.idteam_member }}">
+                            <h3 class="title">{{ teamMember.fullName }}</h3>                             
+                            <span class="post">{{ teamMember.title }}</span>
                         </div>
+                    </div>                    
+                </div>
+<!--
+                <div id="{{ teamMember.firstName }}" class="team-member col-sm-6 col-md-3" data-toggle="modal" data-target="#myModal">
+                    <div class="text-center">
+                        <img src="http://placehold.it/200x200" />
+                        <h3 class="text-center team-member-name">{{ teamMember.fullName }}</h3>
+                        <h4  class="text-center team-member-title">{{ teamMember.title }}</h4>
+                        <div class="team-member-description hidden">{{ teamMember.description|raw }}</div>
                     </div>
-            {% endfor %}
-            </div>
+                </div>
+-->
+                
+                <div class="modal fade" id="exampleModalLong-{{ teamMember.idteam_member }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <h2 class="modal-title" id="exampleModalLongTitle">{{ teamMember.fullName }} </h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-footer text-center">
+
+                        <div class="col-xs-12">
+                            <h3 class="col-xs-12 text-center">{{ teamMember.fullName }}</h3>                                
+                            <h3 class="col-xs-12 text-center">{{ teamMember.description|raw }}</h3>                                
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        </div>
+                      </div>
+                    </div>       
+                  </div>
+                </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {% endfor %}            
         </section>
     </main>
     <div id="team-layer">
@@ -45,5 +92,6 @@
 
 {% block javascript %}
     {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
     <script src="{{ asset('js/about/about.js') }}"></script>
 {% endblock %}

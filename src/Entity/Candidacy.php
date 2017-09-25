@@ -12,8 +12,12 @@ class Candidacy {
     private $lastname;
     private $email;
     private $phone;
-    private $adresse;
+    private $address;
     private $country;
+    private $opportunity;
+    private $cv;
+    private $coverletter;
+    
     
     public function getIdcandidacy() {
         return $this->idcandidacy;
@@ -35,13 +39,30 @@ class Candidacy {
         return $this->phone;
     }
 
-    public function getAdresse() {
-        return $this->adresse;
+    public function getAddress() {
+        return $this->address;
     }
 
     public function getCountry() {
         return $this->country;
     }
+    
+    public function getOpportunity() {
+        return $this->opportunity;
+    }
+   
+    
+    public function getCv() {
+        return $this->cv;
+    }
+    
+    
+    public function getCoverletter() {
+        return $this->coverletter;
+    }
+    
+    
+    /*********************** SETTER  ********************** */
 
     public function setIdcandidacy($idcandidacy) {
         $this->idcandidacy = $idcandidacy;
@@ -68,8 +89,8 @@ class Candidacy {
         return $this;
     }
 
-    public function setAdresse($adresse) {
-        $this->adresse = $adresse;
+    public function setAddress($address) {
+        $this->address = $address;
         return $this;
     }
 
@@ -77,6 +98,42 @@ class Candidacy {
         $this->country = $country;
         return $this;
     }
-
+    
+     public function setOpportunity(Opportunity $opportunity) {
+        $this->opportunity = $opportunity;
+        return $this;
+    }
+    
+    public function setCv($cv) {
+        $this->cv = $cv;
+        return $this;
+    }
+    
+    public function setCoverletter($coverletter) {
+        $this->coverletter = $coverletter;
+        return $this;
+    }
+    
+    
+    
+    
+    
+    
+    
+    public function getOpportunityReference() {
+        if (!is_null($this->opportunity)) {
+            return $this->opportunity->getReference();
+        }
+        
+        return '';
+    }
+    
+    public function getIdOpportunity() {
+        if (!is_null($this->opportunity)) {
+            return $this->opportunity->getIdopportunity();
+        }
+        
+        return '';
+    }
 
 }

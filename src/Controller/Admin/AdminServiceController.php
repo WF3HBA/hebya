@@ -30,22 +30,15 @@ class AdminServiceController extends ControllerAbstract {
         $errors = [];
         
         if (!empty($_POST)) {
-            
-            $service->setTarget($_POST['target']);
+           
             $service->setContent($_POST['content']);
            
-            //contrôle les champs du formulaire d'ajout
-            
-            if(empty($_POST['target'])){
-                $errors['name'] = 'La cible est obligatoire (start-up / investisseur)';
-            }
-            
             if (empty($_POST['content'])) {
                 $errors['content'] = 'Le contenu est obligatoire';
             }
             
             if (empty($errors)) {
-                $this->app['product.repository']->save($service);
+                $this->app['service.repository']->save($service);
                 $this->addFlashMessage('Le service est bien validé');
                 return $this->redirectRoute('admin_service');
             } else {

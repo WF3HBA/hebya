@@ -1,10 +1,22 @@
+h1 {
+    position: relative;
+    top: -400px;
+    color: #fff;
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.3);
+    transition: 0.5s;
+}
+
+main {
+    background-color: #fff;
+    padding-top: 0;
+}
 
 #service-main-header div, #service-main-footer div {
     transition: 0.4s;
 }
 
 #service-main-header, #service-main-footer {
-    padding: 40px 0;
+    padding-bottom: 40px;
 }
 
 .service-profil-title {
@@ -23,28 +35,31 @@
     display: inline-block;
     width: 100%;
     padding: 20px 0;
-    border: 2px solid #008080;
+    border: 2px solid rgba(34, 34, 34, 0.3);
     border-radius: 5px;
     margin-bottom: 20px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #008080;
+    color: #222222;
     transition: 0.4s;
 }
 
+
+
 .service-link-button:hover, .service-profil-button:hover {
-    background-color: #008080;
-    color: #ffffff;
+    border: 2px solid rgba(0, 128, 128, 0.7);
+    color: rgba(0, 128, 128, 1);
 }
 
 .service-contact-button {
-    background-color: #008080;
+    background-color: rgba(0, 128, 128, 1);
     color: #ffffff;
+    border: 2px solid rgba(0, 128, 128, 0.7);
 }
 
 .service-contact-button:hover {
     background-color: #ffffff;
-    color: #008080;
+    color: rgba(0, 128, 128, 1);
 }
 
 #service-header {
@@ -53,6 +68,21 @@
 
 #service-main-footer .row:first-child {
     margin-bottom: 40px;
+}
+
+@media only screen and (min-width : 768px) {
+    h1 {
+        top: -400px;
+        font-size: 3.4em;
+        letter-spacing: 5px;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    h1 {
+        font-size: 4em;
+        letter-spacing: 8px;
+    }
 }
 
 @media only screen and (min-width : 1200px){

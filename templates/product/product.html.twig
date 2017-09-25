@@ -2,67 +2,51 @@
 
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset("css/innovators/innovators.css") }}"/>
+    <link rel="stylesheet" href="{{ asset("css/products/products.css") }}"/>
 
 {% endblock %}
 
 {% block content %}
+    <div class="parallax" data-image="{{ asset('img/products/hosted_by_africa_products.jpg') }}"></div>
     <main>
-        <section id="innovators-header">
+        <section id="products-header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <h1>{{ "Nos Produit"|upper }}</h1>
+                        <h1>{{ "Nos Produits"|upper }}</h1>
                     </div>
                 </div>
-                <div class="row all-select-innovators">
-                    <div class="col-xs-12 col-sm-6 innovators-select-theme">
-                        <select class="col-xs-12">
-                            <option>Theme</option>
-                            <option>Education</option>
-                            <option>Santé</option>
-                            <option>Assurance</option>
-                            <option>Comptabilité</option>
-                            <option>Numérisation GED</option>
-                        </select>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 ">
-                        <select class="col-xs-12 innovators-select-pays">
-                            {% for country in countries %}
-                            <option>{{ country.name }}</option>
-                            {% endfor %}
-                           
-                        </select>
-                    </div>
+                <div class="row all-select-products">
+                    <form id="filter-form">
+                        <div class="col-xs-12 col-sm-6 products-select-theme">
+                            <select class="col-xs-12 products-select-field">
+                                <option value="">Thème</option>
+                                <option>Education</option>
+                                <option>Santé</option>
+                                <option>Assurance</option>
+                                <option>Comptabilité</option>
+                                <option>Numérisation GED</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 ">
+                            <select class="col-xs-12 products-select-pays">
+                                <option value="">pays</option>
+                                {% for country in countries %}
+{#                                    #}
+                                <option value="{{ country.idcountry }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section><br><br>
               
-        <section id="innovators-body">
+        <section id="products-body">
             <div class="container">
-                
-                 {% for product in products %}
-                 <div class="row product-row">                    
-                  
-                   
-                    <div class="col-sm-6">
-                      <a href="#">
-                        <img class="img-thumbnail" src="http://placehold.it/700x300" alt="">
-                      </a>
-                    </div>                    
-                    <div class="col-sm-6">
-                      <h2 class="product-name">{{ product.name }}</h2>
-                      <div class="product-content-short">{{ product.summary|raw }}</div>
-                      <div class="product-content hidden">{{ product.content|raw }}</div>
-                      
-                        {#Launch modal with the button above #}
-                      <button class="btn btn-primary boutton-innovators-body" data-toggle="modal" data-target="#myModal">View Product</button>
-                    </div>
-                    
-                     
-                 </div><hr><br><br>
-                 {% endfor %}
-                 
+                <div id="product-list">
+                    {% include 'product/productList.html.twig' %}
+                </div>
                 
                 {#  MODAL #}
                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -92,5 +76,10 @@
 
 {% block javascript %}
      {{ parent() }}
-    <script src="{{ asset("js/innovators/innovators.js") }}"></script>
+     <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+    <script>
+        var countrySelect = '{{ path('product_ajax') }}';
+        
+    </script>
+     <script src="{{ asset("js/product/product.js") }}"></script>
 {% endblock %}
