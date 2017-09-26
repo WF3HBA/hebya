@@ -15,11 +15,11 @@ class __TwigTemplate_fa4d058763ec1ecfc8404874c933a4b485eba2d233fab7845d2f7125d29
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_d08e71bfe264baaa241c8fbf67f66b2037c47dade1c86e1a94b5dcd55ac6231f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d08e71bfe264baaa241c8fbf67f66b2037c47dade1c86e1a94b5dcd55ac6231f->enter($__internal_d08e71bfe264baaa241c8fbf67f66b2037c47dade1c86e1a94b5dcd55ac6231f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "product/productList.html.twig"));
+        $__internal_7e2453c021ff881c29f8d3cd48d08c146564a9377455d0531689440a4a85fb95 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7e2453c021ff881c29f8d3cd48d08c146564a9377455d0531689440a4a85fb95->enter($__internal_7e2453c021ff881c29f8d3cd48d08c146564a9377455d0531689440a4a85fb95_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "product/productList.html.twig"));
 
-        $__internal_50e8dacdad468cfcad58c9d31d7006d4a4eac7a4e17757afcdb61c58f0c5412b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_50e8dacdad468cfcad58c9d31d7006d4a4eac7a4e17757afcdb61c58f0c5412b->enter($__internal_50e8dacdad468cfcad58c9d31d7006d4a4eac7a4e17757afcdb61c58f0c5412b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "product/productList.html.twig"));
+        $__internal_bc5021c45cb4793fc03b919860bb325013bcf8f13b4a62c869abc700319dd300 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_bc5021c45cb4793fc03b919860bb325013bcf8f13b4a62c869abc700319dd300->enter($__internal_bc5021c45cb4793fc03b919860bb325013bcf8f13b4a62c869abc700319dd300_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "product/productList.html.twig"));
 
         // line 1
         $context['_parent'] = $context;
@@ -53,7 +53,7 @@ class __TwigTemplate_fa4d058763ec1ecfc8404874c933a4b485eba2d233fab7845d2f7125d29
 
            ";
             // line 16
-            echo "         <button class=\"btn btn-primary boutton-products-body\" data-toggle=\"modal\" data-target=\"#myModal\">View Product</button>
+            echo "         <button class=\"btn btn-primary boutton-products-body\" data-toggle=\"modal\" data-target=\"#myModal\">Détail produit</button>
        </div>
 
 
@@ -64,10 +64,10 @@ class __TwigTemplate_fa4d058763ec1ecfc8404874c933a4b485eba2d233fab7845d2f7125d29
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         
-        $__internal_d08e71bfe264baaa241c8fbf67f66b2037c47dade1c86e1a94b5dcd55ac6231f->leave($__internal_d08e71bfe264baaa241c8fbf67f66b2037c47dade1c86e1a94b5dcd55ac6231f_prof);
+        $__internal_7e2453c021ff881c29f8d3cd48d08c146564a9377455d0531689440a4a85fb95->leave($__internal_7e2453c021ff881c29f8d3cd48d08c146564a9377455d0531689440a4a85fb95_prof);
 
         
-        $__internal_50e8dacdad468cfcad58c9d31d7006d4a4eac7a4e17757afcdb61c58f0c5412b->leave($__internal_50e8dacdad468cfcad58c9d31d7006d4a4eac7a4e17757afcdb61c58f0c5412b_prof);
+        $__internal_bc5021c45cb4793fc03b919860bb325013bcf8f13b4a62c869abc700319dd300->leave($__internal_bc5021c45cb4793fc03b919860bb325013bcf8f13b4a62c869abc700319dd300_prof);
 
     }
 
@@ -103,7 +103,7 @@ class __TwigTemplate_fa4d058763ec1ecfc8404874c933a4b485eba2d233fab7845d2f7125d29
          <div class=\"product-content hidden\">{{ product.description|raw }}</div>
 
            {#Launch modal with the button above #}
-         <button class=\"btn btn-primary boutton-products-body\" data-toggle=\"modal\" data-target=\"#myModal\">View Product</button>
+         <button class=\"btn btn-primary boutton-products-body\" data-toggle=\"modal\" data-target=\"#myModal\">Détail produit</button>
        </div>
 
 

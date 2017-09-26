@@ -10,7 +10,7 @@ $(function(){
        var $row = $(this).closest('.product-row');
        var name = $row.find('.product-name').html();
        var content = $row.find('.product-content').html();
-       
+         
        console.log(name);
        
        var $detail = $('.product-detail');

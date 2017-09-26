@@ -61,8 +61,8 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                 <div class=\"slide-1\"></div>
                 <div class=\"hero\">
                     <hgroup>
-                        <h1>We are creative</h1>        
-                        <h3>Get start your next awesome project</h3>
+                        <h1>Pour les entrepreneurs</h1>        
+                        <h3></h3>
                     </hgroup>
                     <button class=\"btn btn-hero btn-lg\" role=\"button\">See all features</button>
                 </div>
@@ -71,8 +71,8 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                 <div class=\"slide-2\"></div>
                 <div class=\"hero\">        
                     <hgroup>
-                        <h1>We are smart</h1>        
-                        <h3>Get start your next awesome project</h3>
+                        <h1>Pour les investisseurs</h1>        
+                        <h3></h3>
                     </hgroup>       
                     <button class=\"btn btn-hero btn-lg\" role=\"button\">See all features</button>
                 </div>
@@ -81,8 +81,8 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                 <div class=\"slide-3\"></div>
                 <div class=\"hero\">        
                     <hgroup>
-                        <h1>We are amazing</h1>        
-                        <h3>Get start your next awesome project</h3>
+                        <h1>Pour l'Humanité</h1>        
+                        <h3></h3>
                     </hgroup>
                     <button class=\"btn btn-hero btn-lg\" role=\"button\">See all features</button>
                 </div>
@@ -105,7 +105,7 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                            
                             <h5>service</h5>
                         
-                                <span>no name</span>
+                                
                            
                             <p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             <h5>Service</h5>
@@ -217,10 +217,7 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
         echo "    ";
         $this->displayParentBlock("javascript", $context, $blocks);
         echo "
-     <script src=\"";
-        // line 172
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/map/africa.js"), "html", null, true);
-        echo "\"></script>
+     
      <script src=\"";
         // line 173
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/map/raphael-min.js"), "html", null, true);
@@ -229,9 +226,9 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
         // line 174
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/map/africa-paths.js"), "html", null, true);
         echo "\"></script>
-    
-     <script src=\"";
+";
         // line 176
+        echo "     <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/index/index.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -249,7 +246,7 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
 
     public function getDebugInfo()
     {
-        return array (  235 => 176,  230 => 174,  226 => 173,  222 => 172,  217 => 171,  214 => 170,  208 => 166,  51 => 10,  48 => 9,  42 => 6,  38 => 5,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  231 => 176,  227 => 174,  223 => 173,  217 => 171,  214 => 170,  208 => 166,  51 => 10,  48 => 9,  42 => 6,  38 => 5,  33 => 4,  30 => 3,  11 => 1,);
     }
 
     public function getSourceContext()
