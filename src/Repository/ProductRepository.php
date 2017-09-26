@@ -100,7 +100,7 @@ SQL;
     
     public function delete(Product $product){
         
-        $this->db->delete('product', ['idproduct' => $product->setIdproduct()]);
+        $this->db->delete('product', ['idproduct' => $product->getIdproduct()]);
     }
     
     

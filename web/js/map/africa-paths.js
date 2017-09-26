@@ -126,7 +126,7 @@ var africaPaths = {
             scrollTop: $("#container").offset().top-50
         }, 800);
     });
-      };
+};
       
   
 

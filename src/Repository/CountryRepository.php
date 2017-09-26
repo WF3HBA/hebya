@@ -88,4 +88,35 @@ SQL;
         
         return $country;
     }
+    
+       public function findByCountry($countryName){
+        
+        $query = <<<SQL
+    SELECT c.*
+    FROM country c
+    WHERE c.name = :name 
+SQL;
+        
+       
+        
+       
+        
+
+        
+        $dbCountry = $this->db->fetchAssoc(
+                $query,
+                [
+                    ":name" => $countryName
+                ]
+                
+            );
+    
+               
+        
+        if(!empty($dbCountry)){
+                
+            return $this->buildEntity($dbCountry);
+                 
+        }
+    }
 }

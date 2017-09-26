@@ -20,30 +20,30 @@
                 <div class="slide-1"></div>
                 <div class="hero">
                     <hgroup>
-                        <h1>Pour les entrepreneurs</h1>        
+                        <h1>Invest in Future</h1>        
                         <h3></h3>
                     </hgroup>
-                    <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                    <a class="btn btn-hero btn-lg" href="{{ path('services') }}" role="button">See all services for investement</a>
                 </div>
             </div>
             <div class="item slides">
                 <div class="slide-2"></div>
                 <div class="hero">        
                     <hgroup>
-                        <h1>Pour les investisseurs</h1>        
+                        <h1>You are creative</h1>        
                         <h3></h3>
                     </hgroup>       
-                    <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                    <a class="btn btn-hero btn-lg" href="{{ path('services') }}" role="button">See all services for inovation</a>
                 </div>
             </div>
             <div class="item slides">
                 <div class="slide-3"></div>
                 <div class="hero">        
                     <hgroup>
-                        <h1>Pour l'Humanité</h1>        
+                        <h1>Solution for Africa</h1>        
                         <h3></h3>
                     </hgroup>
-                    <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                    <a class="btn btn-hero btn-lg" href="{{ path('product') }}" role="button">See all products</a>
                 </div>
             </div>
         </div> 
@@ -53,9 +53,7 @@
         <section id="index-map">
             <div class="container">
                 <div class="row">
-                    <!-- Map Container -->
                     <div id="container" class="col-md-8 col-xs-12"></div>
-                    <!-- End Map Container -->
                     <div class="col-md-4 col-xs-12">
                         <div class="info">
                             <div id="country_name">
@@ -67,13 +65,14 @@
                                 
                            
                             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            <h5>Service</h5>
+                            <h5>Présence</h5>
                             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <h5>Contact</h5>
                             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <button class="btn btn-default btn-block">back to map</button>
                         </div>
                     </div>
+                     
                 </div>
             </div>
         </section> 
@@ -172,6 +171,10 @@
      
      <script src="{{ asset('js/map/raphael-min.js') }}"></script>
      <script src="{{ asset('js/map/africa-paths.js') }}"></script>
-{#    <script src="{{ asset('js/map/africa.js') }}"></script>#}
+     <script>
+        var countrySelect = '{{ path('index_country_ajax') }}';
+        
+    </script>
+        <script src="{{ asset('js/map/africa.js') }}"></script>
      <script src="{{ asset('js/index/index.js') }}"></script>
 {% endblock %}

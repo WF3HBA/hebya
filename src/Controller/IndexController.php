@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-use Repository\CountryRepository;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class IndexController extends ControllerAbstract {
     
@@ -14,9 +14,23 @@ class IndexController extends ControllerAbstract {
         return $this->render(
                 'index.html.twig',
                  [
-//                     'country' => $country,
-                      'countries' =>$countries,
+                     
+                      'countries' =>$countries
                 ]
         );
+    }
+    
+    public function displayNameCountry(){
+          
+        $country = $this->app['country.repository']->findByCountry($_GET['name']);
+         
+        dump($country);
+        
+        return $this->render(
+                'mapAfrica.html.twig',
+                [
+                    'country' => $country
+                ]
+            );
     }
 }

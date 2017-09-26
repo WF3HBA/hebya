@@ -70,6 +70,9 @@ $app->get('/provider_ajax', 'innovator.controller:countrySelect')
 $app->get('/opportunity_ajax', 'opportunity.controller:jobSelect')
         ->bind('opportunity_ajax');
 
+$app->get('/index_country_ajax', 'index.controller:displayNameCountry')
+        ->bind('index_country_ajax');
+
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');
 
