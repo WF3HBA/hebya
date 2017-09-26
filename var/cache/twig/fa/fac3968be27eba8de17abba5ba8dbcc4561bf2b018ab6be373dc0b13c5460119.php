@@ -8,7 +8,7 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("Admin/admin.html.twig", "admin/providerEdit.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/admin.html.twig", "admin/providerEdit.html.twig", 1);
         $this->blocks = array(
             'stylesheet' => array($this, 'block_stylesheet'),
             'content' => array($this, 'block_content'),
@@ -18,34 +18,34 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
 
     protected function doGetParent(array $context)
     {
-        return "Admin/admin.html.twig";
+        return "admin/admin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_deb1a9302d2c12527c46ebd739952b14c8dd936e02a84d0d93b23accd67f88bb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_deb1a9302d2c12527c46ebd739952b14c8dd936e02a84d0d93b23accd67f88bb->enter($__internal_deb1a9302d2c12527c46ebd739952b14c8dd936e02a84d0d93b23accd67f88bb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/providerEdit.html.twig"));
+        $__internal_f1f58c000bc8a89f3cd6811c29838c5033bc1f9f76fad2ff3a3b1a79802d210d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f1f58c000bc8a89f3cd6811c29838c5033bc1f9f76fad2ff3a3b1a79802d210d->enter($__internal_f1f58c000bc8a89f3cd6811c29838c5033bc1f9f76fad2ff3a3b1a79802d210d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/providerEdit.html.twig"));
 
-        $__internal_1fff7c7e8f0657bc87d67bb853b55a4229dd683819c6450816c8880bccea47c8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1fff7c7e8f0657bc87d67bb853b55a4229dd683819c6450816c8880bccea47c8->enter($__internal_1fff7c7e8f0657bc87d67bb853b55a4229dd683819c6450816c8880bccea47c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/providerEdit.html.twig"));
+        $__internal_b14e92af02af3ac05fc798ea9939552b703cafaf0eac427441a7c954d675bd9d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b14e92af02af3ac05fc798ea9939552b703cafaf0eac427441a7c954d675bd9d->enter($__internal_b14e92af02af3ac05fc798ea9939552b703cafaf0eac427441a7c954d675bd9d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/providerEdit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_deb1a9302d2c12527c46ebd739952b14c8dd936e02a84d0d93b23accd67f88bb->leave($__internal_deb1a9302d2c12527c46ebd739952b14c8dd936e02a84d0d93b23accd67f88bb_prof);
+        $__internal_f1f58c000bc8a89f3cd6811c29838c5033bc1f9f76fad2ff3a3b1a79802d210d->leave($__internal_f1f58c000bc8a89f3cd6811c29838c5033bc1f9f76fad2ff3a3b1a79802d210d_prof);
 
         
-        $__internal_1fff7c7e8f0657bc87d67bb853b55a4229dd683819c6450816c8880bccea47c8->leave($__internal_1fff7c7e8f0657bc87d67bb853b55a4229dd683819c6450816c8880bccea47c8_prof);
+        $__internal_b14e92af02af3ac05fc798ea9939552b703cafaf0eac427441a7c954d675bd9d->leave($__internal_b14e92af02af3ac05fc798ea9939552b703cafaf0eac427441a7c954d675bd9d_prof);
 
     }
 
     // line 3
     public function block_stylesheet($context, array $blocks = array())
     {
-        $__internal_bb4f64d74a0869f2292c8c9ffdf574f5d4f6d0dd2cfad73d6e6a80b8971ff3f0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bb4f64d74a0869f2292c8c9ffdf574f5d4f6d0dd2cfad73d6e6a80b8971ff3f0->enter($__internal_bb4f64d74a0869f2292c8c9ffdf574f5d4f6d0dd2cfad73d6e6a80b8971ff3f0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheet"));
+        $__internal_78b4194596142a482d4f0d911b92372bdb52858834faec0eac11e9c7dc7a1878 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_78b4194596142a482d4f0d911b92372bdb52858834faec0eac11e9c7dc7a1878->enter($__internal_78b4194596142a482d4f0d911b92372bdb52858834faec0eac11e9c7dc7a1878_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheet"));
 
-        $__internal_783f04795644668f291dc21ce564fc98681fc24c5fdd04a0133a9054e5546701 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_783f04795644668f291dc21ce564fc98681fc24c5fdd04a0133a9054e5546701->enter($__internal_783f04795644668f291dc21ce564fc98681fc24c5fdd04a0133a9054e5546701_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheet"));
+        $__internal_2aab6cd05e5b2124fd4ac1b441cfc0609683fa041775981734a0014389a2a5b2 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2aab6cd05e5b2124fd4ac1b441cfc0609683fa041775981734a0014389a2a5b2->enter($__internal_2aab6cd05e5b2124fd4ac1b441cfc0609683fa041775981734a0014389a2a5b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheet"));
 
         // line 4
         echo "    ";
@@ -61,21 +61,21 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
         echo "\" />
 ";
         
-        $__internal_783f04795644668f291dc21ce564fc98681fc24c5fdd04a0133a9054e5546701->leave($__internal_783f04795644668f291dc21ce564fc98681fc24c5fdd04a0133a9054e5546701_prof);
+        $__internal_2aab6cd05e5b2124fd4ac1b441cfc0609683fa041775981734a0014389a2a5b2->leave($__internal_2aab6cd05e5b2124fd4ac1b441cfc0609683fa041775981734a0014389a2a5b2_prof);
 
         
-        $__internal_bb4f64d74a0869f2292c8c9ffdf574f5d4f6d0dd2cfad73d6e6a80b8971ff3f0->leave($__internal_bb4f64d74a0869f2292c8c9ffdf574f5d4f6d0dd2cfad73d6e6a80b8971ff3f0_prof);
+        $__internal_78b4194596142a482d4f0d911b92372bdb52858834faec0eac11e9c7dc7a1878->leave($__internal_78b4194596142a482d4f0d911b92372bdb52858834faec0eac11e9c7dc7a1878_prof);
 
     }
 
     // line 9
     public function block_content($context, array $blocks = array())
     {
-        $__internal_212c9bce78a8f5dbf4034b61758f195894cfa5b09aa92f96322b38e7c5738b32 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_212c9bce78a8f5dbf4034b61758f195894cfa5b09aa92f96322b38e7c5738b32->enter($__internal_212c9bce78a8f5dbf4034b61758f195894cfa5b09aa92f96322b38e7c5738b32_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_263052574ea06652528564bd65781a5b04fad960c1c091fcb614fe632941a8b5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_263052574ea06652528564bd65781a5b04fad960c1c091fcb614fe632941a8b5->enter($__internal_263052574ea06652528564bd65781a5b04fad960c1c091fcb614fe632941a8b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_72805d7d01ee0ecb04090fae872f0c087e11e59992a00e50d3837552e35adbcf = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_72805d7d01ee0ecb04090fae872f0c087e11e59992a00e50d3837552e35adbcf->enter($__internal_72805d7d01ee0ecb04090fae872f0c087e11e59992a00e50d3837552e35adbcf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_198d6862b6a9d236c09b5684411a5840c615b2d1cbcd938c1f8b72335f487f42 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_198d6862b6a9d236c09b5684411a5840c615b2d1cbcd938c1f8b72335f487f42->enter($__internal_198d6862b6a9d236c09b5684411a5840c615b2d1cbcd938c1f8b72335f487f42_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 10
         echo "    <div class=\"col-md-9 col-md-offset-2 table-listing\">
@@ -171,36 +171,45 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
                     </div>
                 </div>
                 <div class=\"form-group\">
-                        <label class=\"col-md-2 control-label\" for=\"status\">Statut</label>  
-                        <div class=\"col-md-8\">
-                            <select id=\"status\" name=\"status\" class=\"form-control select-md\">
-                                <option value=\"public\" ";
-        // line 72
-        if ((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 72, $this->getSourceContext()); })()), "status", array()) == "public")) {
+                    <label class=\"col-md-2 control-label\" for=\"picture\">Photo</label>
+                     <div class=\"col-md-8\">
+                        <input id=\"picture\" name=\"picture\" type=\"text\" placeholder=\"\" value=\"";
+        // line 71
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 71, $this->getSourceContext()); })()), "picture", array()), "html", null, true);
+        echo "\" class=\"form-control input-md\">
+                    </div>
+                </div>
+                <div class=\"form-group\">
+                    <label class=\"col-md-2 control-label\" for=\"status\">Statut</label>  
+                    <div class=\"col-md-8\">
+                        <select id=\"status\" name=\"status\" class=\"form-control select-md\">
+                            <option value=\"public\" ";
+        // line 78
+        if ((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 78, $this->getSourceContext()); })()), "status", array()) == "public")) {
             echo "selected";
         }
         echo ">Public</option>
-                                <option value=\"privé\" ";
-        // line 73
-        if ((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 73, $this->getSourceContext()); })()), "status", array()) == "privé")) {
+                            <option value=\"privé\" ";
+        // line 79
+        if ((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 79, $this->getSourceContext()); })()), "status", array()) == "privé")) {
             echo "selected";
         }
         echo ">Privé</option>
-                                <option value=\"archivé\" ";
-        // line 74
-        if ((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 74, $this->getSourceContext()); })()), "status", array()) == "archivé")) {
+                            <option value=\"archivé\" ";
+        // line 80
+        if ((twig_get_attribute($this->env, $this->getSourceContext(), (isset($context["provider"]) || array_key_exists("provider", $context) ? $context["provider"] : (function () { throw new Twig_Error_Runtime('Variable "provider" does not exist.', 80, $this->getSourceContext()); })()), "status", array()) == "archivé")) {
             echo "selected";
         }
         echo ">Archvé</option>
-                            </select>
-                        </div>
+                        </select>
                     </div>
+                </div>
                 <div class=\"form-group\">
                     <label class=\"col-md-2 control-label\" for=\"submit\"></label>
                     <div class=\"col-md-8\">
                         <button  name=\"submit\" type=\"submit\" class=\"btn btn-success\">Valider</button>
                         <a href=\"";
-        // line 82
+        // line 88
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_provider");
         echo "\" class=\"btn btn-primary\">Annuler</a>
                     </div>
@@ -211,40 +220,40 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
 
 ";
         
-        $__internal_72805d7d01ee0ecb04090fae872f0c087e11e59992a00e50d3837552e35adbcf->leave($__internal_72805d7d01ee0ecb04090fae872f0c087e11e59992a00e50d3837552e35adbcf_prof);
+        $__internal_198d6862b6a9d236c09b5684411a5840c615b2d1cbcd938c1f8b72335f487f42->leave($__internal_198d6862b6a9d236c09b5684411a5840c615b2d1cbcd938c1f8b72335f487f42_prof);
 
         
-        $__internal_212c9bce78a8f5dbf4034b61758f195894cfa5b09aa92f96322b38e7c5738b32->leave($__internal_212c9bce78a8f5dbf4034b61758f195894cfa5b09aa92f96322b38e7c5738b32_prof);
+        $__internal_263052574ea06652528564bd65781a5b04fad960c1c091fcb614fe632941a8b5->leave($__internal_263052574ea06652528564bd65781a5b04fad960c1c091fcb614fe632941a8b5_prof);
 
     }
 
-    // line 91
+    // line 97
     public function block_javascript($context, array $blocks = array())
     {
-        $__internal_cb96701b490e35ac68d0cf5e88706840371203952f75c7f67923247f5e331e02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_cb96701b490e35ac68d0cf5e88706840371203952f75c7f67923247f5e331e02->enter($__internal_cb96701b490e35ac68d0cf5e88706840371203952f75c7f67923247f5e331e02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+        $__internal_c66e3f775ce1d0dd03ee4fdb114b1d5e72ce461815b9a17f435a5f99c49447b7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c66e3f775ce1d0dd03ee4fdb114b1d5e72ce461815b9a17f435a5f99c49447b7->enter($__internal_c66e3f775ce1d0dd03ee4fdb114b1d5e72ce461815b9a17f435a5f99c49447b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        $__internal_ba444131e3f0523c6ff6e960e3d7fb914753d85d544b87dff2520338f5e2cebd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ba444131e3f0523c6ff6e960e3d7fb914753d85d544b87dff2520338f5e2cebd->enter($__internal_ba444131e3f0523c6ff6e960e3d7fb914753d85d544b87dff2520338f5e2cebd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+        $__internal_5f3a4021e08e692bc5dd1aedf885a9081effaae837e2560a455f2e9dd4a7a661 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_5f3a4021e08e692bc5dd1aedf885a9081effaae837e2560a455f2e9dd4a7a661->enter($__internal_5f3a4021e08e692bc5dd1aedf885a9081effaae837e2560a455f2e9dd4a7a661_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 92
+        // line 98
         echo "    ";
         $this->displayParentBlock("javascript", $context, $blocks);
         echo "
     <script type=\"text/javascript\" src=\"";
-        // line 93
+        // line 99
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/admin/module.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 94
+        // line 100
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/admin/hotkeys.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 95
+        // line 101
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/admin/uploader.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" src=\"";
-        // line 96
+        // line 102
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/admin/simditor.min.js"), "html", null, true);
         echo "\"></script>
     <script>
@@ -254,10 +263,10 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
     </script>
 ";
         
-        $__internal_ba444131e3f0523c6ff6e960e3d7fb914753d85d544b87dff2520338f5e2cebd->leave($__internal_ba444131e3f0523c6ff6e960e3d7fb914753d85d544b87dff2520338f5e2cebd_prof);
+        $__internal_5f3a4021e08e692bc5dd1aedf885a9081effaae837e2560a455f2e9dd4a7a661->leave($__internal_5f3a4021e08e692bc5dd1aedf885a9081effaae837e2560a455f2e9dd4a7a661_prof);
 
         
-        $__internal_cb96701b490e35ac68d0cf5e88706840371203952f75c7f67923247f5e331e02->leave($__internal_cb96701b490e35ac68d0cf5e88706840371203952f75c7f67923247f5e331e02_prof);
+        $__internal_c66e3f775ce1d0dd03ee4fdb114b1d5e72ce461815b9a17f435a5f99c49447b7->leave($__internal_c66e3f775ce1d0dd03ee4fdb114b1d5e72ce461815b9a17f435a5f99c49447b7_prof);
 
     }
 
@@ -273,12 +282,12 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
 
     public function getDebugInfo()
     {
-        return array (  248 => 96,  244 => 95,  240 => 94,  236 => 93,  231 => 92,  222 => 91,  204 => 82,  191 => 74,  185 => 73,  179 => 72,  169 => 65,  160 => 59,  151 => 53,  142 => 47,  133 => 41,  124 => 35,  115 => 29,  106 => 23,  97 => 17,  84 => 11,  81 => 10,  72 => 9,  60 => 6,  56 => 5,  51 => 4,  42 => 3,  11 => 1,);
+        return array (  257 => 102,  253 => 101,  249 => 100,  245 => 99,  240 => 98,  231 => 97,  213 => 88,  200 => 80,  194 => 79,  188 => 78,  178 => 71,  169 => 65,  160 => 59,  151 => 53,  142 => 47,  133 => 41,  124 => 35,  115 => 29,  106 => 23,  97 => 17,  84 => 11,  81 => 10,  72 => 9,  60 => 6,  56 => 5,  51 => 4,  42 => 3,  11 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends \"Admin/admin.html.twig\" %}
+        return new Twig_Source("{% extends \"admin/admin.html.twig\" %}
 
 {% block stylesheet %}
     {{ parent() }}
@@ -346,15 +355,21 @@ class __TwigTemplate_9991a70db10a06c106f5b402a1ed5373bb2b2b4338e2adf740013ebcfb2
                     </div>
                 </div>
                 <div class=\"form-group\">
-                        <label class=\"col-md-2 control-label\" for=\"status\">Statut</label>  
-                        <div class=\"col-md-8\">
-                            <select id=\"status\" name=\"status\" class=\"form-control select-md\">
-                                <option value=\"public\" {% if provider.status == \"public\" %}selected{% endif %}>Public</option>
-                                <option value=\"privé\" {% if provider.status == \"privé\" %}selected{% endif %}>Privé</option>
-                                <option value=\"archivé\" {% if provider.status == \"archivé\" %}selected{% endif %}>Archvé</option>
-                            </select>
-                        </div>
+                    <label class=\"col-md-2 control-label\" for=\"picture\">Photo</label>
+                     <div class=\"col-md-8\">
+                        <input id=\"picture\" name=\"picture\" type=\"text\" placeholder=\"\" value=\"{{ provider.picture }}\" class=\"form-control input-md\">
                     </div>
+                </div>
+                <div class=\"form-group\">
+                    <label class=\"col-md-2 control-label\" for=\"status\">Statut</label>  
+                    <div class=\"col-md-8\">
+                        <select id=\"status\" name=\"status\" class=\"form-control select-md\">
+                            <option value=\"public\" {% if provider.status == \"public\" %}selected{% endif %}>Public</option>
+                            <option value=\"privé\" {% if provider.status == \"privé\" %}selected{% endif %}>Privé</option>
+                            <option value=\"archivé\" {% if provider.status == \"archivé\" %}selected{% endif %}>Archvé</option>
+                        </select>
+                    </div>
+                </div>
                 <div class=\"form-group\">
                     <label class=\"col-md-2 control-label\" for=\"submit\"></label>
                     <div class=\"col-md-8\">

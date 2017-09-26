@@ -1,7 +1,9 @@
 
 /*********  G E N E R A L  *******/
 
-
+#trio h4 {
+    padding: 20px;
+}
 
 /*********  M A P  **********/
 
@@ -89,6 +91,15 @@ h3 {
 .onebyone-carosel .active.right { left: 33.33%; }
 .onebyone-carosel .next { left: 33.33%; }
 .onebyone-carosel .prev { left: -33.33%; }
+
+#product-carousel {
+    padding: 40px;
+}
+
+#product-carousel h2 {
+    padding : 50px;
+    font-weight: bold;
+}
 
 
 #index-carousel {
