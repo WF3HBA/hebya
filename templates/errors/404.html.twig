@@ -1,5 +1,77 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    Page not found.
+
+        <h1 style="position:fixed; color: white; right: 50%;">{{ "Page non trouvée"|upper }}</h1>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/dove.jpg') }}"></div>
+
+        <div class="parallax" data-image="{{ asset('img/404/john.jpg') }}"></div>
+
+        
+
+               <span style="color: black;" id="scrollin"  class="glyphicon glyphicon-chevron-up"></span>
+
+    <main id="about-content" class="container">
+
+        <section class="row">
+
+            <div class="col-xs-12 text-center">
+
+             <h1 id="cool">{{ "Page toujours pas trouvée"|upper }}</h1>`
+
+             `
+
+            </div>
+
+        </section>
+
+    </main>
+
+               <span style="color: black;" id="scrollin"  class="glyphicon glyphicon-chevron-up"></span>
+
+{% endblock %}
+
+{% block javascript %}
+
+    {{ parent() }}
+
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+
+    <script src="{{ asset('js/notfound/notfound.js') }}"></script>
+
 {% endblock %}

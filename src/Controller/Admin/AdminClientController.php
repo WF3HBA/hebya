@@ -116,7 +116,7 @@ class AdminClientController extends ControllerAbstract {
         }
         
             return $this->render(
-                    'admin/clientEdit.html.twig',
+                    'admin/adminClientEdit.html.twig',
                     ['client' => $client]
              );
        

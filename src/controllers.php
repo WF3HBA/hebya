@@ -22,7 +22,7 @@ $app->get('/services', 'service.controller:serviceAction')
 $app->get('/services/ajax-request', 'service.controller:targetAction')
         ->bind('services_ajax');
 
-$app->get('/innovateurs', 'innovator.controller:innovatorAction')
+$app->get('/innovateurs', 'provider.controller:providerAction')
         ->bind('innovateurs');
 
 $app->get('/clients', 'client.controller:clientAction')
@@ -33,9 +33,6 @@ $app->get('/offres', 'opportunity.controller:opportunityAction')
 
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
-
-$app->match('/register', 'register.controller:registerAction')
-        ->bind('register');
 
 $app->get('/mention', 'mention.controller:mentionAction')
         ->bind('mention');
@@ -64,7 +61,7 @@ $app->get('/product/{field}', 'product.controller:fieldSelect')
 $app->get('/product_ajax', 'product.controller:countrySelect')
         ->bind('product_ajax');
 
-$app->get('/provider_ajax', 'innovator.controller:countrySelect')
+$app->get('/provider_ajax', 'provider.controller:countrySelect')
         ->bind('provider_ajax');
 
 $app->get('/opportunity_ajax', 'opportunity.controller:jobSelect')

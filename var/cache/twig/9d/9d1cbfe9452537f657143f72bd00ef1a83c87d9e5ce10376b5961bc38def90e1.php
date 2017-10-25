@@ -61,30 +61,39 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                 <div class=\"slide-1\"></div>
                 <div class=\"hero\">
                     <hgroup>
-                        <h1>Pour les entrepreneurs</h1>        
+                        <h1>Invest for future</h1>        
                         <h3></h3>
                     </hgroup>
-                    <button class=\"btn btn-hero btn-lg\" role=\"button\">See all features</button>
+                    <a class=\"btn btn-hero btn-lg\" href=\"";
+        // line 26
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("services");
+        echo "\" role=\"button\">Nos services pour les investisseurs</a>
                 </div>
             </div>
             <div class=\"item slides\">
                 <div class=\"slide-2\"></div>
                 <div class=\"hero\">        
                     <hgroup>
-                        <h1>Pour les investisseurs</h1>        
+                        <h1>You are creative</h1>        
                         <h3></h3>
                     </hgroup>       
-                    <button class=\"btn btn-hero btn-lg\" role=\"button\">See all features</button>
+                    <a class=\"btn btn-hero btn-lg\"href=\"";
+        // line 36
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("services");
+        echo "\" role=\"button\">Nos services pour les start-ups</a>
                 </div>
             </div>
             <div class=\"item slides\">
                 <div class=\"slide-3\"></div>
                 <div class=\"hero\">        
                     <hgroup>
-                        <h1>Pour l'Humanité</h1>        
+                        <h1>Solutions for Africa</h1>        
                         <h3></h3>
                     </hgroup>
-                    <button class=\"btn btn-hero btn-lg\" role=\"button\">See all features</button>
+                    <a class=\"btn btn-hero btn-lg\" href=\"";
+        // line 46
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("product");
+        echo "\" role=\"button\">Nos produits innovants</a>
                 </div>
             </div>
         </div> 
@@ -121,26 +130,26 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
         <section id=\"index-info\">
             <div class=\"container\">
                 <div id=\"trio\" class=\"row\">
-                        <h2>Opportunités</h2>
+                        <h2>Nos missions</h2>
                         <div class=\"col-md-4 col-xs-12\">
                             <div class=\"assets\">
                                 <i class=\"fa fa-line-chart  fa-4x\" aria-hidden=\"true\"></i>
-                                <strong><h4>Sourcing technologique</h4></strong>
-                                <p>\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                                <h4>ACCÈS AU MARCHÉ AFRICAIN</h4>
+                                <p>A Hosted By Africa, nous avons une ambition panafricaine. Nous allons, après le Maroc, ouvrir progressivement des filiales dans les autres pays africains et ainsi permettre à nos startups de conquérir le continent.</p>
                             </div>
                         </div>
                         <div class=\"col-md-4 col-xs-12\">
                              <div class=\"assets\">
                                  <i class=\"fa fa-handshake-o fa-4x\" aria-hidden=\"true\"></i>
-                                <h4>Developpement</h4>
-                                <p>\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                                <h4>MUTUALISATION</h4>
+                                <p>Hosted By Africa va à terme réunir les équipes techniques des startups de son portefeuil afin de créer une grande équipe de R & D pour que les uns puissent  bénéficier des expertises et  des expériences des autres.</p>
                             </div>
                         </div>
                         <div class=\"col-md-4 col-xs-12\">
                             <div class=\"assets\">
                                 <i class=\"fa fa-cloud-upload fa-4x\" aria-hidden=\"true\"></i>
-                                <h4>Conseil</h4>
-                                <p>\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
+                                <h4>CO-CRÉATION</h4>
+                                <p>Rassembler les startups sous un même toit va  favoriser l'émergence de nouvelles idées et projet de startups. Nous allons ensuite co-construire et co-développer ces startups jusqu’à ce qu’elles deviennent  autonomes.</p>
                             </div>
                         </div>
                      </div>
@@ -148,7 +157,7 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
         </section>
         <section id=\"product-carousel\" class=\"text-center\">
             
-            
+            <h2>Nos produits</h2>
             <div id=\"product-carousel-container\">
                 <div id=\"myCarousel\" class=\"carousel fdi-Carousel slide\">
                  <!-- Carousel items -->
@@ -157,7 +166,10 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                             <div class=\"item active\">
                                 <div class=\"col-xs-6 col-md-3\">
                                     <p></p>
-                                    <a href=\"#\">
+                                    <a href=\"";
+        // line 119
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("product");
+        echo "\">
                                         <img src=\"../img/img-index/eyone-medical.jpg\" class=\"img-responsive center-block\">
                                         <figcaption class=\"text-center\"><span>E-YONE MEDICAL</span></figcaption>
                                     </a>
@@ -166,7 +178,10 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                             <div class=\"item\">                                           
                                 <div class=\"col-xs-6 col-md-3\">
                                      <p></p>
-                                    <a href=\"#\">
+                                    <a href=\"";
+        // line 128
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("product");
+        echo "\">
                                         <img src=\"../img/img-index/madrassa-system.jpg\" class=\"img-responsive center-block\">
                                         <figcaption><span>MADRASSA-SYSTEM</span></figcaption>
                                     </a>
@@ -175,7 +190,10 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                             <div class=\"item\">
                                 <div class=\"col-xs-6 col-md-3\">
                                     <p></p>
-                                    <a href=\"#\">
+                                    <a href=\"";
+        // line 137
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("product");
+        echo "\">
                                         <img src=\"../img/img-index/as-pharm.jpg\" class=\"img-responsive center-block\">
                                         <figcaption><span>AS PHARM</span></figcaption>
                                     </a>
@@ -184,7 +202,10 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
                             <div class=\"item\">
                                 <div class=\"col-xs-6 col-md-3\">
                                     <p></p>
-                                    <a href=\"#\">
+                                    <a href=\"";
+        // line 146
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("product");
+        echo "\">
                                         <img src=\"../img/img-index/sos-system.jpg\" class=\"img-responsive center-block\">
                                         <figcaption><span>SOS SYSTEM</span></figcaption>
                                     </a>
@@ -246,7 +267,7 @@ class __TwigTemplate_f59581f1d6ffe5222f529d3848d5ca5f741d673dc4246063011bd2f3592
 
     public function getDebugInfo()
     {
-        return array (  231 => 176,  227 => 174,  223 => 173,  217 => 171,  214 => 170,  208 => 166,  51 => 10,  48 => 9,  42 => 6,  38 => 5,  33 => 4,  30 => 3,  11 => 1,);
+        return array (  252 => 176,  248 => 174,  244 => 173,  238 => 171,  235 => 170,  229 => 166,  207 => 146,  195 => 137,  183 => 128,  171 => 119,  95 => 46,  82 => 36,  69 => 26,  51 => 10,  48 => 9,  42 => 6,  38 => 5,  33 => 4,  30 => 3,  11 => 1,);
     }
 
     public function getSourceContext()

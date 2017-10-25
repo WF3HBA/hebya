@@ -12,7 +12,7 @@ class AboutController extends ControllerAbstract {
          
         return $this->render(
                 
-                'about/about.html.twig',
+                'public/about.html.twig',
                 [
                     'abouts' => $abouts,
                     'teamMembers' => $teamMembers

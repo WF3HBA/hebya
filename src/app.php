@@ -59,8 +59,8 @@ $app['service.controller'] = function () use ($app) {
     return new Controller\ServiceController($app);
 };
 
-$app['innovator.controller'] = function () use ($app) {
-    return new Controller\InnovatorController($app);
+$app['provider.controller'] = function () use ($app) {
+    return new Controller\ProviderController($app);
 };
 
 $app['client.controller'] = function () use ($app) {

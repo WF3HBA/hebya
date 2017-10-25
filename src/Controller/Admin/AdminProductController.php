@@ -110,7 +110,7 @@ class AdminProductController extends ControllerAbstract {
         $countries = $this->app['country.repository']->findAll();
         
         return $this->render(
-                'admin/productEdit.html.twig',
+                'admin/adminProductEdit.html.twig',
                 [
                     'product' => $product,
                     'countries' => $countries,

@@ -1,0 +1,81 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+         {{ parent() }}   
+         <link rel="stylesheet" href="{{ asset("css/public/services.css") }}"/>
+{% endblock %}
+
+{% block content %}
+    <div class="parallax" data-image="{{ asset('img/services/hosted_by_africa_services.jpg') }}"></div>
+    <main>
+        <section id="service-main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center service-profil-title">
+                        <h1>{{ "Nos services"|upper }}</h1>
+                    </div>
+                </div>
+                <div class="row">   
+                    <div class="col-xs-12 col-sm-6 col-lg-3 col-lg-offset-3 text-center">
+                        <a href="btn btn-default" role="button" class="service-profil-button" data-id="
+                           {% for service in services %}
+                                {% if service.target == "start-up" %}
+                                    {{ service.idService }}
+                                {% endif %}
+                            {% endfor %}">Start-up</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
+                        <a href="btn btn-default" role="button" class="service-profil-button" data-id="
+                           {% for service in services %}
+                                {% if service.target == "investor" %}
+                                    {{ service.idService }}
+                                {% endif %}
+                            {% endfor %}">Investisseur</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="service-main-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 main-body-content">
+                        <div id="service-content">
+                            {% for service in services %}
+                                {% if service.target == "introduction" %}
+                                    {{ service.content|raw }}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="service-main-footer">
+            <div class="container">
+                <div class="row">
+                    <br><br>
+                    <div class="col-xs-12 col-sm-6 col-lg-3 text-center col-lg-offset-3">
+                        <a href="{{ path('clients') }}" role="button" class="service-link-button">Nos clients</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
+                        <a href="{{ path('innovateurs') }}" role="button" class="service-link-button">Nos innovateurs</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 text-center">
+                        <a href="http://localhost/hebya/web/index_dev.php/contact" role="button" class="service-contact-button">Nous contacter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+    <script>
+        var targetAjaxUrl = '{{ path('services_ajax') }}';
+    </script>
+    <script src="{{ asset("js/public/service.js") }}"></script>
+{% endblock %}

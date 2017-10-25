@@ -112,7 +112,7 @@ class AdminProviderController extends ControllerAbstract {
         }
         
         return $this->render(
-                'admin/providerEdit.html.twig',
+                'admin/adminProviderEdit.html.twig',
                 ['provider' => $provider]
          );
     }

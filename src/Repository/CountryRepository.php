@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Repository;
 
 use Entity\Country;
@@ -10,21 +9,16 @@ class CountryRepository extends RepositoryAbstract {
     public function findAll(){
     
         $query = <<<SQL
-                
-        SELECT *
-        FROM country
-        ORDER BY name
-        
-                
+            SELECT *
+            FROM country
+            ORDER BY name  
 SQL;
        
             $dbCountries = $this->db->fetchAll($query);
             $countries = [];
             
             foreach ($dbCountries as $dbCountry){
-
                 $countries[] = $this->buildEntity($dbCountry);
-
             }
             
             return $countries;
@@ -32,7 +26,7 @@ SQL;
     
     public function find($id){
          $dbCountry = $this->db->fetchAssoc(
-                'SELECT * FROM country WHERE idcountry = :idcountry',
+            'SELECT * FROM country WHERE idcountry = :idcountry',
                 [
                     ':idcountry' => $id
                 ]
@@ -70,7 +64,6 @@ SQL;
     }
     
     public function delete(Country $country){
-        
         $this->db->delete('country', ['idcountry' => $country->getIdcountry()]);
     }
     
