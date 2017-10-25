@@ -1,9 +1,6 @@
 <?php
 
-
-
 namespace Controller;
-
 
 class OpportunityController extends ControllerAbstract {
    
@@ -12,7 +9,7 @@ class OpportunityController extends ControllerAbstract {
         $opportunities = $this->app['opportunity.repository']->findAll();
       
         return $this->render(
-                'opportunity/opportunity.html.twig',
+                'public/opportunity.html.twig',
                 [
                     'countries' => $countries,
                     'opportunities' => $opportunities
@@ -21,12 +18,11 @@ class OpportunityController extends ControllerAbstract {
     }
     
      public function jobSelect(){
-//        dump($_GET);
+
          $opportunities = $this->app['opportunity.repository']->findBySelector($_GET['field'], $_GET['idcountry'], $_GET['contrat_type']);
          
-         
          return $this->render(
-            'opportunity/opportunityList.html.twig',
+            'public/opportunityList.html.twig',
              [
                  'opportunities' => $opportunities
              ]

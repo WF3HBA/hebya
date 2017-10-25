@@ -11,7 +11,7 @@ class ServiceController extends ControllerAbstract {
         $services = $this->app['service.repository']->findAll();
       
         return $this->render(
-                'service/service.html.twig',
+                'public/service.html.twig',
                 [
                     'services' => $services
                 ]

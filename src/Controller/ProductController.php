@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace Controller;
 
 use Controller\ControllerAbstract;
@@ -17,7 +15,7 @@ class ProductController extends ControllerAbstract {
 //        $fields = $this->app['product.repository']->findByField();
          
         return $this->render(
-                'product/product.html.twig',
+                'public/product.html.twig',
                 [
                      'countries' => $countries,
                      'products' => $products,
@@ -34,7 +32,7 @@ class ProductController extends ControllerAbstract {
         $product = $this->app['product.repository']->find($id);
          
         return $this->render(
-                'product/productId.html.twig',
+                'public/productId.html.twig',
                 [
                      'country' => $country,
                       'product' => $product
@@ -48,27 +46,13 @@ class ProductController extends ControllerAbstract {
          
          
          return $this->render(
-            'product/productList.html.twig',
+            'public/productList.html.twig',
              [
                  'products' => $products
              ]
         );
          
-    }
-    
-//    public function fieldSelect(){
-//        
-//         $fields = $this->app['product.repository']->findByField($_GET['field']);
-//         
-//         $response = 
-//            [
-//                'fields' => $fields
-//            ];
-//         
-//        $reponse = new JsonResponse($response);
-//        dump($reponse);
-//    }
-    
+    }    
     
 }
 

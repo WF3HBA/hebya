@@ -82,6 +82,7 @@ SQL;
                 'website' => $product->getWebsite(),
                 'summary' => $product->getSummary(),
                 'description' => $product->getDescription(),
+                'picture' => $product->getPicture(),
                 'field' => $product->getField(),
                 'status' => $product->getStatus()
             ];
@@ -121,6 +122,7 @@ SQL;
             ->setName($data['name'])
             ->setWebsite($data['website'])
             ->setDescription($data['description'])
+            ->setPicture($data['picture'])
             ->setField($data['field'])
             ->setStatus($data['status'])
             ->setSummary($data['summary'])

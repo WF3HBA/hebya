@@ -13,7 +13,7 @@ class ClientController extends ControllerAbstract {
          
         return $this->render(
                 
-                'client/client.html.twig',
+                'public/client.html.twig',
                 [
                     'countries' => $countries,
                     'clients' => $clients
