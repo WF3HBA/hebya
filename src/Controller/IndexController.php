@@ -10,6 +10,7 @@ class IndexController extends ControllerAbstract {
         
 //      $country = $this->app['country.repository']->find($id);
         $countries = $this->app['country.repository']->findAll();
+     
         return $this->render(
                 'index.html.twig',
                  [
