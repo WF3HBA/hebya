@@ -5,25 +5,29 @@ $(function () {
     speed: 0.3
   });
 
-  $(".boutton-products-body").click(function () {
+  $(".overlay-button").click(function () {
     
-    console.log("click");
-    
-    var name = $('.product-name').html();
-    var content = $('.product-content').html();
-    
-    console.log(name);
-    console.log(content);
+    var $row = $(this).closest('.product-row');
+    var name = $row.find('.product-name').html();
+    var content = $row.find('.product-content').html();
+    var picture = $row.find('.img-thumbnail').attr('src');
 
     $('#product-overlay h2').html(name);
+    $('#product-overlay img').attr('src', picture);
     $('#product-detail').html(content);
-
+    
+    $('body').toggleClass('noscroll');
     $('#product-overlay').fadeIn(600);
+  });
+  
+  $('#close-overlay').click(function(){
+    $('#product-overlay').fadeOut();
+    $('body').toggleClass('noscroll');
   });
 
   $("#filter-form").on('change', 'select', function () {
-    var idCountry = $(".products-select-pays").val();
-    var field = $(".products-select-field").val();
+    var idCountry = $(".country-select").val();
+    var field = $(".field-select").val();
 
     $.ajax({
       url: countrySelect,

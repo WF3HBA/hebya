@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $('#myCarousel').carousel({
         interval: 4000
-    })
+    });
+    
     $('.fdi-Carousel .item').each(function () {
         var next = $(this).next();
 		if (!next.length) {
