@@ -8,10 +8,10 @@ h1 {
 }
 
 #product-list .row {
-  padding: 30px 0;
+  padding-top: 20px;
 }
 
-#product-list h2 {
+h2 {
     padding-bottom: 20px;
 }
 
@@ -21,9 +21,17 @@ h1 {
     border-radius: 10px;
 }
 
-button.btn.btn-primary.boutton-products-body{
+.product-select {
+  padding: 20px 0;
+}
+
+.overlay-button {
     margin-top: 10px;
     transition: 0.5s;
+}
+
+img {
+  margin-bottom: 25px;
 }
 
 #product-overlay {
@@ -32,10 +40,29 @@ button.btn.btn-primary.boutton-products-body{
   z-index: 102;
   top: 0;
   left: 0;
-  width: 100%;
-  min-height: 100vh;
-  background-color: rgba(0,0,0,0.8);
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-color: rgba(0,0,0,0.9);
   color: #fff;
+  padding: 100px 0;
+}
+
+#product-overlay img {
+  width: 100%;
+}
+
+#close-overlay {
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.noscroll {
+  overflow: hidden;
 }
 
 @media only screen and (min-width : 768px) {
