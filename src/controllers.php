@@ -13,6 +13,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app->get('/', 'index.controller:indexAction')
         ->bind('homepage');
 
+$app->get('/index/ajax-request', 'index.controller:countryAction')
+        ->bind('countryAjaxUrl');
+
 $app->get('/apropos', 'about.controller:aboutAction')
         ->bind('apropos');
 

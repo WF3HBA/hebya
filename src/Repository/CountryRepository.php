@@ -37,6 +37,19 @@ SQL;
             }
     }
     
+    public function findByName($name){
+         $dbCountry = $this->db->fetchAssoc(
+            'SELECT * FROM country WHERE name = :name',
+                [
+                    ':name' => $name
+                ]
+            );
+        
+            if(!empty($dbCountry)){
+                return $this->buildEntity($dbCountry);
+            }
+    }
+    
     public function save(Country $country){
         
         $data =
