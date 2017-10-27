@@ -24,7 +24,8 @@ class IndexController extends ControllerAbstract {
     
     $response = [
         'country_name' => $country->getName(),
-        'contact_name' => $country->getContact_name()
+        'contact_name' => $country->getContact_name(),
+        'content'=> $country->getContent()
     ];
             
     return new JsonResponse($response);

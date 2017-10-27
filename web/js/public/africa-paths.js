@@ -110,6 +110,9 @@ var africaPaths = {
           console.log(data);
           $(".info h3").hide().html(data.country_name).fadeIn();
           $(".info #country_contact p").hide().html(data.contact_name).fadeIn();
+          $(".info #country_content p").hide().html(data.content).fadeIn();
+          $(".info #country_service p").hide().html(data.content).fadeIn();
+          $(".info #country_contact .btn-primary").hide();
         })
 
         if (browserWidth < 991) {
