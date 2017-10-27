@@ -59,8 +59,8 @@ $app['service.controller'] = function () use ($app) {
     return new Controller\ServiceController($app);
 };
 
-$app['innovator.controller'] = function () use ($app) {
-    return new Controller\InnovatorController($app);
+$app['provider.controller'] = function () use ($app) {
+    return new Controller\ProviderController($app);
 };
 
 $app['client.controller'] = function () use ($app) {
@@ -126,6 +126,10 @@ $app['admin.team.controller'] = function () use ($app) {
 
 $app['admin.country.controller'] = function () use ($app) {
     return new Controller\Admin\AdminCountryController($app);
+};
+
+$app['admin.opportunity.controller'] = function () use ($app) {
+    return new Controller\Admin\AdminOpportunityController($app);
 };
 
 $app['mention.controller'] = function () use ($app) {

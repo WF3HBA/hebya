@@ -54,7 +54,6 @@ class CandidacyController extends ControllerAbstract {
             if(empty($_FILES['coverletter'])){
                 $errors['coverletter'] = 'lettre de motivation require';
             }
-           
             
             if(empty($errors)){
                 
@@ -70,6 +69,7 @@ class CandidacyController extends ControllerAbstract {
                 $candidacy->setPhone($_POST['phone']);
                 $candidacy->setAddress($_POST['address']);
                 $candidacy->setCountry($_POST['country']);
+<<<<<<< HEAD
                 
                 
                 
@@ -85,16 +85,14 @@ class CandidacyController extends ControllerAbstract {
                 
                 
                 
+=======
+>>>>>>> bd4a90be0117c49f81045717df601f87b36cf8f1
                 
+                //$candidacy->setCv($_FILES['cv']["name"]);
                 
+                //$candidacy->setCoverletter($_FILES['coverletter']["name"]); 
                 
                 $candidacy->setOpportunity($opportunity);
-                
-                
-                
-                
-                
-                
                     
                 $this->app['candidacy.repository']->save($candidacy);
                 
@@ -110,7 +108,7 @@ class CandidacyController extends ControllerAbstract {
         }
       
         return $this->render(
-                'candidacy/candidacy.html.twig',
+                'public/candidacy.html.twig',
                 [
                    'opportunity' => $opportunity 
                 ]

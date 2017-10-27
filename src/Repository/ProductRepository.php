@@ -82,6 +82,7 @@ SQL;
                 'website' => $product->getWebsite(),
                 'summary' => $product->getSummary(),
                 'description' => $product->getDescription(),
+                'picture' => $product->getPicture(),
                 'field' => $product->getField(),
                 'status' => $product->getStatus()
             ];
@@ -121,6 +122,7 @@ SQL;
             ->setName($data['name'])
             ->setWebsite($data['website'])
             ->setDescription($data['description'])
+            ->setPicture($data['picture'])
             ->setField($data['field'])
             ->setStatus($data['status'])
             ->setSummary($data['summary'])
@@ -133,16 +135,14 @@ SQL;
     public function findByCountryAndField($idCountry, $field){
         
         $query = <<<SQL
-    SELECT c.name,
-                chp.idcountry,
-                 p.*,
-                 pr.company 
-                
+    SELECT
+      p.*,
+      pr.company   
     FROM product p
     JOIN country_has_product chp ON chp.idproduct = p.idproduct
     JOIN country c ON c.idcountry = chp.idcountry
     JOIN provider pr ON pr.idprovider = p.idprovider
-    WHERE true 
+    WHERE true
 SQL;
         
         $parameters = [];
@@ -156,6 +156,8 @@ SQL;
             $query .= ' AND p.field = :field';
             $parameters[':field'] = $field;
         }
+        
+        $query .= " GROUP BY idproduct";
         
         $dbProducts = $this->db->fetchAll(
                 $query,

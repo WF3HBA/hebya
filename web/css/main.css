@@ -1,4 +1,5 @@
 /*************  R E S E T  *************/
+
 body {
     box-sizing: border-box;
     font-family: 'Roboto';
@@ -10,11 +11,12 @@ header {
 }
 
 main {
-    padding: 40px 0;
+    padding: 40px 0 40px 0;
+    background-color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans';
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     border: 0;
@@ -60,6 +62,8 @@ footer {
     border-radius: 25px; 
     line-height: 30px;
     z-index: 25;
+    text-align: center;
+    display: none;
 }
 
 #scrollin:hover{
@@ -116,7 +120,7 @@ header .fa-twitter-square:hover{
 }
 
 div#header-social.col-xs-8{
-   margin: 10px 0 10px 0;
+   margin-top: 10px;
 }
 
 a#admin.btn.btn-primary.fa.fa-book, a#admin.btn.btn-primary.fa.fa-user{

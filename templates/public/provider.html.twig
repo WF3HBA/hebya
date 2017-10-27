@@ -1,0 +1,63 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset("css/public/providers.css") }}"/>
+{% endblock %}
+
+{% block content %}
+  <div class="parallax" data-image="{{ asset('img/public/hosted_by_africa_providers.jpg') }}"></div>
+  <main>
+    <section id="providers-header">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-xs-12 text-center">
+            <h1>{{ "Nos innovateurs"|upper }}</h1>
+          </div>
+        </div>
+        <div class="row all-select-providers">
+          <div class="col-md-6 providers-select-theme">
+                  <select class="col-xs-12">
+                      <option value="">Theme</option>
+                      <option>Education</option>
+                      <option>Santé</option>
+                      <option>Assurance</option>
+                      <option>Comptabilité</option>
+                      <option>Numérisation GED</option>
+                  </select>
+          </div>
+          <div class="col-md-6">
+            <form id="filter-form">
+              <select class="col-xs-12 providers-select-pays">
+                <option value="">choissisez un pays</option>
+                {% for country in countries %}
+                  <option>{{ country.name }}</option>
+                {% endfor %}
+              </select>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><br><br>
+    <section id="providers-body">
+      <div class="container">
+        <div class="row">
+          <div id="provider-list">
+            {% include 'public/providerList.html.twig' %}
+          </div>                  
+        </div>                    
+      </div>  
+    </section>
+  </main>
+{% endblock %}
+
+{% block javascript %}
+  {{ parent() }}
+  <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+  <script>
+    var countrySelect = '{{ path('provider_ajax') }}';
+  </script>
+  <script src="{{ asset("js/public/providers.js") }}"></script>
+  <script type="text/javascript" src="script/jquery.parallax-1.1.js"></script>
+{% endblock %}

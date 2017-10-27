@@ -1,0 +1,322 @@
+h1 {
+  position: absolute;
+  top: calc(-50vh - 50px);
+  width: 100%;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+  letter-spacing: 5px;
+}
+
+main {
+  background-color: #fff;
+  padding-top: 0;
+}
+
+/* le select par theme aura un margin-bottom de 20px */
+
+.providers-select-theme {
+
+  margin-bottom: 20px;
+
+}
+
+/* les deux select (theme et pays) auront des border,des border et une height spécifiques*/
+
+#providers-header select {
+
+  margin-top:30px;
+
+  border:2px solid rgba(0, 128, 128, 0.8);
+
+  height: 40px;
+
+  border-radius: 10px;
+
+}
+
+/* c'est pour donner la forme ronde au images' */
+
+#providers-body .row div {
+
+  margin-bottom: 0px;
+
+}
+
+/********************************   hover *********************** */
+
+#providers-body {
+
+  margin-top: 100px;
+
+  margin-bottom: 80px;
+
+}
+
+#providers-body img{
+
+  height:250px;
+
+  width: 250px;
+
+}
+
+.test {
+
+  overflow: hidden;
+
+}
+
+.box {
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  position: relative;
+
+  margin-top: 30px ;
+
+  padding: 0;
+
+  text-align: center;
+
+  cursor: pointer;
+
+}
+
+.box:before {
+
+  content: "";
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, .6);
+
+  position: absolute;
+
+  top: 0;
+
+  left: -50%;
+
+  transform: scale(0);
+
+  transition: all 0.5s ease 0s;
+
+}
+
+.box:hover:before{
+
+  transform: scale(1.8);
+
+}
+
+.box img{
+
+  width: 100%;
+
+  height: auto;
+
+}
+
+.box .box-content {
+
+  width: 50%;
+
+  color: #fff;
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 15%;
+
+  transform: translate(-200%, -50%);
+
+  transition: all 0.2s ease 0s;
+
+}
+
+.box:hover .box-content{
+
+  transform: translate(0, -50%);
+
+}
+
+.box .title {
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  z-index: 1;
+
+}
+
+.box .icon {
+
+  padding: 0;
+
+  margin: 0;
+
+  list-style: none;
+
+}
+
+.box .icon li { 
+
+  display: inline-block; 
+
+}
+
+.box .icon li a{
+
+  width: 40px;
+
+  height: 40px;
+
+  line-height: 40px;
+
+  border-radius: 50%;
+
+  text-align: center;
+
+  font-size: 16px;
+
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  margin-right: 5px;
+
+  transition: all 0.3s ease 0s;
+
+}
+
+.box .icon li a:hover{
+
+  background: #fff;
+
+  color: #000;
+
+}
+
+#providers-body .box-content p{
+
+  font-size: 11px;
+
+}
+
+/************************* Modal *******************/
+
+.modal-content {
+
+  margin-top: 100px;
+
+}
+
+#providers-body .modal-footer h3{
+
+  padding-bottom: 30px;
+
+}
+
+/************************ ******************************/
+
+@media only screen and (max-width:990px) {
+
+  .box { 
+
+    margin-bottom: 20px; 
+
+  }
+
+}
+
+
+
+#providers-body .modal-footer button {
+  margin: 0;
+}
+
+
+/******************************************************************************************************/
+
+/*lorsque la taille de l'écran dépasse 700 px, le margin-top aura la valeur 0 */
+
+@media screen and ( min-width: 700px ) {
+
+  h3 {
+
+    margin-top:0;
+
+  }
+
+}
+
+div.col-lg-4.col-sm-6.text-center.mb-4{
+
+  margin-bottom: 20px;
+
+  height: 350px;
+
+}
+
+/******************************************************************************************************/
+
+/*lorsque la taille de l'écran dépasse 700 px, le margin-top aura la valeur 0 */
+
+@media screen and ( min-width: 700px ) {
+
+  h3 {
+
+    margin-top:0;
+
+  }
+
+}
+
+/********  M E D I A   Q U E R I E S  ***********/
+
+/* Custom, iPhone Retina */ 
+
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px) {
+
+  h1 {
+    font-size: 3.4em;
+    letter-spacing: 5px;
+  }
+
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px) {
+
+  h1 {
+        font-size: 4em;
+        letter-spacing: 8px;
+    }
+
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px) {
+
+}

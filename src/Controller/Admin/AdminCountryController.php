@@ -62,7 +62,6 @@ class AdminCountryController extends ControllerAbstract {
                 $errors['content'] = 'Maximum 200 characteres';
             }
 
-dump($errors);
             if (empty($errors)) {
                 
                 $this->app['country.repository']->save($country);

@@ -1,14 +1,13 @@
 <?php
 
-
 namespace Controller;
 
 use Entity\User;
 
-
 class UserController extends ControllerAbstract {
     
     public function regiterAction(){
+        
         $user = new User();
         $errors = [];
         
@@ -43,7 +42,7 @@ class UserController extends ControllerAbstract {
             }
         }
         
-        return $this->render('register/register.html.twig',
+        return $this->render('public/register.html.twig',
                 [
                     'user' => $user,
                 ]
@@ -77,7 +76,7 @@ class UserController extends ControllerAbstract {
         }
         
         return $this->render(
-                'register/login.html.twig',
+                'public/login.html.twig',
                 [
                     'email' => $email
                 ]
