@@ -4,8 +4,8 @@ $(function () {
     coverRatio: 1,
     speed: 0.3
   });
-
-  $(".overlay-button").click(function () {
+  
+  $(document).on("click", ".overlay-button", function () {
     
     var $row = $(this).closest('.product-row');
     var name = $row.find('.product-name').html();
@@ -35,7 +35,7 @@ $(function () {
       data: {'idcountry': idCountry, 'field': field},
       dataType: 'html'
     }).done(function (data) {
-      $('#product-list').html(data);
+      $('#product-list .container').html(data);
     });
   });
 });

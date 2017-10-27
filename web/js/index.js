@@ -21,8 +21,7 @@ $(document).ready(function () {
         next3 = $(this).siblings(':first');
         }        
         
-        
-            next3.children(':first-child').clone().appendTo($(this));
+        next3.children(':first-child').clone().appendTo($(this));
             
        
     });

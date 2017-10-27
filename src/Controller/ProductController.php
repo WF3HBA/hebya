@@ -44,7 +44,6 @@ class ProductController extends ControllerAbstract {
         
          $products = $this->app['product.repository']->findByCountryAndField($_GET['idcountry'], $_GET['field']);
          
-         
          return $this->render(
             'public/productList.html.twig',
              [

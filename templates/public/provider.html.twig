@@ -2,24 +2,22 @@
 
 {% block stylesheet %}
   {{ parent() }}
-  <link rel="stylesheet" href="{{ asset("css/providers/providers.css") }}"/>
+  <link rel="stylesheet" href="{{ asset("css/public/providers.css") }}"/>
 {% endblock %}
 
 {% block content %}
-  <div class="parallax" data-image="{{ asset('img/img-provider/hosted_by_africa_providers.jpg') }}"></div>
+  <div class="parallax" data-image="{{ asset('img/public/hosted_by_africa_providers.jpg') }}"></div>
   <main>
     <section id="providers-header">
       <div class="container">
         <div class="row">
-          {# <div id="slide1" style="background-image:url("../images/innovateurs.jpg"); background-repeat: none;">
           
-              </div>#}
           <div class="col-xs-12 text-center">
             <h1>{{ "Nos innovateurs"|upper }}</h1>
           </div>
         </div>
         <div class="row all-select-providers">
-          {#<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 providers-select-theme">
+          <div class="col-md-6 providers-select-theme">
                   <select class="col-xs-12">
                       <option value="">Theme</option>
                       <option>Education</option>
@@ -28,8 +26,8 @@
                       <option>Comptabilité</option>
                       <option>Numérisation GED</option>
                   </select>
-          </div>#}
-          <div class="col-xs-offset-1 col-xs-12  col-sm-offset-3 col-sm-6 ">
+          </div>
+          <div class="col-md-6">
             <form id="filter-form">
               <select class="col-xs-12 providers-select-pays">
                 <option value="">choissisez un pays</option>
