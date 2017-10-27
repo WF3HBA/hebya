@@ -1,30 +1,22 @@
 h1 {
-
-    position: relative;
-
-    top: -300px;
-
-    color: #fff;
-
-    text-shadow: 0px 0px 25px rgba(0,0,0,0.3);
-
-    letter-spacing: 5px;
-
+  position: absolute;
+  top: calc(-50vh - 50px);
+  width: 100%;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+  letter-spacing: 5px;
 }
 
 main {
-
-    background-color: #fff;
-
-    padding-top: 0;
-
+  background-color: #fff;
+  padding-top: 0;
 }
 
 /* le select par theme aura un margin-bottom de 20px */
 
 .providers-select-theme {
 
-   margin-bottom: 20px;
+  margin-bottom: 20px;
 
 }
 
@@ -32,13 +24,13 @@ main {
 
 #providers-header select {
 
-   margin-top:30px;
+  margin-top:30px;
 
-   border:2px solid rgba(0, 128, 128, 0.8);
+  border:2px solid rgba(0, 128, 128, 0.8);
 
-   height: 40px;
+  height: 40px;
 
-   border-radius: 10px;
+  border-radius: 10px;
 
 }
 
@@ -46,7 +38,7 @@ main {
 
 #providers-body .row div {
 
-   margin-bottom: 0px;
+  margin-bottom: 0px;
 
 }
 
@@ -54,167 +46,167 @@ main {
 
 #providers-body {
 
-   margin-top: 100px;
+  margin-top: 100px;
 
-   margin-bottom: 80px;
+  margin-bottom: 80px;
 
 }
 
 #providers-body img{
 
-   height:250px;
+  height:250px;
 
-   width: 250px;
+  width: 250px;
 
 }
 
 .test {
 
-   overflow: hidden;
+  overflow: hidden;
 
 }
 
 .box {
 
-   display: inline-block;
+  display: inline-block;
 
-   overflow: hidden;
+  overflow: hidden;
 
-   position: relative;
+  position: relative;
 
-   margin-top: 30px ;
+  margin-top: 30px ;
 
-   padding: 0;
+  padding: 0;
 
-   text-align: center;
+  text-align: center;
 
-   cursor: pointer;
+  cursor: pointer;
 
 }
 
 .box:before {
 
-   content: "";
+  content: "";
 
-   width: 100%;
+  width: 100%;
 
-   height: 100%;
+  height: 100%;
 
-   border-radius: 50%;
+  border-radius: 50%;
 
-   background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .6);
 
-   position: absolute;
+  position: absolute;
 
-   top: 0;
+  top: 0;
 
-   left: -50%;
+  left: -50%;
 
-   transform: scale(0);
+  transform: scale(0);
 
-   transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 
 }
 
 .box:hover:before{
 
-   transform: scale(1.8);
+  transform: scale(1.8);
 
 }
 
 .box img{
 
-   width: 100%;
+  width: 100%;
 
-   height: auto;
+  height: auto;
 
 }
 
 .box .box-content {
 
-   width: 50%;
+  width: 50%;
 
-   color: #fff;
+  color: #fff;
 
-   position: absolute;
+  position: absolute;
 
-   top: 50%;
+  top: 50%;
 
-   left: 15%;
+  left: 15%;
 
-   transform: translate(-200%, -50%);
+  transform: translate(-200%, -50%);
 
-   transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
 
 }
 
 .box:hover .box-content{
 
-   transform: translate(0, -50%);
+  transform: translate(0, -50%);
 
 }
 
 .box .title {
 
-   font-size: 22px;
+  font-size: 22px;
 
-   font-weight: 700;
+  font-weight: 700;
 
-   z-index: 1;
+  z-index: 1;
 
 }
 
 .box .icon {
 
-   padding: 0;
+  padding: 0;
 
-   margin: 0;
+  margin: 0;
 
-   list-style: none;
+  list-style: none;
 
 }
 
 .box .icon li { 
 
-    display: inline-block; 
+  display: inline-block; 
 
 }
 
 .box .icon li a{
 
-   width: 40px;
+  width: 40px;
 
-   height: 40px;
+  height: 40px;
 
-   line-height: 40px;
+  line-height: 40px;
 
-   border-radius: 50%;
+  border-radius: 50%;
 
-   text-align: center;
+  text-align: center;
 
-   font-size: 16px;
+  font-size: 16px;
 
-   color: #fff;
+  color: #fff;
 
-   border: 1px solid #fff;
+  border: 1px solid #fff;
 
-   margin-right: 5px;
+  margin-right: 5px;
 
-   transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 
 }
 
 .box .icon li a:hover{
 
-   background: #fff;
+  background: #fff;
 
-   color: #000;
+  color: #000;
 
 }
 
 #providers-body .box-content p{
 
-   font-size: 11px;
+  font-size: 11px;
 
 }
 
@@ -222,13 +214,13 @@ main {
 
 .modal-content {
 
-    margin-top: 100px;
+  margin-top: 100px;
 
 }
 
 #providers-body .modal-footer h3{
 
-   padding-bottom: 30px;
+  padding-bottom: 30px;
 
 }
 
@@ -236,18 +228,18 @@ main {
 
 @media only screen and (max-width:990px) {
 
-   .box { 
+  .box { 
 
-       margin-bottom: 20px; 
+    margin-bottom: 20px; 
 
-   }
+  }
 
 }
 
 
 
 #providers-body .modal-footer button {
-    margin: 0;
+  margin: 0;
 }
 
 
@@ -257,19 +249,19 @@ main {
 
 @media screen and ( min-width: 700px ) {
 
-    h3 {
+  h3 {
 
-       margin-top:0;
+    margin-top:0;
 
-    }
+  }
 
 }
 
 div.col-lg-4.col-sm-6.text-center.mb-4{
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    height: 350px;
+  height: 350px;
 
 }
 
@@ -281,7 +273,7 @@ div.col-lg-4.col-sm-6.text-center.mb-4{
 
   h3 {
 
-     margin-top:0;
+    margin-top:0;
 
   }
 
@@ -305,15 +297,10 @@ div.col-lg-4.col-sm-6.text-center.mb-4{
 
 @media only screen and (min-width : 768px) {
 
-    h1 {
-
-        top: -400px;
-
-        font-size: 3.4em;
-
-        letter-spacing: 5px;
-
-    }
+  h1 {
+    font-size: 3.4em;
+    letter-spacing: 5px;
+  }
 
 }
 
@@ -321,12 +308,9 @@ div.col-lg-4.col-sm-6.text-center.mb-4{
 
 @media only screen and (min-width : 992px) {
 
-    h1 {
-
+  h1 {
         font-size: 4em;
-
         letter-spacing: 8px;
-
     }
 
 }
