@@ -16,6 +16,9 @@ $app->get('/', 'index.controller:indexAction')
 $app->get('/index/ajax-request', 'index.controller:countryAction')
         ->bind('countryAjaxUrl');
 
+$app->get('/index/country-request', 'country.controller:statusAction')
+        ->bind('country_request');
+
 $app->get('/apropos', 'about.controller:aboutAction')
         ->bind('apropos');
 

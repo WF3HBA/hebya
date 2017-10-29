@@ -164,8 +164,10 @@
 
   {% block javascript %}
     {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
       var countryAjaxUrl = '{{ path('countryAjaxUrl') }}';
+      var countryRequest = '{{ path('country_request') }}';
     </script>
     <script src="{{ asset('js/public/raphael-min.js') }}"></script>
     <script src="{{ asset('js/public/africa-paths.js') }}"></script>

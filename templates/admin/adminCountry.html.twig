@@ -14,6 +14,7 @@
                 <th>Email</th>
                 <th>Adresse</th>
                 <th>Ville</th>
+                <th>Status</th>
                 <th>Edition</th>
                 <th>Supprimer</th>
             </tr>
@@ -26,6 +27,7 @@
                 <td>{{ country.contact_email }}</td>
                 <td>{{ country.contact_address }}</td>
                 <td>{{ country.contact_city }}</td>
+                <td>{{ country.status }}</td>
                 <td>
                     <a href="{{ path('admin_country_edit', {id: country.idcountry}) }}"><button class="btn btn-primary">Modifier</button></a>
                 </td>
