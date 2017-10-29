@@ -1,0 +1,127 @@
+{% extends "Admin/admin.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset("css/admin/provider_edit.css") }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/simditor.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="col-md-9 col-md-offset-2 table-listing">
+    <h1>{% if client.idclient%}Edition{% else %}Création{% endif %} client</h1>
+<form class="form-horizontal" method="POST">
+    <fieldset>
+    <legend></legend>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="lastname">Nom</label>  
+      <div class="col-md-8">
+      <input id="lastname" name="lastname" type="text" placeholder="" value="{{client.lastname}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="firstname">Prénom</label>  
+      <div class="col-md-8">
+      <input id="firstname" name="firstname" type="text" placeholder="" value="{{client.firstname}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="company">Société</label>  
+      <div class="col-md-8">
+      <input id="company" name="company" type="text" placeholder="" value="{{client.company}}" class="form-control input-md">
+
+      </div>
+    </div>
+      
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="description">Description</label>  
+      <div class="col-md-8">
+          <textarea id="description" name="description" placeholder=""  class="form-control textarea-md">{{client.description}}</textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="email">Email</label>  
+      <div class="col-md-8">
+      <input id="email" name="email" type="text" placeholder="" value="{{client.email}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="phone">Téléphone</label>  
+      <div class="col-md-8">
+      <input id="phone" name="phone" type="text" placeholder="" value="{{client.phone}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="address">Adresse</label>  
+      <div class="col-md-8">
+      <input id="address" name="address" type="text" placeholder="" value="{{client.address}}" class="form-control input-md">
+
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="city">Ville</label>  
+      <div class="col-md-8">
+      <input id="city" name="city" type="text" placeholder="" value="{{client.city}}" class="form-control input-md">
+
+      </div>
+    </div>
+
+    <!-- text input-->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="country">Pays</label>
+      <div class="col-md-8">
+         <input id="country" name="country" type="text" placeholder="" value="{{client.country}}" class="form-control input-md">
+      </div>
+    </div>
+
+     <div class="form-group">
+        <label class="col-md-2 control-label" for="status">Statut</label>  
+        <div class="col-md-8">
+            <select id="status" name="status" class="form-control select-md">
+                <option value="public" {% if client.status == "public" %}selected{% endif %}>Public</option>
+                <option value="privé" {% if client.status == "privé" %}selected{% endif %}>Privé</option>
+                <option value="archivé" {% if client.status == "archivé" %}selected{% endif %}>Archvé</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <label class="col-md-2 control-label" for="submit"></label>
+      <div class="col-md-8">
+        <button  name="submit" type="submit" class="btn btn-success">Valider</button>
+        <a href="{{ path('admin_client') }}" class="btn btn-primary">Annuler</a>
+      </div>
+    </div>
+
+    </fieldset>
+</form>
+</div>
+
+    {% endblock %}
+    
+    {% block javascript %}
+    {{ parent() }}
+     <script src="{{ asset('js/admin/edit.js') }}"></script>
+     <script type="text/javascript" src="{{ asset('js/admin/module.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/hotkeys.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/simditor.min.js') }}"></script>
+    <script>
+        var content = new Simditor({
+             textarea: $('#description')
+        });
+    </script>
+    {% endblock %}

@@ -1,0 +1,48 @@
+h1 {
+    position: relative;
+    top: -300px;
+    color: #fff;
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.3);
+    letter-spacing: 5px;
+}
+
+main {
+    background-color: #fff;
+    padding-top: 0;
+}
+
+.icone-fermer{
+    display:none;
+}
+
+#affiner-recherche{
+    display:none;
+}
+
+.products-select-field, .products-select-pays{
+    border-color: #004f4f;
+}
+
+.boutton-annonce{
+    float: right;
+}
+
+.modal-content{
+    margin:100px 50px;
+    padding: 30px;
+}
+
+@media only screen and (min-width : 768px) {
+    h1 {
+        top: -400px;
+        font-size: 3.4em;
+        letter-spacing: 5px;
+    }
+}
+
+@media only screen and (min-width : 992px) {
+    h1 {
+        font-size: 4em;
+        letter-spacing: 8px;
+    }
+}

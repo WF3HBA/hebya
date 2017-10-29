@@ -1,0 +1,41 @@
+{% extends "admin/admin.html.twig" %}
+
+
+{% block content %}    
+        
+    <div class="col-md-9 col-md-offset-2 table-listing">
+        <h2>Innovateurs</h2>
+        <p>Admin <a href="{{ path('admin_provider_edit')}}">Ajout innovateur</a></p>
+        <table class="table table-striped">
+            <tr class="info">
+                <th>Nom</th>
+                <th>Société</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Pays</th>
+                <th>Edition</th>
+                <th>Supprimer</th>
+            </tr>
+            {% for provider in providers%}
+            <tr>
+                <td>{{ provider.fullName }}</td>
+                <td>{{ provider.company }}</td>
+                <td>{{ provider.email }}</td>
+                <td>{{ provider.phone }}</td>
+                <td>{{ provider.address }}</td>
+                <td>{{ provider.country }}</td>
+                <td>
+                    <a href="{{ path('admin_provider_edit', {id: provider.idprovider}) }}"><button class="btn btn-primary">Modifier</button></a>
+                </td>
+                <td>
+                    <a href=" {{path('admin_provider_delete', {id: provider.idprovider}) }}"><button id="annuler" name="annuler" class="btn btn-danger">Supprimer</button></a>
+                </td>
+            </tr>
+            {% else %} 
+                <tr><td colspan="2">Aucun résultat</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+       
+{% endblock %}

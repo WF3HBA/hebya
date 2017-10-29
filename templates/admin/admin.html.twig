@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title '' %} - Hebya - admin</title>
+        <meta charset="utf-8">
+        {% block stylesheet %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Josefin+Sans|Open+Sans|Roboto" rel="stylesheet"> 
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.min.css" rel="stylesheet"  crossorigin="anonymous">
+            <link href="{{ asset('css/admin/admin.css') }}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+    </head>
+    <body>
+        
+        
+    {#    <div class="navbar navbar-inverse navbar-fixed-left" id="leftside">
+            
+           <ul class="nav navbar-nav" id="left-menu">
+              
+               <li class="li-left"><a href="{{ path('admin_product') }}">Produits</a></li>
+               <li class="li-left"><a href="{{ path('admin_provider') }}">Fournisseur</a></li>
+               <li class="li-left"><a href="{{ path('admin_client') }}">Clients</a></li>
+               <li class="li-left"><a href="{{ path('admin_team') }}">Team</a></li>
+               <li class="li-left"><a href="{{ path('homepage') }}">Retour au site</a></li>
+           </ul>
+       </div>#}
+       <div class="navbar navbar-inverse navbar-fixed-top"> 
+            <ul class="nav navbar-nav" id="head-menu">
+                <li><a href="{{ path('admin') }}"><img src="{{ asset('img/hebya-logo-inverse.png')}}"/></a></li>
+                <li class="li-nav"><a href="{{ path('admin_product') }}">Produits</a></li>
+                <li class="li-nav"><a href="{{ path('admin_provider') }}">Fournisseur</a></li>
+                <li class="li-nav"><a href="{{ path('admin_client') }}">Clients</a></li>
+                <li class="li-nav"><a href="{{ path('admin_team') }}">Equipe</a></li>
+                <li class="li-nav"><a href="{{ path('admin_about') }}">A propos</a></li>
+                <li class="li-nav"><a href="{{ path('admin_service') }}">Services</a></li>
+                <li class="li-nav"><a href="{{ path('admin_country') }}">Pays</a></li>
+                <li class="li-nav"><a href="{{ path('homepage') }}">Retour au site</a></li>
+            </ul>
+        </div>
+
+       
+
+         {% block content %}
+             <div class="container col-md-offset-2">
+                <div class="row table-listing">                    
+                     <div class="col-md-3">
+                         <div class="asset1 asset">
+                            {#  weather api data   #}
+                         </div> 
+                    </div>                                    
+                   
+                     <div class="col-md-3">
+                         <div class="asset2 asset">
+                            {#  weather api data   #}
+                         </div> 
+                    </div>                                    
+                   
+                     <div class="col-md-3">
+                         <div class="asset3 asset">
+                            {#  weather api data   #}
+                         </div> 
+                    </div>                                    
+                   
+                     <div class="col-md-3">
+                         <div class="asset4 asset">
+                            {#  weather api data   #}
+                           
+                         </div> 
+                         
+                </div> 
+                <div class="row">
+                    <span class="col-md-3 col-md-offset-9 powered">Powered by <img src="{{ asset('img/weatheru.jpg') }}"></span>
+                </div>
+                   
+                
+                 
+                 <div class="row">
+                     <div class="col-md-5 table-listing">
+                         
+                         <div class="add-on">
+                             <h2>Ajout</h2>
+                             <a href="{{ path('admin_client_edit')}}" class="btn btn-default"><i class="fa fa-address-card fa-5x" aria-hidden="true"></i><h5>Clients</h5></a>
+                             <a href="{{ path('admin_product_edit')}}" class="btn btn-default"><i class="fa fa-cart-plus fa-5x" aria-hidden="true"></i><h5>Produit</h5></a>
+                             <a href="{{ path('admin_team_edit')}}" class="btn btn-default"><i class="fa fa-users fa-5x" aria-hidden="true"></i><h5>Equipes</h5></a>
+                             <a href="{{ path('admin_country_edit')}}" class="btn btn-default"><i class="fa fa-globe fa-5x" aria-hidden="true"></i><h5>Pays</h5></a>
+                             <a href="{{ path('admin_provider_edit')}}" class="btn btn-default"><i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i><h5>Innovateurs</h5></a>
+                             <a href="{{ path('admin_provider_edit')}}" class="btn btn-default"><i class="fa fa-handshake-o fa-5x" aria-hidden="true"></i><h5>Emplois</h5></a>
+                         </div>
+                         
+                     </div>
+                     <div class="col-md-6 asset table-listing">
+                         <div id="calendar"></div>
+                     </div>
+                 </div>
+                 
+                
+                 
+            </div>  
+           
+        {% endblock %}
+        
+           
+        
+ {% block javascript %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/admin/moment-with-locales.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.min.js"  crossorigin="anonymous"></script>
+   
+    <script src="{{ asset('js/admin/edit.js') }}"></script>
+    <script src="{{ asset('js/admin/calendrier.js') }}"></script>
+    
+     
+    
+   
+    
+    {% endblock %}
+    
+    
+    </body>
+</html>

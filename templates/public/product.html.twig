@@ -1,0 +1,75 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset("css/public/products.css") }}"/>
+
+{% endblock %}
+
+{% block content %}
+  <div class="parallax" data-image="{{ asset('img/public/hosted_by_africa_products.jpg') }}"></div>
+  <main>
+    <section id="products-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1>{{ "Nos Produits"|upper }}</h1>
+          </div>
+        </div>
+        <div class="row product-select">
+          <form id="filter-form">
+            <div class="col-sm-6">
+              <select class="col-xs-12  field-select">
+                <option value="">Thème</option>
+                <option>Education</option>
+                <option>Santé</option>
+                <option>Assurance</option>
+                <option>Comptabilité</option>
+                <option>Numérisation GED</option>
+              </select>
+            </div>
+            <div class="col-sm-6">
+              <select class="col-xs-12 country-select">
+                <option value="">pays</option>
+                {% for country in countries %}
+                  <option value="{{ country.idcountry }}">{{ country.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="product-list">
+      <div class="container">
+        {% include 'public/productList.html.twig' %}
+      </div>
+    </section>
+    <div id="product-overlay">
+      <i id="close-overlay" class="fa fa-times-circle-o" aria-hidden="true"></i>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 product-picture">
+            <img src="">
+          </div>
+          <div class="col-md-6 product-description">
+            <h2></h2>
+            <div id="product-detail">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
+
+
+{% block javascript %}
+  {{ parent() }}
+  <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+  <script>
+      var countrySelect = '{{ path('product_ajax') }}';
+  </script>
+  <script src="{{ asset("js/public/product.js") }}"></script>
+{% endblock %}

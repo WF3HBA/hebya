@@ -8,11 +8,193 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
-})
-->bind('homepage')
-;
+/********* F R O N T *********/
+
+$app->get('/', 'index.controller:indexAction')
+        ->bind('homepage');
+
+$app->get('/index/ajax-request', 'index.controller:countryAction')
+        ->bind('countryAjaxUrl');
+
+$app->get('/index/country-request', 'country.controller:statusAction')
+        ->bind('country_request');
+
+$app->get('/apropos', 'about.controller:aboutAction')
+        ->bind('apropos');
+
+$app->get('/services', 'service.controller:serviceAction')
+        ->bind('services');
+
+$app->get('/services/ajax-request', 'service.controller:targetAction')
+        ->bind('services_ajax');
+
+$app->get('/innovateurs', 'provider.controller:providerAction')
+        ->bind('innovateurs');
+
+$app->get('/clients', 'client.controller:clientAction')
+        ->bind('clients');
+
+$app->get('/offres', 'opportunity.controller:opportunityAction')
+        ->bind('opportunity');
+
+$app->get('/contact', 'contact.controller:contactAction')
+        ->bind('contact');
+
+$app->get('/mention', 'mention.controller:mentionAction')
+        ->bind('mention');
+
+$app->match('/candidatures/{postId}', 'candidacy.controller:candidacyAction')
+        ->value('postId', null)
+        ->bind('candidacy');
+
+$app->match('/login', 'user.controller:loginAction')
+        ->bind('login');
+
+$app->match('/logout', 'user.controller:logoutAction')
+        ->bind('logout');
+
+$app->get('/product', 'product.controller:productAction')
+        ->bind('product');
+
+$app->get('/product/{id}', 'product.controller:productIdAction')
+        ->value('id',null)
+        ->bind('product_id');
+
+$app->get('/product/{field}', 'product.controller:fieldSelect')
+        ->value('field',null)
+        ->bind('product_field');
+
+$app->get('/product_ajax', 'product.controller:countrySelect')
+        ->bind('product_ajax');
+
+$app->get('/provider_ajax', 'provider.controller:countrySelect')
+        ->bind('provider_ajax');
+
+$app->get('/opportunity_ajax', 'opportunity.controller:jobSelect')
+        ->bind('opportunity_ajax');
+
+$app->get('/index_country_ajax', 'index.controller:displayNameCountry')
+        ->bind('index_country_ajax');
+
+$app->get('/profil', 'profil.controller:profilAction')
+        ->bind('profil');
+
+
+
+/***ADMIN ROUTE***/
+//crée un groupe de route
+
+$admin = $app['controllers_factory'];
+//toutes les url des routes créees par $admin sont préfixées par admin
+$app->mount('/admin', $admin);
+
+$admin->get('/accueil', 'admin.controller:adminAction')
+        ->bind('admin');
+
+
+/******ADMIN PROVIDER ACTION*********/
+
+$admin->get('/providers', 'admin.provider.controller:providertListAction')
+        ->bind('admin_provider');
+
+$admin->match('/providers/edition/{id}', 'admin.provider.controller:editAction')
+        ->value('id', null)
+        ->bind('admin_provider_edit');
+
+$admin->get('/providers/suppression/{id}', 'admin.provider.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_provider_delete');
+
+/*******ADMIN PRODUCT ACTION*******/
+
+$admin->get('/products', 'admin.product.controller:productListAction')
+        ->bind('admin_product');
+
+$admin->match('/products/edition/{id}', 'admin.product.controller:editAction')
+        ->value('id', null)
+        ->bind('admin_product_edit');
+
+$admin->get('/products/suppression/{id}', 'admin.product.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_product_delete');
+
+/*******ADMIN CLIENT ACTION*******/
+
+$admin->get('/clients', 'admin.client.controller:clientListAction')
+        ->bind('admin_client');
+
+$admin->match('/clients/edition/{id}', 'admin.client.controller:editAction')
+         ->value('id', null)
+        ->bind('admin_client_edit');
+
+$admin->get('/clients/suppression/{id}', 'admin.product.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_client_delete');
+
+/*******ADMIN SERVICE ACTION*******/
+
+$admin->get('/services', 'admin.service.controller:serviceListAction')
+        ->bind('admin_service');
+
+$admin->match('/services/edition/{id}', 'admin.service.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_service_edit');
+
+/*******ADMIN ABOUT ACTION*******/
+
+$admin->get('/apropos', 'admin.about.controller:aboutListAction')
+            ->bind('admin_about');
+
+$admin->match('/apropos/edition/{id}', 'admin.about.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_about_edit');
+
+/*******ADMIN TEAM ACTION*******/
+
+$admin->get('/team', 'admin.team.controller:teamListAction')
+            ->bind('admin_team');
+
+$admin->match('/team/edition/{id}', 'admin.team.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_team_edit');
+
+$admin->get('/team/suppression/{id}', 'admin.team.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_team_delete');
+
+/*******ADMIN COUNTRY ACTION*******/
+
+$admin->get('/country', 'admin.country.controller:countryListAction')
+            ->bind('admin_country');
+
+$admin->match('/country/edition/{id}', 'admin.country.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_country_edit');
+
+$admin->get('/country/suppression/{id}', 'admin.country.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_country_delete');
+
+/*******ADMIN OPPORTUNITY ACTION*******/
+
+$admin->get('/opportunity', 'admin.opportunity.controller:opportunityListAction')
+            ->bind('admin_opportunity');
+
+$admin->match('/opportunity/edition/{id}', 'admin.opportunity.controller:editAction')
+            ->value('id', null)
+            ->bind('admin_opportunity_edit');
+
+$admin->get('/opportunity/suppression/{id}', 'admin.opportunity.controller:deleteAction')
+        ->assert('id','\d+')
+        ->bind('admin_opportunity_delete');
+
+
+//route admin user
+$admin->before(function () use ($app){
+    if(!$app['user.manager']->isAdmin()){
+        $app->abort(403, 'acces refusé');
+    }
+});
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

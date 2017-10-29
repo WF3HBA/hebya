@@ -1,0 +1,379 @@
+/*************  R E S E T  *************/
+
+body {
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-size: 1.6em;
+}
+
+header {
+    background-color: #fff;
+}
+
+main {
+    padding: 40px 0 40px 0;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+h1 {
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: #008080;
+  transition: 0.5s;
+}
+
+footer {
+    padding-top: 45px;
+    background-color: #222222;
+}
+
+.glyphicon.glyphicon-chevron-up{
+    position: fixed;
+    right: 3%; 
+    top: 93%;  
+    color: white; 
+    background-color: rgba(105,105,105,0.8); 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 25px; 
+    line-height: 30px;
+    z-index: 25;
+    text-align: center;
+    display: none;
+}
+
+#scrollin:hover{
+     cursor: pointer;
+}
+/***********  H E A D E R  *********/
+
+header {
+   min-height: 50px;
+   z-index: 102;    
+}
+
+#header-social {
+   height: 59px;
+   line-height: 74px;
+   text-align: right;
+}
+
+#header-social i {
+   margin-left: 5px;
+   font-size: 2.4em;
+}
+
+#header-social select.form-control {
+   display: inline-block;
+   position: relative;
+   top: -8px;
+   width: 40px;
+   border: 1px solid #eee;
+   padding: 0;
+   margin-left: 15px;
+}
+
+#admin{
+   margin-bottom: 15px;
+}
+
+header .fa-facebook-square{
+   color:#222222;
+}
+
+header .fa-twitter-square{
+   color:#222222;
+}
+
+header .fa-facebook-square:hover{
+   transition: 1s;
+   color:#008080;
+}
+
+header .fa-twitter-square:hover{
+   transition: 1s;
+   color:#008080;
+}
+
+div#header-social.col-xs-8{
+   margin-top: 10px;
+}
+
+a#admin.btn.btn-primary.fa.fa-book, a#admin.btn.btn-primary.fa.fa-user{
+   padding: 9px 9px 8px 9px;
+   margin-left: 5px;
+   margin-bottom: 18.5px;
+   border-radius: 6px;
+   border: none;
+   background-color:#222222;
+   color: white;
+}
+
+a#admin.btn.btn-primary.fa.fa-book:hover, a#admin.btn.btn-primary.fa.fa-user:hover{
+   transition: 1s;
+   background-color:#008080;
+   color: white;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out, a#admin.btn.btn-primary.fa.fa-pencil{
+   padding: 9px 9px 8px 9px;
+   margin-left: 5px;
+   margin-bottom: 18.5px;
+   border-radius: 6px;
+   border: none;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out, a#admin.btn.btn-primary.fa.fa-pencil{
+   background-color:#222222;
+   color: white;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out:hover, a#admin.btn.btn-primary.fa.fa-pencil:hover{
+   transition: 1s;
+   background-color:#008080;
+   color: white;
+}
+
+
+a#admin.btn.btn-primary.fa.fa-book:hover, a#admin.btn.btn-primary.fa.fa-user:hover{
+    transition: 1s;
+    background-color:#008080;
+    color: white;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out, a#admin.btn.btn-primary.fa.fa-pencil{
+    padding: 9px 9px 8px 9px;
+    margin-left: 5px;
+    margin-bottom: 18.5px;
+    border-radius: 6px;
+    border: none;
+}
+
+a#admin.btn.btn-primary.fa.fa-sign-out, a#admin.btn.btn-primary.fa.fa-pencil{
+    background-color:#222222;
+    color: white;
+}
+
+
+a#admin.btn.btn-primary.fa.fa-sign-out:hover, a#admin.btn.btn-primary.fa.fa-pencil:hover{
+    transition: 1s;
+    background-color:#008080;
+    color: white;
+}
+
+/***********  N A V B A R  *********/
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #008080;
+    background-color: white;
+}
+
+.navbar-inverse .navbar-nav>.open>a:not(:hover) {
+    color: white;
+    background-color: #008080;
+}
+
+#navbar>ul>li:hover {
+  background-color: white;
+    transition:0.5s;
+}
+
+#navbar>ul>li:not(:hover) {
+  background-color: #008080;
+    transition:0.5s;
+}
+
+#navbar>ul>li>a:hover {
+  color: #008080;
+    transition:0.5s;
+}
+
+#navbar>ul>li>a:not(:hover) {
+  color: white;
+    transition:0.5s;
+}
+
+#sticker {
+    z-index: 101 !important;
+}
+
+.navbar-inverse {
+    background: #008080;
+    border: 0;
+    box-shadow: 0 10px 25px -10px #000;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+
+
+
+/****************  F O O T E R  ***************/
+
+.footer {
+    background: #222222 none repeat scroll 0 0;
+    border-top: 4px solid #fcab0e;
+    margin: 0;
+    padding: 20px 0;
+    color: white;
+}
+
+.footer_dv {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+/*div.col-lg-4.col-md-4.col-sm-4{
+    border-left: 1px solid grey;
+    color: #f1f2f2;
+    padding: 20px;
+}
+
+div.col-lg-4.col-md-4.col-sm-4{
+    border-right: 1px solid grey;
+    color: #f1f2f2;
+    padding: 20px;
+}*/
+
+.footer_dv h4 {
+    color: #008080;
+    font-family: roboto;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.footer_dv ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer_dv ul li:first-child {
+    border-top: medium none;
+    box-shadow: none;
+}
+
+.footer_dv ul li {
+    margin-bottom: 12.2px;
+}
+
+.footer_dv p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 15px;
+    text-align: justify;
+}
+
+
+footer button#submit.btn.btn-primary.pull-right{
+    margin-right: 40%;
+}
+
+footer a {
+    color: white;
+} 
+
+footer .btn-primary {
+    background: #008080;
+    border: none;
+    /*margin-left: 20px;*/
+}
+
+footer .btn-primary:hover {
+   transition: 0.5s;
+    border: none;
+    /*margin-left: 20px;*/
+}
+
+ .footer-link-twitter,  .footer-link-rss {
+    margin-left: 70px;
+}
+
+ .footer-link-youtube {
+    margin-left: 45px;
+}
+
+
+ .footer-link-youtube,  .footer-link-rss,  i.fa.fa-google-plus.fa-4x,  i.fa.fa-linkedin-square.fa-4x{
+    margin-top: 24.3999992px;
+}
+
+
+/********  M E D I A   Q U E R I E S  ***********/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+    #header-social select.form-control {
+        margin-left: 20px;
+    }
+    
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+}

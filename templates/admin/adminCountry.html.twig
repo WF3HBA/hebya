@@ -1,0 +1,45 @@
+{% extends "admin/admin.html.twig" %}
+
+{% block content %}    
+        
+    <div class="col-md-9 col-md-offset-2 table-listing">
+        <h2>Pays</h2>
+        <p><a href="{{ path('admin_country_edit')}}">Ajout pays</a></p>
+        <table class="table table-striped">
+            <tr class="info">
+                <th>Nom</th>
+                <th>Continent</th>
+                <th>Contact</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Status</th>
+                <th>Edition</th>
+                <th>Supprimer</th>
+            </tr>
+            {% for country in countries%}
+            <tr>
+                <td>{{ country.name }}</td>
+                <td>{{ country.continent }}</td>
+                <td>{{ country.contact_name }}</td>
+                <td>{{ country.contact_phone }}</td>
+                <td>{{ country.contact_email }}</td>
+                <td>{{ country.contact_address }}</td>
+                <td>{{ country.contact_city }}</td>
+                <td>{{ country.status }}</td>
+                <td>
+                    <a href="{{ path('admin_country_edit', {id: country.idcountry}) }}"><button class="btn btn-primary">Modifier</button></a>
+                </td>
+                <td>
+                    <a href=" {{path('admin_country_delete', {id: country.idcountry}) }}"><button id="annuler" name="annuler" class="btn btn-danger">Supprimer</button></a>
+                </td>
+            </tr>
+            {% else %} 
+                <tr><td colspan="2">Aucun résultat</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+       
+{% endblock %}
+
