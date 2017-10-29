@@ -175,29 +175,18 @@ SQL;
     
     
     
-    public function findByField(Field $field){
+    public function findField(){
           
         $query = <<<SQL
-    SELECT p.*    
-    FROM product p 
-    WHERE p.field = :field
-    
+    SELECT DISTINCT field    
+    FROM product
 SQL;
         
-        $dbProducts = $this->db->fetchAll(
-                $query,
-                [
-                    ':field' => $field->getField($field)
-                ]
+        $dbFields = $this->db->fetchAll(
+                $query
             );
-    
-            $products = [];    
-        
-            foreach($dbProducts as $dbProduct){
-                $products[] = $this->buildEntity($dbProduct);
-            }
             
-            return $products;
+        return $dbFields;
     }
 
 }
