@@ -1,9 +1,3 @@
-/*.about-content {
-
-    padding-top: 40px;
-
-}*/
-
 .about-content h2 {
 
     padding-bottom: 20px;
@@ -16,60 +10,6 @@
 
 }
 
-/*
-
-#team-members {
-
-    padding-top: 20px;
-
-}
-
-#team-members .team-member {
-
-    height: 320px;
-
-}
-
-#team-members img {
-
-    padding: 20px 0;
-
-}
-
-#team-members h3 {
-
-    padding-bottom: 10px;
-
-}
-
-.team-member {
-
-    cursor: pointer;
-
-}
-
-.image-box {
-
-    display: inline-block;
-
-    width: 200px;
-
-    height: 200px;
-
-    overflow: hidden;
-
-}
-
-.image-box img {
-
-    width: 100%;
-
-}
-
-*/
-
-/*************************  ************************* */
-
 #about-content h2{
 
     margin-bottom: 15px;
@@ -77,25 +17,12 @@
 }
 
 h1 {
-
-    position: relative;
-
-    top: -300px;
-
+    position: absolute;
+    top: calc(-50vh - 100px);
+    width: 100%;
     color: #fff;
-
     text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
-
     letter-spacing: 5px;
-
-}
-
-main {
-
-    background-color: #fff;
-
-    padding-top: 0;
-
 }
 
 .teem{
@@ -311,13 +238,8 @@ main {
 @media only screen and (min-width : 768px) {
 
     h1 {
-
-        top: -400px;
-
         font-size: 3.4em;
-
         letter-spacing: 5px;
-
     }
 
 }

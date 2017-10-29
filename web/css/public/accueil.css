@@ -5,6 +5,15 @@
   padding: 20px;
 }
 
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2px;
+  padding: 50px 0px;
+  text-align: center;
+}
+
 /*********  M A P  **********/
 
 #container {
@@ -142,11 +151,6 @@ h3 {
   padding-bottom: 50px;
 }
 
-#trio > h2 {
-  padding : 50px;
-  font-weight: bold;
-}
-
 #index-info i {
   color: #008080;
   padding: 10px;
@@ -166,11 +170,9 @@ h3 {
   padding: 40px;
 }
 
-#product-carousel h2 {
-  padding : 50px;
-  font-weight: bold;
+#product-carousel img {
+  height: 200px;
 }
-
 
 #index-carousel {
   margin-top: 40px;   
@@ -189,7 +191,7 @@ figcaption {
   padding: 5px 0;
 }
 
-figcaption span{
+figcaption span {
   text-shadow: 1px 1px 3px rgba(0,0,0,1);
 }
 
