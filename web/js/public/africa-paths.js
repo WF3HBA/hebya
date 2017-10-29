@@ -62,7 +62,6 @@ var africaPaths = {
 };
 
 
-
   window.onload = function () {
         // Create canvas and define attributes shared by all paths.
         var R = Raphael("container", 620, 660),
