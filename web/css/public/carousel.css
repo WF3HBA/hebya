@@ -95,15 +95,6 @@ Image credits: unsplash.com
   filter: brightness(50%);
 }
 .fade-carousel .slides .slide-1 {
-<<<<<<< HEAD:web/css/carousel.css
-  background-image: url(../img/img-index/slide3.jpg); 
-}
-.fade-carousel .slides .slide-2 {
-  background-image: url(../img/img-index/slide2.jpg);
-}
-.fade-carousel .slides .slide-3 {
-  background-image: url(../img/img-index/slide1.jpg);
-=======
   background-image: url(../../img/public/slide3.jpg); 
 }
 .fade-carousel .slides .slide-2 {
@@ -111,7 +102,6 @@ Image credits: unsplash.com
 }
 .fade-carousel .slides .slide-3 {
   background-image: url(../../img/public/slide1.jpg);
->>>>>>> bd4a90be0117c49f81045717df601f87b36cf8f1:web/css/public/carousel.css
 }
 
 /********************************/
