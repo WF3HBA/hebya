@@ -18,9 +18,12 @@ $(function () {
     
     $('body').toggleClass('noscroll');
     $('#product-overlay').fadeIn(600);
+    
   });
   
   $('#close-overlay').click(function(){
+    
+    $('#product-overlay').animate({scrollTop:0},200);
     $('#product-overlay').fadeOut();
     $('body').toggleClass('noscroll');
   });
