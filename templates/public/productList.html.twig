@@ -1,6 +1,6 @@
 {% for product in products %}
     <div class="row product-row">    
-       <div class="col-sm-4">
+       <div id="{{ product.idproduct }}" class="col-sm-4">
          <a href="#">
            <img class="img-thumbnail" src="{{ asset(product.picture) }}" alt="">
          </a>

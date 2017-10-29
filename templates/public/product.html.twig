@@ -21,11 +21,9 @@
             <div class="col-sm-6">
               <select class="col-xs-12  field-select">
                 <option value="">Thème</option>
-                <option>Education</option>
-                <option>Santé</option>
-                <option>Assurance</option>
-                <option>Comptabilité</option>
-                <option>Numérisation GED</option>
+                {% for field in fields %}
+                  <option value="{{ field.field }}">{{ field.field|capitalize }}</option>
+                {% endfor %}
               </select>
             </div>
             <div class="col-sm-6">
@@ -70,6 +68,7 @@
   <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
   <script>
       var countrySelect = '{{ path('product_ajax') }}';
+      var idproduct = '{{ idproduct }}';
   </script>
   <script src="{{ asset("js/public/product.js") }}"></script>
 {% endblock %}

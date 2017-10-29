@@ -58,7 +58,7 @@ $app->get('/product', 'product.controller:productAction')
 
 $app->get('/product/{id}', 'product.controller:productIdAction')
         ->value('id',null)
-        ->bind('product_id');
+        ->bind('product-overlay');
 
 $app->get('/product/{field}', 'product.controller:fieldSelect')
         ->value('field',null)
