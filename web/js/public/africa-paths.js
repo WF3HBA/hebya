@@ -109,27 +109,29 @@ var africaPaths = {
             method: "GET"  
           }).done(function (data) {
                   
-            // console.log(data.inactive);
+             
             for (l=0; l<data.active.length;l++){
                 var pays = data.active[l].name;
                 var pay = pays.split(' ').join('_');
-                console.log(pay);
-
+               
+                
                 var docu = document.getElementById(pay);
-                console.log(docu);
 
-                docu.setAttribute('fill', 'red');
+                console.log(docu);
+           
+                docu.setAttribute("title", pays);
+                docu.classList.add('active');
             }
 
-            for (k=0; k<data.inactive.length;k++){
-                var pays = data.inactive[k].name;
+            for (k=0; k<data.prospect.length;k++){
+                var pays = data.prospect[k].name;
                 var pay = pays.split(' ').join('_');
-                console.log(pay);
+                // console.log(pay);
 
                 var docu = document.getElementById(pay);
-                console.log(docu);
+              
 
-                docu.setAttribute('fill', 'dodgerblue');
+                docu.classList.add('prospect');
             }
 
 
@@ -151,8 +153,7 @@ var africaPaths = {
             // }       
         })
 
-        console.log(tableau);
-        console.log(countryProspect);
+       
         //console.log(countryActive);
         //console.log(countryInactive);
 
@@ -160,7 +161,7 @@ var africaPaths = {
         
        var soso = Object.keys(africaPaths);
 
-      console.log(Array.isArray(countryActive));
+      //console.log(Array.isArray(countryActive));
       
 
    
