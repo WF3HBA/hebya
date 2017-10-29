@@ -86,8 +86,86 @@ var africaPaths = {
         // var demo1 = R.getById('tanzania').attr({"fill": "green"});
         // For an example of interaction via javascript, uncomment the line below.
         // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";
+     
+     //////////////////// Active country ///////////////////////////
+     
+    var countryActive = [];
+    
+    var countryInactive = [];
+
+    var countryProspect = [];
+    
+    var tableau = [];
+  
+       
+        for (let item of countryActive){
+            item.style.fill = 'red';
+            
+        }
+       
+        $.ajax({
+            url: countryRequest,
+            method: "GET"  
+          }).done(function (data) {
+                  
+            // console.log(data.inactive);
+            for (l=0; l<data.active.length;l++){
+                var pays = data.active[l].name;
+                var pay = pays.split(' ').join('_');
+                console.log(pay);
+
+                var docu = document.getElementById(pay);
+                console.log(docu);
+
+                docu.setAttribute('fill', 'red');
+            }
+
+            for (k=0; k<data.inactive.length;k++){
+                var pays = data.inactive[k].name;
+                var pay = pays.split(' ').join('_');
+                console.log(pay);
+
+                var docu = document.getElementById(pay);
+                console.log(docu);
+
+                docu.setAttribute('fill', 'dodgerblue');
+            }
+
+
+            // for(var i of data.inactive)
+            // {
+            //    var countryNameInactive = i.name.split(' ').join('_'); 
+            //     countryInactive.push(countryNameInactive);
+            // }
+            
+            // for(var a of data.active){
+
+            //     var countryNameActive = a.name.split(' ').join('_'); 
+            //     countryActive.push(countryNameActive);
+            // }
+            
+            // for(var b of data.prospect){
+            //     var countryNameProspect = b.name.split(' ').join('_'); 
+            //     countryProspect.push(countryNameProspect);
+            // }       
+        })
+
+        console.log(tableau);
+        console.log(countryProspect);
+        //console.log(countryActive);
+        //console.log(countryInactive);
+
+       
         
-        var browserWidth = $( window ).width();
+       var soso = Object.keys(africaPaths);
+
+      console.log(Array.isArray(countryActive));
+      
+
+   
+    /////////////////////////////////////////////////    
+
+     var browserWidth = $( window ).width();
     
      if (browserWidth > 991) {
             $(".info > button").hide();
@@ -136,7 +214,7 @@ var africaPaths = {
             scrollTop: $("#container").offset().top-50
         }, 800);
     });
-      };
+};
       
   
 

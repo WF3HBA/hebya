@@ -16,6 +16,9 @@ $app->get('/', 'index.controller:indexAction')
 $app->get('/index/ajax-request', 'index.controller:countryAction')
         ->bind('countryAjaxUrl');
 
+$app->get('/index/country-request', 'country.controller:statusAction')
+        ->bind('country_request');
+
 $app->get('/apropos', 'about.controller:aboutAction')
         ->bind('apropos');
 
@@ -69,6 +72,9 @@ $app->get('/provider_ajax', 'provider.controller:countrySelect')
 
 $app->get('/opportunity_ajax', 'opportunity.controller:jobSelect')
         ->bind('opportunity_ajax');
+
+$app->get('/index_country_ajax', 'index.controller:displayNameCountry')
+        ->bind('index_country_ajax');
 
 $app->get('/profil', 'profil.controller:profilAction')
         ->bind('profil');

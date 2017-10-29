@@ -3,37 +3,39 @@
 namespace Entity;
 
 class Country {
-    
-    
+
+
     /**
      *
      * @var int
      */
     private $idcountry;
-    
+
     private $name;
-    
+
     /**
      *
      * @var string
      */
     private $content;
-    
+
     private $continent;
-    
+
     private $contact_name;
-    
+
     private $contact_email;
-    
+
     private $contact_phone;
-    
+
     private $contact_address;
-    
+
     private $contact_city;
 
-        
+    private $status;
+
+
     /***GETTER****/
-    
+
     function getIdcountry() {
         return $this->idcountry;
     }
@@ -65,63 +67,72 @@ class Country {
     function getContact_address() {
         return $this->contact_address;
     }
-    
+
     public function getContact_city() {
         return $this->contact_city;
     }
-    
+
+    public function getStatus(){
+        return $this->status;
+    }
+
     /**********SETTER************/
-    
+
     function setIdcountry($idcountry) {
         $this->idcountry = $idcountry;
-        
+
         return $this;
     }
 
     function setContent($content) {
         $this->content = $content;
-        
+
         return $this;
     }
 
     function setName($name) {
         $this->name = $name;
-        
+
         return $this;
     }
 
     function setContinent($continent) {
         $this->continent = $continent;
-        
+
         return $this;
-    }   
+    }
 
     function setContact_name($contact_name) {
         $this->contact_name = $contact_name;
-        
+
          return $this;
     }
 
     function setContact_email($contact_email) {
         $this->contact_email = $contact_email;
-        
+
          return $this;
     }
 
     function setContact_phone($contact_phone) {
         $this->contact_phone = $contact_phone;
-        
+
          return $this;
     }
 
     function setContact_address($contact_address) {
         $this->contact_address = $contact_address;
-        
+
          return $this;
     }
-    
+
     public function setContact_city($contact_city) {
         $this->contact_city = $contact_city;
+        return $this;
+    }
+
+    public function setStatus($status){
+        $this->status = $status;
         return $this;
     }
 

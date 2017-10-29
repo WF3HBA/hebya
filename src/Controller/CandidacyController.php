@@ -69,6 +69,24 @@ class CandidacyController extends ControllerAbstract {
                 $candidacy->setPhone($_POST['phone']);
                 $candidacy->setAddress($_POST['address']);
                 $candidacy->setCountry($_POST['country']);
+<<<<<<< HEAD
+                
+                
+                
+                
+                
+                
+//                $candidacy->setCv($_FILES['cv']["name"]);
+//                
+//                $candidacy->setCoverletter($_FILES['coverletter']["name"]); 
+                
+                
+                
+                
+                
+                
+=======
+>>>>>>> bd4a90be0117c49f81045717df601f87b36cf8f1
                 
                 //$candidacy->setCv($_FILES['cv']["name"]);
                 

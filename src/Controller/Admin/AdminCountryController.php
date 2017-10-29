@@ -34,7 +34,7 @@ class AdminCountryController extends ControllerAbstract {
         $errors = [];
 
         if (!empty($_POST)) {
-
+            
             $country->setName($_POST['name']);
             $country->setContinent($_POST['continent']);
             $country->setContent($_POST['content']);
@@ -43,6 +43,7 @@ class AdminCountryController extends ControllerAbstract {
             $country->setContact_email($_POST['contact_email']);
             $country->setContact_address($_POST['contact_address']);
             $country->setContact_city($_POST['contact_city']);
+            $country->setStatus($_POST['status']);
 
             if (empty($_POST['name'])) {
                 $errors['name'] = 'Prénom requis';
@@ -58,10 +59,10 @@ class AdminCountryController extends ControllerAbstract {
 
             if (empty($_POST['content'])) {
                 $errors['content'] = 'Titre requis';
-            } elseif (strlen($_POST['content']) > 200) {
+            } elseif (strlen($_POST['content']) > 700) {
                 $errors['content'] = 'Maximum 200 characteres';
             }
-
+               
             if (empty($errors)) {
                 
                 $this->app['country.repository']->save($country);

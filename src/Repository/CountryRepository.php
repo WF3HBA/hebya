@@ -36,6 +36,19 @@ SQL;
                 return $this->buildEntity($dbCountry);
             }
     }
+
+    public function findByStatus($status){
+        $dbCountry = $this->db->fetchAll(
+            'SELECT name FROM country WHERE status = :status',
+                [
+                    ':status' => $status
+                ]
+            );
+        
+            if(!empty($dbCountry)){
+                return $dbCountry;
+            }
+    }
     
     public function findByName($name){
          $dbCountry = $this->db->fetchAssoc(
@@ -61,7 +74,8 @@ SQL;
                 'contact_email' => $country->getContact_email(),
                 'contact_phone' => $country->getContact_phone(),
                 'contact_address' => $country->getContact_address(),
-                'contact_city' => $country->getContact_city()
+                'contact_city' => $country->getContact_city(),
+                'status' => $country->getStatus()
             ];
         
         if ($country->getIdcountry()){
@@ -95,8 +109,40 @@ SQL;
             ->setContact_email($data['contact_email'])
             ->setContact_address($data['contact_address'])
             ->setContact_city($data['contact_city'])
+            ->setStatus($data['status'])
         ;
         
         return $country;
+    }
+    
+       public function findByCountry($countryName){
+        
+        $query = <<<SQL
+    SELECT c.*
+    FROM country c
+    WHERE c.name = :name 
+SQL;
+        
+       
+        
+       
+        
+
+        
+        $dbCountry = $this->db->fetchAssoc(
+                $query,
+                [
+                    ":name" => $countryName
+                ]
+                
+            );
+    
+               
+        
+        if(!empty($dbCountry)){
+                
+            return $this->buildEntity($dbCountry);
+                 
+        }
     }
 }

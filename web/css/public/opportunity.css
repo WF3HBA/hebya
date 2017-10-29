@@ -19,7 +19,9 @@ main {
     display:none;
 }
 
-
+.products-select-field, .products-select-pays{
+    border-color: #004f4f;
+}
 
 .boutton-annonce{
     float: right;
