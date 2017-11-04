@@ -152,6 +152,15 @@
     {{ parent() }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
+      var countryStatus = {
+        {% for country in countries %}
+          '{{ country.name }}': '{{ country.status }}',
+          {% if loop.last %}
+            '{{ country.name }}': '{{ country.status }}'
+          {% endif %}
+        {% endfor %}
+        };
+      
       var countryAjaxUrl = '{{ path('countryAjaxUrl') }}';
       var countryRequest = '{{ path('country_request') }}';
     </script>

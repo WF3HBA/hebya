@@ -1,19 +1,21 @@
+#presentation {
+  margin-top: 30px;
+}
+
+.about-content {
+  text-align: justify;
+}
+
 .about-content h2 {
-
     padding-bottom: 20px;
-
 }
 
 .about-content:first-child {
-
     padding-bottom: 40px;
-
 }
 
 #about-content h2{
-
     margin-bottom: 15px;
-
 }
 
 h1 {
@@ -25,215 +27,172 @@ h1 {
     letter-spacing: 5px;
 }
 
-.teem{
-
-    margin:70px 0 30px 0; 
-
-}
+.team {
+  margin-bottom: 30px;
+} 
 
 .box{
-
-    width: 70%;
-
+    width: 200px;
+    margin: 0 auto;
     text-align: center;
-
     background: #000;
-
     color: #fff;
-
     overflow: hidden;
-
     position: relative;
-
     transition: all 0.35s ease 0s;
-
     padding-left: 0;
-
     padding-right: 0;
-
 }
 
 .box:before{
-
     content: "";
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     bottom: 0;
-
     right: 100%;
-
     background: #008080;
-
     opacity: 0.4;
-
     transition: all 0.35s ease-in 0s;
-
 }
 
 .box:hover:before{
-
     right: 0;
-
     transition: all 0.35s ease-out 0s;
-
 }
 
 .box:after{
-
     content: "";
-
     position: absolute;
-
     top: 50%;
-
     left: 100%;
-
     border-width: 200px 200px 200px 0;
-
     border-style: solid;
-
     border-color: transparent #008080 transparent transparent;
-
     opacity: 0.9;
-
     transform: translateY(-50%);
-
     transition: all 0.35s ease-out 0s;
-
 }
 
 .box:hover:after{
-
     left: 50%;
-
     transition: all 0.35s ease-in 0.2s;
-
 }
 
 .box img{
-
     width: 100%;
-
     height: 250px;
-
-    /*height: auto;*/
-
 }
 
 .box:hover img{
-
     opacity: 0.4;
-
 }
 
 .box .box-content{
-
     width: 100%;
-
     height: 100%;
-
     position: absolute;
-
     top: 0;
-
     left: 0;
-
     z-index: 1;
-
-    cursor: pointer;
-
 }
 
-.box .title, 
-
-.box .post{
-
-    width: 100%;
-
+.box .name, .box .title, .box .btn {
     padding: 7px 20px;
-
     margin: 0;
-
     position: absolute;
-
     top: 47%;
-
     left: 0;
-
-    font-size: 22px;
-
     font-weight: 700;
-
     opacity: 0;
-
     transform: translate(-25%, -50%);
-
     transition: all 0.3s ease-out 0.2s;
-
 }
 
-.box .post{
+.box .name {
+  font-size: 22px;
+  width: 100%;
+}
 
+.box .title {
     font-size: 15px;
+    width: 100%;
+    transform: translate(-25%, 0%);
+}
 
-    transform: translate(-25%, 60%);
-
+.box:hover .name {
+    opacity: 1;
+    transform: translate(0, -50%);
+    transition-delay: 0.7s;
 }
 
 .box:hover .title{
-
     opacity: 1;
-
-    transform: translate(0, -50%);
-
+    transform: translate(0, 50%);
     transition-delay: 0.7s;
-
 }
 
-.box:hover .post{
-
+.box:hover .button-detail {
     opacity: 1;
-
-    transform: translate(0, 60%);
-
+    transform: translate(65%, 200%);
     transition-delay: 0.7s;
-
 }
 
-.img-modal{
-
-    width: 35%;
-
-    height: 35%;
-
+.button-detail {
+  background-color: #008080;
+  border: 2px solid #008080;
+  transform: translate(-25%, 80%);
 }
 
-/*     */
+.button-detail:hover {
+  color: #008080;
+  background-color: #fff;
+  border: 2px solid #fff;
+  transition-delay: 0s;
+}
 
-@media screen and (min-width: 518px) and (max-width: 959px) {
+.modal-content p {
+  text-align: justify;
+  padding-top: 20px;
+}
 
-    .box img{
+.modal-content img {
+    width: 50%;
+}
 
+/*  BOUTONS-Liens   */
+
+.service-profil-button, .service-link-button, .service-contact-button {
+    display: inline-block;
     width: 100%;
-
-    height: 350px;
-
-   
-
-    }
-
+    padding: 20px 0;
+    border: 2px solid rgba(34, 34, 34, 0.3);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #222222;
+    transition: 0.4s;
 }
 
-@media only screen and (max-width:990px){
 
-    .box{ margin-bottom: 30px; }
 
+.service-link-button:hover, .service-profil-button:hover {
+    border: 2px solid rgba(0, 128, 128, 0.7);
+    color: rgba(0, 128, 128, 1);
 }
+
+.service-contact-button {
+    background-color: rgba(0, 128, 128, 1);
+    color: #ffffff;
+    border: 2px solid rgba(0, 128, 128, 0.7);
+}
+
+.service-contact-button:hover {
+    background-color: #ffffff;
+    color: rgba(0, 128, 128, 1);
+}
+
 
 @media only screen and (min-width : 768px) {
 
@@ -247,21 +206,30 @@ h1 {
 @media only screen and (min-width : 992px) {
 
     h1 {
-
         font-size: 4em;
-
         letter-spacing: 8px;
-
+    }
+    
+    .about-content {
+      padding: 0 50px;
     }
 
+}
+
+@media only screen and (min-width : 1200px) {
+  .service-contact-button {
+        width: 50%;
+    }
+    
+  .about-content {
+    padding: 0 75px;
+  }
 }
 
 @media only screen and (max-width:767px){
 
     .box:after{
-
         border-width: 800px 800px 800px 0;
-
     }
 
 }

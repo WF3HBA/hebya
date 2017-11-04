@@ -1,5 +1,7 @@
 {% extends "layout.html.twig" %}
 
+{% block title 'Produits' %}
+
 {% block stylesheet %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset("css/public/products.css") }}"/>
@@ -28,7 +30,7 @@
             </div>
             <div class="col-sm-6">
               <select class="col-xs-12 country-select">
-                <option value="">pays</option>
+                <option value="">Pays</option>
                 {% for country in countries %}
                   <option value="{{ country.idcountry }}">{{ country.name }}</option>
                 {% endfor %}
@@ -42,6 +44,24 @@
       <div class="container">
         {% include 'public/productList.html.twig' %}
       </div>
+    </section>
+    <section id="service-main-footer">
+        <div class="container">
+            <div class="row">
+                <br><br>
+                <div class="col-xs-12 col-sm-6 col-lg-3 text-center col-lg-offset-3">
+                    <a href="{{ path('clients') }}" role="button" class="service-link-button">Nos clients</a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
+                    <a href="{{ path('innovateurs') }}" role="button" class="service-link-button">Nos innovateurs</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 text-center">
+                    <a href="{{ path('contact') }}" role="button" class="service-contact-button">Nous contacter</a>
+                </div>
+            </div>
+        </div>
     </section>
     <div id="product-overlay">
       <i id="close-overlay" class="fa fa-times-circle-o" aria-hidden="true"></i>

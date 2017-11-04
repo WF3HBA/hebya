@@ -188,5 +188,5 @@ SQL;
             
         return $dbFields;
     }
-
+    
 }
