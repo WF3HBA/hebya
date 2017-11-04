@@ -30,8 +30,12 @@ h2 {
     transition: 0.5s;
 }
 
-img {
+main img {
   margin-bottom: 25px;
+}
+
+.product-content-short {
+  text-align: justify;
 }
 
 #product-overlay {
@@ -46,6 +50,7 @@ img {
   background-color: rgba(0,0,0,0.9);
   color: #fff;
   padding: 100px 0;
+  text-align: justify;
 }
 
 #product-overlay img {
@@ -65,6 +70,37 @@ img {
   overflow: hidden;
 }
 
+.service-profil-button, .service-link-button, .service-contact-button {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    border: 2px solid rgba(34, 34, 34, 0.3);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #222222;
+    transition: 0.4s;
+}
+
+
+
+.service-link-button:hover, .service-profil-button:hover {
+    border: 2px solid rgba(0, 128, 128, 0.7);
+    color: rgba(0, 128, 128, 1);
+}
+
+.service-contact-button {
+    background-color: rgba(0, 128, 128, 1);
+    color: #ffffff;
+    border: 2px solid rgba(0, 128, 128, 0.7);
+}
+
+.service-contact-button:hover {
+    background-color: #ffffff;
+    color: rgba(0, 128, 128, 1);
+}
+
 @media only screen and (min-width : 768px) {
     h1 {
         font-size: 3.4em;
@@ -76,5 +112,16 @@ img {
     h1 {
         font-size: 4em;
         letter-spacing: 8px;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    h1 {
+        font-size: 4em;
+        letter-spacing: 8px;
+    }
+    
+    .service-contact-button {
+        width: 50%;
     }
 }

@@ -24,20 +24,13 @@ select{
     display: inline-block;
     overflow: hidden;
     box-sizing: border-box;
-    border-radius: 200px 200px 200px 200px;
--moz-border-radius: 200px 200px 200px 200px;
--webkit-border-radius: 200px 200px 200px 200px;
-border: 1px solid white;
+    border: 1px solid white;
 }
 
 
 #clients-body .row div{
     margin-bottom: 40px;
 }
-
-
-
- 
 
 
 .image-client img{
@@ -48,6 +41,91 @@ border: 1px solid white;
     height: 250px;
     width: 250px;
     display: inline-block;
+}
+
+.button-detail {
+  font-weight: bold;
+  background-color: #008080;
+  margin: 20px auto;
+  color: #fff;
+  border: 2px solid #008080;
+  transition: 0.4s;
+}
+
+.button-detail:hover {
+  color: #008080;
+  background-color: #fff;
+  border: 2px solid rgba(0, 128, 128, 0.8);
+}
+
+#client-overlay {
+  display: none;
+  position: fixed;
+  z-index: 102;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-color: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 100px 0;
+  text-align: justify;
+}
+
+#client-overlay img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#client-overlay h2 {
+  margin-bottom: 30px;
+}
+
+#close-overlay {
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+#service-main-footer {
+  margin-top: 40px;
+}
+
+.service-profil-button, .service-link-button, .service-contact-button {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0;
+    border: 2px solid rgba(34, 34, 34, 0.3);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #222222;
+    transition: 0.4s;
+}
+
+.service-link-button:hover, .service-profil-button:hover {
+    border: 2px solid rgba(0, 128, 128, 0.7);
+    color: rgba(0, 128, 128, 1);
+}
+
+.service-contact-button {
+    background-color: rgba(0, 128, 128, 1);
+    color: #ffffff;
+    border: 2px solid rgba(0, 128, 128, 0.7);
+}
+
+.service-contact-button:hover {
+    background-color: #ffffff;
+    color: rgba(0, 128, 128, 1);
 }
 
 
@@ -65,5 +143,11 @@ border: 1px solid white;
     h1 {
         font-size: 4em;
         letter-spacing: 8px;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+  .service-contact-button {
+        width: 50%;
     }
 }

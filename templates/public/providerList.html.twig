@@ -1,33 +1,12 @@
 {% for provider in providers %}
-  <div class="test col-lg-3 col-sm-6 text-center mb-4">
-    <div class="box"  data-toggle="modal" data-target="#exampleModalLong-{{ provider.idprovider }}">
+  <div class="col-lg-3 col-sm-6 text-center">
+    <div class="box provider-detail"  data-toggle="modal" data-target="#myModal">
       <img src="{{ asset(provider.picture) }}" alt="">
       <div class="box-content">
-        <h3 class="title">{{ provider.firstname }} {{ provider.lastname }}</h3>
-        <p class="title">{{ provider.company }}</p>
+        <h3 class="provider-name">{{ provider.firstname }} {{ provider.lastname }}</h3>
+        <p class="provider-company">{{ provider.company|title }}</p>
+        <div class="provider-content hidden">{{ provider.description|raw }}</div>
       </div>
     </div>
   </div>   
-  <div class="modal fade" id="exampleModalLong-{{ provider.idprovider }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLongTitle">{{ provider.firstname }} {{ provider.lastname }}</h2>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-footer text-center">
-          <div class="col-xs-12">
-            <img class="col-xs-9 col-xs-offset-3" src="{{ asset(provider.picture) }}" alt="">
-          </div>
-          <div class="col-xs-12">
-            <h3 class="text-center col-xs-12">{{ provider.company }}</h3>                                
-            <p class="text-center col-xs-12"> {{ provider.description |raw }}</p> 
-            <button type="button" class="btn btn-secondary col-xs-12" data-dismiss="modal">Fermer</button>
-          </div>
-        </div>
-      </div>       
-    </div>
-  </div>    
 {% endfor %} 

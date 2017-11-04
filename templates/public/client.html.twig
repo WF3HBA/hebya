@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="parallax" data-image="{{ asset('img/clients/hosted_by_africa_clients.jpg') }}"></div>
+  <div class="parallax" data-image="{{ asset('img/public/hosted_by_africa_clients.jpg') }}"></div>
   <main>
     <section id="clients-header">
       <div class="container">
@@ -45,17 +45,51 @@
       <div class="container">
         <div class="row">
           {% for client in clients %}
-            <div class="col-lg-4 col-sm-6 text-center mb-4">
+            <div class="col-lg-4 col-sm-6 text-center client-box">
               <div class="image-client">
                 <img src="{{ asset(client.picture)  }}" alt="">
               </div>
-              <h3>{{ client.company }}</h3>
-              <p>{{ client.description[:200]|raw }}...</p>
+              <h3 class="client-name">{{ client.company }}</h3>
+              <button type="button" class="btn button-detail">+ Infos</button>
+              <div class=" client-description hidden">{{ client.description|raw }}</div>
             </div>
           {% endfor %}
         </div>
       </div>
-    </section><br>
+    </section>
+    <section id="service-main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-lg-3 text-center col-lg-offset-3">
+            <a href="{{ path('product') }}" role="button" class="service-link-button">Nos produits</a>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
+            <a href="{{ path('innovateurs') }}" role="button" class="service-link-button">Nos innovateurs</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 text-center">
+            <a href="{{ path('contact') }}" role="button" class="service-contact-button">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="client-overlay">
+      <i id="close-overlay" class="fa fa-times-circle-o" aria-hidden="true"></i>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 client-picture">
+            <img src="">
+          </div>
+          <div class="col-md-6 client-description">
+            <h2></h2>
+            <div id="client-detail">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 {% endblock %}
 
