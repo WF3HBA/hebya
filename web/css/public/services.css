@@ -7,6 +7,11 @@ h1 {
     letter-spacing: 5px;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 #service-main-header div, #service-main-footer div {
     transition: 0.4s;
 }
@@ -21,6 +26,15 @@ h1 {
     letter-spacing: 1px;
     color: #444;
     opacity: 0.7;
+}
+
+#service-content {
+  padding: 20px 0;
+  text-align: justify;
+}
+
+#service-content p {
+  padding: 10px;
 }
 
 .service-profil-button, .service-link-button, .service-contact-button {
@@ -58,10 +72,6 @@ h1 {
     font-weight: bold;
 }
 
-#service-main-footer .row:first-child {
-    margin-bottom: 40px;
-}
-
 @media only screen and (min-width : 768px) {
     h1 {
         font-size: 3.4em;
@@ -74,10 +84,18 @@ h1 {
         font-size: 4em;
         letter-spacing: 8px;
     }
+    
+    #service-content {
+      padding: 20px 50px;
+    }
 }
 
 @media only screen and (min-width : 1200px){
     .service-contact-button {
         width: 50%;
+    }
+    
+    #service-content {
+      padding: 20px 75px;
     }
 }

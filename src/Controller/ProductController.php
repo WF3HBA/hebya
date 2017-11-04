@@ -9,7 +9,7 @@ class ProductController extends ControllerAbstract {
 
   public function productAction() {
 
-    $countries = $this->app['country.repository']->findAll();
+    $countries = $this->app['country.repository']->countryHasProduct();
     $products = $this->app['product.repository']->findPublic();
     $fields = $this->app['product.repository']->findField();
 
@@ -20,12 +20,12 @@ class ProductController extends ControllerAbstract {
     }
 
     return $this->render(
-                    'public/product.html.twig', [
-                'countries' => $countries,
-                'products' => $products,
-                'fields' => $fields,
-                'idproduct' => $idproduct
-                    ]
+      'public/product.html.twig', [
+        'countries' => $countries,
+        'products' => $products,
+        'fields' => $fields,
+        'idproduct' => $idproduct
+      ]
     );
   }
 

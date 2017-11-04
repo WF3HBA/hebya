@@ -25,60 +25,62 @@
     {% endfor %}
     <section id="team-members" class="container">
       <div class="row">
-        {% for teamMember in teamMembers  %}
-          <div class="teem col-xs-12 col-sm-6 col-md-3">
-            <div class="box col-xs-10 col-xs-offset-2 col-md-12">
-              <img class="img-responsive" src="{{ asset(teamMember.picture) }}">
-              <div class="box-content" data-toggle="modal" data-target="#exampleModalLong-{{ teamMember.idteam_member }}">
-                <h3 class="title">{{ teamMember.fullName }}</h3>                             
-                <span class="post">{{ teamMember.title }}</span>
+        {% for teamMember in teamMembers %}
+          <div class="col-lg-3 col-md-4 col-sm-6 team">
+            <div class="box about-detail"  data-toggle="modal" data-target="#myModal">
+              <img src="{{ asset(teamMember.picture) }}" alt="">
+              <div class="box-content">
+                <h3 class="name">{{ teamMember.firstname }} {{ teamMember.lastname }}</h3>
+                <p class="title">{{ teamMember.title|title }}</p>
+                <button type="button" class="btn button-detail">+ Infos</button>
+                <div class="team-content hidden">{{ teamMember.description|raw }}</div>
               </div>
-            </div>                    
-          </div>
-          <!--
-          <div id="{{ teamMember.firstName }}" class="team-member col-sm-6 col-md-3" data-toggle="modal" data-target="#myModal">
-              <div class="text-center">
-                  <img src="http://placehold.it/200x200" />
-                  <h3 class="text-center team-member-name">{{ teamMember.fullName }}</h3>
-                  <h4  class="text-center team-member-title">{{ teamMember.title }}</h4>
-                  <div class="team-member-description hidden">{{ teamMember.description|raw }}</div>
-              </div>
-          </div>
-          -->
-          <div class="modal fade" id="exampleModalLong-{{ teamMember.idteam_member }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h2 class="modal-title" id="exampleModalLongTitle">{{ teamMember.fullName }} </h2>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-footer text-center">
-                  <div class="col-xs-12">
-                    <div class="img-modal col-xs-6 col-xs-offset-4">
-                      <img class="img-responsive" src="{{ asset(teamMember.picture) }}">
-                    </div>
-                    <div class="col-xs-12" >
-                      <h3 class=" text-center col-xs-12">{{ teamMember.fullName }}</h3>                    
-                      <p class="text-center col-xs-12">{{ teamMember.description|raw }}</p>
-                      <button type="button" class="btn btn-secondary col-xs-12" data-dismiss="modal">Fermer</button>
-                    </div>
-                  </div>
-                </div>
-              </div>       
             </div>
-          </div> 
-        {% endfor %}            
-    </section>
-  </main>
-  <div id="team-layer">
+          </div>   
+        {% endfor %}
+        <div class="modal fade team-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel"></h2>
+                <h3 class="modal-subtitle"></h3>
+              </div>
+              <div class="modal-body team-detail-content">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+          </section>
+          <section id="service-main-footer">
+            <div class="container">
+              <div class="row">
+                <br><br>
+                <div class="col-xs-12 col-sm-6 col-lg-3 text-center col-lg-offset-3">
+                  <a href="{{ path('clients') }}" role="button" class="service-link-button">Nos clients</a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-lg-3 text-center">
+                  <a href="{{ path('innovateurs') }}" role="button" class="service-link-button">Nos innovateurs</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 text-center">
+                  <a href="{{ path('contact') }}" role="button" class="service-contact-button">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </section>
+          </main>
+          <div id="team-layer">
 
-  </div>
-{% endblock %}
+          </div>
+        {% endblock %}
 
-{% block javascript %}
-  {{ parent() }}
-  <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
-  <script src="{{ asset('js/public/about.js') }}"></script>
-{% endblock %}
+        {% block javascript %}
+          {{ parent() }}
+          <script type="text/javascript" src="{{ asset('js/jquery.imageScroll.min.js') }}"></script>
+          <script src="{{ asset('js/public/about.js') }}"></script>
+        {% endblock %}

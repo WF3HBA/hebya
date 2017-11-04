@@ -40,6 +40,9 @@ $app->get('/offres', 'opportunity.controller:opportunityAction')
 $app->get('/contact', 'contact.controller:contactAction')
         ->bind('contact');
 
+$app->post('/contact', 'contact.controller:sendAction')
+        ->bind('contact_message');
+
 $app->get('/mention', 'mention.controller:mentionAction')
         ->bind('mention');
 

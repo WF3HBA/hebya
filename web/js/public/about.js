@@ -5,27 +5,23 @@ $(function(){
         speed: 0.3
     });
    
-    $('.team-member a').click(function(e){
-        
-        e.preventDefault();
-        
-        var idteam_member = $(this).attr('id');
-        console.log(idteam_member);
-    });
-      
-   $(".team-member").click(function(){
+    $(document).on('click', '.about-detail', function(){
 
-       var memberName = $(this).find('.team-member-name').html();
-       var memberTitle = $(this).find('.team-member-title').html();
-       var memberDescription = $(this).find('.team-member-description').html();
+       var $teamMember = $(this).closest('.box');
+       var name = $teamMember.find('.name').html();
+       var title = $teamMember.find('.title').html();
+       var picture = $teamMember.find('img').attr('src');
+       var content = $teamMember.find('.team-content').html();
+         
+       console.log(picture);
        
-       var fullDescription = $('.full-description');
-       fullDescription.find('h1').html(memberName);
-       fullDescription.find('h2').html(memberTitle);
-       fullDescription.find('.team-member-full-description').html(memberDescription);
+       var $detail = $('.team-modal');
+       $detail.find('h2').html(name);
+       $detail.find('h3').html(title);
+       $detail.find('.team-detail-content').html('<img src="'+picture+'">').append(content);
        
-       $(".full-description").css('display','block');
-   });
+       $(".team-modal").css('display','block');
+    });
    
 });
 

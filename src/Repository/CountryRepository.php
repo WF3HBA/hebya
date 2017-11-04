@@ -115,7 +115,7 @@ SQL;
         return $country;
     }
     
-       public function findByCountry($countryName){
+    public function findByCountry($countryName){
         
         $query = <<<SQL
     SELECT c.*
@@ -123,26 +123,39 @@ SQL;
     WHERE c.name = :name 
 SQL;
         
-       
-        
-       
-        
-
-        
         $dbCountry = $this->db->fetchAssoc(
                 $query,
                 [
                     ":name" => $countryName
                 ]
-                
             );
     
-               
-        
         if(!empty($dbCountry)){
                 
             return $this->buildEntity($dbCountry);
                  
         }
     }
+    
+    public function countryHasProduct() {
+      
+      $query = <<<SQL
+        SELECT DISTINCT c.*
+        FROM country c
+        JOIN country_has_product chp
+        ON chp.idcountry = c.idcountry
+SQL;
+      
+      $dbCountries = $this->db->fetchAll($query);
+      
+      $countries = [];
+            
+      foreach ($dbCountries as $dbCountry){
+          $countries[] = $this->buildEntity($dbCountry);
+      }
+
+      return $countries;
+      
+    }
+    
 }

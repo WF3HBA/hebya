@@ -51,6 +51,7 @@ class AdminProductController extends ControllerAbstract {
             $product->setPicture($_POST['picture']);
             $product->setField($_POST['field']);
             $product->setStatus($_POST['status']);
+            $product->setIdprovider($_POST['idprovider']);
             
             //contrôle les champs du formulaire d'ajout
             if (empty($_POST['name'])) {
@@ -108,11 +109,13 @@ class AdminProductController extends ControllerAbstract {
         }
         
         $countries = $this->app['country.repository']->findAll();
+        $providers = $this->app['provider.repository']->findAll();
         
         return $this->render(
                 'admin/adminProductEdit.html.twig',
                 [
                     'product' => $product,
+                    'providers' => $providers,
                     'countries' => $countries,
                     'disponibilities' => $disponibility
                 ]

@@ -10,10 +10,13 @@ class IndexController extends ControllerAbstract {
   public function indexAction() {
     
     $products = $this->app['product.repository']->findAll();
+    $countries = $this->app['country.repository']->findAll();
+    
     return $this->render(
         'index.html.twig', 
             [
-                'products' => $products
+                'products' => $products,
+                'countries' => $countries
             ]
     );
   }

@@ -51,6 +51,17 @@
                                 <option value="Education" {% if product.field == "Education" %}selected{% endif %}>Education</option>
                                 <option value="Santé" {% if product.field == "Santé" %}selected{% endif %}>Santé</option>
                                 <option value="Assurance" {% if product.field == "Assurance" %}selected{% endif %}>Assurance</option>
+                                <option value="Industrie" {% if product.field == "Industrie" %}selected{% endif %}>Industrie</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="field">Innovateur</label>  
+                        <div class="col-md-10">
+                            <select id="idprovider" name="idprovider" class="form-control select-md">
+                              {% for provider in providers %}
+                                <option value="{{ provider.idprovider }}" {% if product.idprovider == provider.idprovider %}selected{% endif %}>{{ provider.fullname }}</option>
+                              {% endfor %}
                             </select>
                         </div>
                     </div>
