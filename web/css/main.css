@@ -235,8 +235,13 @@ a#admin.btn.btn-primary.fa.fa-sign-out:hover, a#admin.btn.btn-primary.fa.fa-penc
     color: white;
 }
 
+ul .dropdown-menu{
+    border-radius: 0;
+}
 
-
+.chevron{
+    font-size: 12px;
+}
 
 /****************  F O O T E R  ***************/
 

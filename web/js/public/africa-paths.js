@@ -87,22 +87,7 @@ var africaPaths = {
         // For an example of interaction via javascript, uncomment the line below.
         // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";
      
-     //////////////////// Active country ///////////////////////////
-     
-    var countryActive = [];
-    
-    var countryInactive = [];
-
-    var countryProspect = [];
-    
-    var tableau = [];
-  
-       
-        for (let item of countryActive){
-            item.style.fill = 'red';
-            
-        }
-       
+     //////////////////// Active country /////////////////////////// 
         $.ajax({
             url: countryRequest,
             method: "GET"  
@@ -116,52 +101,86 @@ var africaPaths = {
                 
                 var docu = document.getElementById(pay);
 
-                console.log(docu);
+               
            
-                docu.setAttribute("title", pays);
+                docu.setAttribute("title", pays); //set les title pour les paths
                 docu.classList.add('active');
             }
 
             for (k=0; k<data.prospect.length;k++){
                 var pays = data.prospect[k].name;
                 var pay = pays.split(' ').join('_');
-                // console.log(pay);
+                
 
                 var docu = document.getElementById(pay);
-              
-
+            
                 docu.classList.add('prospect');
             }
 
+            for (var j = 0; j<data.inactive.length; j++){
+                var pays = data.inactive[j].name;
+                var pay = pays.split(' ').join('_');
+
+                var docu = document.getElementById(pay);
+
+                docu.classList.add('inactive');
+
+                //console.log(docu);
+
+                docu.addEventListener("click", function(){
+                    var inactiveId = document.getElementById('accordion');
+                    
+                    inactiveId.innerHTML = "hebya n'est pas présent dans se pays";
+                });
+   
+            }
 
             // for(var i of data.inactive)
             // {
             //    var countryNameInactive = i.name.split(' ').join('_'); 
             //     countryInactive.push(countryNameInactive);
             // }
-            
             // for(var a of data.active){
-
             //     var countryNameActive = a.name.split(' ').join('_'); 
             //     countryActive.push(countryNameActive);
             // }
-            
             // for(var b of data.prospect){
             //     var countryNameProspect = b.name.split(' ').join('_'); 
             //     countryProspect.push(countryNameProspect);
             // }       
         })
+        /////tooltip/////
 
-       
-        //console.log(countryActive);
-        //console.log(countryInactive);
+        $description = $(".description");
 
-       
         
-       var soso = Object.keys(africaPaths);
+        
+          $('path').hover(function() {
+            
+            
+            $description.addClass('actived');
+            $description.html($(this).attr('id'));
+          }, function() {
+            $description.removeClass('actived');
+          });
+        
+        $(document).on('mousemove', function(e){
+          
+          $description.css({
+            left:  e.pageX,
+            top:   e.pageY - 70
+          });
+          
+        });
 
-      //console.log(Array.isArray(countryActive));
+    ////////////////////////////////////////////////
+      var zyzy = document.getElementById('legend');
+
       
+
+      setTimeout(function() {
+          $('#legend').hide().fadeIn();
+      }, 1000);
 
    
     /////////////////////////////////////////////////    
@@ -185,7 +204,7 @@ var africaPaths = {
           method: "GET",
           data: {"country": country}
         }).done(function (data) {
-          console.log(data);
+          
           $(".info h3").hide().html(data.country_name).fadeIn();
           $(".info #country_contact p").hide().html(data.contact_name).fadeIn();
           $(".info #country_content p").hide().html(data.content).fadeIn();

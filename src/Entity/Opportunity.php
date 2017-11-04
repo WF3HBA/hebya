@@ -30,6 +30,8 @@ class Opportunity {
     
     private $idcountry;
     
+    private $status;
+
     private $country;
     
     
@@ -85,6 +87,12 @@ class Opportunity {
     public function getCountry() {
         return $this->country;
     }
+
+    public function getStatus() {
+        return $this->status;
+    }
+
+    
     
 /*************** SETTER *************** */
     
@@ -145,6 +153,11 @@ class Opportunity {
 
     public function setIdcountry($idcountry) {
         $this->idcountry = $idcountry;
+        return $this;
+    }
+
+    public function setStatus($status) {
+        $this->status = $status;
         return $this;
     }
 

@@ -68,6 +68,7 @@ SQL;
             ->setRequired_skills($data['required_skills'])
             ->setDescription($data['description'])
             ->setSalary($data['salary'])
+            ->setStatus($data['status'])
             ->setCountry($country)
         ;
         
@@ -117,5 +118,41 @@ SQL;
             return $opportunities;
     }
     
+    public function delete($opportunity){
+        
+        $this->db->delete('opportunity', ['idopportunity' => $opportunity->getIdopportunity()]);
+    }
+
+    public function save(opportunity $opportunity){
+        
+                $data =
+                    [
+                        'idopportunity' => $opportunity->getidopportunity(),
+                        'position' => $opportunity->getPosition(),
+                        'city' => $opportunity->getCity(),
+                        'contract_type'=> $opportunity->getContract_type(),
+                        'hiring_date'=>$opportunity->getHiring_date(),
+                        'publication_date'=> $opportunity->getPublication_date(),
+                        'required_skills'=>$opportunity->getRequired_skills(),
+                        'description' => $opportunity->getDescription(),
+                        'reference' => $opportunity->getReference(),
+                        'field' => $opportunity->getField(),
+                        'salary'=>$opportunity->getSalary(),
+                        'idcountry'=>$opportunity->getIdcountry(),
+                        'status' => $opportunity->getStatus()
+                    ];
+        
+                if ($opportunity->getidopportunity()){
+                    $this->db->update('opportunity', $data, 
+                            [
+                                'idopportunity'=>$opportunity->getidopportunity()
+                            ] 
+                        );
+                } else {
+                    $this->db->insert('opportunity', $data);
+                    $opportunity->setidopportunity($this->db->LastInsertId());
+                }
+            }
+   
     
 }

@@ -59,7 +59,7 @@ class AdminCountryController extends ControllerAbstract {
 
             if (empty($_POST['content'])) {
                 $errors['content'] = 'Titre requis';
-            } elseif (strlen($_POST['content']) > 700) {
+            } elseif (strlen($_POST['content']) > 10000) {
                 $errors['content'] = 'Maximum 200 characteres';
             }
                
