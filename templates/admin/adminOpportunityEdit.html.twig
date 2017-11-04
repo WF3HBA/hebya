@@ -1,0 +1,128 @@
+{% extends "admin/admin.html.twig" %}
+
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/simditor.css') }}" />
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-9 col-md-offset-2 table-listing">
+        <h1>{% if opportunity.idopportunity%}Edit{% else %}Create{% endif %} des offres</h1>
+        <form class="form-horizontal" method="POST">
+            <fieldset>
+               <div class="form-group">
+                    <label class="col-md-2 control-label" for="position">position</label>  
+                    <div class="col-md-8">
+                        <input id="position" name="position" type="text" placeholder="" value="{{ opportunity.position }}" class="form-control input-md">
+                        <input id="idopportunity" name="idopportunity" type="text" placeholder="" value="{{ opportunity.idopportunity }}" class="form-control input-md hidden">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="reference">reference</label>  
+                    <div class="col-md-8">
+                        <input id="reference" name="reference" type="text" placeholder="" value="{{ opportunity.reference }}" class="form-control input-md">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-md-2 control-label" for="city">city</label>  
+                    <div class="col-md-8">
+                        <input id="city" name="city" type="text" placeholder="" value="{{ opportunity.city }}" class="form-control input-md">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="field">field</label>  
+                    <div class="col-md-8">
+                        <select id="field" name="field" class="form-control select-md">
+                            <option value="Informatique" {% if opportunity.field == "Informatique" %}selected{% endif %}>Informatique</option>
+                            <option value="Communication" {% if opportunity.field == "Communication" %}selected{% endif %}>Communication</option>
+                            <option value="Marketing" {% if opportunity.field == "Marketing" %}selected{% endif %}>Marketing</option>
+                            <option value="Comptabilité" {% if opportunity.field == "Comptabilité" %}selected{% endif %}>Comptabilité</option>
+                        </select>
+                    </div>
+                </div>
+              
+                 <div class="form-group">
+                    <label class="col-md-2 control-label" for="status">contract_type</label>  
+                    <div class="col-md-8">
+                        <select id="contract_type" name="contract_type" class="form-control select-md">
+                            <option value="CDI" {% if opportunity.contract_type == "CDI" %}selected{% endif %}>CDI</option>
+                            <option value="CDD" {% if opportunity.contract_type == "CDD" %}selected{% endif %}>CDD</option>
+                            <option value="Stage" {% if opportunity.contract_type == "Stage" %}selected{% endif %}>Stage</option>
+                            <option value="Alternance" {% if opportunity.contract_type == "Alternance" %}selected{% endif %}>Alternance</option>
+                        </select>
+                    </div>
+                </div>contract_type
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="publication_date">publication_date</label>  
+                    <div class="col-md-8">
+                        <input id="publication_date" type="date" name="publication_date" placeholder="" value="{{ opportunity.publication_date }}" class="form-control input-md">
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label class="col-md-2 control-label" for="hiring_date">hiring_date</label>  
+                    <div class="col-md-8">
+                        <input id="hiring_date" type="date" name="hiring_date" placeholder="" value="{{ opportunity.hiring_date }}" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="require_skills">require_skills</label>  
+                    <div class="col-md-8">
+                        <textarea id="require_skills" name="require_skills" placeholder="" class="form-control input-md" rows="15">{{ opportunity.required_skills }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="description">description</label>  
+                    <div class="col-md-8">
+                        <textarea id="content" name="description" placeholder="" class="form-control input-md" rows="15">{{ opportunity.description }}</textarea>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label class="col-md-2 control-label" for="salary">salary</label>  
+                    <div class="col-md-8">
+                        <input id="salary" type="text" name="salary" placeholder="" value="{{ opportunity.salary }}" class="form-control input-md">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="idcountry">idcountry</label>  
+                    <div class="col-md-8">
+                        <input id="idcountry" type="text" name="idcountry" placeholder="" value="{{ opportunity.idcountry }}" class="form-control input-md">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="status">Statut</label>  
+                    <div class="col-md-8">
+                        <select id="status" name="status" class="form-control select-md">
+                            <option value="public" {% if opportunity.status == "public" %}selected{% endif %}>Public</option>
+                            <option value="privé" {% if opportunity.status == "privé" %}selected{% endif %}>Privé</option>
+                        </select>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                     <label class="col-md-2 control-label" for="submit"></label>
+                     <div class="col-md-8">
+                          <button  name="submit" type="submit" class="btn btn-success">Valider</button>
+                         <a href="{{ path('admin_opportunity') }}" class="btn btn-primary">Annuler</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/admin/module.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/hotkeys.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin/simditor.min.js') }}"></script>
+    <script>
+        var content = new Simditor({
+             textarea: $('#content')
+        });
+    </script>
+{% endblock %}

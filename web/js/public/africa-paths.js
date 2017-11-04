@@ -84,55 +84,120 @@ Republique_du_Congo:"m 4282.2071,5566.1391 c 23.8283,67.514 1.9855,63.542 -25.81
         // var demo1 = R.getById('tanzania').attr({"fill": "green"});
         // For an example of interaction via javascript, uncomment the line below.
         // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";
+     
+     //////////////////// Active country /////////////////////////// 
+        $.ajax({
+            url: countryRequest,
+            method: "GET"  
+          }).done(function (data) {
+                  
+             
+            for (l=0; l<data.active.length;l++){
+                var pays = data.active[l].name;
+                var pay = pays.split(' ').join('_');
+               
+                
+                var docu = document.getElementById(pay);
 
-        //////////////////// Active country ///////////////////////////
+               
+           
+                docu.setAttribute("title", pays); //set les title pour les paths
+                docu.classList.add('active');
+            }
 
-        var countryActive = [];
-                var countryInactive = [];
-                var countryProspect = [];
-                var tableau = [];
-                for (let item of countryActive){
-        item.style.fill = 'red';
-        }
+            for (k=0; k<data.prospect.length;k++){
+                var pays = data.prospect[k].name;
+                var pay = pays.split(' ').join('_');
+                
+
+                var docu = document.getElementById(pay);
+            
+                docu.classList.add('prospect');
+            }
+
+            for (var j = 0; j<data.inactive.length; j++){
+                var pays = data.inactive[j].name;
+                var pay = pays.split(' ').join('_');
+
+                var docu = document.getElementById(pay);
+
+                docu.classList.add('inactive');
+
+                //console.log(docu);
+
+                docu.addEventListener("click", function(){
+                    var inactiveId = document.getElementById('accordion');
+                    
+                    inactiveId.innerHTML = "hebya n'est pas présent dans se pays";
+                });
+   
+            }
+
+            // for(var i of data.inactive)
+            // {
+            //    var countryNameInactive = i.name.split(' ').join('_'); 
+            //     countryInactive.push(countryNameInactive);
+            // }
+            // for(var a of data.active){
+            //     var countryNameActive = a.name.split(' ').join('_'); 
+            //     countryActive.push(countryNameActive);
+            // }
+            // for(var b of data.prospect){
+            //     var countryNameProspect = b.name.split(' ').join('_'); 
+            //     countryProspect.push(countryNameProspect);
+            // }       
+        })
+        /////tooltip/////
+
+        $description = $(".description");
+
         
-        console.log(countryStatus);
-
-        for (country in countryStatus) {
+        
+          $('path').hover(function() {
+            
+            
+            $description.addClass('actived');
+            $description.html($(this).attr('id'));
+          }, function() {
+            $description.removeClass('actived');
+          });
+        
+        $(document).on('mousemove', function(e){
           
-          var svg = country.split(' ').join('_');
+          $description.css({
+            left:  e.pageX,
+            top:   e.pageY - 70
+          });
           
-          $('#' + svg).attr('title', country);
-          
-          if (countryStatus[country] == 'active') {
-            $('#' + svg).addClass('active');
-          } else if (countryStatus[country] == 'prospect'){
-            $('#' + svg).addClass('prospect');
-          }
-        }
+        });
 
-        var browserWidth = $(window).width();
-                if (browserWidth > 991) {
-        $(".info > button").hide();
-        } else if (browserWidth < 992) {
-        $(".info > button").show();
-        }
+    ////////////////////////////////////////////////
+      var zyzy = document.getElementById('legend');
 
-        $("svg > path").click(function(){
+      
+
+      setTimeout(function() {
+          $('#legend').hide().fadeIn();
+      }, 1000);
+
+   
+    /////////////////////////////////////////////////    
 
         var id_country = ($(this).attr("id"));
-                var country = id_country.split("_").join(" ");
-                var browserWidth = $(window).width();
-                $.ajax({
-                url: countryAjaxUrl,
-                        method: "GET",
-                        data: {"country": country}
-                }).done(function (data) {
-        console.log(data);
-                $(".info h3").hide().html(data.country_name).fadeIn();
-                $(".info #country_contact p").hide().html(data.contact_name).fadeIn();
-                $(".info #country_content p").hide().html(data.content).fadeIn();
-                $(".info #country_service p").hide().html(data.content).fadeIn();
-                $(".info #country_contact .btn-primary").hide();
+        var country = id_country.split("_").join(" ");
+        var browserWidth = $( window ).width();
+        
+        $.ajax({
+          url: countryAjaxUrl,
+          method: "GET",
+          data: {"country": country}
+        }).done(function (data) {
+          
+          $(".info h3").hide().html(data.country_name).fadeIn();
+          $(".info #country_contact p").hide().html(data.contact_name).fadeIn();
+          $(".info #country_content p").hide().html(data.content).fadeIn();
+          $(".info #country_service p").hide().html(data.content).fadeIn();
+          $(".info #country_contact .btn-primary").hide();
         })
 
                 if (browserWidth < 991) {

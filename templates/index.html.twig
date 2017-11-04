@@ -6,6 +6,7 @@
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset("css/public/carousel.css") }}"/>
     <link rel="stylesheet" href="{{ asset("css/public/accueil.css") }}"/>
+     <link rel="stylesheet" href="{{ asset("css/public/jqueryui.css") }}"/>
   {% endblock %}
 
   {% block content %}
@@ -61,28 +62,34 @@
               <div id="legend">
                 <p class="flex-item"><div id="active"></div><span>active</span></p>
                 <p class="flex-item"><div id="prospect"></div><span>prospect</span></p>
-                <p class="flex-item"><div id="inactive"></div>inactive</p>
+                <p class="flex-item"><div id="inactive"></div>inactive</p>               
               </div>
             </div>
+            <div class="description"></div>
             <!-- End Map Container -->
             <div class="col-md-5">
+              
               <div class="info">
                 <div id="country_name">
                   <h3>HEBYA</h3>
                 </div>
-                <div id="country_service">
-                  <h4>Présence</h4>
+              <div id="accordion">  
+                <h4>Présence</h4>
+                <div id="country_service"> 
                   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
+                <h4>Service</h4>
                 <div id="country_content">
-                  <h4>Service</h4>
+                  
                   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 </div>
+                <h4>Contact</h4>
                 <div id="country_contact">
-                  <h4>Contact</h4>
+                  
                   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                   {# <a class="btn btn-primary" href="{{ path('apropos') }}">En savoir plus sur Hebya</a> #}
                 </div>
+              </div>
                 <button class="btn btn-default btn-block">back to map</button>
               </div>
             </div>
@@ -151,6 +158,15 @@
   {% block javascript %}
     {{ parent() }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"></script>
+      <script>
+        $( function() {
+        $( "#accordion" ).accordion();
+        } );
+      </script>
     <script>
       var countryStatus = {
         {% for country in countries %}

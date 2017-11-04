@@ -14,6 +14,7 @@
                 <th>Type</th>
                 <th>Publication</th>
                 <th>Embauche</th>
+                <th>Status</th>
                 <th>Edition</th>
                 <th>Supprimer</th>
             </tr>
@@ -26,11 +27,12 @@
                 <td>{{ opportunity.contract_type }}</td>
                 <td>{{ opportunity.publication_date }}</td>
                 <td>{{ opportunity.hiring_date }}</td>
+                <td>{{ opportunity.status }}</td>
                 <td>
-                    <a href="{{ path('admin_country_edit', {id: opportunity.idcountry}) }}"><button class="btn btn-primary">Modifier</button></a>
+                    <a href="{{ path('admin_opportunity_edit', {id: opportunity.idopportunity}) }}"><button class="btn btn-primary">Modifier</button></a>
                 </td>
                 <td>
-                    <a href=" {{path('admin_country_delete', {id: opportunity.idcountry}) }}"><button id="annuler" name="annuler" class="btn btn-danger">Supprimer</button></a>
+                    <a href=" {{ path('admin_opportunity_delete', {id: opportunity.idopportunity}) }}"><button id="annuler" name="annuler" class="btn btn-danger">Supprimer</button></a>
                 </td>
             </tr>
             {% else %} 

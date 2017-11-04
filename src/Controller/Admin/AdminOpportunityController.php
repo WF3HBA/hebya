@@ -29,7 +29,7 @@ class AdminOpportunityController extends ControllerAbstract {
                 if (is_null($opportunity)) {
                     $this->app->abort(404);
                 }
-            }
+            } 
 
             $errors = [];
 
@@ -37,38 +37,45 @@ class AdminOpportunityController extends ControllerAbstract {
                 
             $opportunity->setPosition($_POST['position']);
             $opportunity->setReference($_POST['reference']);
-            $opportunity->setField($_POST['field']);
             $opportunity->setCity($_POST['city']);
+            $opportunity->setField($_POST['field']);
             $opportunity->setContract_type($_POST['contract_type']);
             $opportunity->setPublication_date($_POST['publication_date']);
-            $opportunity->setPublication_date($_POST['publication_date']);
+            $opportunity->setHiring_date($_POST['hiring_date']);
+            $opportunity->setRequired_skills($_POST['require_skills']);
+            $opportunity->setDescription($_POST['description']);
+            $opportunity->setSalary($_POST['salary']);
+            $opportunity->setStatus($_POST['status']);
+            $opportunity->setIdcountry($_POST['idcountry']);
+
           
-            if (empty($_POST['firstname'])) {
-                $errors['firstname'] = 'Prénom requis';
-            } elseif(strlen($_POST['firstname']) > 45){
-                $errors['firstname'] = 'Maximum 45 caractères';
-            }
+            // if (empty($_POST['firstname'])) {
+            //     $errors['firstname'] = 'Prénom requis';
+            // } elseif(strlen($_POST['firstname']) > 45){
+            //     $errors['firstname'] = 'Maximum 45 caractères';
+            // }
                    
-            if (empty($_POST['lastname'])) {
-                $errors['lastname'] = 'Nom requis';
-            } elseif (strlen($_POST['lastname']) > 45) {
-                $errors['website'] = 'Maximum 45 caracteres';
-            }
+            // if (empty($_POST['lastname'])) {
+            //     $errors['lastname'] = 'Nom requis';
+            // } elseif (strlen($_POST['lastname']) > 45) {
+            //     $errors['website'] = 'Maximum 45 caracteres';
+            // }
             
-            if (empty($_POST['title'])) {
-                $errors['title'] = 'Titre requis';
-            } elseif (strlen($_POST['title']) > 45) {
-                $errors['title'] = 'Maximum 45 characteres';
-            }
+            // if (empty($_POST['title'])) {
+            //     $errors['title'] = 'Titre requis';
+            // } elseif (strlen($_POST['title']) > 45) {
+            //     $errors['title'] = 'Maximum 45 characteres';
+            // }
             
-            if (empty($_POST['description'])) {
-                $errors['description'] = 'Description requise';
-            }
+            // if (empty($_POST['description'])) {
+            //     $errors['description'] = 'Description requise';
+            // }
             
             if (empty($errors)) {
-                $this->app['team.repository']->save($teamMember);
-                $this->addFlashMessage('Nouveau membre ajouté');
-                return $this->redirectRoute('admin_team');
+                
+                $this->app['opportunity.repository']->save($opportunity);
+                $this->addFlashMessage('Nouvelle offre ajouté');
+                return $this->redirectRoute('admin_opportunity');
             } else {
                 $message = '<strong>Le formulaire contient des erreurs</strong>';
                 $message .= '<br>' .implode('</br>', $errors);
@@ -77,11 +84,20 @@ class AdminOpportunityController extends ControllerAbstract {
         }
         
         return $this->render(
-                'admin/adminTeamEdit.html.twig',
+                'admin/adminOpportunityEdit.html.twig',
                 [
-                    'teamMember' => $teamMember
+                    'opportunity' => $opportunity
                 ]
          );
+    }
+
+    public function deleteAction($idopportunity) {
+        $client = $this->app['opportunity.repository']->find($idopportunity);
+        
+        $client = $this->app['opportunity.repository']->delete($idopportunity);
+        $this->addFlashMessage('l\'offre est supprimé');
+        
+        return $this->redirectRoute('admin_opportunity');
     }
     
 }
