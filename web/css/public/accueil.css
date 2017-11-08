@@ -41,6 +41,10 @@ path:hover {
   transition: 0.9s;
 }
 
+.cache{
+  display: none;
+}
+
 /* MAP LEGEND */
 
 #legend{

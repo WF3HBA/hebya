@@ -105,6 +105,16 @@ var africaPaths = {
            
                 docu.setAttribute("title", pays); //set les title pour les paths
                 docu.classList.add('active');
+
+                docu.addEventListener('click', function(){
+                    var inactiveId = document.getElementById('accordion');
+                    inactiveId.classList.remove('cache');
+
+                    var inactiveMess = document.getElementById('inactiveMess');
+                    
+                                        inactiveMess.classList.add('cache');
+                    
+                })
             }
 
             for (k=0; k<data.prospect.length;k++){
@@ -115,6 +125,18 @@ var africaPaths = {
                 var docu = document.getElementById(pay);
             
                 docu.classList.add('prospect');
+
+                docu.addEventListener('click', function(){
+                    var inactiveId = document.getElementById('accordion');
+                    inactiveId.classList.remove('cache');
+
+                    var inactiveMess = document.getElementById('inactiveMess');
+                    
+                                        inactiveMess.classList.add('cache');
+                    
+                })
+
+
             }
 
             for (var j = 0; j<data.inactive.length; j++){
@@ -125,12 +147,17 @@ var africaPaths = {
 
                 //docu.classList.add('inactive');
 
-                //console.log(docu);
-
                 docu.addEventListener("click", function(){
                     var inactiveId = document.getElementById('accordion');
+
+                    var inactiveMess = document.getElementById('inactiveMess');
+
+                    inactiveMess.classList.remove('cache');
+
+                    inactiveId.classList.add('cache');
+
                     
-                    inactiveId.innerHTML = "hebya n'est pas présent dans se pays";
+                    
                 });
    
             }
