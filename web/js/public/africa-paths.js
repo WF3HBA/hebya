@@ -103,6 +103,16 @@ Republique_du_Congo:"m 4282.2071,5566.1391 c 23.8283,67.514 1.9855,63.542 -25.81
            
                 docu.setAttribute("title", pays); //set les title pour les paths
                 docu.classList.add('active');
+
+                docu.addEventListener('click', function(){
+                    var inactiveId = document.getElementById('accordion');
+                    inactiveId.classList.remove('cache');
+
+                    var inactiveMess = document.getElementById('inactiveMess');
+                    
+                                        inactiveMess.classList.add('cache');
+                    
+                })
             }
 
             for (k=0; k<data.prospect.length;k++){
@@ -113,6 +123,18 @@ Republique_du_Congo:"m 4282.2071,5566.1391 c 23.8283,67.514 1.9855,63.542 -25.81
                 var docu = document.getElementById(pay);
             
                 docu.classList.add('prospect');
+
+                docu.addEventListener('click', function(){
+                    var inactiveId = document.getElementById('accordion');
+                    inactiveId.classList.remove('cache');
+
+                    var inactiveMess = document.getElementById('inactiveMess');
+                    
+                                        inactiveMess.classList.add('cache');
+                    
+                })
+
+
             }
 
             for (var j = 0; j<data.inactive.length; j++){
@@ -123,12 +145,17 @@ Republique_du_Congo:"m 4282.2071,5566.1391 c 23.8283,67.514 1.9855,63.542 -25.81
 
                 docu.classList.add('inactive');
 
-                //console.log(docu);
-
                 docu.addEventListener("click", function(){
                     var inactiveId = document.getElementById('accordion');
+
+                    var inactiveMess = document.getElementById('inactiveMess');
+
+                    inactiveMess.classList.remove('cache');
+
+                    inactiveId.classList.add('cache');
+
                     
-                    inactiveId.innerHTML = "hebya n'est pas présent dans se pays";
+                    
                 });
    
             }
