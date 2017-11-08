@@ -27,22 +27,6 @@ $(function () {
     
   });
   
-  function openOverlay(target) {
-    
-    var $row = $(target).closest('.product-row');
-    var name = $row.find('.product-name').html();
-    var content = $row.find('.product-content').html();
-    var picture = $row.find('.img-thumbnail').attr('src');
-
-    $('#product-overlay h2').html(name);
-    $('#product-overlay img').attr('src', picture);
-    $('#product-detail').html(content);
-    
-    $('body').toggleClass('noscroll');
-    $('#product-overlay').fadeIn(600);
-    
-  }
-  
   $('#close-overlay').click(function(){
     
     $('#product-overlay').animate({scrollTop:0},200);

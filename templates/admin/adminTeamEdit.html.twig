@@ -40,6 +40,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-md-2 control-label" for="picture">Image</label>  
+                    <div class="col-md-8">
+                        <input type="file" class="form-control-file" id="picture" name="picture" value="{{ asset(teamMember.picture) }}" aria-describedby="fileHelp">
+                    </div>
+                </div>
+                <div class="form-group">
                      <label class="col-md-2 control-label" for="submit"></label>
                      <div class="col-md-8">
                           <button  name="submit" type="submit" class="btn btn-success">Valider</button>

@@ -176,6 +176,10 @@ $app['client.repository'] = function () use ($app) {
     return new Repository\ClientRepository($app['db']);
 };
 
+$app['contact.repository'] = function () use ($app) {
+    return new Repository\ContactRepository($app['db']);
+};
+
 $app['disponibility.repository'] = function () use ($app) {
     return new Repository\DisponibilityRepository($app['db']);
 };
