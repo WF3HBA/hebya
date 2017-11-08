@@ -62,6 +62,7 @@ var africaPaths = {
 };
 
 
+
   window.onload = function () {
         // Create canvas and define attributes shared by all paths.
         var R = Raphael("container", 620, 660),
@@ -88,94 +89,127 @@ var africaPaths = {
         // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";
      
      //////////////////// Active country /////////////////////////// 
-        $.ajax({
-            url: countryRequest,
-            method: "GET"  
-          }).done(function (data) {
-                  
-             
-            for (l=0; l<data.active.length;l++){
-                var pays = data.active[l].name;
-                var pay = pays.split(' ').join('_');
-               
-                
-                var docu = document.getElementById(pay);
+     
+       for (country in countryStatus) {
 
-               
-           
-                docu.setAttribute("title", pays); //set les title pour les paths
-                docu.classList.add('active');
-
-                docu.addEventListener('click', function(){
-                    var inactiveId = document.getElementById('accordion');
-                    inactiveId.classList.remove('cache');
-
-                    var inactiveMess = document.getElementById('inactiveMess');
-                    
-                                        inactiveMess.classList.add('cache');
-                    
-                })
-            }
-
-            for (k=0; k<data.prospect.length;k++){
-                var pays = data.prospect[k].name;
-                var pay = pays.split(' ').join('_');
-                
-
-                var docu = document.getElementById(pay);
-            
-                docu.classList.add('prospect');
-
-                docu.addEventListener('click', function(){
-                    var inactiveId = document.getElementById('accordion');
-                    inactiveId.classList.remove('cache');
-
-                    var inactiveMess = document.getElementById('inactiveMess');
-                    
-                                        inactiveMess.classList.add('cache');
-                    
-                })
-
-
-            }
-
-            for (var j = 0; j<data.inactive.length; j++){
-                var pays = data.inactive[j].name;
-                var pay = pays.split(' ').join('_');
-
-                //var docu = document.getElementById(pay);
-
-                //docu.classList.add('inactive');
-
-                docu.addEventListener("click", function(){
-                    var inactiveId = document.getElementById('accordion');
-
-                    var inactiveMess = document.getElementById('inactiveMess');
-
-                    inactiveMess.classList.remove('cache');
-
-                    inactiveId.classList.add('cache');
-
-                    
-                    
-                });
-   
-            }
-
-            // for(var i of data.inactive)
-            // {
-            //    var countryNameInactive = i.name.split(' ').join('_'); 
-            //     countryInactive.push(countryNameInactive);
-            // }
-            // for(var a of data.active){
-            //     var countryNameActive = a.name.split(' ').join('_'); 
-            //     countryActive.push(countryNameActive);
-            // }
-            // for(var b of data.prospect){
-            //     var countryNameProspect = b.name.split(' ').join('_'); 
-            //     countryProspect.push(countryNameProspect);
-            // }       
+          var svg = country.split(' ').join('_');
+          
+          $('#' + svg).attr('title', country);
+          
+          if (countryStatus[country] == 'active') {
+            $('#' + svg).addClass('active');
+          } else if (countryStatus[country] == 'prospect'){
+            $('#' + svg).addClass('prospect');
+          } else if (countryStatus[country] == 'inactive'){
+            $('#' + svg).addClass('inactive');
+          }
+        }
+        
+        $(document).on('click', 'path', function(){
+          
+          var countryName = $(this).attr('title');
+          $('.info h3').hide().html(countryName).fadeIn('slow');
+          
+          if ($(this).hasClass('inactive')) {
+            $('#accordion').fadeOut(200);
+            $('#inactiveMess').delay(400).fadeIn();
+          } else {
+            $('#inactiveMess').fadeOut(200);
+            $('#accordion').delay(400).fadeIn();
+          }
         })
+
+     
+     
+     
+//        $.ajax({
+//            url: countryRequest,
+//            method: "GET"  
+//          }).done(function (data) {
+//                  
+//             
+//            for (l=0; l<data.active.length;l++){
+//                var pays = data.active[l].name;
+//                var pay = pays.split(' ').join('_');
+//               
+//                
+//                var docu = document.getElementById(pay);
+//
+//               
+//           
+//                docu.setAttribute("title", pays); //set les title pour les paths
+//                docu.classList.add('active');
+//
+//                docu.addEventListener('click', function(){
+//                    var inactiveId = document.getElementById('accordion');
+//                    inactiveId.classList.remove('cache');
+//
+//                    var inactiveMess = document.getElementById('inactiveMess');
+//                    
+//                                        inactiveMess.classList.add('cache');
+//                    
+//                })
+//            }
+//
+//            for (k=0; k<data.prospect.length;k++){
+//                var pays = data.prospect[k].name;
+//                var pay = pays.split(' ').join('_');
+//                
+//
+//                var docu = document.getElementById(pay);
+//            
+//                docu.classList.add('prospect');
+//
+//                docu.addEventListener('click', function(){
+//                    var inactiveId = document.getElementById('accordion');
+//                    inactiveId.classList.remove('cache');
+//
+//                    var inactiveMess = document.getElementById('inactiveMess');
+//                    
+//                                        inactiveMess.classList.add('cache');
+//                    
+//                })
+//
+//
+//            }
+//
+//            for (var j = 0; j<data.inactive.length; j++){
+//                var pays = data.inactive[j].name;
+//                var pay = pays.split(' ').join('_');
+//
+//                var docu = document.getElementById(pay);
+//                
+//                docu.classList.add('inactive');
+//
+//                docu.addEventListener("click", function(){
+//                    var inactiveId = document.getElementById('accordion');
+//
+//                    var inactiveMess = document.getElementById('inactiveMess');
+//
+//                    inactiveMess.classList.remove('cache');
+//
+//                    inactiveId.classList.add('cache');
+//
+//                    
+//                    
+//                });
+//   
+//            }
+//
+//            // for(var i of data.inactive)
+//            // {
+//            //    var countryNameInactive = i.name.split(' ').join('_'); 
+//            //     countryInactive.push(countryNameInactive);
+//            // }
+//            // for(var a of data.active){
+//            //     var countryNameActive = a.name.split(' ').join('_'); 
+//            //     countryActive.push(countryNameActive);
+//            // }
+//            // for(var b of data.prospect){
+//            //     var countryNameProspect = b.name.split(' ').join('_'); 
+//            //     countryProspect.push(countryNameProspect);
+//            // }       
+//        })
         /////tooltip/////
 
         $description = $(".description");
@@ -232,7 +266,7 @@ var africaPaths = {
           data: {"country": country}
         }).done(function (data) {
           
-          $(".info h3").hide().html(data.country_name).fadeIn();
+          //$(".info h3").hide().html(data.country_name).fadeIn();
           $(".info #country_contact p").hide().html(data.contact_name).fadeIn();
           $(".info #country_content p").hide().html(data.content).fadeIn();
           $(".info #country_service p").hide().html(data.content).fadeIn();
@@ -262,6 +296,7 @@ var africaPaths = {
         }, 800);
     });
 };
+
       
   
 
