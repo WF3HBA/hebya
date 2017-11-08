@@ -1,13 +1,9 @@
 <?php
 
-
-
 namespace Controller\Admin;
 
 use Controller\ControllerAbstract;
 use Entity\Client;
-
-
 
 class AdminClientController extends ControllerAbstract {
     
